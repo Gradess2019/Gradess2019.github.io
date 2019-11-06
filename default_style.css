@@ -1,0 +1,35 @@
+
+.background 
+{
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#first-background
+{
+    background-color: #181a1b;
+}
+
+#second-background
+{
+    background-color: #752425;
+}
+
+#third-background
+{
+    background-color: #d32f2f;
+}
+
+#fourth-background
+{
+    background-color: #ffffff;
+}
+
+#name
+{
+    text-align: left;
+    font-size: 4vh;
+    font-family: 'Montserrat';
+}
