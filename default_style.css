@@ -1,3 +1,8 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
 
 .background 
 {
@@ -9,7 +14,10 @@
 
 #first-background
 {
-    background-color: #181a1b;
+    height: 50vh;
+    background-image: url("images/coding-background.jpg");
+    background-attachment: fixed;
+    background-position: 50% 50%;
 }
 
 #second-background
