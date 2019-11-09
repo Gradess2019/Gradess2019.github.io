@@ -38,8 +38,8 @@
 #name-background
 {
     position: relative;
-    height: 30vh;
     width: 28vw;
+    height: 14vw;
     background-color: #181a1b;
 }
 
@@ -52,13 +52,13 @@
 
 #title
 {
-    font-size: calc(2vw + 2vh);
+    font-size: 2vw;
 }
 
 
 #subtitle
 {
-    font-size: calc(0.4vw + 0.4vh);
+    font-size: 0.7vw;
 }
 
 /* #name:first-letter
