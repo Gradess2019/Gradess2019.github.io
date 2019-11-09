@@ -4,28 +4,76 @@
     padding: 0;
 }
 
+p
+{
+    font-family: 'Montserrat';
+}
+
 .background 
 {
-    height: 40vh;
+    height: 30vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#first-background
+/* Title */
+#title-background
 {
-    height: 50vh;
+    height: 40vw;
     background-image: url("images/coding-background.jpg");
     background-attachment: fixed;
     background-position: 50% 60%;
 }
 
-#second-background
+#name-background
+{
+    position: relative;
+    width: 28vw;
+    height: 14vw;
+    background-color: #181a1b;
+    opacity: 0.97;
+}
+
+#name
+{
+    text-align: left;
+    color: white;
+}
+
+#title
+{
+    font-size: 2.5vw;
+}
+
+#subtitle
+{
+    font-size: 0.8vw;
+}
+
+/* About me */
+#about-me-background
 {
     background-color: #752425;
 }
 
-#third-background
+#about-me
+{
+    color: white;
+}
+
+#about-me-title
+{
+    font-size: 3vw;
+}
+
+#about-me-description
+{
+    font-size: 1.75vw;
+}
+
+/* Professional experience background */
+#professional-experience-background
 {
     background-color: #d32f2f;
 }
@@ -35,33 +83,3 @@
     background-color: #ffffff;
 }
 
-#name-background
-{
-    position: relative;
-    width: 28vw;
-    height: 14vw;
-    background-color: #181a1b;
-}
-
-#name
-{
-    text-align: left;
-    font-family: 'Montserrat';
-    color: white;
-}
-
-#title
-{
-    font-size: 2vw;
-}
-
-
-#subtitle
-{
-    font-size: 0.7vw;
-}
-
-/* #name:first-letter
-{
-    color: #d32f2f;
-} */
