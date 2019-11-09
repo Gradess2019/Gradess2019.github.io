@@ -17,6 +17,12 @@ p
     justify-content: center;
 }
 
+.title
+{
+    font-size: 3vw;
+    color: white;
+}
+
 /* Title */
 #title-background
 {
@@ -26,7 +32,7 @@ p
     background-position: 50% 60%;
 }
 
-#name-background
+.name-background
 {
     position: relative;
     width: 28vw;
@@ -35,18 +41,43 @@ p
     opacity: 0.97;
 }
 
-#name
+.name 
 {
     text-align: left;
     color: white;
 }
 
-#title
+.title
 {
     font-size: 2.5vw;
 }
 
-#subtitle
+.responsibilities
+{
+    font-size: 1.3vw;
+}
+
+.job-title
+{
+    font-size: 1.25vw;
+}
+
+.job-years
+{
+    font-size: 1vw;
+}
+
+.blur-enabled
+{
+    filter: blur(2px);
+}
+
+.blur-disabled
+{
+    filter: blur(0);
+}
+
+.subtitle
 {
     font-size: 0.8vw;
 }
@@ -62,11 +93,6 @@ p
     color: white;
 }
 
-#about-me-title
-{
-    font-size: 3vw;
-}
-
 #about-me-description
 {
     font-size: 1.75vw;
@@ -76,10 +102,50 @@ p
 #professional-experience-background
 {
     background-color: #d32f2f;
+    height: 5vw;
+}
+
+#experience-title
+{
+    text-align: center;
+    position: relative;
+    top: 2%;
+}
+
+#screwdriver-entertainment-background
+{
+    background-image: url("images/Screwdriver_Entertainment.jpg");
+    background-position-x: 46.5%;
+    background-position-y: 30%;
+    background-size: 60vw;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 34vw;
+}
+
+#screwdriver-entertainment-description, #rtu-description
+{
+    width: 48vw;
+    height: 20vw;
+    background-color: #752425;
+}
+
+#rtu-background
+{
+    background-image: url("images/RTU.jpg");
+    background-size: 50vw;
+    background-repeat: repeat-x;
+    background-position: 50%;
+    height: 40vw;
+}
+
+#rtu-description
+{
+    height: 29vw;
+    background-color: #181a1b;
 }
 
 #fourth-background
 {
     background-color: #ffffff;
 }
-
