@@ -15,6 +15,8 @@ p
     display: flex;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .title
@@ -118,9 +120,14 @@ p
     background-position-x: 46.5%;
     background-position-y: 30%;
     background-size: 60vw;
-    background-repeat: no-repeat;
+    
     background-color: black;
     height: 34vw;
+}
+
+.inverted
+{
+    filter: invert(100%);
 }
 
 #screwdriver-entertainment-description, #rtu-description
@@ -130,11 +137,10 @@ p
     background-color: #752425;
 }
 
-#rtu-background
+#rtu-background, #enter-vr-background, #marta-background
 {
     background-image: url("images/RTU.jpg");
-    background-size: 50vw;
-    background-repeat: repeat-x;
+    background-size: 30vw;
     background-position: 50%;
     height: 40vw;
 }
@@ -142,10 +148,14 @@ p
 #rtu-description
 {
     height: 29vw;
-    background-color: #181a1b;
 }
 
-#fourth-background
+#enter-vr-background
 {
-    background-color: #ffffff;
+    background-image: url("images/enter-vr-logo.png");
+}
+
+#marta-background
+{
+    background-image: url("images/Marta_logo.jpg");
 }
