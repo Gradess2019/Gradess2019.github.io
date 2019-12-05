@@ -69,16 +69,6 @@ p
     font-size: 1vw;
 }
 
-.blur-enabled
-{
-    filter: blur(2px);
-}
-
-.blur-disabled
-{
-    filter: blur(0);
-}
-
 .subtitle
 {
     font-size: 0.8vw;
@@ -120,14 +110,7 @@ p
     background-position-x: 46.5%;
     background-position-y: 30%;
     background-size: 60vw;
-    
-    background-color: black;
     height: 34vw;
-}
-
-.inverted
-{
-    filter: invert(100%);
 }
 
 #screwdriver-entertainment-description, #rtu-description
