@@ -1,144 +1,147 @@
-* 
-{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-p
-{
-    font-family: 'Montserrat';
+p a {
+  font-family: "Montserrat";
 }
 
-.background 
-{
-    height: 30vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+.background {
+  height: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.title
-{
-    font-size: 3vw;
-    color: white;
+.title {
+  font-size: 3vw;
+  color: white;
 }
 
 /* Title */
-#title-background
-{
-    height: 40vw;
-    background-image: url("images/coding-background.jpg");
-    background-attachment: fixed;
-    background-position: 50% 60%;
+#title-background {
+  height: 40vw;
+  background-image: url("images/coding-background.jpg");
+  background-attachment: fixed;
+  background-position: 50% 60%;
 }
 
-.name-background
-{
-    position: relative;
-    width: 28vw;
-    height: 14vw;
-    background-color: #181a1b;
-    opacity: 0.97;
+.name-background {
+  position: relative;
+  width: 28vw;
+  height: 14vw;
+  background-color: #181a1b;
+  opacity: 0.97;
 }
 
-.name 
-{
-    text-align: left;
-    color: white;
+.name {
+  text-align: left;
+  color: white;
 }
 
-.title
-{
-    font-size: 2.5vw;
+.title {
+  font-size: 2.5vw;
 }
 
-.responsibilities
-{
-    font-size: 1.3vw;
+.responsibilities {
+  font-size: 1.3vw;
 }
 
-.job-title
-{
-    font-size: 1.25vw;
+.job-title {
+  font-size: 1.25vw;
 }
 
-.job-years
-{
-    font-size: 1vw;
+.job-years {
+  font-size: 1vw;
 }
 
-.subtitle
-{
-    font-size: 0.8vw;
+.subtitle {
+  font-size: 0.8vw;
 }
 
 /* About me */
-#about-me-background
-{
-    background-color: #752425;
+#about-me-background {
+  background-color: #752425;
 }
 
-#about-me
-{
-    color: white;
+#about-me {
+  color: white;
 }
 
-#about-me-description
-{
-    font-size: 1.75vw;
+#about-me-description {
+  font-size: 1.75vw;
 }
 
 /* Professional experience background */
-#professional-experience-background
-{
-    background-color: #d32f2f;
-    height: 5vw;
+#professional-experience-background {
+  background-color: #d32f2f;
+  height: 5vw;
 }
 
-#experience-title
-{
-    text-align: center;
-    position: relative;
-    top: 2%;
+#experience-title {
+  text-align: center;
+  position: relative;
+  top: 2%;
 }
 
-#screwdriver-entertainment-background
-{
-    background-image: url("images/Screwdriver_Entertainment.jpg");
-    background-position-x: 46.5%;
-    background-position-y: 30%;
-    background-size: 60vw;
-    height: 34vw;
+#screwdriver-entertainment-background {
+  background-image: url("images/Screwdriver_Entertainment.jpg");
+  background-position-x: 46.5%;
+  background-position-y: 30%;
+  background-size: 60vw;
+  height: 34vw;
 }
 
-#screwdriver-entertainment-description, #rtu-description
-{
-    width: 48vw;
-    height: 20vw;
-    background-color: #752425;
+#screwdriver-entertainment-description,
+#rtu-description {
+  width: 48vw;
+  height: 20vw;
+  background-color: #752425;
 }
 
-#rtu-background, #enter-vr-background, #marta-background
-{
-    background-image: url("images/RTU.jpg");
-    background-size: 30vw;
-    background-position: 50%;
-    height: 40vw;
+#rtu-background,
+#enter-vr-background,
+#marta-background {
+  background-image: url("images/RTU.jpg");
+  background-size: 30vw;
+  background-position: 50%;
+  height: 40vw;
 }
 
-#rtu-description
-{
-    height: 29vw;
+#rtu-description {
+  height: 29vw;
 }
 
-#enter-vr-background
-{
-    background-image: url("images/enter-vr-logo.png");
+#enter-vr-background {
+  background-image: url("images/enter-vr-logo.png");
 }
 
-#marta-background
-{
-    background-image: url("images/Marta_logo.jpg");
+#marta-background {
+  background-image: url("images/Marta_logo.jpg");
+}
+
+#category {
+  position: fixed;
+  right: 0vw;
+  min-width: 2vw;
+  max-width: 6vw;
+  top: 3vh;
+  padding: 2vh 3vw 2vh 1vw;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+#category a {
+  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s linear;
+  font-weight: 500;
+
+}
+
+#category a:hover {
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.2s linear;
 }
