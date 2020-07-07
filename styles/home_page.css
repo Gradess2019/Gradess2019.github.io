@@ -5,3 +5,67 @@
     background-repeat: no-repeat;
     background-image: url("../images/Coding_background.jpg");
 }
+
+.home-default-background {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: auto;
+}
+
+/* Name block */
+#name-background {
+    height: 30vmin;
+    width: 30vmax;
+    top: 30vmin;
+}
+
+#name-background p {
+    text-align: center;
+    color: white;
+}
+
+#name-background span {
+    display: block;
+    position: relative;
+}
+
+#name {
+    padding-top: 7vmin;
+    font-size: 5vmin;
+    line-height: 6vmin;
+    font-weight: 650;
+}
+
+#profession {
+    font-size: 2vmin;
+    font-weight: 600;
+    padding-top: 3%;
+}
+
+/* Logo block */
+#logo-background {
+    height: 17.5vmin;
+    width: 45vmax;
+    top: 40vmin;
+    text-align: center;
+}
+
+.home-page-logo {
+    position: relative;
+    height: 100%;
+    object-fit: contain;
+    margin: auto 0.5vmax;
+}
+
+#ue4-logo {
+    width: 9vmax;
+    margin-left: 0;
+}
+
+#vs-logo {
+    width: 6vmax;
+}
+
+#unity-logo {
+    width: 15vmax;
+}
