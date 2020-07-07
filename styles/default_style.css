@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p a {
+  font-family: "Montserrat";
+}
+
+#category {
+  position: fixed;
+  right: 0vw;
+  min-width: 2vw;
+  max-width: 6vw;
+  top: 3vh;
+  padding: 2vh 3vw 2vh 1vw;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+#category a {
+  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s linear;
+  font-weight: 500;
+
+}
+
+#category a:hover {
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.2s linear;
+}
