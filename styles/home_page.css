@@ -17,6 +17,8 @@
     height: 30vmin;
     width: 30vmax;
     top: 30vmin;
+    opacity: 0;
+    animation: show-name-background 1s 0.5s forwards ease-out;
 }
 
 #name-background p {
@@ -48,24 +50,77 @@
     width: 45vmax;
     top: 40vmin;
     text-align: center;
+    opacity: 0;
+    animation: show-logo-root 1s 1.25s forwards ease-out;
 }
 
 .home-page-logo {
     position: relative;
     height: 100%;
     object-fit: contain;
-    margin: auto 0.5vmax;
+    margin-left: 0.5vmax;
+    margin-right: 0.5vmax;
+    opacity: 0;
+    vertical-align: top;
+    animation: show-logo 1s forwards ease-out;
 }
 
 #ue4-logo {
     width: 9vmax;
     margin-left: 0;
+
+    animation-delay: 1.5s;
 }
 
-#vs-logo {
-    width: 6vmax;
+#vs2019-logo {
+    animation-delay: 1.75s;
 }
 
 #unity-logo {
     width: 15vmax;
+    animation-delay: 2s;
+}
+
+#vscode-logo {
+    animation-delay: 2.25s;
+}
+
+.vs-logo {
+    width: 6vmax;
+}
+
+/* Name background anomation */
+@keyframes show-name-background {
+    from {
+        top: 33vmin;
+        opacity: 0;
+    }
+    to {
+        top: 30vmin;
+        opacity: 1;
+    }
+}
+
+/* Logo root animation */
+@keyframes show-logo-root {
+    from {
+        top: 43vmin;
+        opacity: 0;
+    }
+    to {
+        top: 40vmin;
+        opacity: 1;
+    }
+}
+
+/* Logo animation */
+@keyframes show-logo {
+    from {
+        padding-top: 2vmin;
+        opacity: 0;
+    }
+    to {
+        padding-top: 0vmin;
+        opacity: 1;
+    }
 }
