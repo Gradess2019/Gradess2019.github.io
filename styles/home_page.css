@@ -1,0 +1,129 @@
+#root-background {
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url("../images/Coding_background.jpg");
+}
+
+.home-default-background {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: auto;
+    /* box-shadow: 0 0 20px 30px rgba(0, 0, 0, 0.85);  */
+    box-shadow: 0 0 2vmin 2vmin rgba(0, 0, 0, 0.85); 
+}
+
+/* Name block */
+#name-background {
+    height: 27vmin;
+    width: 27vmax;
+    top: 27vmin;
+    opacity: 0;
+    animation: show-name-background 1s 0.5s forwards ease-out;
+    /* box-shadow: 0 30px 40px rgba(0,0,0,.1); */
+}
+
+#name-background p {
+    text-align: center;
+    color: white;
+}
+
+#name-background span {
+    display: block;
+    position: relative;
+}
+
+#name {
+    padding-top: 5vmin;
+    font-size: 5vmin;
+    line-height: 6vmin;
+    font-weight: 650;
+}
+
+#profession {
+    font-size: 2vmin;
+    font-weight: 600;
+    padding-top: 3%;
+}
+
+/* Logo block */
+#logo-background {
+    height: 17.5vmin;
+    width: 42vmax;
+    top: 37vmin;
+    text-align: center;
+    opacity: 0;
+    animation: show-logo-root 1s 1.25s forwards ease-out;
+}
+
+.home-page-logo {
+    position: relative;
+    height: 100%;
+    object-fit: contain;
+    margin-left: 0.5vmax;
+    margin-right: 0.5vmax;
+    vertical-align: top;
+    opacity: 0;
+    animation: show-logo 1s forwards ease-out;
+}
+
+#ue4-logo {
+    width: 9vmax;
+    margin-left: 0;
+
+    animation-delay: 1.5s;
+}
+
+#vs2019-logo {
+    animation-delay: 1.75s;
+}
+
+#unity-logo {
+    width: 15vmax;
+    animation-delay: 2s;
+}
+
+#vscode-logo {
+    animation-delay: 2.25s;
+}
+
+.vs-logo {
+    width: 6vmax;
+}
+
+/* Name background anomation */
+@keyframes show-name-background {
+    from {
+        top: 30vmin;
+        opacity: 0;
+    }
+    to {
+        top: 27vmin;
+        opacity: 1;
+    }
+}
+
+/* Logo root animation */
+@keyframes show-logo-root {
+    from {
+        top: 43vmin;
+        opacity: 0;
+    }
+    to {
+        top: 40vmin;
+        opacity: 1;
+    }
+}
+
+/* Logo animation */
+@keyframes show-logo {
+    from {
+        padding-top: 2vmin;
+        opacity: 0;
+    }
+    to {
+        padding-top: 0vmin;
+        opacity: 1;
+    }
+}
