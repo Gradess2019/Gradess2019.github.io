@@ -18,7 +18,7 @@
 #name-background {
     height: 27vmin;
     width: 27vmax;
-    top: 30vmin;
+    top: 27vmin;
     opacity: 0;
     animation: show-name-background 1s 0.5s forwards ease-out;
     /* box-shadow: 0 30px 40px rgba(0,0,0,.1); */
@@ -63,8 +63,8 @@
     object-fit: contain;
     margin-left: 0.5vmax;
     margin-right: 0.5vmax;
-    opacity: 0;
     vertical-align: top;
+    opacity: 0;
     animation: show-logo 1s forwards ease-out;
 }
 
@@ -95,11 +95,11 @@
 /* Name background anomation */
 @keyframes show-name-background {
     from {
-        top: 33vmin;
+        top: 30vmin;
         opacity: 0;
     }
     to {
-        top: 30vmin;
+        top: 27vmin;
         opacity: 1;
     }
 }
