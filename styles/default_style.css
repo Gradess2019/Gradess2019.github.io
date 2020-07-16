@@ -3,6 +3,13 @@
   font-family: "Montserrat";
 }
 
+body {
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url("../images/Coding_background.jpg");
+}
+
 #category {
   position: fixed;
   right: 0vw;
