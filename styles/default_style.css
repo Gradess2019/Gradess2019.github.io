@@ -10,6 +10,13 @@ body {
   background-image: url("../images/Coding_background.jpg");
 }
 
+.default-background {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
+  margin: auto;
+  box-shadow: 0 0 2vmin 2vmin rgba(0, 0, 0, 0.85); 
+}
+
 #category {
   position: fixed;
   right: 0vw;
