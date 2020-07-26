@@ -1,82 +1,147 @@
 body * {
     color: white;
 }
+/* For desktop */
+@media (orientation: landscape) {
+    .company-root {
+        display: block;
+        margin: 0 5vmax;
+    }
+    
+    h1 {
+        padding-top: 3vmax;
+        font-size: 3vmax;
+        text-align: center;
+    }
+    
+    h2 {
+        margin-top: 3vmax;
+        font-size: 2vmax;
+    }
+    
+    .responsibilities {
+        font-size: 1.5vmax;
+    }
+    
+    .work-term {
+        font-size: 1vmax;
+    }
+    
+    .logo-wrapper {
+        display: block;
+        float: right;
+    }
+    
+    .logo-wrapper img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        filter: invert(100%);
+    }
+    
+    #content-root {
+        margin: 7vmax 10vmax;
+        height: 130vmax;
+    }
 
-.company-root {
-    display: block;
-    margin: 0 5vmin;
+    #screwdriver-entertainment-block {
+        margin-bottom: 10vmax;
+    }
+
+    #rtu-block {
+        margin-bottom: 10vmax;
+    }
+
+    #enter-vr-block {
+        margin-bottom: 3vmax;
+    }
+
+    #marta-block {
+        margin-bottom: 5vmax;
+    }
+
+    #screwdriver-entertainment-logo {
+        width: 50%;
+        margin-top: -8%;
+        margin-right: 8%;
+    }
+
+    #rtu-logo {
+        width: 25%;
+        margin-top: -14%;
+        margin-right: 10%;
+    }
+
+    #enter-vr-logo {
+        filter: invert(100%);
+        width: 35%;
+        margin-top: -25%;
+        margin-right: 2%;
+    }
+
+    #marta-logo {
+        width: 40%;
+        margin-top: -7%;
+        margin-right: 5%;
+    }
 }
 
-h1 {
-    padding-top: 3vmin;
-    font-size: 5vmin;
-    text-align: center;
-}
+/* For mobile */
+@media (orientation: portrait) {
+    .company-root {
+        margin: 0 3vmax;
+    }
+    
+    h1 {
+        padding-top: 3vmax;
+        font-size: 3vmax;
+        text-align: center;
+    }
+    
+    h2 {
+        /* margin-top: 0.5vmax; */
+        font-size: 2vmax;
+    }
+    
+    .responsibilities {
+        font-size: 1.5vmax;
+    }
+    
+    .work-term {
+        font-size: 1vmax;
+    }
 
-h2 {
-    margin-top: 3vmin;
-    font-size: 4vmin;
-}
+    .logo-wrapper {
+        margin: auto;
+        margin-top: 3vmax;
+    }
+    
+    .logo-wrapper img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        filter: invert(100%);
+    }
+    
+    #content-root {
+        margin: 5vmax 3vmax;
+        height: 185vmax;
+    }
 
-.responsibilities {
-    font-size: 3vmin;
-}
-
-.work-term {
-    font-size: 2vmin;
-}
-
-.logo-wrapper {
-    display: block;
-    float: right;
-}
-
-.logo-wrapper img{
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    filter: invert(100%);
-}
-
-#content-root {
-    margin: 15vmin 10vmax;
-    height: 240vmin;
-}
-
-#screwdriver-entertainment-block {
-    margin-bottom: 15vmin;
-}
-
-#rtu-block {
-    margin-bottom: 20vmin;
-}
-
-#enter-vr-block {
-    margin-bottom: 15vmin;
-}
-
-#marta-block {
-    margin-bottom: 5vmin;
-}
-
-#screwdriver-entertainment-logo {
-    width: 50%;
-    margin-top: 2%;
-    margin-right: 8%;
-}
-
-#rtu-logo {
-    width: 25%;
-    margin-right: 20%;
-}
-
-#enter-vr-logo {
-    filter: invert(100%);
-    margin-right: 5%;
-}
-
-#marta-logo {
-    width: 40%;
-    margin-top: 6%;
-    margin-right: 5%;
+    #screwdriver-entertainment-logo {
+        width: 75%;
+    }
+    
+    #rtu-logo {
+        width: 50%;
+    }
+    
+    #enter-vr-logo {
+        filter: invert(100%);
+        width: 60%;
+    }
+    
+    #marta-logo {
+        width: 60%;
+    }
 }
