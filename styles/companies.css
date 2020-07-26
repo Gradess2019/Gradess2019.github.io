@@ -26,13 +26,12 @@ h2 {
     font-size: 2vmin;
 }
 
-.logo-block {
+.logo-wrapper {
     display: block;
-    width: 40%;
     float: right;
 }
 
-.logo-block img{
+.logo-wrapper img{
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -41,5 +40,43 @@ h2 {
 
 #content-root {
     margin: 15vmin 10vmax;
-    height: 400vmin;
+    height: 240vmin;
+}
+
+#screwdriver-entertainment-block {
+    margin-bottom: 12vmin;
+}
+
+#rtu-block {
+    margin-bottom: 38vmin;
+}
+
+#enter-vr-block {
+    margin-bottom: 15vmin;
+}
+
+#marta-block {
+    margin-bottom: 5vmin;
+}
+
+#screwdriver-entertainment-logo {
+    width: 50%;
+    margin-top: 2%;
+    margin-right: 8%;
+}
+
+#rtu-logo {
+    width: 25%;
+    margin-right: 20%;
+}
+
+#enter-vr-logo {
+    filter: invert(100%);
+    margin-right: 5%;
+}
+
+#marta-logo {
+    width: 40%;
+    margin-top: 6%;
+    margin-right: 5%;
 }
