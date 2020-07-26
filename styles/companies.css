@@ -2,6 +2,11 @@ body * {
     color: white;
 }
 
+.company-root {
+    display: block;
+    margin: 0 5vmin;
+}
+
 h1 {
     padding-top: 3vmin;
     font-size: 5vmin;
@@ -21,24 +26,20 @@ h2 {
     font-size: 2vmin;
 }
 
-#content-root {
-    margin: 15vmin 10vmax;
-    height: 400vmin;
+.logo-block {
+    display: block;
+    width: 40%;
+    float: right;
 }
 
-#screwdriver-entertainment-root {
-    margin: auto 5vmin;
-}
-
-#screwdriver-entertainment-block {
-    position: absolute;
-    width: 50%;
-    left: 40%;
-}
-
-#screwdriver-entertainment-block img {
+.logo-block img{
     object-fit: contain;
     width: 100%;
     height: 100%;
     filter: invert(100%);
+}
+
+#content-root {
+    margin: 15vmin 10vmax;
+    height: 400vmin;
 }
