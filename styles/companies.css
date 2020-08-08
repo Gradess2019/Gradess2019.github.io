@@ -15,7 +15,6 @@ body * {
     }
     
     h2 {
-        margin-top: 3vmax;
         font-size: 2vmax;
     }
     
@@ -41,11 +40,11 @@ body * {
     
     #content-root {
         margin: 7vmax 10vmax;
-        height: 130vmax;
+        height: 115vmax;
     }
 
     #screwdriver-entertainment-block {
-        margin-bottom: 10vmax;
+        margin-bottom: 5vmax;
     }
 
     #rtu-block {
@@ -67,7 +66,7 @@ body * {
     }
 
     #rtu-logo {
-        width: 25%;
+        width: 30%;
         margin-top: -14%;
         margin-right: 10%;
     }
@@ -99,7 +98,6 @@ body * {
     }
     
     h2 {
-        /* margin-top: 0.5vmax; */
         font-size: 2vmax;
     }
     
