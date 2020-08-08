@@ -1,3 +1,59 @@
 * {
   color: white;
 }
+
+.project-root {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2.5vmax;
+}
+
+@media (orientation: landscape) {
+  .project-root {
+    margin: 5vmax 0;
+    /* height: 15vmax; */
+    height: auto;
+  }
+
+  .left {
+    margin-right: 55vmax;
+  }
+
+  .right {
+    margin-left: 55vmax;
+  }
+
+  h1 {
+    font-size: 2vmax;
+  }
+
+  p {
+    font-size: 1vmax;
+  }
+}
+
+@media (orientation: portrait) {
+  .project-root {
+    margin: 5vmax 0;
+    height: 15vmax;
+    width: 40vmax;
+  }
+
+  .left {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  h1 {
+    font-size: 2vmax;
+  }
+
+  p {
+    font-size: 1vmax;
+  }
+}
