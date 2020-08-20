@@ -6,13 +6,12 @@
   display: block;
   background-color: rgba(0, 0, 0, 0.85);
   padding: 2.5vmax;
+  height: auto;
 }
 
 @media (orientation: landscape) {
   .project-root {
     margin: 5vmax 0;
-    /* height: 15vmax; */
-    height: auto;
   }
 
   .left {
@@ -35,7 +34,6 @@
 @media (orientation: portrait) {
   .project-root {
     margin: 5vmax 0;
-    height: 15vmax;
     width: 40vmax;
   }
 
