@@ -22,22 +22,20 @@
   margin-right: 0;
 }
 
-@media (orientation: landscape) {
-  h1 {
-    font-size: 2vmax;
-  }
+.strong {
+  font-weight: bold;
+}
 
-  p {
-    font-size: 1vmax;
-  }
+h1 {
+  font-size: 2vmax;
+}
+
+p {
+  font-size: 1vmax;
+}
+
+@media (orientation: landscape) {
 }
 
 @media (orientation: portrait) {
-  h1 {
-    font-size: 2vmax;
-  }
-
-  p {
-    font-size: 1vmax;
-  }
 }
