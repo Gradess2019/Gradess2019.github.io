@@ -1,0 +1,41 @@
+* {
+  color: white;
+}
+
+.project-root {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2.5vmax;
+  height: auto;
+  width: 40vmax;
+  margin-top: 5vmax;
+  margin-bottom: 5vmax;
+}
+
+.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2vmax;
+}
+
+p {
+  font-size: 1vmax;
+}
+
+@media (orientation: landscape) {
+}
+
+@media (orientation: portrait) {
+}
