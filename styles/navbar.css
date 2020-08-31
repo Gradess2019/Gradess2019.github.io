@@ -1,0 +1,22 @@
+#nav-bar {
+	height: auto;
+	position: fixed;
+	right: 0;
+	top: 2.5vmax;
+	width: 12vmax;
+	background-color: rgba(255, 0, 0, 0.7);
+	padding: 1vmax;
+}
+
+#nav-bar a {
+	font-size: 1.5vmax;
+	color: rgba(255, 255, 255, 0.5);
+	transition: color 0.2s linear;
+	font-weight: 500;
+	font-family: "Montserrat";
+}
+
+#nav-bar a:hover {
+	color: rgba(255, 255, 255, 1);
+	transition: color 0.2s linear;
+}
