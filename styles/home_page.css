@@ -1,113 +1,113 @@
 /* Name block */
 #name-background {
-    height: auto;
-    width: 27vmax;
-    top: 27vmax;
-    opacity: 0;
-    animation: show-name-background 1s 0.5s forwards ease-out;
+  height: auto;
+  width: 27vmax;
+  top: 27vmax;
+  opacity: 0;
+  animation: show-name-background 1s 0.5s forwards ease-out;
 }
 
 #name-background p {
-    text-align: center;
-    color: white;
+  text-align: center;
+  color: white;
 }
 
 #name-background span {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 }
 
 #name {
-    padding-top: 2.5vmax;
-    font-size: 2.5vmax;
-    line-height: 3vmax;
-    font-weight: 650;
+  padding-top: 2.5vmax;
+  font-size: 2.5vmax;
+  line-height: 3vmax;
+  font-weight: 650;
 }
 
 #profession {
-    font-size: 1vmax;
-    font-weight: 600;
-    padding-top: 3%;
-    padding-bottom: 2.5vmax;
+  font-size: 1vmax;
+  font-weight: 600;
+  padding-top: 3%;
+  padding-bottom: 2.5vmax;
 }
 /* TODO replace vmin with vmax */
 /* Logo block */
 #logo-background {
-    height: 17.5vmin;
-    width: 42vmax;
-    top: 37vmin;
-    text-align: center;
-    opacity: 0;
-    animation: show-logo-root 1s 1.25s forwards ease-out;
+  height: 17.5vmin;
+  width: 42vmax;
+  top: 37vmin;
+  text-align: center;
+  opacity: 0;
+  animation: show-logo-root 1s 1.25s forwards ease-out;
 }
 
 .home-page-logo {
-    position: relative;
-    height: 100%;
-    object-fit: contain;
-    margin-left: 0.5vmax;
-    margin-right: 0.5vmax;
-    vertical-align: top;
-    opacity: 0;
-    animation: show-logo 1s forwards ease-out;
+  position: relative;
+  height: 100%;
+  object-fit: contain;
+  margin-left: 0.5vmax;
+  margin-right: 0.5vmax;
+  vertical-align: top;
+  opacity: 0;
+  animation: show-logo 1s forwards ease-out;
 }
 
 #ue4-logo {
-    width: 9vmax;
-    margin-left: 0;
+  width: 9vmax;
+  margin-left: 0;
 
-    animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
 #vs2019-logo {
-    animation-delay: 1.75s;
+  animation-delay: 1.75s;
 }
 
 #unity-logo {
-    width: 15vmax;
-    animation-delay: 2s;
+  width: 15vmax;
+  animation-delay: 2s;
 }
 
 #vscode-logo {
-    animation-delay: 2.25s;
+  animation-delay: 2.25s;
 }
 
 .vs-logo {
-    width: 6vmax;
+  width: 6vmax;
 }
 
 /* Name background anomation */
 @keyframes show-name-background {
-    from {
-        top: 30vmin;
-        opacity: 0;
-    }
-    to {
-        top: 27vmin;
-        opacity: 1;
-    }
+  from {
+    top: 30vmin;
+    opacity: 0;
+  }
+  to {
+    top: 27vmin;
+    opacity: 1;
+  }
 }
 
 /* Logo root animation */
 @keyframes show-logo-root {
-    from {
-        top: 43vmin;
-        opacity: 0;
-    }
-    to {
-        top: 40vmin;
-        opacity: 1;
-    }
+  from {
+    top: 43vmin;
+    opacity: 0;
+  }
+  to {
+    top: 40vmin;
+    opacity: 1;
+  }
 }
 
 /* Logo animation */
 @keyframes show-logo {
-    from {
-        padding-top: 2vmin;
-        opacity: 0;
-    }
-    to {
-        padding-top: 0vmin;
-        opacity: 1;
-    }
+  from {
+    padding-top: 2vmin;
+    opacity: 0;
+  }
+  to {
+    padding-top: 0vmin;
+    opacity: 1;
+  }
 }

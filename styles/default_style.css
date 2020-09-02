@@ -1,38 +1,38 @@
 * {
-	margin: 0;
-	font-family: "Montserrat";
+  margin: 0;
+  font-family: "Montserrat";
 }
 
 body {
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-image: url("../images/Coding_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url("../images/Coding_background.jpg");
 }
 
 .default-background {
-	position: relative;
-	background-color: rgba(33, 33, 33, 0.92);
-	margin: auto;
-	box-shadow: 0 0 1.25vmax 1.25vmax rgba(33, 33, 33, 0.92);
+  position: relative;
+  background-color: rgba(33, 33, 33, 0.92);
+  margin: auto;
+  box-shadow: 0 0 1.25vmax 1.25vmax rgba(33, 33, 33, 0.92);
 }
 
 #notification {
-	position: fixed;
-	top: 0;
-	width: 9vmax;
-	background: rgba(255, 82, 82, 0.85);
-	background: linear-gradient(
-		-45deg,
-		transparent 0.5vmax,
-		rgba(255, 82, 82, 0.85) 0
+  position: fixed;
+  top: 0;
+  width: 9vmax;
+  background: rgba(255, 82, 82, 0.85);
+  background: linear-gradient(
+    -45deg,
+    transparent 0.5vmax,
+    rgba(255, 82, 82, 0.85) 0
   );
   z-index: 1;
 }
 
 #notification p {
-	font-size: 1vmax;
-	font-weight: 450;
-	color: rgba(33, 33, 33, 0.92);
+  font-size: 1vmax;
+  font-weight: 450;
+  color: rgba(33, 33, 33, 0.92);
 }
