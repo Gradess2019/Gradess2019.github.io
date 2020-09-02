@@ -1,19 +1,10 @@
-.home-default-background {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.85);
-    margin: auto;
-    /* box-shadow: 0 0 20px 30px rgba(0, 0, 0, 0.85);  */
-    box-shadow: 0 0 2vmin 2vmin rgba(0, 0, 0, 0.85); 
-}
-
 /* Name block */
 #name-background {
-    height: 27vmin;
+    height: auto;
     width: 27vmax;
-    top: 27vmin;
+    top: 27vmax;
     opacity: 0;
     animation: show-name-background 1s 0.5s forwards ease-out;
-    /* box-shadow: 0 30px 40px rgba(0,0,0,.1); */
 }
 
 #name-background p {
@@ -27,18 +18,19 @@
 }
 
 #name {
-    padding-top: 5vmin;
-    font-size: 5vmin;
-    line-height: 6vmin;
+    padding-top: 2.5vmax;
+    font-size: 2.5vmax;
+    line-height: 3vmax;
     font-weight: 650;
 }
 
 #profession {
-    font-size: 2vmin;
+    font-size: 1vmax;
     font-weight: 600;
     padding-top: 3%;
+    padding-bottom: 2.5vmax;
 }
-
+/* TODO replace vmin with vmax */
 /* Logo block */
 #logo-background {
     height: 17.5vmin;
