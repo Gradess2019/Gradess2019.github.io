@@ -5,6 +5,7 @@
 
 body {
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-image: url("../images/Coding_background.jpg");
@@ -12,7 +13,7 @@ body {
 
 .default-background {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(33, 33, 33, 0.92);
   margin: auto;
-  box-shadow: 0 0 2vmin 2vmin rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 1.25vmax 1.25vmax rgba(33, 33, 33, 0.92);
 }
