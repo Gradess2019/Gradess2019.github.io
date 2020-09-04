@@ -11,6 +11,18 @@ body {
   background-image: url("../images/Coding_background.jpg");
 }
 
+strong {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2vmax;
+}
+
+p {
+  font-size: 1vmax;
+}
+
 .default-background {
   position: relative;
   background-color: rgba(33, 33, 33, 0.92);
@@ -35,4 +47,31 @@ body {
   font-size: 1vmax;
   font-weight: 450;
   color: rgba(33, 33, 33, 0.92);
+}
+
+.default-content-root {
+  display: block;
+  padding: 2.5vmax;
+  height: auto;
+  width: 40vmax;
+  margin-top: 5vmax;
+  margin-bottom: 5vmax;
+}
+
+.default-content-root > * {
+  color: white;
+}
+
+.left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.invert {
+  filter: invert(100%);
 }
