@@ -4,6 +4,7 @@
 }
 
 body {
+  overflow-x: hidden !important;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -63,13 +64,13 @@ p {
 }
 
 .left {
-  margin-left: 0;
+  margin-left: -60vmax;
   margin-right: auto;
 }
 
 .right {
   margin-left: auto;
-  margin-right: 0;
+  margin-right: -60vmax;
 }
 
 .invert {

@@ -1,0 +1,27 @@
+
+.default-content-root.left{
+  animation: default-content-root-left-animation 1s 1s ease-out forwards;
+}
+.default-content-root.right{
+  animation: default-content-root-right-animation 1s 1s ease-out forwards;
+}
+
+@keyframes default-content-root-left-animation {
+  0% {
+    margin-left: -60vmax;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes default-content-root-right-animation {
+  0% {
+    margin-right: -60vmax;
+  }
+
+  100% {
+    margin-right: 0;
+  }
+}

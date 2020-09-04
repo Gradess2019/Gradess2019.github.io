@@ -48,3 +48,19 @@ h2 {
     width: 35vmax;
   }
 }
+
+#screwdriver-entertainment {
+  animation-delay: 1s;
+}
+
+#rtu-it-lab {
+  animation-delay: 1.6s;
+}
+
+#enter-vr {
+  animation-delay: 2.2s;
+}
+
+#marta {
+  animation-delay: 2.8s;
+}
