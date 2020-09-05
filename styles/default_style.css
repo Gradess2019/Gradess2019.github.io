@@ -26,9 +26,16 @@ p {
 
 .default-background {
   position: relative;
-  background-color: rgba(33, 33, 33, 0.92);
   margin: auto;
+  transition: all 0.5s;
+  background-color: rgba(33, 33, 33, 0.92);
   box-shadow: 0 0 1.25vmax 1.25vmax rgba(33, 33, 33, 0.92);
+}
+
+.default-background:hover {
+  transition: all 0.5s;
+  background-color: rgba(48, 48, 48, 0.92);
+  box-shadow: 0 0 1.25vmax 1.25vmax rgba(48, 48, 48, 0.92);
 }
 
 #notification {
@@ -61,6 +68,21 @@ p {
 
 .default-content-root > * {
   color: white;
+  -webkit-backface-visibility: hidden;
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.default-content-root > .inscription {
+  transform: perspective(1px) scale(1);
+  transition: transform 0.5s;
+}
+
+.default-content-root:hover > .inscription {
+  transform: perspective(1px) scale(1.05);
+  transition: transform 0.5s;
 }
 
 .left {
