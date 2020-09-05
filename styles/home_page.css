@@ -30,12 +30,12 @@
   padding-top: 3%;
   padding-bottom: 2.5vmax;
 }
-/* TODO replace vmin with vmax */
+
 /* Logo block */
 #logo-background {
-  height: 17.5vmin;
+  height: 9vmax;
   width: 42vmax;
-  top: 37vmin;
+  top: 37vmax;
   text-align: center;
   opacity: 0;
   animation: show-logo-root 1s 1.25s forwards ease-out;
@@ -88,11 +88,11 @@
 /* Name background anomation */
 @keyframes show-name-background {
   from {
-    top: 30vmin;
+    top: 15vmax;
     opacity: 0;
   }
   to {
-    top: 27vmin;
+    top: 12vmax;
     opacity: 1;
   }
 }
@@ -100,11 +100,11 @@
 /* Logo root animation */
 @keyframes show-logo-root {
   from {
-    top: 43vmin;
+    top: 23vmax;
     opacity: 0;
   }
   to {
-    top: 40vmin;
+    top: 20vmax;
     opacity: 1;
   }
 }
@@ -112,11 +112,11 @@
 /* Logo animation */
 @keyframes show-logo {
   from {
-    padding-top: 2vmin;
+    padding-top: 1vmax;
     opacity: 0;
   }
   to {
-    padding-top: 0vmin;
+    padding-top: 0vmax;
     opacity: 1;
   }
 }
