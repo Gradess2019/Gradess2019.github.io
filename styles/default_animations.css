@@ -9,19 +9,23 @@
 @keyframes default-content-root-left-animation {
   0% {
     margin-left: -60vmax;
+    opacity: 0;
   }
 
   100% {
     margin-left: 0;
+    opacity: 1;
   }
 }
 
 @keyframes default-content-root-right-animation {
   0% {
     margin-right: -60vmax;
+    opacity: 0;
   }
 
   100% {
     margin-right: 0;
+    opacity: 1;
   }
 }
