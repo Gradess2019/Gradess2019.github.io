@@ -75,24 +75,32 @@ p {
   backface-visibility: hidden;
 }
 
-.default-content-root > .inscription {
+.default-content-root > .inscription-root {
   transform: perspective(1px) scale(1);
   transition: transform 0.5s;
 }
 
-.default-content-root:hover > .inscription {
+/* FIXME Hover doesnt work on scroll */
+.default-content-root:hover > .inscription-root {
   transform: perspective(1px) scale(1.05);
   transition: transform 0.5s;
 }
 
+.inscription {
+  opacity: 0;
+  animation: inscription-animation 1s ease-out 2s forwards;
+}
+
 .left {
-  margin-left: -60vmax;
+  transform: translateX(-60vmax);
+  margin-left: 0;
   margin-right: auto;
 }
 
 .right {
+  transform: translateX(60vmax);
   margin-left: auto;
-  margin-right: -60vmax;
+  margin-right: 0;
 }
 
 .invert {
