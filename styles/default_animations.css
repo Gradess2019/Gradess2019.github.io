@@ -1,0 +1,49 @@
+
+.default-content-root.left{
+  animation: default-content-root-left-animation 1s 1s ease-out forwards;
+}
+.default-content-root.right{
+  animation: default-content-root-right-animation 1s 1s ease-out forwards;
+}
+
+@keyframes default-content-root-left-animation {
+  0% {
+    transform: translateX(-60vmax);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0vmax);
+    opacity: 1;
+  }
+}
+
+@keyframes default-content-root-right-animation {
+  0% {
+    transform: translateX(60vmax);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0vmax);
+    opacity: 1;
+  }
+}
+
+@keyframes inscription-animation {
+  0% {
+    transform: translateY(2vmax) perspective(1px) scale(1);
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  90% {
+    transform: translateY(0vmax) perspective(1px) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

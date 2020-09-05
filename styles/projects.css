@@ -1,0 +1,39 @@
+#postworld {
+  animation-delay: 0.25s;
+}
+
+#quidditch {
+  animation-delay: 0.85s;
+}
+
+#vr-painter {
+  animation-delay: 1.45s;
+}
+
+#interactive-map {
+  animation-delay: 2.05s;
+}
+
+#domont {
+    animation-delay: 2.65s;
+}
+
+#postworld > * > .inscription {
+  animation-delay: 1s;
+}
+
+#quidditch > * > .inscription {
+  animation-delay: 1.6s;
+}
+
+#vr-painter > * > .inscription {
+  animation-delay: 2.2s;
+}
+
+#interactive-map > * > .inscription {
+  animation-delay: 2.8s;
+}
+
+#domont > * > .inscription {
+    animation-delay: 3.4s;
+}

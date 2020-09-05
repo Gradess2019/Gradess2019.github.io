@@ -48,3 +48,35 @@ h2 {
     width: 35vmax;
   }
 }
+
+#screwdriver-entertainment {
+  animation-delay: 0.25s;
+}
+
+#rtu-it-lab {
+  animation-delay: 0.85s;
+}
+
+#enter-vr {
+  animation-delay: 1.45s;
+}
+
+#marta {
+  animation-delay: 2.05s;
+}
+
+#screwdriver-entertainment > * > .inscription {
+  animation-delay: 1s;
+}
+
+#rtu-it-lab > * > .inscription {
+  animation-delay: 1.6s;
+}
+
+#enter-vr > * > .inscription {
+  animation-delay: 2.2s;
+}
+
+#marta > * > .inscription {
+  animation-delay: 2.8s;
+}
