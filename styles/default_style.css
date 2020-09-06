@@ -38,11 +38,10 @@ a {
   box-shadow: 0 0 1.25vmax 1.25vmax rgba(33, 33, 33, 0.92);
 }
 
-/* TODO Change rgba to rgba(36, 36, 36, 0.92);*/
 .default-background:hover {
   transition: all 0.5s;
-  background-color: rgba(48, 48, 48, 0.92);
-  box-shadow: 0 0 1.25vmax 1.25vmax rgba(48, 48, 48, 0.92);
+  background-color: rgba(40, 40, 40, 0.92);
+  box-shadow: 0 0 1.25vmax 1.25vmax rgba(40, 40, 40, 0.92);
 }
 
 #notification {
