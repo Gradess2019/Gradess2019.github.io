@@ -35,6 +35,7 @@
 #logo-background {
   height: 9vmax;
   width: 42vmax;
+  /* FIXME top offset */
   top: 37vmax;
   text-align: center;
   opacity: 0;
