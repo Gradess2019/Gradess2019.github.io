@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 /* Name block */
 #name-background {
   height: auto;
@@ -35,8 +39,7 @@
 #logo-background {
   height: 9vmax;
   width: 42vmax;
-  /* FIXME top offset */
-  top: 37vmax;
+  top: 20vmax;
   text-align: center;
   opacity: 0;
   animation: show-logo-root 1s 1.25s forwards ease-out;
