@@ -1,5 +1,6 @@
-body {
-  overflow: hidden;
+body,
+html {
+  overflow: visible;
 }
 
 /* Name block */
@@ -58,16 +59,17 @@ body {
   position: relative;
   height: 100%;
   object-fit: contain;
-  margin-left: 0.5vmax;
-  margin-right: 0.5vmax;
+  margin-left: 0.75%;
+  margin-right: 0.75%;
   vertical-align: top;
   opacity: 0;
   animation: show-logo 1s forwards ease-out;
 }
 
 #ue4-logo {
-  width: 9vmax;
-  margin-left: 0;
+  /* width: 9vmax; */
+  width: 25%;
+  margin-left: -2.5%;
 
   animation-delay: 1.5s;
 }
@@ -77,16 +79,19 @@ body {
 }
 
 #unity-logo {
-  width: 15vmax;
+  /* width: 15vmax; */
+  width: 30%;
   animation-delay: 2s;
 }
 
 #vscode-logo {
+  margin-right: 0;
   animation-delay: 2.25s;
 }
 
 .vs-logo {
-  width: 6vmax;
+  /* width: 6vmax; */
+  width: 15%;
 }
 
 /* Name background anomation */
