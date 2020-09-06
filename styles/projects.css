@@ -1,22 +1,21 @@
+body {
+  overflow-x: hidden;
+}
 
-
-/* FIXME opacity transition on unhover  */
-.empty-link {
+.default-content-root * > .empty-link {
   display: block;
-  height: 0vmax;
+  height: 1.4vmax;
   color: white;
   opacity: 1;
   transition: opacity 0.5s;
 }
 
-/* FIXME Replace ".default-content-root:hover > * > *" with ".default-content-root:hover *"  */
-.default-content-root:hover > * > * > .empty-link {
+.default-content-root:hover * > .empty-link {
   color: white;
   opacity: 0;
-  transition: opacity 0.5s;
 }
 
-.default-content-root > * > * > iframe {
+.default-content-root * > iframe {
   display: block;
   border-style: none;
   width: 32vmax;
@@ -25,7 +24,7 @@
   transition: width 0.5s, height 0.5s;
 }
 
-.default-content-root:hover > * > * > iframe {
+.default-content-root:hover * > iframe {
   width: 32vmax;
   height: 18vmax;
 }

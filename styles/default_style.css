@@ -12,6 +12,10 @@ body {
   background-image: url("../images/Coding_background.jpg");
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 strong {
   font-weight: bold;
 }
@@ -86,7 +90,6 @@ a {
   transition: transform 0.5s;
 }
 
-/* FIXME Hover doesnt work on scroll */
 .default-content-root:hover > .inscription-root {
   transform: perspective(1px) scale(1.05);
   transition: transform 0.5s;
@@ -101,7 +104,7 @@ a {
 #antilatency {
   display: inline-block;
   width: auto;
-  margin-top: 1vmax;
+  margin-top: 0.5vmax;
   font-size: 1.25vmax;
   transition: color 0.5s;
 }
