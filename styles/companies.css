@@ -19,20 +19,20 @@ h2 {
 
 .logo-wrapper > img {
   object-fit: contain;
-  width: 75%;
+  width: 50%;
   height: 100%;
 }
 
 #rtu-block > .logo-wrapper > img {
-  width: 50%;
+  width: 30%;
 }
 
 #enter-vr-block > .logo-wrapper > img {
-  width: 60%;
+  width: 40%;
 }
 
 #marta-block > .logo-wrapper > img {
-  width: 70%;
+  width: 50%;
 }
 
 /* Descktop support */
