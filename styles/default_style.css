@@ -24,6 +24,12 @@ p {
   font-size: 1vmax;
 }
 
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .default-background {
   position: relative;
   margin: auto;
@@ -32,6 +38,7 @@ p {
   box-shadow: 0 0 1.25vmax 1.25vmax rgba(33, 33, 33, 0.92);
 }
 
+/* TODO Change rgba to rgba(36, 36, 36, 0.92);*/
 .default-background:hover {
   transition: all 0.5s;
   background-color: rgba(48, 48, 48, 0.92);

@@ -1,3 +1,41 @@
+.inscription > a {
+  display: inline-block;
+  width: auto;
+  margin-top: 1vmax;
+  font-size: 1.25vmax;
+  transition: color 0.5s;
+}
+
+.inscription > a:hover {
+  color: #FF5252;
+}
+
+.empty-link {
+  display: block;
+  height: 0vmax;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.default-content-root:hover > * > * > .empty-link {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.default-content-root > * > * > iframe {
+  display: block;
+  border-style: none;
+  width: 32vmax;
+  height: 0vmax;
+
+  transition: width 0.5s, height 0.5s;
+}
+
+.default-content-root:hover > * > * > iframe {
+  width: 32vmax;
+  height: 18vmax;
+}
+
 #postworld {
   animation-delay: 0.25s;
 }
