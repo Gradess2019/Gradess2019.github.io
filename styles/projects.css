@@ -1,40 +1,70 @@
-* {
-  color: white;
+body {
+  overflow-x: hidden;
 }
 
-.project-root {
+.default-content-root * > .empty-link {
   display: block;
-  padding: 2.5vmax;
-  height: auto;
-  width: 40vmax;
-  margin-top: 5vmax;
-  margin-bottom: 5vmax;
+  height: 1.4vmax;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
-.left {
-  margin-left: 0;
-  margin-right: auto;
+.default-content-root:hover * > .empty-link {
+  color: white;
+  opacity: 0;
 }
 
-.right {
-  margin-left: auto;
-  margin-right: 0;
+.default-content-root * > iframe {
+  display: block;
+  border-style: none;
+  width: 32vmax;
+  height: 0vmax;
+
+  transition: width 0.5s, height 0.5s;
 }
 
-.strong {
-  font-weight: bold;
+.default-content-root:hover * > iframe {
+  width: 32vmax;
+  height: 18vmax;
 }
 
-h1 {
-  font-size: 2vmax;
+#postworld {
+  animation-delay: 0.25s;
 }
 
-p {
-  font-size: 1vmax;
+#quidditch {
+  animation-delay: 0.85s;
 }
 
-@media (orientation: landscape) {
+#vr-painter {
+  animation-delay: 1.45s;
 }
 
-@media (orientation: portrait) {
+#interactive-map {
+  animation-delay: 2.05s;
+}
+
+#domont {
+    animation-delay: 2.65s;
+}
+
+#postworld > * > .inscription {
+  animation-delay: 1s;
+}
+
+#quidditch > * > .inscription {
+  animation-delay: 1.6s;
+}
+
+#vr-painter > * > .inscription {
+  animation-delay: 2.2s;
+}
+
+#interactive-map > * > .inscription {
+  animation-delay: 2.8s;
+}
+
+#domont > * > .inscription {
+    animation-delay: 3.4s;
 }
