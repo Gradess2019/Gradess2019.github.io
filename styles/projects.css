@@ -1,3 +1,15 @@
+.inscription > a {
+  display: inline-block;
+  width: auto;
+  margin-top: 1vmax;
+  font-size: 1.25vmax;
+  transition: color 0.5s;
+}
+
+.inscription > a:hover {
+  color: #FF5252;
+}
+
 #postworld {
   animation-delay: 0.25s;
 }

@@ -24,6 +24,12 @@ p {
   font-size: 1vmax;
 }
 
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .default-background {
   position: relative;
   margin: auto;
