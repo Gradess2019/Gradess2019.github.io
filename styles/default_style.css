@@ -98,6 +98,21 @@ a {
   animation: inscription-animation 1s ease-out 2s forwards;
 }
 
+.inscription > a,
+#antilatency {
+  display: inline-block;
+  width: auto;
+  margin-top: 1vmax;
+  font-size: 1.25vmax;
+  transition: color 0.5s;
+}
+
+.inscription > a:hover,
+#antilatency:hover {
+  color: #ff5252;
+}
+
+/* Additional properties */
 .left {
   transform: translateX(-60vmax);
   margin-left: 0;

@@ -80,3 +80,7 @@ h2 {
 #marta > * > .inscription {
   animation-delay: 2.8s;
 }
+
+#antilatency {
+  margin-top: 0;
+}
