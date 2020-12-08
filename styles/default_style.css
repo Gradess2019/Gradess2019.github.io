@@ -106,11 +106,13 @@ a {
   width: auto;
   margin-top: 0.5vmax;
   font-size: 1.25vmax;
+}
+
+a {
   transition: color 0.5s;
 }
 
-.inscription > a:hover,
-#antilatency:hover {
+a:hover {
   color: #ff5252;
 }
 

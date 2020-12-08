@@ -49,6 +49,14 @@ body {
     animation-delay: 2.65s;
 }
 
+#spark-ar {
+  animation-delay: 3.25s;
+}
+
+#apartment-127 {
+  animation-delay: 3.85s;
+}
+
 #postworld > * > .inscription {
   animation-delay: 1s;
 }
@@ -67,4 +75,12 @@ body {
 
 #domont > * > .inscription {
     animation-delay: 3.4s;
+}
+
+#spark-ar > * > .inscription {
+    animation-delay: 4s;
+}
+
+#apartment-127 > * > .inscription {
+    animation-delay: 4.6s;
 }
