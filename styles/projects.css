@@ -57,6 +57,10 @@ body {
   animation-delay: 3.85s;
 }
 
+#marta-hub {
+  animation-delay: 4.45s;
+}
+
 #postworld > * > .inscription {
   animation-delay: 1s;
 }
@@ -83,4 +87,8 @@ body {
 
 #apartment-127 > * > .inscription {
     animation-delay: 4.6s;
+}
+
+#marta-hub > * > .inscription {
+    animation-delay: 5.2s;
 }
