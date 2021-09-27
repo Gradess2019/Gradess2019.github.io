@@ -42,6 +42,7 @@
 @import 'bouncing_exits/bounceOutUp.css';
 
 /* Fading entrances  */
+@import 'fading_entrances/blinking.css';
 @import 'fading_entrances/fadeIn.css';
 @import 'fading_entrances/fadeInDown.css';
 @import 'fading_entrances/fadeInDownBig.css';

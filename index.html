@@ -12,26 +12,34 @@
 </head>
 <body>
 <div class="vh-100 bg-black">
-    <div class="vh-100 vw-100 position-fixed bg-size-cover bg-pos-center bg-fixed bg-no-repeat blur"></div>
-<!--    <div class="h-25 row">-->
-<!--        <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-3 fw-bold rounded-1">-->
-<!--            <div class="row neon-wrapper">-->
-<!--                <div class="col text-center neon-text">-->
-<!--                    STEPAN TROFIMOV-->
-<!--                </div>-->
-<!--            </div>-->
-<!--&lt;!&ndash;            <div class="row">&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="col text-center neon">&ndash;&gt;-->
-<!--&lt;!&ndash;                    UNREAL ENGINE & UNITY DEVELOPER&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-    <div class="wrapper">
-        <div class="neon-wrapper">
-            <div class="neon-text">NEON <br> TEXT</div>
-        </div>
+    <div class="vh-100 vw-100 d-flex align-items-center justify-content-center animated"
+         id="start-root">
+        <button class="neon-wrapper rounded-circle size-s fade animated fadeIn delay-1s" id="start-button" onclick="start()">
+            <div class="neon-text fs-1 animated blink infinite slow delay-2s">
+                START
+            </div>
+        </button>
     </div>
+<!--    <div>-->
+<!--        <img class="neon-image size-xs" src="images/interface/internet.svg" alt=""/>-->
+<!--    </div>-->
+    <script>
+
+        function fadeInElement(element) {
+            document.getElementById(element).classList.remove("fadeOut")
+            document.getElementById(element).classList.add("fadeIn")
+        }
+
+        function fadeOutElement(element) {
+            document.getElementById(element).classList.remove("fadeIn")
+            document.getElementById(element).classList.add("fadeOut")
+        }
+
+        function start() {
+            fadeOutElement("start-root")
+        }
+
+    </script>
 </div>
 </body>
 </html>
