@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="vh-100 bg-black">
-    <div class="vh-100 vw-100 d-flex align-items-center justify-content-center animated"
+    <div class="vh-100 vw-100 d-flex align-items-center justify-content-center animated position-absolute"
          id="start-root">
         <button class="neon-wrapper rounded-circle size-s fade animated fadeIn delay-1s" id="start-button" onclick="start()">
             <div class="neon-text fs-1 animated blink infinite slow delay-2s">
@@ -20,10 +20,23 @@
             </div>
         </button>
     </div>
-<!--    <div>-->
-<!--        <img class="neon-image size-xs" src="images/interface/internet.svg" alt=""/>-->
-<!--    </div>-->
+    <div id="header-panel">
+        <div class="float-start">
+            <img class="neon-image size-xs animated " src="images/interface/internet.svg" alt=""/>
+        </div>
+        <div class="float-start">
+            <img class="neon-image size-xs animated " src="images/interface/home-1.svg" alt=""/>
+        </div>
+        <div class="float-end">
+            <img class="neon-image size-xs animated " src="images/interface/server.svg" alt=""/>
+        </div>
+        <div class="float-end">
+            <img class="neon-image size-xs animated " src="images/interface/internet.svg" alt=""/>
+        </div>
+    </div>
+
     <script>
+        let headerChildren = document.getElementById("header-panel").children;
 
         function fadeInElement(element) {
             document.getElementById(element).classList.remove("fadeOut")
@@ -36,7 +49,26 @@
         }
 
         function start() {
+            let startRoot = document.getElementById("start-root");
+            startRoot.addEventListener("animationend", () => {
+                for (let i = 0; i < headerChildren.length; i++) {
+                    let classes = headerChildren[i].children[0].classList;
+                    classes.remove("invisible");
+                    classes.add("backInDown");
+                }
+
+                startRoot.classList.add("invisible");
+            }, { once: true })
+
             fadeOutElement("start-root")
+
+        }
+
+        window.onload = () => {
+            let initialDelay = 0.25;
+            for (let i = 0; i < headerChildren.length; i++) {
+                headerChildren[i].children[0].style.cssText += `animation-delay: calc(var(--animate-delay) * ${initialDelay * i});`
+            }
         }
 
     </script>

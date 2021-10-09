@@ -38,6 +38,26 @@
     height: 16rem;
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-25 {
+    opacity: 0.25;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.opacity-75 {
+    opacity: 0.75;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
 button {
     text-decoration: none;
     vertical-align: middle;
@@ -75,6 +95,6 @@ button {
     0 0 0.125rem #e50b0b;
 }
 
-/*.neon-image {*/
-/*    filter: invert(100%) drop-shadow(0 0 0.1vw #e50b0b) drop-shadow(0 0 0.4vw #e50b0b) drop-shadow(0 0 0.4vw #e50b0b);*/
-/*}*/
+.neon-image {
+    filter: invert(100%) drop-shadow(0 0 0.1vw #e50b0b) drop-shadow(0 0 0.4vw #e50b0b) drop-shadow(0 0 0.4vw #e50b0b);
+}
