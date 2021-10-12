@@ -1,42 +1,24 @@
-let skeleton = `<div class="row w-100">
-        <p class="h2 text-white-50">Screwdriver Entertainment</p>
-        <p class="text-white-50 mb-0">
-            <span class="fw-bold">Position</span>: Junior Unreal Engine Developer<br>
-            <span class="fw-bold">Responsibilities</span>:</p>
-            <ul class="text-white-50 ms-4 mb-0">
-                <li>AI systems development</li>
-                <li>Game mechanics development in Blueprint Visual Scripting</li>
-                <li>UI development (UMG)</li>
-            </ul>
-        <p class="text-white-50">
-            May 2017 — October 2018<br>
-            1 year 5 months<br>
-            <img src="images/Screwdriver_Entertainment.png"/>
-        </p>
-    </div>`
-
-
 class CompanyBuilder {
 
     build(json) {
         return `
-       <div class="row w-50 bg-dark rounded m-auto mb-5">
+       <div class="row w-50 bg-idea rounded m-auto mb-5 border border-2 invisible">
             ${this.buildTitle(json)}
             ${this.buildBody(json)}
-        </div>
-        `
+       </div>
+       `
     };
 
     buildBody(json) {
         return`
-        <p class="text-white-50 ps-4 pe-4 m-0">
+        <p class="text-white-50 ps-4 pe-4 mb-0">
             ${this.buildPosition(json)}
             ${this.buildResponsibilities(json)}
             <p class="text-white-50 ps-4 pe-4">
             ${this.buildTerm(json)}
             </p>
         </p>
-        <div class="m-auto w-75 mb-4">
+        <div class="m-auto w-75 mb-4 logo-container text-center">
             ${this.buildLogo(json)}
         </div>
 `
@@ -60,7 +42,7 @@ class CompanyBuilder {
 
         let header = '<span class="fw-bold">Responsibilities</span>:</p>'
         let body = `
-        <ul class="text-white-50 ms-5 mb-0">
+        <ul class="text-white-50 ps-5 mb-0">
             ${items}
         </ul>
 `
@@ -91,7 +73,7 @@ class CompanyBuilder {
     }
 
     buildLogo(json) {
-        return json.logoUrl ? `<img class="w-100" src="${json.logoUrl}"/>` : ""
+        return json.logoUrl ? `<img src="${json.logoUrl}"/>` : ""
     }
 }
 
