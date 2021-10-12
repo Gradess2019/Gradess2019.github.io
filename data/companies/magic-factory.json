@@ -1,0 +1,16 @@
+{
+  "title": "Magic Factory Animation",
+  "position": "Unreal Engine Developer",
+  "responsibilities":  [
+    "Implementing extensions for Level Sequence",
+    "UE4 pipeline automation using Python 3.7 and C++",
+    "UE4 Editor utilities (Blutilities)",
+    "Tools development",
+    "AI development",
+    "Additional: frontend and backend development"
+  ],
+  "term": {
+    "start": "022021"
+  },
+  "logoUrl":  "images/logo/magic_factory_logo.svg"
+}
