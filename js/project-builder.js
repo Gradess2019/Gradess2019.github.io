@@ -2,7 +2,7 @@ class ProjectBuilder {
 
     build(json) {
         return `
-        <div class="row w-50 bg-dark rounded m-auto mb-5">
+        <div class="row w-50 bg-idea rounded m-auto mb-5 border border-2 invisible">
             ${this.buildTitle(json)}
             ${this.buildBody(json)}
         </div>

@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link rel="stylesheet" type="text/css" href="styles/common.css">
     <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/animations/animate.css">
     <script src="js/moment.js"></script>
     <script src="js/moment-precise-range.js"></script>
     <title>Stepan Trofimov</title>
@@ -23,6 +24,18 @@
 <script type="module">
     import ProjectBuilder from "./js/project-builder.js";
     import CompanyBuilder from "./js/company-builder.js";
+
+    let projectsRoot = document.getElementById("projects_root");
+    let companiesRoot = document.getElementById("companies_root");
+
+    let checkVisibility = function() {
+        [...projectsRoot.children, ...companiesRoot.children].forEach(child => {
+            if (isInViewport(child)) {
+                child.classList.add("animated", "backInLeft");
+                child.classList.remove("invisible");
+            }
+        })
+    };
 
     let getJSON = function (url, callback) {
         let xhr = new XMLHttpRequest();
@@ -63,10 +76,12 @@
         "data\\companies\\magic-factory.json",
     ]
 
+
     let onReceiveProjectJson = (data) => {
         let projectBuilder = new ProjectBuilder();
         let project = projectBuilder.build(data);
-        document.getElementById("projects_root").innerHTML += project;
+        projectsRoot.innerHTML += project;
+        checkVisibility();
 
         currentIndex++;
         if (projects.length === currentIndex) {
@@ -81,7 +96,8 @@
     let onReceiveCompanyJson = (data) => {
         let companyBuilder = new CompanyBuilder();
         let company = companyBuilder.build(data);
-        document.getElementById("companies_root").innerHTML += company;
+        companiesRoot.innerHTML += company;
+        checkVisibility();
 
         currentIndex++;
         if (companies.length === currentIndex) return;
@@ -91,5 +107,23 @@
 
     getJSON(projects[currentIndex], onReceiveProjectJson)
 
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+
+        let bottom = rect.bottom;
+        if (bottom > 300) {
+            bottom -= 300;
+        }
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+        );
+    }
+
+    window.addEventListener("scroll", checkVisibility);
 </script>
 </html>
