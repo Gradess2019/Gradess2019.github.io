@@ -1,0 +1,8 @@
+{
+  "title": "Interactive map for EEF 2019",
+  "companyName": "MARTA",
+  "position": "Unreal Engine & Unity Developer",
+  "technologies": "Unreal Engine 4",
+  "platform": "Desktop",
+  "description": "Interactive map for the stand of Primorye at EEF 2019. With it’s help visitors could study the future changes of the Russky Island. There are several types of objects that have only 1 approximation and which are shown in white volumes with filled boarder, and more elaborate objects for which there are visualizations and detailed information. When you click on any object — general information appears on the screen. For the most important objects there is an opportunity to \"show more.\" This screen displays slides and accompanying text. We also showed objects already existing on the island, for some there is a second step of approximation. Large things are shown at the entire map scale. The project was implemented in two weeks. On the second week all the graphics materials appeared, to create which we used a model designed for the video."
+}

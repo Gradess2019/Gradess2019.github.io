@@ -12,12 +12,12 @@ class ProjectBuilder {
     buildBody(json) {
         return`
         <p class=\"text-white-50\">
-            ${this.buildCompany(json)}<br>
-            ${this.buildPosition(json)}<br>
-            ${this.buildTechnologies(json)}<br>
-            ${this.buildPlatform(json)}<br>
-            ${this.buildDescription(json)}<br>
-            ${this.buildVideo(json)}<br>
+            ${this.buildCompany(json)}
+            ${this.buildPosition(json)}
+            ${this.buildTechnologies(json)}
+            ${this.buildPlatform(json)}
+            ${this.buildDescription(json)}
+            ${this.buildVideo(json)}
         </p>
 `
     }
@@ -27,27 +27,27 @@ class ProjectBuilder {
     }
 
     buildCompany(json) {
-        return json.companyName ? `<span class="fw-bold">Company</span>: ${json.companyName}` : ""
+        return json.companyName ? `<span class="fw-bold">Company</span>: ${json.companyName}<br>` : ""
     }
 
     buildPosition(json) {
-        return json.position ? `<span class="fw-bold">Position</span>: ${json.position}` : ""
+        return json.position ? `<span class="fw-bold">Position</span>: ${json.position}<br>` : ""
     }
 
     buildTechnologies(json) {
-        return json.technologies ? `<span class="fw-bold">Technologies</span>: ${json.technologies}` : ""
+        return json.technologies ? `<span class="fw-bold">Technologies</span>: ${json.technologies}<br>` : ""
     }
 
     buildPlatform(json) {
-        return json.platform ? `<span class="fw-bold">Platform</span>: ${json.platform}` : ""
+        return json.platform ? `<span class="fw-bold">Platform</span>: ${json.platform}<br>` : ""
     }
 
     buildDescription(json) {
-        return json.description ? `<span class="fw-bold">Brief description</span>: ${json.description}` : ""
+        return json.description ? `<span class="fw-bold">Brief description</span>: ${json.description}<br>` : ""
     }
 
     buildVideo(json) {
-        return json.videoUrl ? `<iframe src="${json.videoUrl}"></iframe>` : ""
+        return json.videoUrl ? `<iframe src="${json.videoUrl}"></iframe><br>` : ""
     }
 }
 
