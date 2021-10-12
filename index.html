@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="styles/index.css">
     <link rel="stylesheet" type="text/css" href="styles/common.css">
     <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
+    <script src="js/moment.js"></script>
+    <script src="js/moment-precise-range.js"></script>
     <title>Stepan Trofimov</title>
 </head>
 <body class="h-100">
@@ -27,19 +29,18 @@
         Magic Factory Animation
     </p>
 </div>
-<div class="row w-100" id="projects_root">
-
-</div>
-
-
+<div class="row w-100" id="companies_root"></div>
+<div class="row w-100" id="projects_root"></div>
 </body>
 <script type="module">
     import ProjectBuilder from "./js/project-builder.js";
-    let getJSON = function(url, callback) {
+    import CompanyBuilder from "./js/company-builder.js";
+
+    let getJSON = function (url, callback) {
         let xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.responseType = 'json';
-        xhr.onload = function() {
+        xhr.onload = function () {
             let status = xhr.status;
             if (status === 200) {
                 callback(xhr.response)
@@ -66,18 +67,41 @@
         "data\\projects\\secrets-honey-valley.json",
     ]
 
-    let onReceiveJson = (data) => {
+    let companies = [
+        "data\\companies\\screwdriver-entertainment.json",
+        "data\\companies\\rtu-it-lab.json",
+        "data\\companies\\enter-vr.json",
+        "data\\companies\\marta.json",
+        "data\\companies\\magic-factory.json",
+    ]
+
+    let onReceiveProjectJson = (data) => {
         let projectBuilder = new ProjectBuilder();
         let project = projectBuilder.build(data);
         document.getElementById("projects_root").innerHTML += project;
 
         currentIndex++;
-        if (projects.length === currentIndex) return;
+        if (projects.length === currentIndex) {
+            currentIndex = 0;
+            getJSON(companies[currentIndex], onReceiveCompanyJson);
+            return;
+        }
 
-        getJSON(projects[currentIndex], onReceiveJson);
+        getJSON(projects[currentIndex], onReceiveProjectJson);
     };
 
-    getJSON(projects[currentIndex], onReceiveJson)
+    let onReceiveCompanyJson = (data) => {
+        let companyBuilder = new CompanyBuilder();
+        let company = companyBuilder.build(data);
+        document.getElementById("companies_root").innerHTML += company;
+
+        currentIndex++;
+        if (companies.length === currentIndex) return;
+
+        getJSON(companies[currentIndex], onReceiveCompanyJson);
+    };
+
+    getJSON(projects[currentIndex], onReceiveProjectJson)
 
 </script>
 </html>

@@ -1,0 +1,14 @@
+{
+  "title": "Screwdriver Entertainment",
+  "position": "Junior Unreal Engine Developer",
+  "responsibilities":  [
+    "AI systems development",
+    "Game mechanics development in Blueprint Visual Scripting",
+    "UI development (UMG)"
+  ],
+  "term": {
+    "start": "052017",
+    "end": "102018"
+  },
+  "logoUrl":  "images/Screwdriver_Entertainment.png"
+}
