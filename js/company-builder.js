@@ -20,7 +20,7 @@ class CompanyBuilder {
 
     build(json) {
         return `
-        <div class="row w-100">
+       <div class="row w-50 bg-dark rounded m-auto mb-5">
             ${this.buildTitle(json)}
             ${this.buildBody(json)}
         </div>
@@ -29,19 +29,21 @@ class CompanyBuilder {
 
     buildBody(json) {
         return`
-        <p class="text-white-50 mb-0">
+        <p class="text-white-50 ps-4 pe-4 m-0">
             ${this.buildPosition(json)}
             ${this.buildResponsibilities(json)}
-            <p class="text-white-50">
+            <p class="text-white-50 ps-4 pe-4">
             ${this.buildTerm(json)}
-            ${this.buildLogo(json)}
             </p>
         </p>
+        <div class="m-auto w-75 mb-4">
+            ${this.buildLogo(json)}
+        </div>
 `
     }
 
     buildTitle(json) {
-        return json.title ? `<p class="h2 text-white-50">${json.title}</p>` : ""
+        return json.title ? `<p class="h2 text-white-50 mt-3 ps-4 pe-4">${json.title}</p>` : ""
     }
 
     buildPosition(json) {
@@ -58,7 +60,7 @@ class CompanyBuilder {
 
         let header = '<span class="fw-bold">Responsibilities</span>:</p>'
         let body = `
-        <ul class="text-white-50 ms-4 mb-0">
+        <ul class="text-white-50 ms-5 mb-0">
             ${items}
         </ul>
 `
@@ -89,7 +91,7 @@ class CompanyBuilder {
     }
 
     buildLogo(json) {
-        return json.logoUrl ? `<img src="${json.logoUrl}"/>` : ""
+        return json.logoUrl ? `<img class="w-100" src="${json.logoUrl}"/>` : ""
     }
 }
 
