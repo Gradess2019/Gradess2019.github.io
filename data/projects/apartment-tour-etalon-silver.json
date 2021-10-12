@@ -4,5 +4,11 @@
   "position": "Unreal Engine & Unity Developer",
   "technologies": "ThreeJS, PlayCanvas",
   "platform": "Web",
-  "description": "Tour consists of 3D apartment model and two modes: orbit camera and point of view. Application has full compatibility with iOS and Android devices. There is flexible texture loading of HQ and LQ types for Desktop and mobile devices respectfully. To lower GPU memory consuming, we applied texture compression for each platform (DXT, PVR, ETC1, ETC2). Also users can take screenshots that is automatically saved in the storage."
+  "description": "Tour consists of 3D apartment model and two modes: orbit camera and point of view. Application has full compatibility with iOS and Android devices. There is flexible texture loading of HQ and LQ types for Desktop and mobile devices respectfully. To lower GPU memory consuming, we applied texture compression for each platform (DXT, PVR, ETC1, ETC2). Also users can take screenshots that is automatically saved in the storage.",
+  "links": [
+    {
+      "url": "http://marta.technology/etalonsilver/apartment_3-4-127/",
+      "name": "Try it!"
+    }
+  ]
 }

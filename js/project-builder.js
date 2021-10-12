@@ -17,6 +17,7 @@ class ProjectBuilder {
             ${this.buildTechnologies(json)}
             ${this.buildPlatform(json)}
             ${this.buildDescription(json)}
+            ${this.buildLinks(json)}
         </p>
         ${this.buildVideo(json)}
 `
@@ -44,6 +45,18 @@ class ProjectBuilder {
 
     buildDescription(json) {
         return json.description ? `<span class="fw-bold">Brief description</span>: ${json.description}<br>` : ""
+    }
+
+    buildLinks(json) {
+        if (!json.links) return "";
+
+        let builtLinks = ""
+        let separator = json.links.length > 1 ? "<br>" : ""
+        json.links.forEach(link => {
+            let builtLink = `<a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer" href="${link.url}">${link.name}</a>${separator}`
+            builtLinks += builtLink;
+        });
+        return builtLinks;
     }
 
     buildVideo(json) {

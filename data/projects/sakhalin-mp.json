@@ -4,5 +4,11 @@
   "position": "Unreal Engine & Unity Developer",
   "technologies": "PlayCanvas",
   "platform": "Web",
-  "description": "Interactive map for the competition"
+  "description": "Interactive map for the competition",
+  "links": [
+    {
+      "name": "Try it!",
+      "url": "http://marta.technology/Interactive_model_Sakhalin_45823701/"
+    }
+  ]
 }

@@ -4,5 +4,11 @@
   "position": "Unreal Engine & Unity Developer",
   "technologies": "Unity, Oculus Go",
   "platform": "Android",
-  "description": "Domont consists of 3 high-quality (16k) panoramas, so user can explore street from 3 points of view. Also user has a bottom menu that allows him to interact with environment, e.g. drawing."
+  "description": "Domont consists of 3 high-quality (16k) panoramas, so user can explore street from 3 points of view. Also user has a bottom menu that allows him to interact with environment, e.g. drawing.",
+  "links": [
+    {
+      "url": "https://www.behance.net/gallery/94458205/Domont-360-virtual-tour",
+      "name": "Watch overview"
+    }
+  ]
 }

@@ -4,5 +4,11 @@
   "position": "Unreal Engine & Unity Developer",
   "technologies": "SparkAR, WebAR",
   "platform": "Web, Instagram",
-  "description": "Test AR application for festival in Moscow."
+  "description": "Test AR application for festival in Moscow.",
+  "links": [
+    {
+      "url": "https://drive.google.com/file/d/15L94Bbo-mTCPbYxa-_cWi0BkShAkvcdM/view?usp=sharing",
+      "name": "Watch overview"
+    }
+  ]
 }
