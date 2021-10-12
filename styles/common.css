@@ -1,0 +1,16 @@
+.bg-idea {
+    background-color: #3f3f40 !important;
+}
+
+.logo-container {
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.logo-container > img {
+    object-fit: contain;
+    width: 50%;
+    height: 50%;
+}
