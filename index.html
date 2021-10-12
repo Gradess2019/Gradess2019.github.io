@@ -48,7 +48,7 @@
     let checkVisibility = function () {
         [...projectsRoot.children, ...companiesRoot.children].forEach(child => {
             if (isInViewport(child)) {
-                child.classList.add("animated", "backInLeft");
+                child.classList.add("animate__animated", "animate__backInLeft");
                 child.classList.remove("invisible");
             }
         })
