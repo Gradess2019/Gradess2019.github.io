@@ -1,5 +1,5 @@
 # Versions
-## 4.0: One page design
+## 4.0: One-page design
 Added:
 - animate.css
 - bootstrap.css
