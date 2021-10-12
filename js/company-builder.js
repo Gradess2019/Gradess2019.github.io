@@ -25,7 +25,7 @@ class CompanyBuilder {
     }
 
     buildTitle(json) {
-        return json.title ? `<p class="h2 text-white-50 mt-3 ps-4 pe-4">${json.title}</p>` : ""
+        return json.title ? `<p class="h3 text-white-50 mt-3 ps-4 pe-4">${json.title}</p>` : ""
     }
 
     buildPosition(json) {

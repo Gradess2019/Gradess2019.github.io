@@ -11,13 +11,30 @@
     <title>Stepan Trofimov</title>
 </head>
 <body class="h-100">
-<div class="row w-50">
+<div class="row w-50 bg-idea rounded m-auto mb-5 border border-2 mt-4">
     <p class="h1 text-white-50">Stepan Trofimov</p>
-</div>
-<div class="row w-50">
     <p class="h2 text-white-50">Unreal Engine Developer</p>
+    <p>
+        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
+           href="https://www.linkedin.com/in/gradess/">LinkedIn</a>
+        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
+           href="https://t.me/GradessUE">Telegram</a>
+        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
+           href="mailto: trofimovjava@gmail.com">E-mail</a>
+        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
+           href="https://github.com/Gradess2019">GitHub</a>
+        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
+           href="https://gitlab.com/gradess">GitLab</a>
+    </p>
+
+</div>
+<div class="m-auto w-50">
+    <p class="h1 text-white-50">Projects</p>
 </div>
 <div class="w-100" id="projects_root"></div>
+<div class="m-auto w-50">
+    <p class="h1 text-white-50">Companies</p>
+</div>
 <div class="w-100" id="companies_root">
 </div>
 </body>
@@ -28,7 +45,7 @@
     let projectsRoot = document.getElementById("projects_root");
     let companiesRoot = document.getElementById("companies_root");
 
-    let checkVisibility = function() {
+    let checkVisibility = function () {
         [...projectsRoot.children, ...companiesRoot.children].forEach(child => {
             if (isInViewport(child)) {
                 child.classList.add("animated", "backInLeft");
