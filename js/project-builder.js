@@ -2,7 +2,7 @@ class ProjectBuilder {
 
     build(json) {
         return `
-        <div class="row">
+        <div class="row w-50 bg-dark rounded m-auto mb-5">
             ${this.buildTitle(json)}
             ${this.buildBody(json)}
         </div>
@@ -11,19 +11,19 @@ class ProjectBuilder {
 
     buildBody(json) {
         return`
-        <p class=\"text-white-50\">
+        <p class="text-white-50 ps-4 pe-4">
             ${this.buildCompany(json)}
             ${this.buildPosition(json)}
             ${this.buildTechnologies(json)}
             ${this.buildPlatform(json)}
             ${this.buildDescription(json)}
-            ${this.buildVideo(json)}
         </p>
+        ${this.buildVideo(json)}
 `
     }
 
     buildTitle(json) {
-        return json.title ? `<p class="h2 text-white-50">${json.title}</p>` : ""
+        return json.title ? `<p class="h2 text-white-50 mt-3 ps-4 pe-4">${json.title}</p>` : ""
     }
 
     buildCompany(json) {
@@ -47,7 +47,10 @@ class ProjectBuilder {
     }
 
     buildVideo(json) {
-        return json.videoUrl ? `<iframe src="${json.videoUrl}"></iframe><br>` : ""
+        return json.videoUrl ? `
+            <div class="video-container m-auto mb-5">
+            <iframe width="640" height="480" allow="fullscreen;" src="${json.videoUrl}"></iframe>
+            </div>` : ""
     }
 }
 
