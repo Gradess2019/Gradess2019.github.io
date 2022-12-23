@@ -10,6 +10,12 @@ class CompanyBuilder {
     };
 
     buildBody(json) {
+        let width = 75;
+        if (json.customLogoWidth) {
+            width = json.customLogoWidth;
+        }
+        console.log(json)
+
         return`
         <p class="text-white-50 ps-4 pe-4 mb-0">
             ${this.buildPosition(json)}
@@ -18,7 +24,7 @@ class CompanyBuilder {
             ${this.buildTerm(json)}
             </p>
         </p>
-        <div class="m-auto w-75 mb-4 logo-container text-center">
+        <div class="m-auto w-${width} mb-4 logo-container text-center">
             ${this.buildLogo(json)}
         </div>
 `
