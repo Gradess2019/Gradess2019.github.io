@@ -1,0 +1,37 @@
+body {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    /* background-image: url(../Images/Background/EntryPageBackground.jpeg); */
+}
+
+.g-progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@media(orientation: landscape) {
+    .g-progress-bar .rounded-circle {
+        width: 350px;
+        height: 350px;
+    }
+
+    .g-progress-bar .g-label {
+        font-size: 2.5em;
+    }
+}
+
+@media(orientation: portrait) {
+    .g-progress-bar .rounded-circle {
+        width: 500px;
+        height: 500px;
+    }
+
+    .g-progress-bar .g-label {
+        font-size: 4em;
+    }
+}
