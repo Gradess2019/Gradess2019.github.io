@@ -24,10 +24,23 @@ body {
 }
 
 .g-advice-container {
+    height: 25%;
     bottom: 0%;
 }
 
+.g-advice-title {
+    font-size: calc(var(--g-advice-text-size) / 1.25);
+}
+
+.g-advice-text {
+    font-size: var(--g-advice-text-size);
+}
+
 @media(orientation: landscape) {
+    :root {
+        --g-advice-text-size: 2em;
+    }
+
     .g-progress-bar .rounded-circle {
         width: 350px;
         height: 350px;
@@ -38,22 +51,16 @@ body {
     }
 
     .g-advice-container {
-        height: 25%;
+        width: 85%;
         translate: -50% -50%;
-    }
-
-    .g-advice-title {
-        font-size: 2em;
-    }
-
-
-    .g-advice-text {
-        font-size: 2.5em;
-        line-height: 1.25em;
     }
 }
 
 @media(orientation: portrait) {
+    :root {
+        --g-advice-text-size: 2.8em;
+    }
+
     .g-progress-bar .rounded-circle {
         width: 500px;
         height: 500px;
@@ -64,16 +71,7 @@ body {
     }
 
     .g-advice-container {
-        height: 25%;
-        translate: -50% -80%;
-    }
-
-    .g-advice-title {
-        font-size: 3em;
-    }
-
-    .g-advice-text {
-        font-size: 3.75em;
-        line-height: 1.25em;
+        width: 95%;
+        translate: -50% -90%;
     }
 }
