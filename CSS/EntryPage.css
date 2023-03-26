@@ -23,6 +23,10 @@ body {
     height: 500px;
 }
 
+.g-advice-container {
+    bottom: 0%;
+}
+
 @media(orientation: landscape) {
     .g-progress-bar .rounded-circle {
         width: 350px;
@@ -31,6 +35,21 @@ body {
 
     .g-progress-bar .g-label {
         font-size: 2.5em;
+    }
+
+    .g-advice-container {
+        height: 25%;
+        translate: -50% -50%;
+    }
+
+    .g-advice-title {
+        font-size: 2em;
+    }
+
+
+    .g-advice-text {
+        font-size: 2.5em;
+        line-height: 1.25em;
     }
 }
 
@@ -42,5 +61,19 @@ body {
 
     .g-progress-bar .g-label {
         font-size: 4em;
+    }
+
+    .g-advice-container {
+        height: 25%;
+        translate: -50% -80%;
+    }
+
+    .g-advice-title {
+        font-size: 3em;
+    }
+
+    .g-advice-text {
+        font-size: 3.75em;
+        line-height: 1.25em;
     }
 }

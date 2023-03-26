@@ -1,7 +1,8 @@
 body {
     line-height: 1;
     letter-spacing: 2;
-    font-family: SpaceCrusaders;
+    font-family: Nasalization;
+    overflow: hidden;
 }
 
 .g-shadow-50 {

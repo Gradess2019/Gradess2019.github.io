@@ -30,16 +30,38 @@
     animation-fill-mode: forwards;
 }
 
+.animate__fadeInDownEdit {
+    -webkit-animation-name: fadeInDownEdit;
+    animation-name: fadeInDownEdit;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    transform-origin: top;
+}
+
 @media(orientation: landscape) {
     @keyframes moveUp30 {
         0% {
             -webkit-transform: translateY(0);
             transform: translateY(0);
         }
-    
+
         100% {
-            -webkit-transform: translateY(-80%);
-            transform: translateY(-80%);
+            -webkit-transform: translateY(-60%);
+            transform: translateY(-60%);
+        }
+    }
+
+    @keyframes fadeInDownEdit {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -30%, 0);
+            transform: translate3d(0, -30%, 0);
+        }
+    
+        to {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
     }
 }
@@ -50,10 +72,24 @@
             -webkit-transform: translateY(0);
             transform: translateY(0);
         }
-    
+
         100% {
             -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
+        }
+    }
+
+    @keyframes fadeInDownEdit {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -20%, 0);
+            transform: translate3d(0, -20%, 0);
+        }
+    
+        to {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
     }
 }
