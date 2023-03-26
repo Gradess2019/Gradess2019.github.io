@@ -23,6 +23,7 @@ export class EntryPageProgressBar {
     private show(): void {
         this.stop_animations();
         this.progress_bar.classList.add("animate__animated");
+        this.progress_bar.classList.remove("visually-hidden");
     }
 
     private pulse(): void {
