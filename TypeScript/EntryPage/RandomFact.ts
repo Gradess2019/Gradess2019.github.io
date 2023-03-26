@@ -1,15 +1,18 @@
 export class RandomFact {
     private static readonly API_URL = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en";
-    private static readonly MIN_FACT_DELAY = 7;
-    private static readonly WORDS_PER_SECOND = 3;
+    private static readonly MIN_FACT_DELAY = 10;
+    private static readonly WORDS_PER_SECOND = 2;
+    private static readonly DEFAULT_FACT = "The average person spends about two years on the phone in a lifetime."
     private advice_container : Element;
     private advice_text : Element;
     private current_advice: any;
+    private past_advices: string[];
 
 
     constructor() {
         this.advice_container = document.getElementsByClassName("g-advice-container")[0];
         this.advice_text = document.getElementsByClassName("g-advice-text")[0];
+        this.past_advices = [ RandomFact.DEFAULT_FACT ];
 
         this.advice_text.addEventListener("animationend", this.on_advice_text_animation_end.bind(this));
     }
@@ -20,7 +23,14 @@ export class RandomFact {
 
     private requestAdvice() {
         fetch(RandomFact.API_URL).then(response => response.json()).then(advice => {
+            if (this.past_advices.includes(advice.text)) {
+                this.requestAdvice();
+                return;
+            }
+
             this.current_advice = advice;
+            this.past_advices.push(advice.text);
+
             let delay = this.calculate_delay(advice);
 
             if (this.is_hidden()) {
