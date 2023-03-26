@@ -2,3 +2,8 @@
     font-family: 'SpaceCrusaders';
     src: url('../Fonts/Space Crusaders.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Nasalization';
+    src: url('../Fonts/nasalization-rg.otf') format('opentype');
+}
