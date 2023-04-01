@@ -36,6 +36,11 @@ body {
     font-size: var(--g-advice-text-size);
 }
 
+.g-line-progress-bar {
+    width: 25%;
+    translate: -50% 75%;
+}
+
 @media(orientation: landscape) {
     :root {
         --g-advice-text-size: 2em;
@@ -53,6 +58,10 @@ body {
     .g-advice-container {
         width: 85%;
         translate: -50% -50%;
+    }
+
+    .g-line-progress-bar {
+        height: 30px;
     }
 }
 

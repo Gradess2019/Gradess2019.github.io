@@ -9,20 +9,12 @@
     <link rel="stylesheet" href="CSS/Colors.css">
     <link rel="stylesheet" href="CSS/EntryPage.css">
     <link rel="stylesheet" href="CSS/Animations.css">
-    <script src="JS/AssetLoader/AssetLoader.js" type="module"></script>
     <script src="JS/EntryPage/EntryPage.js" type="module"></script>
 </head>
 <script type="module">
-    import { AssetLoader } from "./JS/AssetLoader/AssetLoader.js";
     import { EntryPage } from "./JS/EntryPage/EntryPage.js";
 
     window.onload = function () {
-        const asset_loader = new AssetLoader();
-        asset_loader.on_all_assets_loaded = function () {
-
-        }.bind(this);
-        asset_loader.load();
-
         let entryPage = new EntryPage();
         entryPage.run();
 
@@ -38,6 +30,12 @@
         <div class="g-label vs-white text-center opacity-75 position-absolute top-50 start-50 translate-middle">
             Preparing your journey
         </div>
+    </div>
+
+    <!-- make line progress bar with grey background and light green fill color -->
+    <div class="g-line-progress-bar position-absolute top-50 start-50">
+        <div class="g-line-progress-bar-bg vs-bg-light-gray position-absolute h-100 w-100 rounded-5"></div>
+        <div class="g-line-progress-bar-fill vs-bg-green position-absolute h-100 rounded-5"></div>
     </div>
 
     <div class="g-advice-container position-absolute start-50 visually-hidden animate__faster">

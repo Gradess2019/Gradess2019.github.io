@@ -2,6 +2,7 @@ import { Asset } from "./Asset.js";
 
 export class AssetLoader {
     public on_asset_list_obtained_event: Function[];
+    public on_asset_loaded_event: Function[];
     public on_all_assets_loaded_event: Function[];
 
     private assets : Asset[];
@@ -13,13 +14,21 @@ export class AssetLoader {
         this.assets_loaded = 0;
         this.assets_to_load = 0;
         this.on_asset_list_obtained_event = [];
+        this.on_asset_loaded_event = [];
         this.on_all_assets_loaded_event = [];
+    }
+
+    public get_total_assets() : number {
+        return this.assets_to_load;
+    }
+
+    public get_loaded_assets() : number {
+        return this.assets_loaded;
     }
 
     public load() {
         this.on_asset_list_obtained_event.push(this.create_assets_from_list.bind(this));
         this.on_asset_list_obtained_event.push(this.load_assets.bind(this));
-        this.on_all_assets_loaded_event.push(this.load_assets.bind(this));
         this.download_asset_list();
     }
 
@@ -62,6 +71,11 @@ export class AssetLoader {
         asset.unbind(this.on_asset_loaded);
 
         this.assets_loaded ++;
+
+        this.on_asset_loaded_event.forEach((callback) => {
+            callback(asset);
+        });
+        
         if (this.assets_loaded == this.assets_to_load) {
             this.on_all_assets_loaded();
         }

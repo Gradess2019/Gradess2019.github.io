@@ -14,6 +14,10 @@
     background-color: #f6fdfb;
 }
 
+.vs-bg-green {
+    background-color: #5bb290;
+}
+
 .vs-blue {
     color: #78c5e7;
 }
@@ -28,4 +32,8 @@
 
 .vs-white {
     color: #f6fdfb;
+}
+
+.vs-green {
+    color: #5bb290;
 }
