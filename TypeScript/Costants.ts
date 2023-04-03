@@ -17,3 +17,8 @@ export class Events {
 
     }
 }
+
+export class AppConstants {
+    public static readonly TICK_RATE: number = 60;
+    public static readonly TICK_INTERVAL: number = 1000 / AppConstants.TICK_RATE;
+}

@@ -25,7 +25,7 @@ export class EntryPage extends Page {
         asset_loader.on_asset_loaded_event.on((asset: Asset) => {
             const loaded = asset_loader.get_loaded_assets();
             const total = asset_loader.get_total_assets();
-            this.progress_bar_line.update_progress(loaded / total * 100);
+            this.progress_bar_line.set_target_percent(loaded / total * 100);
         });
         
         asset_loader.on_asset_list_obtained_event.on((asset_list: string[]) => {
