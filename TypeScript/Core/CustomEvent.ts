@@ -32,9 +32,7 @@ export class CustomEvent {
         }
     }
 
-    public fire(event: string, ...args: any[]) {
-        Assert.check(event.length > 0, "Event name cannot be empty.");
-
+    public fire(...args: any[]) {
         if (this.listeners.length <= 0) {
             return;
         }
@@ -43,6 +41,6 @@ export class CustomEvent {
     }
 
     private validateParams(listener: Function) {
-        Assert.isTypeOf(listener, "function", "Listener must be a function.");
+        Assert.isTypeOf(listener, Function, "Listener must be a function.");
     }
 }

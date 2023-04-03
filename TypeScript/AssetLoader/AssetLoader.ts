@@ -1,9 +1,10 @@
+import { CustomEvent } from "../Core/CustomEvent.js";
 import { Asset } from "./Asset.js";
 
 export class AssetLoader {
-    public on_asset_list_obtained_event: Function[];
-    public on_asset_loaded_event: Function[];
-    public on_all_assets_loaded_event: Function[];
+    public on_asset_list_obtained_event: CustomEvent;
+    public on_asset_loaded_event: CustomEvent;
+    public on_all_assets_loaded_event: CustomEvent;
 
     private assets : Asset[];
     private assets_loaded : number;
@@ -13,9 +14,9 @@ export class AssetLoader {
         this.assets = [];
         this.assets_loaded = 0;
         this.assets_to_load = 0;
-        this.on_asset_list_obtained_event = [];
-        this.on_asset_loaded_event = [];
-        this.on_all_assets_loaded_event = [];
+        this.on_asset_list_obtained_event = new CustomEvent("asset-loader:asset-list-obtained");
+        this.on_asset_loaded_event = new CustomEvent("asset-loader:asset-loaded");
+        this.on_all_assets_loaded_event = new CustomEvent("asset-loader:all-assets-loaded");
     }
 
     public get_total_assets() : number {
@@ -27,8 +28,8 @@ export class AssetLoader {
     }
 
     public load() {
-        this.on_asset_list_obtained_event.push(this.create_assets_from_list.bind(this));
-        this.on_asset_list_obtained_event.push(this.load_assets.bind(this));
+        this.on_asset_list_obtained_event.on(this.create_assets_from_list.bind(this));
+        this.on_asset_list_obtained_event.on(this.load_assets.bind(this));
         this.download_asset_list();
     }
 
@@ -72,9 +73,7 @@ export class AssetLoader {
 
         this.assets_loaded ++;
 
-        this.on_asset_loaded_event.forEach((callback) => {
-            callback(asset);
-        });
+        this.on_asset_loaded_event.fire(asset)
         
         if (this.assets_loaded == this.assets_to_load) {
             this.on_all_assets_loaded();
@@ -82,15 +81,11 @@ export class AssetLoader {
     }
 
     private on_asset_list_obtained(list: string[]) {
-        this.on_asset_list_obtained_event.forEach((callback) => {
-            callback(list);
-        });
+        this.on_asset_list_obtained_event.fire(list)
     }
 
     private on_all_assets_loaded() {
-        this.on_all_assets_loaded_event.forEach((callback) => {
-            callback(this.assets);
-        });
+        this.on_all_assets_loaded_event.fire(this.assets);
     }
 
 }

@@ -22,17 +22,19 @@ export class EntryPage extends Page {
     public run(): void {
         const asset_loader = new AssetLoader();
 
-        asset_loader.on_asset_loaded_event.push((asset: Asset) => {
+        asset_loader.on_asset_loaded_event.on((asset: Asset) => {
             const loaded = asset_loader.get_loaded_assets();
             const total = asset_loader.get_total_assets();
             this.progress_bar_line.update_progress(loaded / total * 100);
         });
-        asset_loader.on_asset_list_obtained_event.push((asset_list: string[]) => {
+        
+        asset_loader.on_asset_list_obtained_event.on((asset_list: string[]) => {
             
         });
+
         asset_loader.load();
 
-        this.progress_bar.on_animation_end_event.push((event: any) => {
+        this.progress_bar.on_animation_end_event.on((event: any) => {
             const animation_event = event as AnimationEvent;
             if (animation_event.animationName === "zoomIn") {
                 this.random_fact.run();

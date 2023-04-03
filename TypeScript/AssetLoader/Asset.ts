@@ -1,17 +1,17 @@
 export class Asset {
-    path : string;
-    callbacks : Function[];
+    path: string;
+    callbacks: Function[];
 
-    constructor(path : string) {
+    constructor(path: string) {
         this.path = path;
         this.callbacks = [];
     }
 
-    bind(callback : Function) {
+    bind(callback: Function) {
         this.callbacks.push(callback);
     }
 
-    unbind(callback : Function) {
+    unbind(callback: Function) {
         this.callbacks = this.callbacks.filter((cb) => cb !== callback);
     }
 

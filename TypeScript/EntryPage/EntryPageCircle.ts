@@ -1,14 +1,15 @@
-import { AnimationConstants } from "../Costants";
+import { AnimationConstants } from "../Costants.js";
+import { CustomEvent } from "../Core/CustomEvent.js";
 
 export class EntryPageCircle {
-    public on_animation_end_event: Function[];
+    public on_animation_end_event: CustomEvent;
 
     private progress_bar: Element;
     private circle: Element;
     private shadow_circle: Element;
 
     constructor() {
-        this.on_animation_end_event = [];
+        this.on_animation_end_event = new CustomEvent("entry-page-circle:on-animation-end");
 
         this.progress_bar = document.getElementsByClassName("g-progress-bar")[0];
         this.circle = document.getElementsByClassName("g-circle")[0];
@@ -68,8 +69,6 @@ export class EntryPageCircle {
             this.blink();
         }
 
-        this.on_animation_end_event.forEach((callback) => {
-            callback(animationEvent);
-        });
+        this.on_animation_end_event.fire(animationEvent);
     }
 }
