@@ -20,7 +20,7 @@ export class App {
 
     public run() {
         setInterval(() => {
-            Events.App.tick.fire(AppConstants.TICK_INTERVAL);
+            Events.App.tick.fire(AppConstants.TICK_INTERVAL / 1000);
         }, AppConstants.TICK_INTERVAL);
 
         const page = new EntryPage();

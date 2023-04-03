@@ -22,7 +22,7 @@ export class EntryProgressBar {
     }
 
     private tick(deltaTime: number): void {
-        this.currentPercent = this.currentPercent + (this.targetPercent - this.currentPercent) * 0.1;
+        this.currentPercent = this.currentPercent + (this.targetPercent - this.currentPercent) * deltaTime * 3;
         this.progressBarFill.style.width = `${this.currentPercent}%`;
     }
 
