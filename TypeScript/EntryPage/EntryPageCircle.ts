@@ -1,6 +1,6 @@
-import { AnimationConstants } from "../Costants.js";
+import { AnimationConstants } from "../Costants";
 
-export class EntryPageProgressBar {
+export class EntryPageCircle {
     public on_animation_end_event: Function[];
 
     private progress_bar: Element;

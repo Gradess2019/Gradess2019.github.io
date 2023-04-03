@@ -65,4 +65,9 @@ export class Assert {
         Assert.isNotNull(a, message);
         Assert.isNotUndefined(a, message);
     }
+
+    public static isInvalid(a: any, message?: string) {
+        Assert.isNull(a, message);
+        Assert.isUndefined(a, message);
+    }
 }
