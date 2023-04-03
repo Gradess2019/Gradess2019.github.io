@@ -1,7 +1,8 @@
 import { CustomEvent } from "../Core/CustomEvent.js";
+import { RuntimeObject } from "../Core/RuntimeObject.js";
 import { Asset } from "./Asset.js";
 
-export class AssetLoader {
+export class AssetLoader extends RuntimeObject {
     public on_asset_list_obtained_event: CustomEvent;
     public on_asset_loaded_event: CustomEvent;
     public on_all_assets_loaded_event: CustomEvent;
@@ -11,6 +12,9 @@ export class AssetLoader {
     private assets_to_load : number;
 
     constructor() {
+        const unique = true;
+        super(unique);
+
         this.assets = [];
         this.assets_loaded = 0;
         this.assets_to_load = 0;
