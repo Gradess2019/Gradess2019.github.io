@@ -12,11 +12,11 @@
     <script src="JS/EntryPage/EntryPage.js" type="module"></script>
 </head>
 <script type="module">
-    import { EntryPage } from "./JS/EntryPage/EntryPage.js";
+    import { App } from "./JS/Core/App.js";
 
     window.onload = function () {
-        let entryPage = new EntryPage();
-        entryPage.run();
+        let app = new App();
+        app.run();
 
     }.bind(this);
 

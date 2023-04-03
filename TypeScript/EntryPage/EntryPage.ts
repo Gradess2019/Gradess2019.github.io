@@ -1,16 +1,18 @@
 import { Asset } from "../AssetLoader/Asset.js";
 import { AssetLoader } from "../AssetLoader/AssetLoader.js";
+import { Page } from "../Core/Page.js";
 import { EntryPageProgressBar } from "./EntryPageProgressBar.js";
 import { EntryProgressBarLine } from "./EntryProgressBarLine.js";
 import { RandomFact } from "./RandomFact.js";
 
-export class EntryPage {
+export class EntryPage extends Page {
     private image_path: string;
     private progress_bar: EntryPageProgressBar;
     private progress_bar_line: EntryProgressBarLine;
     private random_fact: RandomFact;
 
     constructor() {
+        super();
         this.image_path = "Images/Background/EntryPageBackground.jpeg";
         this.progress_bar = new EntryPageProgressBar();
         this.progress_bar_line = new EntryProgressBarLine();
