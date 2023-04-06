@@ -56,13 +56,11 @@ export class EntryPage extends Page {
         }, EntryPageConstants.LOADING_DELAY);
 
         assetLoader.onAllAssetsLoadedEvent.on(() => {
-            setTimeout(() => {
-                if (!gate) {
-                    return;
-                }
+            if (!gate) {
+                return;
+            }
 
-                this.progressBar.collapse();
-            }, EntryPageConstants.COLLAPSE_DELAY);
+            setTimeout(() => this.progressBar.collapse(), EntryPageConstants.COLLAPSE_DELAY);
         });
     }
 }
