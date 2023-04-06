@@ -28,3 +28,10 @@ export class EntryPageConstants {
     public static readonly LOADING_DELAY: number = 5000;
     public static readonly COLLAPSE_DELAY: number = 1000;
 }
+
+export class RandomFactConstants {
+    public static readonly API_URL = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en";
+    public static readonly MIN_FACT_DELAY = 10;
+    public static readonly WORDS_PER_SECOND = 2;
+    public static readonly DEFAULT_FACT = "The average person spends about two years on the phone in a lifetime."
+}

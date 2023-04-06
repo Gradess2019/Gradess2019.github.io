@@ -1,20 +1,18 @@
+import { RandomFactConstants } from "../Costants.js";
+
 export class RandomFact {
-    private static readonly API_URL = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en";
-    private static readonly MIN_FACT_DELAY = 10;
-    private static readonly WORDS_PER_SECOND = 2;
-    private static readonly DEFAULT_FACT = "The average person spends about two years on the phone in a lifetime."
-    private advice_container : Element;
-    private advice_text : Element;
-    private current_advice: any;
-    private past_advices: string[];
+    private adviceContainer : Element;
+    private adviceText : Element;
+    private currentAdvice: any;
+    private pastAdvices: string[];
 
 
     constructor() {
-        this.advice_container = document.getElementsByClassName("g-advice-container")[0];
-        this.advice_text = document.getElementsByClassName("g-advice-text")[0];
-        this.past_advices = [ RandomFact.DEFAULT_FACT ];
+        this.adviceContainer = document.getElementsByClassName("g-advice-container")[0];
+        this.adviceText = document.getElementsByClassName("g-advice-text")[0];
+        this.pastAdvices = [ RandomFactConstants.DEFAULT_FACT ];
 
-        this.advice_text.addEventListener("animationend", this.on_advice_text_animation_end.bind(this));
+        this.adviceText.addEventListener("animationend", this.onAdviceTextAnimationEnd.bind(this));
     }
 
     public run() {
@@ -22,23 +20,23 @@ export class RandomFact {
     };
 
     private requestAdvice() {
-        fetch(RandomFact.API_URL).then(response => response.json()).then(advice => {
-            if (this.past_advices.includes(advice.text)) {
+        fetch(RandomFactConstants.API_URL).then(response => response.json()).then(advice => {
+            if (this.pastAdvices.includes(advice.text)) {
                 this.requestAdvice();
                 return;
             }
 
-            this.current_advice = advice;
-            this.past_advices.push(advice.text);
+            this.currentAdvice = advice;
+            this.pastAdvices.push(advice.text);
 
-            let delay = this.calculate_delay(advice);
+            let delay = this.calculateReadDelay(advice);
 
-            if (this.is_hidden()) {
-                this.update_advice();
+            if (this.isHidden()) {
+                this.updateText();
                 this.show();
                 delay += 2;
             } else {
-                this.fade_out_advice_text();
+                this.fadeOutAdviceText();
             }
 
             setTimeout(() => this.requestAdvice(), delay * 1000);
@@ -48,50 +46,50 @@ export class RandomFact {
         });
     };
 
-    private update_advice() {
-        this.advice_text.innerHTML = this.current_advice.text;
+    private updateText() {
+        this.adviceText.innerHTML = this.currentAdvice.text;
     }
 
-    private is_hidden() : boolean {
-        return this.advice_container.classList.contains("visually-hidden");
+    private isHidden() : boolean {
+        return this.adviceContainer.classList.contains("visually-hidden");
     }
 
     private show() {
-        this.advice_container.classList.remove("visually-hidden");
+        this.adviceContainer.classList.remove("visually-hidden");
         
-        this.advice_container.classList.add("animate__fadeInDownEdit");
-        this.advice_container.classList.add("animate__animated");
+        this.adviceContainer.classList.add("animate__fadeInDownEdit");
+        this.adviceContainer.classList.add("animate__animated");
     }
 
-    private fade_in_advice_text() {
-        this.advice_text.classList.remove("animate__fadeOut");
-        this.advice_text.classList.remove("animate__animated");
+    private fadeInAdviceText() {
+        this.adviceText.classList.remove("animate__fadeOut");
+        this.adviceText.classList.remove("animate__animated");
 
-        this.advice_text.classList.add("animate__fadeIn");
-        this.advice_text.classList.add("animate__animated");
+        this.adviceText.classList.add("animate__fadeIn");
+        this.adviceText.classList.add("animate__animated");
     }
 
-    private fade_out_advice_text() {
-        this.advice_text.classList.remove("animate__fadeIn");
-        this.advice_text.classList.remove("animate__animated");
+    private fadeOutAdviceText() {
+        this.adviceText.classList.remove("animate__fadeIn");
+        this.adviceText.classList.remove("animate__animated");
 
-        this.advice_text.classList.add("animate__fadeOut");
-        this.advice_text.classList.add("animate__animated");
+        this.adviceText.classList.add("animate__fadeOut");
+        this.adviceText.classList.add("animate__animated");
     }
 
-    private calculate_delay(advice : any) {
+    private calculateReadDelay(advice : any) {
         const text = advice.text;
         const words = text.split(" ");
-        const delay = words.length / RandomFact.WORDS_PER_SECOND;
+        const delay = words.length / RandomFactConstants.WORDS_PER_SECOND;
 
-        return Math.max(delay, RandomFact.MIN_FACT_DELAY);
+        return Math.max(delay, RandomFactConstants.MIN_FACT_DELAY);
     }
 
-    private on_advice_text_animation_end(event : Event) {
+    private onAdviceTextAnimationEnd(event : Event) {
         const animationEvent = event as AnimationEvent;
         if (animationEvent.animationName === "fadeOut") {
-            this.update_advice();
-            this.fade_in_advice_text();
+            this.updateText();
+            this.fadeInAdviceText();
         }
     }
 }
