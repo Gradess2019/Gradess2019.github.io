@@ -1,10 +1,9 @@
-body {
+.g-background-image {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
-    /* background-image: url(../Images/Background/EntryPageBackground.jpeg); */
+    opacity: 0;
 }
 
 .g-circle-container {

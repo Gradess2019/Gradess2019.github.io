@@ -2,20 +2,30 @@ import { Asset } from "../AssetLoader/Asset.js";
 import { App } from "../Core/App.js";
 import { Page } from "../Core/Page.js";
 import { AnimationConstants, EntryPageConstants } from "../Costants.js";
+import { EntryPageBackground } from "./EntryPageBackground.js";
 import { EntryPageCircle } from "./EntryPageCircle.js";
 import { EntryProgressBar } from "./EntryProgressBar.js";
 import { RandomFact } from "./RandomFact.js";
 
 export class EntryPage extends Page {
+    private background: EntryPageBackground;
     private entryPageCircle: EntryPageCircle;
     private progressBar: EntryProgressBar;
     private randomFact: RandomFact;
 
     constructor() {
         super();
+        this.background = new EntryPageBackground();
         this.entryPageCircle = new EntryPageCircle();
         this.progressBar = new EntryProgressBar();
         this.randomFact = new RandomFact();
+
+        this.entryPageCircle.onAnimationEndEvent.on((event: any) => {
+            const animationEvent = event as AnimationEvent;
+            if (animationEvent.animationName === "moveDown30") {
+                this.background.showBackgroundImage();
+            }
+        });
 
         this.progressBar.animationStartEvent.on((event: any) => {
             const animationEvent = event as AnimationEvent;
