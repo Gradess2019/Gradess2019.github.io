@@ -1,7 +1,7 @@
 import { Asset } from "../AssetLoader/Asset.js";
 import { App } from "../Core/App.js";
 import { Page } from "../Core/Page.js";
-import { EntryPageConstants } from "../Costants.js";
+import { AnimationConstants, EntryPageConstants } from "../Costants.js";
 import { EntryPageCircle } from "./EntryPageCircle.js";
 import { EntryProgressBar } from "./EntryProgressBar.js";
 import { RandomFact } from "./RandomFact.js";
@@ -16,6 +16,21 @@ export class EntryPage extends Page {
         this.entryPageCircle = new EntryPageCircle();
         this.progressBar = new EntryProgressBar();
         this.randomFact = new RandomFact();
+
+        this.progressBar.animationStartEvent.on((event: any) => {
+            const animationEvent = event as AnimationEvent;
+            if (animationEvent.animationName === "progressBarCollapse") {
+                setTimeout(() => this.randomFact.hide(), AnimationConstants.FAST_ANIMATION_TIME / 2 * 1000);
+                this.randomFact.setPendingHide(true);
+            }
+        });
+
+        this.progressBar.animationEndEvent.on((event: any) => {
+            const animationEvent = event as AnimationEvent;
+            if (animationEvent.animationName === "progressBarCollapse") {
+                setTimeout(() => this.entryPageCircle.moveDown(), AnimationConstants.FAST_ANIMATION_TIME / 2 * 1000);
+            }
+        });
     }
 
     public run(): void {
@@ -27,7 +42,7 @@ export class EntryPage extends Page {
             this.progressBar.setTargetPercent(loaded / total * 100);
         });
 
-        this.entryPageCircle.on_animation_end_event.on((event: any) => {
+        this.entryPageCircle.onAnimationEndEvent.on((event: any) => {
             const animation_event = event as AnimationEvent;
             if (animation_event.animationName === "zoomIn") {
                 this.randomFact.run();

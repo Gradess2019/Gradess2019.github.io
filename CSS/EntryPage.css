@@ -7,7 +7,7 @@ body {
     /* background-image: url(../Images/Background/EntryPageBackground.jpeg); */
 }
 
-.g-progress-bar {
+.g-circle-container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -46,12 +46,12 @@ body {
         --g-advice-text-size: 2em;
     }
 
-    .g-progress-bar .rounded-circle {
+    .g-circle-container .rounded-circle {
         width: 350px;
         height: 350px;
     }
 
-    .g-progress-bar .g-label {
+    .g-circle-container .g-label {
         font-size: 2.5em;
     }
 
@@ -70,12 +70,12 @@ body {
         --g-advice-text-size: 2.8em;
     }
 
-    .g-progress-bar .rounded-circle {
+    .g-circle-container .rounded-circle {
         width: 500px;
         height: 500px;
     }
 
-    .g-progress-bar .g-label {
+    .g-circle-container .g-label {
         font-size: 4em;
     }
 

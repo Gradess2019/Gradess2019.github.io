@@ -5,14 +5,19 @@ export class RandomFact {
     private adviceText : Element;
     private currentAdvice: any;
     private pastAdvices: string[];
-
+    private pendingHide: boolean;
 
     constructor() {
         this.adviceContainer = document.getElementsByClassName("g-advice-container")[0];
         this.adviceText = document.getElementsByClassName("g-advice-text")[0];
         this.pastAdvices = [ RandomFactConstants.DEFAULT_FACT ];
+        this.pendingHide = false;
 
         this.adviceText.addEventListener("animationend", this.onAdviceTextAnimationEnd.bind(this));
+    }
+
+    public setPendingHide(pendingHide: boolean) {
+        this.pendingHide = pendingHide;
     }
 
     public run() {
@@ -21,6 +26,10 @@ export class RandomFact {
 
     private requestAdvice() {
         fetch(RandomFactConstants.API_URL).then(response => response.json()).then(advice => {
+            if (this.pendingHide) {
+                return;
+            }
+
             if (this.pastAdvices.includes(advice.text)) {
                 this.requestAdvice();
                 return;
@@ -46,19 +55,27 @@ export class RandomFact {
         });
     };
 
+    public show() {
+        this.adviceContainer.classList.remove("visually-hidden");
+        
+        this.adviceContainer.classList.add("animate__fadeInDownEdit");
+        this.adviceContainer.classList.add("animate__animated");
+    }
+
+    public hide() {
+        this.adviceContainer.classList.remove("animate__animated");
+        this.adviceContainer.classList.remove("animate__fadeInDownEdit");
+
+        this.adviceContainer.classList.add("animate__fadeOut");
+        this.adviceContainer.classList.add("animate__animated");
+    }
+
     private updateText() {
         this.adviceText.innerHTML = this.currentAdvice.text;
     }
 
     private isHidden() : boolean {
         return this.adviceContainer.classList.contains("visually-hidden");
-    }
-
-    private show() {
-        this.adviceContainer.classList.remove("visually-hidden");
-        
-        this.adviceContainer.classList.add("animate__fadeInDownEdit");
-        this.adviceContainer.classList.add("animate__animated");
     }
 
     private fadeInAdviceText() {

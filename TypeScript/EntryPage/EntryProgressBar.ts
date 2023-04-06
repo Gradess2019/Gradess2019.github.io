@@ -2,8 +2,9 @@ import { CustomEvent } from "../Core/CustomEvent.js";
 import { Events } from "../Costants.js";
 
 export class EntryProgressBar {
-    public animationEndEvent: CustomEvent
-    public visibilityChangedEvent: CustomEvent
+    public animationStartEvent: CustomEvent;
+    public animationEndEvent: CustomEvent;
+    public visibilityChangedEvent: CustomEvent;
 
     private progressBar: Element;
     private progressBarFill: HTMLElement;
@@ -14,6 +15,7 @@ export class EntryProgressBar {
     private tickBind: (deltaTime: number) => void;
 
     constructor() {
+        this.animationStartEvent = new CustomEvent("entry-progress-bar:animation-start");
         this.animationEndEvent = new CustomEvent("entry-progress-bar:animation-end");
         this.visibilityChangedEvent = new CustomEvent("entry-progress-bar:visibility-changed");
 
@@ -25,6 +27,8 @@ export class EntryProgressBar {
 
         this.tickBind = this.tick.bind(this);
         Events.App.tick.on(this.tickBind);
+
+        this.progressBar.addEventListener("animationstart", (event) => this.animationStartEvent.fire(event));
 
         this.progressBar.addEventListener("animationend", (event) => {
             if (this.progressBar.classList.contains("animate__progressBarCollapse")) {

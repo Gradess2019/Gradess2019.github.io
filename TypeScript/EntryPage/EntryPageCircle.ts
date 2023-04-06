@@ -1,34 +1,38 @@
 import { AnimationConstants } from "../Costants.js";
 import { CustomEvent } from "../Core/CustomEvent.js";
+import { AnimationManager } from "../Core/AnimationManager.js";
 
 export class EntryPageCircle {
-    public on_animation_end_event: CustomEvent;
+    public onAnimationEndEvent: CustomEvent;
 
-    private progress_bar: Element;
+    private container: Element;
     private circle: Element;
-    private shadow_circle: Element;
+    private shadowCircle: Element;
 
     constructor() {
-        this.on_animation_end_event = new CustomEvent("entry-page-circle:on-animation-end");
+        this.onAnimationEndEvent = new CustomEvent("entry-page-circle:on-animation-end");
 
-        this.progress_bar = document.getElementsByClassName("g-progress-bar")[0];
+        this.container = document.getElementsByClassName("g-circle-container")[0];
         this.circle = document.getElementsByClassName("g-circle")[0];
-        this.shadow_circle = document.getElementsByClassName("g-shadow-circle")[0];
+        this.shadowCircle = document.getElementsByClassName("g-shadow-circle")[0];
+
+        AnimationManager.finishInfiniteAnimation(this.circle, "pulse", () => this.container.classList.contains("animate__moveDown30"));
+        AnimationManager.finishInfiniteAnimation(this.shadowCircle, "zoomInAndFadeOut", () => this.container.classList.contains("animate__moveDown30"));
     }
 
     public run(): void {
-        this.progress_bar.addEventListener("animationend", this.on_animation_end.bind(this));
+        this.container.addEventListener("animationend", this.onAnimationEnd.bind(this));
         this.show();
     }
 
     private show(): void {
-        this.stop_animations();
-        this.progress_bar.classList.add("animate__animated");
-        this.progress_bar.classList.remove("visually-hidden");
+        this.stopAnimations();
+        this.container.classList.add("animate__animated");
+        this.container.classList.remove("visually-hidden");
     }
 
     private pulse(): void {
-        this.stop_animations();
+        this.stopAnimations();
 
         this.circle.classList.add("animate__animated");
         this.circle.classList.add("animate__pulse");
@@ -37,22 +41,29 @@ export class EntryPageCircle {
     }
 
     private blink(): void {
-        this.shadow_circle.classList.add("animate__animated");
-        this.shadow_circle.classList.add("animate__zoomInFadeOut");
-        this.shadow_circle.classList.add("animate__slower");
-        this.shadow_circle.classList.add("animate__infinite");
-        this.shadow_circle.classList.remove("visually-hidden");
+        this.shadowCircle.classList.add("animate__animated");
+        this.shadowCircle.classList.add("animate__zoomInFadeOut");
+        this.shadowCircle.classList.add("animate__slower");
+        this.shadowCircle.classList.add("animate__infinite");
+        this.shadowCircle.classList.remove("visually-hidden");
     }
 
-    private move_up(): void {
-        this.progress_bar.classList.remove("animate__zoomIn");
-        this.progress_bar.classList.remove("animate__animated");
-        this.progress_bar.classList.add("animate__moveUp30");
-        this.progress_bar.classList.add("animate__animated");
+    private moveUp(): void {
+        this.container.classList.remove("animate__zoomIn");
+        this.container.classList.remove("animate__animated");
+        this.container.classList.add("animate__moveUp30");
+        this.container.classList.add("animate__animated");
     }
 
-    public stop_animations(): void {
-        this.progress_bar.classList.remove("animate__animated");
+    public moveDown(): void {
+        this.container.classList.remove("animate__animated");
+        
+        this.container.classList.add("animate__moveDown30");
+        this.container.classList.add("animate__animated");
+    }
+
+    public stopAnimations(): void {
+        this.container.classList.remove("animate__animated");
 
         this.circle.classList.remove("animate__animated");
         this.circle.classList.remove("animate__pulse");
@@ -60,15 +71,15 @@ export class EntryPageCircle {
         this.circle.classList.remove("animate__infinite");
     }
 
-    private on_animation_end(event: Event) {
+    private onAnimationEnd(event: Event) {
         const animationEvent = event as AnimationEvent;
         if (animationEvent.animationName === "zoomIn") {
-            this.move_up();
+            this.moveUp();
         } else if (animationEvent.animationName === "moveUp30") {
             this.pulse();
             this.blink();
         }
 
-        this.on_animation_end_event.fire(animationEvent);
+        this.onAnimationEndEvent.fire(animationEvent);
     }
 }
