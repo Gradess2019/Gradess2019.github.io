@@ -23,3 +23,8 @@ export class AppConstants {
     public static readonly TICK_INTERVAL: number = 1000 / AppConstants.TICK_RATE;
     public static readonly DELAY_BEFORE_START: number = 2000;
 }
+
+export class EntryPageConstants {
+    public static readonly LOADING_DELAY: number = 5000;
+    public static readonly COLLAPSE_DELAY: number = 1000;
+}

@@ -38,6 +38,13 @@
     transform-origin: top;
 }
 
+.animate__progressBarCollapse {
+    -webkit-animation-name: progressBarCollapse;
+    animation-name: progressBarCollapse;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
 @media(orientation: landscape) {
     @keyframes moveUp30 {
         0% {
@@ -62,6 +69,27 @@
             opacity: 1;
             -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes progressBarCollapse {
+        0% {
+            width: 25%;
+        }
+
+        50% {
+            width: 30px;
+            opacity: 1;
+        }
+
+        75% {
+            width: 30px;
+            opacity: 1;
+        }
+
+        100% {
+            width: 30px;
+            opacity: 0;
         }
     }
 }
@@ -90,6 +118,21 @@
             opacity: 1;
             -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes progressBarCollapse {
+        0% {
+            width: 25%;
+        }
+
+        50% {
+            width: 30px;
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
         }
     }
 }

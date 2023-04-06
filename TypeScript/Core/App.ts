@@ -1,5 +1,4 @@
 import { EntryPage } from "../EntryPage/EntryPage.js";
-import { Page } from "./Page.js";
 import { AppConstants, Events } from "../Costants.js";
 import { AssetLoader } from "../AssetLoader/AssetLoader.js";
 

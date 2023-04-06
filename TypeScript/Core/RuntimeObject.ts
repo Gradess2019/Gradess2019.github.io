@@ -1,3 +1,5 @@
+import { Assert } from "./Assert.js";
+
 export class RuntimeObject {
     private static objectCounter: Record<string, number> = {};
     

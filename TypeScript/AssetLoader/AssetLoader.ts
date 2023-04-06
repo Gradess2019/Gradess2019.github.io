@@ -1,53 +1,57 @@
-import { CustomEvent } from "../Core/CustomEvent.js";
 import { RuntimeObject } from "../Core/RuntimeObject.js";
+import { CustomEvent } from "../Core/CustomEvent.js";
 import { Asset } from "./Asset.js";
 
 export class AssetLoader extends RuntimeObject {
-    public on_asset_list_obtained_event: CustomEvent;
-    public on_asset_loaded_event: CustomEvent;
-    public on_all_assets_loaded_event: CustomEvent;
+    public onAssetListObtainedEvent: CustomEvent;
+    public onAssetLoadedEvent: CustomEvent;
+    public onAllAssetsLoadedEvent: CustomEvent;
 
-    private assets : Asset[];
-    private assets_loaded : number;
-    private assets_to_load : number;
+    private assets: Asset[];
+    private loadedAssetsCounter: number;
+    private pendingAssetsCounter: number;
 
     constructor() {
         const unique = true;
         super(unique);
 
         this.assets = [];
-        this.assets_loaded = 0;
-        this.assets_to_load = 0;
-        this.on_asset_list_obtained_event = new CustomEvent("asset-loader:asset-list-obtained");
-        this.on_asset_loaded_event = new CustomEvent("asset-loader:asset-loaded");
-        this.on_all_assets_loaded_event = new CustomEvent("asset-loader:all-assets-loaded");
+        this.loadedAssetsCounter = 0;
+        this.pendingAssetsCounter = 0;
+        this.onAssetListObtainedEvent = new CustomEvent("asset-loader:asset-list-obtained");
+        this.onAssetLoadedEvent = new CustomEvent("asset-loader:asset-loaded");
+        this.onAllAssetsLoadedEvent = new CustomEvent("asset-loader:all-assets-loaded");
     }
 
-    public get_total_assets() : number {
-        return this.assets_to_load;
+    public getTotalAssets(): number {
+        return this.pendingAssetsCounter;
     }
 
-    public get_loaded_assets() : number {
-        return this.assets_loaded;
+    public getLoadedAssets(): number {
+        return this.loadedAssetsCounter;
+    }
+
+    public isReady(): boolean {
+        return this.loadedAssetsCounter === this.pendingAssetsCounter;
     }
 
     public load() {
-        this.on_asset_list_obtained_event.on(this.create_assets_from_list.bind(this));
-        this.on_asset_list_obtained_event.on(this.load_assets.bind(this));
-        this.download_asset_list();
+        this.onAssetListObtainedEvent.on(this.createAssetsFromList.bind(this));
+        this.onAssetListObtainedEvent.on(this.loadAssets.bind(this));
+        this.downloadAssetList();
     }
 
-    private add_asset(asset : Asset) {
+    private addAsset(asset: Asset) {
         this.assets.push(asset);
-        this.assets_to_load ++;
+        this.pendingAssetsCounter++;
     }
 
-    private download_asset_list() {
+    private downloadAssetList() {
         let request = new XMLHttpRequest();
         request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
                 let data = JSON.parse(request.responseText);
-                this.on_asset_list_obtained(data);
+                this.onAssetListObtainedEvent.fire(data);
             } else {
                 console.log("Could not load assets.json");
             }
@@ -57,39 +61,30 @@ export class AssetLoader extends RuntimeObject {
         request.send();
     }
 
-    private create_assets_from_list(list : string[]) {
+    private createAssetsFromList(list: string[]) {
         for (let i = 0; i < list.length; i++) {
             let asset = new Asset(list[i]);
-            this.add_asset(asset);
+            this.addAsset(asset);
         }
     }
 
-    private load_assets() {
+    private loadAssets() {
         for (let i = 0; i < this.assets.length; i++) {
             let asset = this.assets[i];
-            asset.bind(this.on_asset_loaded.bind(this));
+            asset.bind(this.onAssetLoaded.bind(this));
             asset.load();
         }
     }
 
-    private on_asset_loaded(asset : Asset) {
-        asset.unbind(this.on_asset_loaded);
+    private onAssetLoaded(asset: Asset) {
+        asset.unbind(this.onAssetLoaded);
 
-        this.assets_loaded ++;
+        this.loadedAssetsCounter++;
 
-        this.on_asset_loaded_event.fire(asset)
-        
-        if (this.assets_loaded == this.assets_to_load) {
-            this.on_all_assets_loaded();
+        this.onAssetLoadedEvent.fire(asset)
+
+        if (this.isReady()) {
+            this.onAllAssetsLoadedEvent.fire(this.assets);
         }
     }
-
-    private on_asset_list_obtained(list: string[]) {
-        this.on_asset_list_obtained_event.fire(list)
-    }
-
-    private on_all_assets_loaded() {
-        this.on_all_assets_loaded_event.fire(this.assets);
-    }
-
 }
