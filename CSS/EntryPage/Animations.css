@@ -1,0 +1,46 @@
+:root {
+    --label-start-scale: 1;
+    --label-end-scale: 1.1;
+    --fill-start-scale: 1;
+    --fill-end-scale: 100;
+}
+
+.animate__labelPulse {
+    -webkit-animation-name: labelPulse;
+    animation-name: labelPulse;
+}
+
+.animate__fillWindow {
+    -webkit-animation-name: fillWindow;
+    animation-name: fillWindow;
+}
+
+@media(orientation: landscape) {
+    @keyframes labelPulse {
+        0% {
+            scale: var(--label-start-scale);
+        }
+
+        50% {
+            scale: var(--label-end-scale);
+        }
+
+        100% {
+            scale: var(--label-start-scale);
+        }
+    }
+
+    @keyframes fillWindow {
+        0% {
+            scale: var(--fill-start-scale);
+        }
+
+        100% {
+            scale: var(--fill-end-scale);
+        }
+    }
+}
+
+@media(orientation: portrait) {
+
+}

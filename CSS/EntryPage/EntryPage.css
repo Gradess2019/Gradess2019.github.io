@@ -6,6 +6,15 @@
     opacity: 0;
 }
 
+.g-circle {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.g-circle.ready:hover {
+    background-color: var(--vs-green-hover);
+    cursor: pointer;
+}
+
 .g-circle-container {
     position: absolute;
     top: 50%;
@@ -40,6 +49,24 @@
     translate: -50% 75%;
 }
 
+.g-label {
+    color: var(--vs-white);
+    opacity: 0.75;
+}
+
+.g-label.ready {
+    color: var(--vs-green);
+    opacity: 1.0;
+}
+
+.g-label.ready.animate__labelPulse {
+    translate: -50% -50%;
+}
+
+.g-label.ready.animate__fadeOut {
+    translate: -50% -50%;
+}
+
 @media(orientation: landscape) {
     :root {
         --g-advice-text-size: 2em;
@@ -52,6 +79,10 @@
 
     .g-circle-container .g-label {
         font-size: 2.5em;
+    }
+
+    .g-circle-container .g-label.ready {
+        font-size: 5em;
     }
 
     .g-advice-container {
@@ -76,6 +107,10 @@
 
     .g-circle-container .g-label {
         font-size: 4em;
+    }
+
+    .g-circle-container .g-label.ready {
+        font-size: 8em;
     }
 
     .g-advice-container {

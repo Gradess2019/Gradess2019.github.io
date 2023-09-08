@@ -8,6 +8,7 @@ export class EntryPageCircle {
     private container: Element;
     private circle: Element;
     private shadowCircle: Element;
+    private label: Element;
 
     constructor() {
         this.onAnimationEndEvent = new CustomEvent("entry-page-circle:on-animation-end");
@@ -15,6 +16,7 @@ export class EntryPageCircle {
         this.container = document.getElementsByClassName("g-circle-container")[0];
         this.circle = document.getElementsByClassName("g-circle")[0];
         this.shadowCircle = document.getElementsByClassName("g-shadow-circle")[0];
+        this.label = document.getElementsByClassName("g-label")[0];
 
         AnimationManager.finishInfiniteAnimation(this.circle, "pulse", () => this.container.classList.contains("animate__moveDown30"));
         AnimationManager.finishInfiniteAnimation(this.shadowCircle, "zoomInAndFadeOut", () => this.container.classList.contains("animate__moveDown30"));
@@ -57,9 +59,53 @@ export class EntryPageCircle {
 
     public moveDown(): void {
         this.container.classList.remove("animate__animated");
+        this.container.classList.remove("animate__moveUp30");
         
         this.container.classList.add("animate__moveDown30");
         this.container.classList.add("animate__animated");
+    }
+
+    private startTextHideAnimation(): void {
+        this.label.classList.remove("animate__animated");
+        this.label.classList.remove("animate__labelPulse");
+        this.label.classList.remove("animate__slower");
+        this.label.classList.remove("animate__fadeIn");
+        this.label.classList.remove("animate__infinite");
+
+        this.label.classList.add("animate__fadeOut");
+        this.label.classList.add("animate__animated");
+    }
+
+    private startTextShowAnimation(): void {
+        this.label.classList.remove("animate__animated");
+        this.label.classList.remove("animate__fadeOut");
+        this.label.classList.remove("opacity-75");
+
+        this.label.classList.add("ready");
+        this.label.classList.add("animate__fadeIn");
+        this.label.classList.add("animate__animated");
+    }
+
+    private startTextPulseAnimation(): void {
+        this.label.classList.remove("animate__animated");
+        this.label.classList.remove("animate__fadeIn");
+        this.label.classList.remove("translate-middle");
+
+        this.label.classList.add("animate__labelPulse");
+        this.label.classList.add("animate__infinite");
+        this.label.classList.add("animate__slower")
+        this.label.classList.add("animate__animated");
+    }
+
+    private hide(): void {
+        this.circle.classList.remove("animate__animated");
+        this.circle.classList.remove("animate__pulse");
+        this.circle.classList.remove("ready");
+
+        this.circle.classList.add("animate__fillWindow");
+        this.circle.classList.add("animate__animated");
+
+        this.startTextHideAnimation();
     }
 
     public stopAnimations(): void {
@@ -78,7 +124,17 @@ export class EntryPageCircle {
         } else if (animationEvent.animationName === "moveUp30") {
             this.pulse();
             this.blink();
+        } else if (animationEvent.animationName === "moveDown30") {
+            this.startTextHideAnimation();
+        } else if (animationEvent.animationName === "fadeOut" && animationEvent.target === this.label && !this.circle.classList.contains("animate__fillWindow")) {
+            this.label.textContent = "GO!";
+            this.startTextShowAnimation();
+            this.circle.addEventListener("click", () => { this.hide(); });
+        } else if (animationEvent.animationName === "fadeIn" && animationEvent.target === this.label) {
+            this.startTextPulseAnimation();
+            this.circle.classList.add("ready");
         }
+
 
         this.onAnimationEndEvent.fire(animationEvent);
     }

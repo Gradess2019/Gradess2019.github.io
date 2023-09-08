@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="CSS/General.css">
     <link rel="stylesheet" href="CSS/Fonts.css">
     <link rel="stylesheet" href="CSS/Colors.css">
-    <link rel="stylesheet" href="CSS/EntryPage.css">
+    <link rel="stylesheet" href="CSS/EntryPage/EntryPage.css">
     <link rel="stylesheet" href="CSS/Animations.css">
+    <link rel="stylesheet" href="CSS/EntryPage/Animations.css">
     <script src="JS/EntryPage/EntryPage.js" type="module"></script>
 </head>
 <script type="module">
@@ -30,9 +31,9 @@
 
     <div class="g-circle-container animate__zoomIn animate__faster">
         <div class="g-circle rounded-circle vs-bg-light-gray g-shadow-50 text-black"></div>
-        <div class="g-shadow-circle rounded-circle g-shadow-50 text-danger visually-hidden"></div>
+        <div class="g-shadow-circle rounded-circle g-shadow-50 text-danger visually-hidden pe-none"></div>
 
-        <div class="g-label vs-white text-center opacity-75 position-absolute top-50 start-50 translate-middle">
+        <div class="g-label text-center position-absolute top-50 start-50 translate-middle user-select-none pe-none">
             Preparing your journey
         </div>
     </div>
@@ -46,7 +47,7 @@
     <div class="g-advice-container position-absolute start-50 visually-hidden animate__faster">
         <div class="g-advice text-center">
             <div class="g-advice-title">
-                <span class="vs-white opacity-75">Did you know?</span>
+                <span class="vs-white opacity-75 user-select-none">Did you know?</span>
             </div>
             <div class="g-advice-content text-center" style="margin-top: 1.5em;">
                 <span class="g-advice-text vs-white">The average person spends about two years on the phone in a lifetime.</span>

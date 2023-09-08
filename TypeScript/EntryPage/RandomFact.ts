@@ -68,6 +68,7 @@ export class RandomFact {
 
         this.adviceContainer.classList.add("animate__fadeOut");
         this.adviceContainer.classList.add("animate__animated");
+        this.adviceContainer.classList.add("pe-none");
     }
 
     private updateText() {

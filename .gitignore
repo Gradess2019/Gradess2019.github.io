@@ -1,3 +1,4 @@
 /.idea/
 JS/*
 !JS/ThirdParty/
+main.py
