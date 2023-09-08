@@ -1,9 +1,0 @@
-{
-  "title": "Quidditch",
-  "companyName": "RTU IT Lab",
-  "position": "Unreal Engine & Unity Developer",
-  "technologies": "Unreal Engine 4, Futurift seat",
-  "platform": "Desktop",
-  "description": "A gaming application for virtual reality glasses and the Futurift V2. The game is based on the Harry Potter universe. During the session, the player, being in the Futurift simulator and the Oculus Rift, controls the broom with the left controller, moving its position, and the right controller interacts with the quofle (game ball). The player's task is to score as many balls into the ring as possible in the allotted time.\nThe Futurift chair simulates broom tilting, thereby enhancing the player's immersion in virtual reality.",
-  "videoUrl": "https://www.youtube.com/embed/ua2ugfrAVNM"
-}
