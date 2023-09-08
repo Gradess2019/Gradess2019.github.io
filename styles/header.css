@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    height: 80px;
+    padding: 0px 160px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .page-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.header .page-links .item {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
