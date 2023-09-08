@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Disket Mono";
+    src: url(../fonts/DisketMono.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter.ttf);
+}
+
 :root {
     /* Colors */
     --Primary-1: #FE056B;
