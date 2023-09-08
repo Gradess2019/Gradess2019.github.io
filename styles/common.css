@@ -1,0 +1,216 @@
+@font-face {
+    font-family: "Disket Mono";
+    src: url(../fonts/DisketMono.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter.ttf);
+}
+
+:root {
+    /* Colors */
+    --Primary-1: #FE056B;
+    --Primary-2: #59FFFF;
+    --White-90: #FFFFFFe6;
+    --White-50: #FFFFFF80;
+    --Black: #020202;
+
+    /* Header */
+    --Header-font-family: Disket Mono;
+    --Header-font-style: normal;
+    --Header-font-weight: 700;
+    --Header-line-height-large: 140%;
+    --Header-line-height-small: 120%;
+
+    --Header-1-size: 80px;
+    --Header-2-size: 56px;
+    --Header-3-size: 48px;
+    --Header-4-size: 36px;
+    --Header-5-size: 32px;
+    --Header-6-size: 20px;
+
+
+    /* Title */
+    --Title-font-family: Inter;
+    --Title-font-style: normal;
+    --Title-font-weight: 600;
+    --Title-line-height: 140%;
+
+    --Title-1-size: 24px;
+    --Title-2-size: 20px;
+    --Title-3-size: 16px;
+    --Title-4-size: 14px;
+
+
+    /* Body */
+    --Body-font-family: Inter;
+    --Body-font-style: normal;
+    --Body-font-weight: 400;
+    --Body-line-height: 160%;
+
+    --Body-1-size: 18px;
+    --Body-2-size: 16px;
+    --Body-3-size: 14px;
+
+    --Body-1-letter-spacing: 0.09px;
+    --Body-2-letter-spacing: 0.08px;
+    --Body-3-letter-spacing: 0.07px;
+
+
+    /* Descriptor */
+    --Descriptor-font-family: Inter;
+    --Descriptor-font-style: normal;
+    --Descriptor-font-weight: 400;
+    --Descriptor-line-height: normal;
+    --Descriptor-text-transform: uppercase;
+
+    --Descriptor-1-size: 16px;
+    --Descriptor-2-size: 14px;
+
+    --Descriptor-1-letter-spacing: 3.36px;
+    --Descriptor-2-letter-spacing: 2.94px;
+
+
+    /* Link */
+    --Link-font-family: Inter;
+    --Link-font-size: 16px;
+    --Link-font-style: normal;
+    --Link-font-weight: 700;
+    --Link-line-height: 120%;
+}
+
+.white-90 {
+    color: var(--White-90);
+}
+
+.white-50 {
+    color: var(--White-50);
+}
+
+.black {
+    color: var(--Black);
+}
+
+.bg-black {
+    background-color: var(--Black);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Header style */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--Header-font-family);
+    font-style: var(--Header-font-style);
+    font-weight: var(--Header-font-weight);
+}
+
+h1, h2, h3 {
+    line-height: var(--Header-line-height-small);
+}
+
+h4, h5, h6 {
+    line-height: var(--Header-line-height-large);
+}
+
+h1 {
+    font-size: var(--Header-1-size);
+}
+
+h2 {
+    font-size: var(--Header-2-size);
+}
+
+h3 {
+    font-size: var(--Header-3-size);
+}
+
+h4 {
+    font-size: var(--Header-4-size);
+}
+
+h5 {
+    font-size: var(--Header-5-size);
+}
+
+h6 {
+    font-size: var(--Header-6-size);
+}
+
+/* Title style */
+.title-1, .title-2, .title-3, .title-4 {
+    font-family: var(--Title-font-family);
+    font-style: var(--Title-font-style);
+    font-weight: var(--Title-font-weight);
+    line-height: var(--Title-line-height);
+}
+
+.title-1 {
+    font-size: var(--Title-1-size);
+}
+
+.title-2 {
+    font-size: var(--Title-2-size);
+}
+
+.title-3 {
+    font-size: var(--Title-3-size);
+}
+
+.title-4 {
+    font-size: var(--Title-4-size);
+}
+
+/* Body style */
+.body-1, .body-2, .body-3 {
+    font-family: var(--Body-font-family);
+    font-style: var(--Body-font-style);
+    font-weight: var(--Body-font-weight);
+    line-height: var(--Body-line-height);
+}
+
+.body-1 {
+    font-size: var(--Body-1-size);
+    letter-spacing: var(--Body-1-letter-spacing);
+}
+
+.body-2 {
+    font-size: var(--Body-2-size);
+    letter-spacing: var(--Body-2-letter-spacing);
+}
+
+.body-3 {
+    font-size: var(--Body-3-size);
+    letter-spacing: var(--Body-3-letter-spacing);
+}
+
+/* Descriptor style */
+.descriptor-1, .descriptor-2 {
+    font-family: var(--Descriptor-font-family);
+    font-style: var(--Descriptor-font-style);
+    font-weight: var(--Descriptor-font-weight);
+    line-height: var(--Descriptor-line-height);
+    text-transform: var(--Descriptor-text-transform);
+}
+
+.descriptor-1 {
+    font-size: var(--Descriptor-1-size);
+    letter-spacing: var(--Descriptor-1-letter-spacing);
+}
+
+.descriptor-2 {
+    font-size: var(--Descriptor-2-size);
+    letter-spacing: var(--Descriptor-2-letter-spacing);
+}
+
+/* Link style */
+.link {
+    font-family: var(--Link-font-family);
+    font-size: var(--Link-font-size);
+    font-style: var(--Link-font-style);
+    font-weight: var(--Link-font-weight);
+    line-height: var(--Link-line-height);
+}
