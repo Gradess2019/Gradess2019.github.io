@@ -19,3 +19,9 @@
     align-items: center;
     gap: 10px;
 }
+
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
