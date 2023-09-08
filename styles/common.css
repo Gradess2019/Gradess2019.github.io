@@ -80,6 +80,22 @@
     --Link-line-height: 120%;
 }
 
+.white-90 {
+    color: var(--White-90);
+}
+
+.white-50 {
+    color: var(--White-50);
+}
+
+.black {
+    color: var(--Black);
+}
+
+.bg-black {
+    background-color: var(--Black);
+}
+
 body {
     padding: 0;
     margin: 0;
