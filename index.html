@@ -59,7 +59,7 @@
                                 TROFIMOV
                             </h1>
                             <div class="main-code-container code white-90">
-                                <div class="main-code"><p class="main-code-content"></p></div>
+                                <div class="main-code"></div>
                             </div>
                         </div>
                     </div>
@@ -220,7 +220,36 @@
             fetch("code-sample.txt")
                 .then(response => response.text())
                 .then(text => {
-                    document.getElementsByClassName("main-code-content")[0].innerHTML = text;
+                    let mainCodeBlock = document.getElementsByClassName("main-code")[0];
+                    
+                    let p1 = document.createElement("p");
+                    let p2 = document.createElement("p");
+                    
+                    p1.innerHTML = text;
+                    p2.innerHTML = text;
+
+                    mainCodeBlock.appendChild(p1);
+                    mainCodeBlock.appendChild(p2);
+
+                    p1.classList.add("main-code-content");
+
+                    let currentCodeBlock = p1;
+                    let nextCodeBlock = p2;
+                    let animateNext = function() {
+                        currentCodeBlock.parentElement.removeChild(currentCodeBlock);
+                        nextCodeBlock.classList.add("main-code-content");
+                        currentCodeBlock.classList.remove("main-code-content");
+
+                        let tempNextBlock = currentCodeBlock;
+                        currentCodeBlock = nextCodeBlock;
+                        nextCodeBlock = tempNextBlock;
+
+                        mainCodeBlock.appendChild(nextCodeBlock);
+                        console.log(nextCodeBlock);
+                    }
+
+                    currentCodeBlock.onanimationend = animateNext;
+                    nextCodeBlock.onanimationend = animateNext;
                 })
                 .catch(error => console.error(error));
         </script>
