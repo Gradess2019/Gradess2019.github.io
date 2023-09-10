@@ -147,3 +147,11 @@
     backdrop-filter: blur(14px);
     z-index: -5;
 }
+
+.stats-bg-container svg {
+    position: absolute;
+}
+
+.stats-bg-border {
+    transform: translate(-21.5px, -23.1px);
+}
