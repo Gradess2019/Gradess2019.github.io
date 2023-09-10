@@ -67,12 +67,30 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.main-code {
+.main-code-container {
     display: flex;
     width: 438px;
     height: 256px;
     justify-content: center;
     align-items: center;
+    /* overflow: hidden; */
+}
+
+.main-code {
+    width: 438px;
+    height: 256px;
+    flex-shrink: 0;
+    
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 15.82%, #FFF 50.82%, rgba(255, 255, 255, 0.00) 70.63%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+    overflow: hidden;
+}
+
+.main-code-content {
+    animation: scroll 15s linear infinite;
 }
 
 .stat-item {
@@ -154,4 +172,15 @@
 
 .stats-bg-border {
     transform: translate(-21.5px, -23.1px);
+}
+
+
+@keyframes scroll {
+    0% {
+        margin-top: 0px;
+    }
+
+    100% {
+        margin-top: -1827px;
+    }
 }

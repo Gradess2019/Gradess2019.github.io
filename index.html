@@ -58,8 +58,8 @@
                                 <br>
                                 TROFIMOV
                             </h1>
-                            <div class="main-code">
-                                MY AWESOME CODE HERE
+                            <div class="main-code-container code white-90">
+                                <div class="main-code"><p class="main-code-content"></p></div>
                             </div>
                         </div>
                     </div>
@@ -216,5 +216,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            fetch("code-sample.txt")
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementsByClassName("main-code-content")[0].innerHTML = text;
+                })
+                .catch(error => console.error(error));
+        </script>
     </body>
 </html>

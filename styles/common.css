@@ -78,6 +78,13 @@
     --Link-font-style: normal;
     --Link-font-weight: 700;
     --Link-line-height: 120%;
+
+    /* Code */
+    --Code-font-family: Inter;
+    --Code-font-size: 18px;
+    --Code-font-style: normal;
+    --Code-font-weight: 400;
+    --Code-line-height: normal;
 }
 
 .white-90 {
@@ -224,4 +231,13 @@ h6 {
     font-style: var(--Link-font-style);
     font-weight: var(--Link-font-weight);
     line-height: var(--Link-line-height);
+}
+
+/* Code style */
+.code {
+    font-family: var(--Code-font-family);
+    font-size: var(--Code-font-size);
+    font-style: var(--Code-font-style);
+    font-weight: var(--Code-font-weight);
+    line-height: var(--Code-line-height);
 }

@@ -1,0 +1,68 @@
+// Copyright 2023 Gradess Games. All Rights Reserved.<br>
+<br>
+#pragma once<br>
+<br>
+#include "CoreMinimal.h"<br>
+#include "ActorLockerTypes.h"<br>
+#include "UObject/Object.h"<br>
+#include "ActorLockerManager.generated.h"<br>
+<br>
+class UActorLockerSettings;<br>
+struct ISceneOutlinerTreeItem;<br>
+class AActor;<br>
+<br>
+/**<br>
+ * <br>
+ */<br>
+UCLASS()<br>
+class ACTORLOCKER_API UActorLockerManager : public UObject<br>
+{<br>
+	GENERATED_BODY()<br>
+<br>
+protected:<br>
+	UPROPERTY(BlueprintReadOnly, Category = "Actor Locker Manager")<br>
+	const UActorLockerSettings* Settings;<br>
+	<br>
+	TMap<uint32, FLockerTreeItem> Items;<br>
+	TSet<uint32> ToggledItems;<br>
+<br>
+public:<br>
+	virtual void PostInitProperties() override;<br>
+	virtual void BeginDestroy() override;<br>
+	virtual void Serialize(FArchive& Ar) override;<br>
+<br>
+	void InitItem(const TWeakPtr<ISceneOutlinerTreeItem>& InTreeItem);<br>
+	void SetLockTreeItem(const TWeakPtr<ISceneOutlinerTreeItem>& InTreeItem, const bool bInLock, const bool bPropagateToChildren = true);<br>
+	void UnlockById(const uint32 InId);<br>
+<br>
+	UFUNCTION(BlueprintCallable, Category = "Actor Locker Manager")<br>
+	void SetLockActor(AActor* InActor, const bool bInLock, const bool bPropagateToChildren = true);<br>
+<br>
+	// Toggling lock state for locked actors (useful for quick change for locked actors)<br>
+	UFUNCTION(BlueprintCallable, Category = "Actor Locker Manager")<br>
+	void ToggleLockedActors();<br>
+	<br>
+	UFUNCTION(BlueprintPure, Category = "Actor Locker Manager")<br>
+	bool IsActorLocked(const AActor* InActor) const;<br>
+	bool IsItemLocked(const TWeakPtr<ISceneOutlinerTreeItem>& InTreeItem) const;<br>
+<br>
+	void CheckParentLock(const TWeakPtr<ISceneOutlinerTreeItem>& InTreeItem);<br>
+	bool IsAnyChildUnlocked(const TWeakPtr<ISceneOutlinerTreeItem>& InParentTreeItem) const;<br>
+	void UpdateLockState();<br>
+<br>
+	UFUNCTION(BlueprintPure, Category = "Actor Locker Manager")<br>
+	TSet<AActor*> GetLockedActors() const;<br>
+<br>
+	UFUNCTION(BlueprintPure, Category = "Actor Locker Manager")<br>
+	static UActorLockerManager* GetActorLockerManager();<br>
+<br>
+protected:<br>
+	UFUNCTION(BlueprintCallable, Category = "Actor Locker Manager")<br>
+	void UpdateTagState(AActor* Actor, bool bInLock);<br>
+	<br>
+	UFUNCTION()<br>
+	void OnActorDeleted(AActor* InActor);<br>
+<br>
+	void OnPostTick(float InDeltaTime);<br>
+	void OnInputEvent(const FSlateDebuggingInputEventArgs& SlateDebuggingInputEventArgs);<br>
+};<br>
