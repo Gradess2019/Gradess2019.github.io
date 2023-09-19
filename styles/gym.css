@@ -1,0 +1,30 @@
+.gym {
+    width: 1440px;
+}
+
+.gym-content {
+    display: flex;
+    padding: 80px 160px 120px 160px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gym-photo {
+    width: 610px;
+    height: 610px;
+    flex-shrink: 0;
+    margin-left: -32px;
+}
+
+.gym-description {
+    display: flex;
+    width: 448px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.gym-description p {
+    margin: 0;
+}
