@@ -1,0 +1,38 @@
+.projects {}
+
+.projects-content {
+    display: flex;
+    padding: 120px 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.projects-toolbar {
+    display: flex;
+    width: 1120px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects-toolbar-title {
+    display: flex;
+    width: 700.5px;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.projects-toolbar-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.projects-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}

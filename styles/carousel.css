@@ -1,0 +1,24 @@
+.carousel-button {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    box-shadow: 0px 1px 4px 1px rgba(36, 36, 36, 0.07);
+}
+
+.carousel-button.left {
+    border-image: linear-gradient(-45deg, rgba(36, 36, 36, 0.07) 0%, white 100%) 1;
+}
+
+.carousel-button.right {
+    border-image: linear-gradient(45deg, rgba(36, 36, 36, 0.07), white) 1;
+}
+
+.carousel-button.right > img {
+    transform: rotate(180deg);
+}
+.carousel-button-content {
+    padding: 8px;
+}
