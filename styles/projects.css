@@ -67,6 +67,19 @@
     flex-shrink: 0;
 }
 
+.project-list-item-image-title {
+    background-repeat: no-repeat;
+    background-size: 544px 304px;
+    width: 542px;
+    height: 302px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .project-list-item-image>img {
     width: 544px;
     height: 304px;
@@ -105,6 +118,17 @@
 
 .project-list-item-button-container {
     width: 100%;
+}
+
+.project-description-overflow {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.00) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .project-show-more {

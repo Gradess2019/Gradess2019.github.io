@@ -336,60 +336,6 @@
                         </div>
                     </div>
                     <div class="projects-list">
-                        <div class="project-list-item">
-                            <div class="project-list-item-background">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="546" height="755" viewBox="0 0 546 755" fill="none">
-                                    <path d="M1 0.5H0.5V1V754V754.5H1H273H409H477H511H511.2L511.345 754.362L545.345 721.954L545.5 721.807V721.592V1V0.5H545H1Z" fill="url(#paint0_linear_1260_153)" fill-opacity="0.5" stroke="#FE056B"/>
-                                    <defs>
-                                        <linearGradient id="paint0_linear_1260_153" x1="273" y1="1" x2="273" y2="766.863" gradientUnits="userSpaceOnUse">
-                                            <stop stop-opacity="0"/>
-                                            <stop offset="0.186243" stop-opacity="0.19"/>
-                                            <stop offset="0.991194" stop-color="#FE056B" stop-opacity="0.5"/>
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <div class="project-list-item-image">
-                                <img src="images/ufl.png">
-                            </div>
-                            <div class="project-list-item-description-block">
-                                <div class="project-list-item-description-content">
-                                    <p class="project-list-item-title white-90 title-1">
-                                        UFL
-                                    </p>
-                                    <div class="project-list-item-description white-50 body-2">
-                                        <p>
-                                            <span class="title-3 white-90">Company:</span>
-                                            Strikerz Inc.
-                                        </p>
-                                        <p>
-                                            <span class="title-3 white-90">Position:</span>
-                                            Unreal Engine Developer
-                                        </p>
-                                        <p>
-                                            <span class="title-3 white-90">Technologies:</span>
-                                            Unreal Engine 4
-                                        </p>
-                                        <p>
-                                            <span class="title-3 white-90">Brief description:</span>
-                                            UFL is a free-to-play association football video game developed and published by Strikerz Inc. It was initially scheduled for release on PlayStation 4, PlayStation 5, Xbox One, Xbox Series X, and Series S in 2022.
-                                        </p>
-
-                                        <div class="white-90 title-3 project-show-more">
-                                            show more 
-                                            <img src="images/arrow-down.svg"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item-button-container">
-                                <div class="carousel-item-button">
-                                    <div class="carousel-item-button-content">
-                                        <p class="link">Try it!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -423,13 +369,92 @@
                         nextCodeBlock = tempNextBlock;
 
                         mainCodeBlock.appendChild(nextCodeBlock);
-                        console.log(nextCodeBlock);
                     }
 
                     currentCodeBlock.onanimationend = animateNext;
                     nextCodeBlock.onanimationend = animateNext;
                 })
                 .catch(error => console.error(error));
+
+            fetch("project-item.html")
+                .then(response => response.text())
+                .then(htmlCode => {
+                    let htmlCodeCopy = htmlCode;
+
+                    fetch("projects.json")
+                        .then(response => response.json())
+                        .then(projects => {
+                            projects.reverse();
+
+                            // for each project in projects
+                            for (let i = 0; i < projects.length; i++) {
+                                let project = projects[i];
+                                let projectItem = htmlCodeCopy;
+
+                                // replace {{projectName}} with project.name
+                                projectItem = projectItem.replace("{{projectName}}", project.projectName);
+
+                                // replace {{company}} with project.company
+                                projectItem = projectItem.replace("{{company}}", project.company);
+
+                                // replace {{position}} with project.position
+                                projectItem = projectItem.replace("{{position}}", project.position);
+
+                                // replace {{technologies}} with project.technologies
+                                projectItem = projectItem.replace("{{technologies}}", project.technologies);
+
+                                // replace {{platform}} with project.platform
+                                projectItem = projectItem.replace("{{platform}}", project.platform);
+
+                                if (project.platform.length <= 0) {
+                                    projectItem = projectItem.replace("{{platformVisibility}}", "hidden");
+                                }
+
+                                // replace {{description}} with project.description
+                                projectItem = projectItem.replace("{{description}}", project.description);
+
+                                // replace {{descriptionClass}} with project.descriptionClass
+
+                                // replace {{buttonText}} with project.buttonText
+                                projectItem = projectItem.replace("{{buttonText}}", project.buttonText);
+
+                                // replace {{imageUrl}} with project.imageUrl
+                                projectItem = projectItem.replace("{{imageUrl}}", project.imageUrl);
+
+                                // replace {{fallbackName}} with project.fallbackName
+                                if (project.fallbackName.length > 0) {
+                                    projectItem = projectItem.replace("{{fallbackName}}", project.fallbackName);
+                                } else {
+                                    projectItem = projectItem.replace("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
+                                }
+
+                                if (!project.showMoreVisible) {
+                                    projectItem = projectItem.replace("{{showMoreVisible}}", "hidden");
+                                    projectItem = projectItem.replace("{{descriptionClass}}", "");
+                                } 
+                                else {
+                                    projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
+                                }
+
+                                if (!project.buttonVisible) {
+                                    projectItem = projectItem.replace("{{buttonVisible}}", "hidden");
+                                }
+
+
+                                // append projectItem to projects-list
+                                let projectsList = document.getElementsByClassName("projects-list")[0];
+                                projectsList.innerHTML += projectItem;
+                            }
+                        })
+                })
+
+
+            // fetch("projects.json")
+            //     .then(response => response.json())
+            //     .then(text => {
+            //         console.log(text);
+            //     })
+            //     .catch(error => console.error(error));
         </script>
     </body>
 </html>

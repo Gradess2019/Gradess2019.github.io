@@ -48,11 +48,12 @@
     text-align: center;
     color: #FFF;
 
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-item-button-content>p {
     position: relative;
     margin: 0;
-    left: 87px;
-    top: 23px;
+    top: -2px;
 }

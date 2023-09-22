@@ -241,3 +241,7 @@ h6 {
     font-weight: var(--Code-font-weight);
     line-height: var(--Code-line-height);
 }
+
+.hidden {
+    display: none !important;
+}
