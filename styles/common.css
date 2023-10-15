@@ -38,6 +38,7 @@
     --Title-line-height: 140%;
 
     --Title-1-size: 28px;
+    --Title-1-5-size: 24px;
     --Title-2-size: 20px;
     --Title-3-size: 16px;
     --Title-4-size: 14px;
@@ -159,7 +160,7 @@ h6 {
 }
 
 /* Title style */
-.title-1, .title-2, .title-3, .title-4 {
+.title-1, .title-1-5, .title-2, .title-3, .title-4 {
     font-family: var(--Title-font-family);
     font-style: var(--Title-font-style);
     font-weight: var(--Title-font-weight);
@@ -168,6 +169,10 @@ h6 {
 
 .title-1 {
     font-size: var(--Title-1-size);
+}
+
+.title-1-5 {
+    font-size: var(--Title-1-5-size);
 }
 
 .title-2 {
