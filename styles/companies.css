@@ -1,0 +1,109 @@
+.companies {}
+
+.companies-content {
+    display: flex;
+    height: 583px;
+    padding: 120px 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+}
+
+.companies-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    height: 67px;
+}
+
+.companies-toolbar-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.companies-toolbar-title {
+    display: flex;
+    width: 702px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.companies-toolbar-title > h2 {
+    margin: 0;
+}
+
+.companies-list {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    gap: 32px;
+    
+    align-self: stretch;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.companies-list::-webkit-scrollbar {
+    display: none;
+}
+
+.comapny-list-item {
+    display: flex;
+    width: 544px;
+    height: 452px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.comapny-list-item-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.company-list-item-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+    margin: 32px;
+}
+
+.company-list-item-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.company-list-item-title > p {
+    margin: 0;
+}
+
+.company-list-item-responsibilities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.responsibilities-title {
+    margin: 0;
+}
+
+.responsibilities-list {
+    margin: 0;
+    margin-top: 4px;
+    padding-left: 27px;
+}

@@ -1,0 +1,59 @@
+<div class="project-list-item">
+        <div class="project-list-item-background">
+            <svg xmlns="http://www.w3.org/2000/svg" width="546" height="755" viewBox="0 0 546 755" fill="none">
+                <path d="M1 0.5H0.5V1V754V754.5H1H273H409H477H511H511.2L511.345 754.362L545.345 721.954L545.5 721.807V721.592V1V0.5H545H1Z" fill="url(#paint0_linear_1260_153)" fill-opacity="0.5" stroke="#FE056B"/>
+                <defs>
+                    <linearGradient id="paint0_linear_1260_153" x1="273" y1="1" x2="273" y2="766.863" gradientUnits="userSpaceOnUse">
+                        <stop stop-opacity="0"/>
+                        <stop offset="0.186243" stop-opacity="0.19"/>
+                        <stop offset="0.991194" stop-color="#FE056B" stop-opacity="0.5"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    <div class="project-list-item-image">
+        <div class="project-list-item-image-title white-90" style="background-image: url('{{imageUrl}}');">
+            <h4>&lt;{{fallbackName}}/&gt;</h4>
+        </div>
+    </div>
+    <div class="project-list-item-description-block">
+        <div class="project-list-item-description-content">
+            <p class="project-list-item-title white-90 title-1">
+                {{projectName}}
+            </p>
+            <div class="project-list-item-description white-50 body-2">
+                <p>
+                    <span class="title-3 white-90">Company:</span>
+                    {{company}}
+                </p>
+                <p>
+                    <span class="title-3 white-90">Position:</span>
+                    {{position}}
+                </p>
+                <p>
+                    <span class="title-3 white-90">Technologies:</span>
+                    {{technologies}}
+                </p>
+                <p class="{{platformVisibility}}">
+                    <span class="title-3 white-90">Platform:</span>
+                    {{platform}}
+                </p>
+                <p class="{{descriptionClass}}">
+                    <span class="title-3 white-90">Brief description:</span>
+                    {{description}}
+                </p>
+                <div class="white-90 title-3 project-show-more {{showMoreVisible}}">
+                    show more
+                    <img src="images/arrow-down.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-item-button-container {{buttonVisible}}">
+        <div class="carousel-item-button">
+            <div class="carousel-item-button-content">
+                <p class="link">{{buttonText}}</p>
+            </div>
+        </div>
+    </div>
+</div>
