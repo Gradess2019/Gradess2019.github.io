@@ -355,137 +355,156 @@
                         </div>
                     </div>
                     <div class="companies-list">
-                        <div class="comapny-list-item">
-                            <div class="comapny-list-item-background">
-                                <img src="images/company_background_large.svg"/>
-                            </div>
-                            <div class="company-list-item-description">
-                                <div class="company-list-item-title">
-                                    <p class="title-1-5 white-90">Unreal Engine Developer | Strikerz Inc.</p>
-                                    <p class="body-2 white-50">November 2021 — till now</p>
-                                </div>
-                                <div class="company-list-item-responsibilities">
-                                    <p class="responsibilities-title title-3 white-90">Responsibilities:</p>
-                                    <ul class="responsibilities-list white-50 body-2">
-                                        <li>Developing a multiplayer game in Unreal Engine 4</li>
-                                        <li>Implementing gameplay mechanics</li>
-                                        <li>Creating UI</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-            fetch("code-sample.txt")
-                .then(response => response.text())
-                .then(text => {
-                    let mainCodeBlock = document.getElementsByClassName("main-code")[0];
-                    
-                    let p1 = document.createElement("p");
-                    let p2 = document.createElement("p");
-                    
-                    p1.innerHTML = text;
-                    p2.innerHTML = text;
 
-                    mainCodeBlock.appendChild(p1);
-                    mainCodeBlock.appendChild(p2);
-
-                    p1.classList.add("main-code-content");
-
-                    let currentCodeBlock = p1;
-                    let nextCodeBlock = p2;
-                    let animateNext = function() {
-                        currentCodeBlock.parentElement.removeChild(currentCodeBlock);
-                        nextCodeBlock.classList.add("main-code-content");
-                        currentCodeBlock.classList.remove("main-code-content");
-
-                        let tempNextBlock = currentCodeBlock;
-                        currentCodeBlock = nextCodeBlock;
-                        nextCodeBlock = tempNextBlock;
-
-                        mainCodeBlock.appendChild(nextCodeBlock);
-                    }
-
-                    currentCodeBlock.onanimationend = animateNext;
-                    nextCodeBlock.onanimationend = animateNext;
-                })
-                .catch(error => console.error(error));
-
-            fetch("project-item.html")
-                .then(response => response.text())
-                .then(htmlCode => {
-                    let htmlCodeCopy = htmlCode;
-
-                    fetch("projects.json")
-                        .then(response => response.json())
-                        .then(projects => {
-                            projects.reverse();
-
-                            // for each project in projects
-                            for (let i = 0; i < projects.length; i++) {
-                                let project = projects[i];
-                                let projectItem = htmlCodeCopy;
-
-                                // replace {{projectName}} with project.name
-                                projectItem = projectItem.replace("{{projectName}}", project.projectName);
-
-                                // replace {{company}} with project.company
-                                projectItem = projectItem.replace("{{company}}", project.company);
-
-                                // replace {{position}} with project.position
-                                projectItem = projectItem.replace("{{position}}", project.position);
-
-                                // replace {{technologies}} with project.technologies
-                                projectItem = projectItem.replace("{{technologies}}", project.technologies);
-
-                                // replace {{platform}} with project.platform
-                                projectItem = projectItem.replace("{{platform}}", project.platform);
-
-                                if (project.platform.length <= 0) {
-                                    projectItem = projectItem.replace("{{platformVisibility}}", "hidden");
-                                }
-
-                                // replace {{description}} with project.description
-                                projectItem = projectItem.replace("{{description}}", project.description);
-
-                                // replace {{descriptionClass}} with project.descriptionClass
-
-                                // replace {{buttonText}} with project.buttonText
-                                projectItem = projectItem.replace("{{buttonText}}", project.buttonText);
-
-                                // replace {{imageUrl}} with project.imageUrl
-                                projectItem = projectItem.replace("{{imageUrl}}", project.imageUrl);
-
-                                // replace {{fallbackName}} with project.fallbackName
-                                if (project.fallbackName.length > 0) {
-                                    projectItem = projectItem.replace("{{fallbackName}}", project.fallbackName);
-                                } else {
-                                    projectItem = projectItem.replace("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
-                                }
-
-                                if (!project.showMoreVisible) {
-                                    projectItem = projectItem.replace("{{showMoreVisible}}", "hidden");
-                                    projectItem = projectItem.replace("{{descriptionClass}}", "");
-                                } 
-                                else {
-                                    projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
-                                }
-
-                                if (!project.buttonVisible) {
-                                    projectItem = projectItem.replace("{{buttonVisible}}", "hidden");
-                                }
-
-
-                                // append projectItem to projects-list
-                                let projectsList = document.getElementsByClassName("projects-list")[0];
-                                projectsList.innerHTML += projectItem;
-                            }
-                        })
-                })
-        </script>
     </body>
-    <script src="scripts/splide.js"></script>
+    <script>
+        fetch("code-sample.txt")
+            .then(response => response.text())
+            .then(text => {
+                let mainCodeBlock = document.getElementsByClassName("main-code")[0];
+                
+                let p1 = document.createElement("p");
+                let p2 = document.createElement("p");
+                
+                p1.innerHTML = text;
+                p2.innerHTML = text;
+
+                mainCodeBlock.appendChild(p1);
+                mainCodeBlock.appendChild(p2);
+
+                p1.classList.add("main-code-content");
+
+                let currentCodeBlock = p1;
+                let nextCodeBlock = p2;
+                let animateNext = function() {
+                    currentCodeBlock.parentElement.removeChild(currentCodeBlock);
+                    nextCodeBlock.classList.add("main-code-content");
+                    currentCodeBlock.classList.remove("main-code-content");
+
+                    let tempNextBlock = currentCodeBlock;
+                    currentCodeBlock = nextCodeBlock;
+                    nextCodeBlock = tempNextBlock;
+
+                    mainCodeBlock.appendChild(nextCodeBlock);
+                }
+
+                currentCodeBlock.onanimationend = animateNext;
+                nextCodeBlock.onanimationend = animateNext;
+            })
+            .catch(error => console.error(error));
+
+        fetch("project-item.html")
+            .then(response => response.text())
+            .then(htmlCode => {
+                let htmlCodeCopy = htmlCode;
+
+                fetch("projects.json")
+                    .then(response => response.json())
+                    .then(projects => {
+                        projects.reverse();
+
+                        // for each project in projects
+                        for (let i = 0; i < projects.length; i++) {
+                            let project = projects[i];
+                            let projectItem = htmlCodeCopy;
+
+                            // replace {{projectName}} with project.name
+                            projectItem = projectItem.replace("{{projectName}}", project.projectName);
+
+                            // replace {{company}} with project.company
+                            projectItem = projectItem.replace("{{company}}", project.company);
+
+                            // replace {{position}} with project.position
+                            projectItem = projectItem.replace("{{position}}", project.position);
+
+                            // replace {{technologies}} with project.technologies
+                            projectItem = projectItem.replace("{{technologies}}", project.technologies);
+
+                            // replace {{platform}} with project.platform
+                            projectItem = projectItem.replace("{{platform}}", project.platform);
+
+                            if (project.platform.length <= 0) {
+                                projectItem = projectItem.replace("{{platformVisibility}}", "hidden");
+                            }
+
+                            // replace {{description}} with project.description
+                            projectItem = projectItem.replace("{{description}}", project.description);
+
+                            // replace {{descriptionClass}} with project.descriptionClass
+
+                            // replace {{buttonText}} with project.buttonText
+                            projectItem = projectItem.replace("{{buttonText}}", project.buttonText);
+
+                            // replace {{imageUrl}} with project.imageUrl
+                            projectItem = projectItem.replace("{{imageUrl}}", project.imageUrl);
+
+                            // replace {{fallbackName}} with project.fallbackName
+                            if (project.fallbackName.length > 0) {
+                                projectItem = projectItem.replace("{{fallbackName}}", project.fallbackName);
+                            } else {
+                                projectItem = projectItem.replace("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
+                            }
+
+                            if (!project.showMoreVisible) {
+                                projectItem = projectItem.replace("{{showMoreVisible}}", "hidden");
+                                projectItem = projectItem.replace("{{descriptionClass}}", "");
+                            } 
+                            else {
+                                projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
+                            }
+
+                            if (!project.buttonVisible) {
+                                projectItem = projectItem.replace("{{buttonVisible}}", "hidden");
+                            }
+
+
+                            // append projectItem to projects-list
+                            let projectsList = document.getElementsByClassName("projects-list")[0];
+                            projectsList.innerHTML += projectItem;
+                        }
+                    })
+            });
+        
+        fetch("company-item.html")
+            .then(response => response.text())
+            .then(htmlCode => {
+                let htmlCodeCopy = htmlCode;
+
+                fetch("companies.json")
+                    .then(response => response.json())
+                    .then(companies => {
+                        companies.reverse();
+
+                        // for each company in companies
+                        for (let i = 0; i < companies.length; i++) {
+                            let company = companies[i];
+                            let companyItem = htmlCodeCopy;
+
+                            // replace {{title}} with company.title
+                            companyItem = companyItem.replace("{{title}}", company.title);
+
+                            // replace {{timeRange}} with company.timeRange
+                            companyItem = companyItem.replace("{{timeRange}}", company.timeRange);
+
+                            
+                            // for each item in company.responsibilities create <li>item</li>
+                            let responsibilitiesList = "";
+                            for (let j = 0; j < company.responsibilities.length; j++) {
+                                let responsibility = company.responsibilities[j];
+                                responsibilitiesList += `<li>${responsibility}</li>`;
+                            }
+                            // and insert it to <ul class="responsibilities-list white-50 body-2">
+                            companyItem = companyItem.replace("{{responsibilities}}", responsibilitiesList);
+
+                            // append companyItem to companies-list
+                            let companiesList = document.getElementsByClassName("companies-list")[0];
+                            companiesList.innerHTML += companyItem;
+                        }
+                    })
+            })
+    </script>
 </html>

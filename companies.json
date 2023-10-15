@@ -1,0 +1,76 @@
+[
+    {
+        "title": "Junior Unreal Engine Developer | Screwdriver Entertainment",
+        "timeRange": "May 2017 — October 2018",
+        "responsibilities": [
+            "AI systems development",
+            "Game mechanics development in Blueprint Visual Scripting",
+            "UI development (UMG)"
+        ]
+    },
+    {
+        "title": "Unreal Engine & Unity Developer | Russian Technological University IT Laboratory",
+        "timeRange": "February 2019 — June 2019",
+        "responsibilities": [
+            "Game mechanics development in C++/C#",
+            "Multiplayer development on UE4",
+            "VR projects development"
+        ]
+    },
+    {
+        "title": "Junior Unreal Engine Developer | Screwdriver Entertainment",
+        "timeRange": "May 2017 — October 2018",
+        "responsibilities": [
+            "AI systems development",
+            "Game mechanics development in Blueprint Visual Scripting",
+            "UI development (UMG)"
+        ]
+    },
+    {
+        "title": "Unreal Engine Developer | EnterVR",
+        "timeRange": "June 2019 — August 2019",
+        "responsibilities": [
+            "Design, implementation, debugging and code support for game mechanics based on Unreal Engine",
+            "Participation in the game development and presentation VR projects",
+            "Multiplayer development",
+            "Game mechanics development in C++",
+            "Game development using Anti-Latency",
+            "Work in Blueprints Visual Scripting"
+        ]
+    },
+    {
+        "title": "Unreal Engine & Unity Developer | MARTA",
+        "timeRange": "August 2019 — February 2021",
+        "responsibilities": [
+            "Implementing game mechanics for VR (Vive, Quest) and AR applications (iOS, ARKit) in Blueprints and C++",
+            "Optimization for Desktop VR and Android VR (Oculus Go & Quest)",
+            "Tools development",
+            "UE4 Editor utilities development",
+            "Additional: AR development for Web and Instagram (SparkAR)",
+            "Additional: Game mechanics development using PlayCanvas and ThreeJS"
+        ]
+    },
+    {
+        "title": "Unreal Engine Developer | Magic Factory Animation",
+        "timeRange": "February 2021 — November 2021",
+        "responsibilities": [
+            "Implementing extensions for Level Sequence",
+            "UE4 pipeline automation using Python 3.7 and C++",
+            "UE4 Editor utilities (Blutilities)",
+            "Tools development",
+            "AI development",
+            "Additional: frontend and backend development"
+        ]
+    },
+    {
+        "title": "Unreal Engine Developer | Strikerz Inc.",
+        "timeRange": "November 2021 — till now",
+        "responsibilities": [
+            "Tools development",
+            "AI development",
+            "Platform tools development (Xbox / PS4 / PS5)",
+            "Later: UI development"
+        ]
+    }
+]
+
