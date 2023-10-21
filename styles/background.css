@@ -11,6 +11,53 @@
     height: 2207px;
     left: -493px;
     top: -155px;
-    
-    background: linear-gradient(to top, rgba(0, 0, 0, 1) 9.57%, rgba(0, 0, 0, 0) 120%), url("../images/background1.png") lightgray 0px -206.121px / 100% 109.339% no-repeat;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 9.57%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 100%), url("../images/background1.png") lightgray 0px -206.121px / 100% 109.339% no-repeat;
+}
+
+.bg-image-2 {
+    width: 2349px;
+    height: 921px;
+    position: absolute;
+    left: -455px;
+    top: 1392px;
+
+    opacity: 0.5;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%), url("../images/background2.png"), lightgray -273.776px -437.873px / 125.874% 209.456% no-repeat;
+    background-size: 2349px 921px;
+}
+
+.bg-image-3 {
+    width: 2487px;
+    height: 864px;
+    position: absolute;
+    left: -507px;
+    top: 2313px;
+
+    opacity: 0.5;
+    background: linear-gradient(181deg, #000 28.29%, rgba(0, 0, 0, 0.00) 65.4%, #000 98.84%), url("../images/background3.png"), lightgray 0px -405.407px / 100% 161.321% no-repeat;
+    background-size: 2487px 864px;
+}
+
+.bg-image-4 {
+    width: 2312px;
+    height: 1297px;
+    position: absolute;
+    left: -436px;
+    top: 3445px;
+    opacity: 0.3;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 46.69%, #000 100%), url("../images/background4.png"), lightgray 50% / cover no-repeat;
+    background-size: 2312px 1297px;
+}
+
+.bg-image-5 {
+    width: 2434px;
+    height: 2434px;
+    position: absolute;
+    left: -497px;
+    top: 4315px;
+    opacity: 0.3;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%), url("../images/background5.png"), lightgray 50% / cover no-repeat;
+
+    background-size: 2434px 2434px;
 }
