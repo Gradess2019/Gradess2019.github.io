@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    width: 1120px;
+    padding: 48px 160px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.copyright {}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.footer-content .page-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-content .page-links .item {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
