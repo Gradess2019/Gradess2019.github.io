@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="styles/carousel.css">
         <link rel="stylesheet" href="styles/projects.css">
         <link rel="stylesheet" href="styles/companies.css">
+        <link rel="stylesheet" href="styles/marketplace.css">
     </head>
     <body class="bg-black">
         <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
@@ -354,14 +355,31 @@
                             <h2>COMPANIES</h2>
                         </div>
                     </div>
-                    <div class="companies-list">
+                    <div class="companies-list"></div>
+                </div>
+            </div>
+            <div class="marketplace">
+                <div class="marketplace-content">
+                    <div class="marketplace-title">
+                        <h2 class="white-90">GRADESS GAMES</h2>
+                        <p class="body-1 white-50">Plugin development for Unreal Engine</p>
+                    </div>
+                    <div class="marketplace-tile">
+                        <div class="marketplace-tile-row-container">
+                            <div class="marketplace-tile-row"></div>
+                        </div>
+                        <div class="button marketplace-button">
+                            <div class="button-content marketplace-button-content">
+                                <p class="link">See in market</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </body>
-    <script>
+    </div>
+</body>
+<script>
         fetch("code-sample.txt")
             .then(response => response.text())
             .then(text => {
@@ -506,5 +524,36 @@
                         }
                     })
             })
-    </script>
+        
+        // do same for plugin-item.html
+        fetch("plugin-item.html")
+            .then(response => response.text())
+            .then(htmlCode => {
+                let htmlCodeCopy = htmlCode;
+
+                fetch("plugins.json")
+                    .then(response => response.json())
+                    .then(plugins => {
+
+                        // for each plugin in plugins
+                        for (let i = 0; i < plugins.length; i++) {
+                            let plugin = plugins[i];
+                            let pluginItem = htmlCodeCopy;
+
+                            // replace {{title}} with plugin.title
+                            pluginItem = pluginItem.replace("{{title}}", plugin.title);
+
+                            // replace {{imageSrc}} with plugin.imageSrc
+                            pluginItem = pluginItem.replace("{{imageSrc}}", plugin.imageSrc);
+
+                            // replace {{reviewCount}} with plugin.reviewCount
+                            pluginItem = pluginItem.replace("{{reviewCount}}", plugin.reviewCount);
+
+                            // append pluginItem to marketplace-tile-row
+                            let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
+                            pluginsList.innerHTML += pluginItem;
+                        }
+                    })
+            })
+</script>
 </html>
