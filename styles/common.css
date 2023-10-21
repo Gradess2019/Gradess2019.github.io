@@ -250,3 +250,34 @@ h6 {
 .hidden {
     display: none !important;
 }
+
+/* Button */
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.button-content {
+    display: flex;
+    position: relative;
+    width: 218px;
+    height: 74px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("../images/button.svg");
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #FFF;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.button-content>p {
+    position: relative;
+    margin: 0;
+    top: -2px;
+}
