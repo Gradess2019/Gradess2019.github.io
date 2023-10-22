@@ -20,6 +20,12 @@
     gap: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: var(--White-90);
+    user-select: none;
+}
+
 .contacts {
     display: flex;
     align-items: center;

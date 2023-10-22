@@ -1,3 +1,8 @@
+#introduction {
+    position: absolute;
+    bottom: 950px;
+}
+
 .introduction {
     position: relative;
     height: 784px;

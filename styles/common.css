@@ -8,6 +8,10 @@
     src: url(../fonts/Inter.ttf);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Colors */
     --Primary-1: #FE056B;
