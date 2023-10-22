@@ -141,6 +141,9 @@
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+
+    /* play fade-out-in animation infinite */
+    animation: fade-out-in 1.25s linear infinite;
 }
 
 .stat-item-not-found {
@@ -173,6 +176,19 @@
     transform: translate(-21.5px, -23.1px);
 }
 
+.progress-item {
+    stroke: var(--Primary-2);
+    fill: transparent;
+}
+
+.progress-item.additional {
+    stroke: transparent;
+}
+
+.progress-item.animated {
+    /* fill: var(--Primary-2); */
+    animation: fill-progress-item 0.2s linear forwards;
+}
 
 @keyframes scroll {
     0% {
@@ -181,5 +197,37 @@
 
     100% {
         margin-top: -1845px;
+    }
+}
+
+@keyframes fill-progress-item {
+    0% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: var(--Primary-2);
+    }
+}
+
+@keyframes fade-out-in {
+    0% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
