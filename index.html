@@ -350,7 +350,7 @@
                     <div class="projects-list"></div>
                 </div>
             </div>
-            <div class="companies" >
+            <div class="companies">
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
@@ -369,7 +369,7 @@
                     <div class="companies-list"></div>
                 </div>
             </div>
-            <div class="marketplace" >
+            <div class="marketplace">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -424,6 +424,17 @@
     </div>
 </body>
 <script>
+        let bindProjectShowMoreButtons = function() {
+            
+            let showMoreButtons = document.getElementsByClassName("project-show-more");
+            for (let i = 0; i < showMoreButtons.length; i++) {
+                let showMoreButton = showMoreButtons[i];
+                showMoreButton.onclick = function() {
+                    console.log("CLICK");
+                }
+            }
+        }
+
         fetch("code-sample.txt")
             .then(response => response.text())
             .then(text => {
@@ -528,6 +539,8 @@
                             let projectsList = document.getElementsByClassName("projects-list")[0];
                             projectsList.innerHTML += projectItem;
                         }
+
+                        bindProjectShowMoreButtons();
                     })
             });
         
