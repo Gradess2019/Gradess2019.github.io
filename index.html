@@ -424,6 +424,7 @@
                 </div>
             </div>
         </div>
+        <div class="modal-black-background"></div>
         <div id="etalon-silver-modal" class="modal">
             <div class="modal-background">
                 <img src="images/etalon_silver_background.svg" class="modal-blur-background">
@@ -431,7 +432,7 @@
             <div class="modal-content">
                 <div class="modal-title title-1 white-90">
                     <p>Apartment tour for Etalon Silver</p>
-                    <div class="modal-cross">
+                    <div class="modal-cross" onclick="closeModal('etalon-silver-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
@@ -452,7 +453,7 @@
             <div class="modal-content">
                 <div class="modal-title title-1 white-90">
                     <p>Interactive map for EEF 2019</p>
-                    <div class="modal-cross">
+                    <div class="modal-cross" onclick="closeModal('interactive-map-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
@@ -473,7 +474,7 @@
             <div class="modal-content">
                 <div class="modal-title title-1 white-90">
                     <p>VR Painter for Leroy Merlin</p>
-                    <div class="modal-cross">
+                    <div class="modal-cross" onclick="closeModal('vr-painter-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
@@ -494,7 +495,7 @@
             <div class="modal-content">
                 <div class="modal-title title-1 white-90">
                     <p>Quidditch</p>
-                    <div class="modal-cross">
+                    <div class="modal-cross" onclick="closeModal('quidditch-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
@@ -506,17 +507,22 @@
     </div>
 </body>
 <script>
-        let bindProjectShowMoreButtons = function() {
-            
-            let showMoreButtons = document.getElementsByClassName("project-show-more");
-            for (let i = 0; i < showMoreButtons.length; i++) {
-                let showMoreButton = showMoreButtons[i];
-                showMoreButton.onclick = function() {
-                    let modal = document.getElementById("myModal");
-                    modal.style.display = "block";
-                }
-            }
+        function openModal(modalId) {
+            let modal = document.getElementById(modalId);
+            modal.style.display = "flex";
+
+            let modalBackground = document.getElementsByClassName("modal-black-background")[0];
+            modalBackground.style.display = "block";
         }
+
+        function closeModal(modalId) {
+            let modal = document.getElementById(modalId);
+            modal.style.display = "none";
+
+            let modalBackground = document.getElementsByClassName("modal-black-background")[0];
+            modalBackground.style.display = "none";
+        }
+        
 
         fetch("code-sample.txt")
             .then(response => response.text())
@@ -611,6 +617,7 @@
                             } 
                             else {
                                 projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
+                                projectItem = projectItem.replace("{{modalId}}", project.modalId);
                             }
 
                             if (!project.buttonVisible) {
@@ -622,8 +629,6 @@
                             let projectsList = document.getElementsByClassName("projects-list")[0];
                             projectsList.innerHTML += projectItem;
                         }
-
-                        bindProjectShowMoreButtons();
                     })
             });
         
@@ -665,7 +670,6 @@
                     })
             })
         
-        // do same for plugin-item.html
         fetch("plugin-item.html")
             .then(response => response.text())
             .then(htmlCode => {
@@ -697,7 +701,6 @@
             })
         
         
-        // stats animation
         let progressItems = document.getElementsByClassName("progress-item");
         let initialDelay = 1;
         let counter = initialDelay;

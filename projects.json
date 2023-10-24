@@ -21,6 +21,7 @@
         "description" : "Brief description: An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.",
         "imageUrl": "images/project_fallback.png",
         "showMoreVisible": true,
+        "modalId": "quidditch-modal",
         "buttonVisible": false
     },
     {
@@ -33,6 +34,7 @@
         "description" : "Brief description:  Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.",
         "imageUrl": "images/leroy_merlin.png",
         "showMoreVisible": true,
+        "modalId": "vr-painter-modal",
         "buttonVisible": true,
         "buttonText": "Watch overview"
     },
@@ -46,6 +48,7 @@
         "description" : "Brief description:  An interactive map designed for the Primorye stand at EEF 2019 allowed visitors to explore the forthcoming transformations of Russky Island. The map featured distinct object categories. Some objects were represented by a single approximation, depicted in white with a solid border, while more intricate elements had accompanying visualizations and comprehensive information. Clicking on any object triggered the display of general information on the screen. For crucial objects, an option to \"show more\" was available, revealing slides and complementary text. The map also showcased existing island structures, with the possibility of a secondary level of zoom for select items. Larger entities were visible at the map's default scale. The entire project was realized in just two weeks, with graphic materials introduced during the second week, utilizing a model initially designed for the video presentation.",
         "imageUrl": "images/interactive_map.png",
         "showMoreVisible": true,
+        "modalId": "interactive-map-modal",
         "buttonVisible": true,
         "buttonText": "Watch overview"
     },
@@ -59,6 +62,7 @@
         "description" : "Brief description:  The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.",
         "imageUrl": "images/etalon_silver.png",
         "showMoreVisible": true,
+        "modalId": "etalon-silver-modal",
         "buttonVisible": true,
         "buttonText": "Watch overview"
     },

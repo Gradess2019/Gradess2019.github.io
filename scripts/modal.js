@@ -1,6 +1,11 @@
 class ModalController {
     init() {
+        modalIds = ["etalon-silver-modal", "interactive-map-modal", "vr-painter-modal", "quidditch-modal"];
         
+    }
+
+    initModal(modalId) {
+        var modal = document.getElementById(modalId);
     }
 }
 
