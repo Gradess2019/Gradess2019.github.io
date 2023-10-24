@@ -15,11 +15,14 @@
         <link rel="stylesheet" href="styles/companies.css">
         <link rel="stylesheet" href="styles/marketplace.css">
         <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/modal.css">
     </head>
     <body class="bg-black">
-        <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
-            <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
-        </svg>
+        <div style="display: none;">
+            <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
+                <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
+            </svg>
+        </div>
         <div class="content">
             <div class="background-container">
                 <div class="bg-image"></div>
@@ -421,6 +424,27 @@
                 </div>
             </div>
         </div>
+        <div id="etalon-silver-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/etalon_silver_background.svg">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title title-1 white-90">
+                    <p>Apartment tour for Etalon Silver</p>
+                    <div class="modal-cross">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50 body-2">
+                    <span class="title-3 white-90">Brief description:</span> The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.
+                </p>
+                <div class="button modal-button">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script>
@@ -430,7 +454,8 @@
             for (let i = 0; i < showMoreButtons.length; i++) {
                 let showMoreButton = showMoreButtons[i];
                 showMoreButton.onclick = function() {
-                    console.log("CLICK");
+                    let modal = document.getElementById("myModal");
+                    modal.style.display = "block";
                 }
             }
         }
@@ -626,4 +651,5 @@
             }
         }
 </script>
+<script src="scripts/modal.js"></script>
 </html>
