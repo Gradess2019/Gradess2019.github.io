@@ -439,9 +439,9 @@
                 <p class="white-50 body-2">
                     <span class="title-3 white-90">Brief description:</span> The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.
                 </p>
-                <div class="button modal-button">
+                <div class="button modal-button" onclick="openUrl('http://marta.technology/etalonsilver/apartment_3-4-127/')">
                     <div class="button-content">
-                        <p class="link">Watch overview</p>
+                        <p class="link">Try it!</p>
                     </div>
                 </div>
             </div>
@@ -460,7 +460,7 @@
                 <p class="white-50 body-2">
                     <span class="title-3 white-90">Brief description:</span> An interactive map designed for the Primorye stand at EEF 2019 allowed visitors to explore the forthcoming transformations of Russky Island. The map featured distinct object categories. Some objects were represented by a single approximation, depicted in white with a solid border, while more intricate elements had accompanying visualizations and comprehensive information. Clicking on any object triggered the display of general information on the screen. For crucial objects, an option to "show more" was available, revealing slides and complementary text. The map also showcased existing island structures, with the possibility of a secondary level of zoom for select items. Larger entities were visible at the map's default scale. The entire project was realized in just two weeks, with graphic materials introduced during the second week, utilizing a model initially designed for the video presentation.
                 </p>
-                <div class="button modal-button">
+                <div class="button modal-button" onclick="openUrl('https://www.behance.net/gallery/85869855/Interactive-map')">
                     <div class="button-content">
                         <p class="link">Watch overview</p>
                     </div>
@@ -481,7 +481,7 @@
                 <p class="white-50 body-2">
                     <span class="title-3 white-90">Brief description:</span> Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.
                 </p>
-                <div class="button modal-button">
+                <div class="button modal-button" onclick="openUrl('https://youtu.be/7GLhgSJwKck')">
                     <div class="button-content">
                         <p class="link">Watch overview</p>
                     </div>
@@ -532,6 +532,10 @@
             if (currentModal != null) {
                 closeModal(currentModal);
             }
+        }
+
+        function openUrl(url) {
+            window.open(url, "_blank");
         }
         
 
@@ -633,6 +637,10 @@
 
                             if (!project.buttonVisible) {
                                 projectItem = projectItem.replace("{{buttonVisible}}", "hidden");
+                            }
+                            else {
+                                projectItem = projectItem.replace("{{buttonVisible}}", "");
+                                projectItem = projectItem.replace("{{buttonUrl}}", project.buttonUrl);
                             }
 
 

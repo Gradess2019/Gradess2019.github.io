@@ -9,7 +9,9 @@
         "description" : "POSTWORLD is a Hardcore Action RPG featuring a non-linear story and the unique ability to swap character body parts with powerful combat prostheses on the fly. The game also offers a non-linear narrative, allowing you to align with factions such as Slavers, Cultists, or Railwaymen, and seize control of the Wasteland.",
         "imageUrl": "images/postworld.png",
         "showMoreVisible": false,
-        "buttonVisible": false
+        "buttonVisible": true,
+        "buttonText": "Watch overview",
+        "buttonUrl": "https://youtu.be/Wd_tDmG0Fis?si=VxWEq6JXztnEWLwW"
     },
     {
         "fallbackName": "QUIDDITCH",
@@ -36,7 +38,8 @@
         "showMoreVisible": true,
         "modalId": "vr-painter-modal",
         "buttonVisible": true,
-        "buttonText": "Watch overview"
+        "buttonText": "Watch overview",
+        "buttonUrl": "https://youtu.be/7GLhgSJwKck"
     },
     {
         "fallbackName": "",
@@ -50,7 +53,8 @@
         "showMoreVisible": true,
         "modalId": "interactive-map-modal",
         "buttonVisible": true,
-        "buttonText": "Watch overview"
+        "buttonText": "Watch overview",
+        "buttonUrl": "https://www.behance.net/gallery/85869855/Interactive-map"
     },
     {
         "fallbackName": "",
@@ -64,7 +68,8 @@
         "showMoreVisible": true,
         "modalId": "etalon-silver-modal",
         "buttonVisible": true,
-        "buttonText": "Watch overview"
+        "buttonText": "Try it!",
+        "buttonUrl": "http://marta.technology/etalonsilver/apartment_3-4-127/"
     },
     {
         "fallbackName": "",
@@ -77,7 +82,8 @@
         "imageUrl": "images/domont.png",
         "showMoreVisible": false,
         "buttonVisible": true,
-        "buttonText": "Watch overview"
+        "buttonText": "Watch overview",
+        "buttonUrl": "https://www.behance.net/gallery/94458205/Domont-360-virtual-tour"
     },
     {
         "fallbackName": "RESEARCH PROJECT",
@@ -90,7 +96,8 @@
         "imageUrl": "images/project_fallback.png",
         "showMoreVisible": false,
         "buttonVisible": true,
-        "buttonText": "Watch overview"
+        "buttonText": "Watch overview",
+        "buttonUrl": "https://drive.google.com/file/d/15L94Bbo-mTCPbYxa-_cWi0BkShAkvcdM/view?usp=sharing"
     },
     {
         "fallbackName": "MARTAHUB",
@@ -103,7 +110,8 @@
         "imageUrl": "images/project_fallback.png",
         "showMoreVisible": false,
         "buttonVisible": true,
-        "buttonText": "Try it!"
+        "buttonText": "Watch overview",
+        "buttonUrl": "https://github.com/Gradess2019/MartaHub"
     },
     {
         "fallbackName": "",
@@ -116,7 +124,8 @@
         "imageUrl": "images/ecopolis.png",
         "showMoreVisible": false,
         "buttonVisible": true,
-        "buttonText": "Try it!"
+        "buttonText": "Try it!",
+        "buttonUrl": "http://marta.technology/Sakhalin_143058550/"
     },
     {
         "fallbackName": "",
@@ -129,7 +138,8 @@
         "imageUrl": "images/cistiy.png",
         "showMoreVisible": false,
         "buttonVisible": true,
-        "buttonText": "Try it!"
+        "buttonText": "Try it!",
+        "buttonUrl": "http://marta.technology/Interactive_model_Sakhalin_45823701/"
     },
     {
         "fallbackName": "",
