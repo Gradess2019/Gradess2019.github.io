@@ -19,6 +19,16 @@
 }
 
 #interactive-map-modal {
+    /* display: flex; */
+    display: none;
+    width: 544px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+#vr-painter-modal {
     display: flex;
     width: 544px;
     padding-bottom: 0px;
@@ -62,7 +72,7 @@
     width: 345px;
 }
 
-#interactive-map-modal .modal-title p {
+#interactive-map-modal .modal-title p, #vr-painter-modal .modal-title p {
     flex: 1 0 0;
 }
 
