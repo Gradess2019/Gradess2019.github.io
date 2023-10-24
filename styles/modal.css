@@ -8,8 +8,7 @@
 }
 
 #etalon-silver-modal {
-    /* display: flex; */
-    display: none;
+    display: flex;
     width: 544px;
     height: 468px;
     padding-bottom: 0px;
@@ -19,7 +18,6 @@
 }
 
 #interactive-map-modal {
-    /* display: flex; */
     display: none;
     width: 544px;
     padding-bottom: 0px;
@@ -29,7 +27,6 @@
 }
 
 #vr-painter-modal {
-    /* display: flex; */
     display: none;
     width: 544px;
     padding-bottom: 0px;
@@ -39,7 +36,7 @@
 }
 
 #quidditch-modal {
-    display: flex;
+    display: none;
     width: 544px;
     padding-bottom: 0px;
     flex-direction: column;
@@ -48,12 +45,27 @@
 }
 
 .modal-background {
-    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     z-index: 99;
     user-select: none;
+
+    width: 546px;
+    height: 404px;
+}
+
+.modal-blur-background {
+    backdrop-filter: blur(4px);
+    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
+}
+
+#etalon-silver-modal .modal-blur-background {
+    -webkit-mask: linear-gradient(133deg, #000 96.57%, transparent 96.57%);
+}
+
+#interactive-map-modal .modal-blur-background {
+    -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%);
 }
 
 .modal-content {
