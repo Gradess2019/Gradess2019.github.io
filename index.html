@@ -424,7 +424,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal-black-background"></div>
+        <div class="modal-black-background" onclick="closeCurrentModal()"></div>
         <div id="etalon-silver-modal" class="modal">
             <div class="modal-background">
                 <img src="images/etalon_silver_background.svg" class="modal-blur-background">
@@ -507,12 +507,15 @@
     </div>
 </body>
 <script>
+        let currentModal = null;
         function openModal(modalId) {
             let modal = document.getElementById(modalId);
             modal.style.display = "flex";
 
             let modalBackground = document.getElementsByClassName("modal-black-background")[0];
             modalBackground.style.display = "block";
+
+            currentModal = modalId;
         }
 
         function closeModal(modalId) {
@@ -521,6 +524,14 @@
 
             let modalBackground = document.getElementsByClassName("modal-black-background")[0];
             modalBackground.style.display = "none";
+
+            currentModal = null;
+        }
+
+        function closeCurrentModal() {
+            if (currentModal != null) {
+                closeModal(currentModal);
+            }
         }
         
 
