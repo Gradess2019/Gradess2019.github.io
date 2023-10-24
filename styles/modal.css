@@ -1,0 +1,167 @@
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-black-background {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#etalon-silver-modal {
+    display: none;
+    width: 544px;
+    height: 468px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+#interactive-map-modal {
+    display: none;
+    width: 544px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+#vr-painter-modal {
+    display: none;
+    width: 544px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+#quidditch-modal {
+    display: none;
+    width: 544px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.modal-background {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    user-select: none;
+
+    width: 546px;
+    height: 404px;
+}
+
+.modal-blur-background {
+    backdrop-filter: blur(4px);
+    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
+}
+
+#etalon-silver-modal .modal-blur-background {
+    -webkit-mask: linear-gradient(133deg, #000 96.57%, transparent 96.57%);
+}
+
+#interactive-map-modal .modal-blur-background {
+    -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%);
+}
+
+.modal-content {
+    z-index: 100;
+    display: flex;
+    padding: 32px 32px 0px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.modal-content p {
+    margin: 0;
+}
+
+.modal-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.modal-title p {
+    margin: 0;
+    width: 345px;
+}
+
+#interactive-map-modal .modal-title p, #vr-painter-modal .modal-title p {
+    flex: 1 0 0;
+}
+
+.modal-cross {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.modal-cross img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.modal-button {
+    margin-left: -8px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    width: 218px;
+    height: 74px;
+}
+
+/* 
+.modal-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} */

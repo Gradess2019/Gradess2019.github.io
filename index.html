@@ -15,11 +15,14 @@
         <link rel="stylesheet" href="styles/companies.css">
         <link rel="stylesheet" href="styles/marketplace.css">
         <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/modal.css">
     </head>
     <body class="bg-black">
-        <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
-            <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
-        </svg>
+        <div style="display: none;">
+            <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
+                <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
+            </svg>
+        </div>
         <div class="content">
             <div class="background-container">
                 <div class="bg-image"></div>
@@ -350,7 +353,7 @@
                     <div class="projects-list"></div>
                 </div>
             </div>
-            <div class="companies" >
+            <div class="companies">
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
@@ -369,7 +372,7 @@
                     <div class="companies-list"></div>
                 </div>
             </div>
-            <div class="marketplace" >
+            <div class="marketplace">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -421,9 +424,117 @@
                 </div>
             </div>
         </div>
+        <div class="modal-black-background" onclick="closeCurrentModal()"></div>
+        <div id="etalon-silver-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/etalon_silver_background.svg" class="modal-blur-background">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title title-1 white-90">
+                    <p>Apartment tour for Etalon Silver</p>
+                    <div class="modal-cross" onclick="closeModal('etalon-silver-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50 body-2">
+                    <span class="title-3 white-90">Brief description:</span> The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.
+                </p>
+                <div class="button modal-button">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="interactive-map-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/interactive_map_background.svg" class="modal-blur-background">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title title-1 white-90">
+                    <p>Interactive map for EEF 2019</p>
+                    <div class="modal-cross" onclick="closeModal('interactive-map-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50 body-2">
+                    <span class="title-3 white-90">Brief description:</span> An interactive map designed for the Primorye stand at EEF 2019 allowed visitors to explore the forthcoming transformations of Russky Island. The map featured distinct object categories. Some objects were represented by a single approximation, depicted in white with a solid border, while more intricate elements had accompanying visualizations and comprehensive information. Clicking on any object triggered the display of general information on the screen. For crucial objects, an option to "show more" was available, revealing slides and complementary text. The map also showcased existing island structures, with the possibility of a secondary level of zoom for select items. Larger entities were visible at the map's default scale. The entire project was realized in just two weeks, with graphic materials introduced during the second week, utilizing a model initially designed for the video presentation.
+                </p>
+                <div class="button modal-button">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="vr-painter-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/vr_painter_background.svg" class="modal-blur-background">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title title-1 white-90">
+                    <p>VR Painter for Leroy Merlin</p>
+                    <div class="modal-cross" onclick="closeModal('vr-painter-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50 body-2">
+                    <span class="title-3 white-90">Brief description:</span> Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.
+                </p>
+                <div class="button modal-button">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="quidditch-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/quidditch_background.svg" class="modal-blur-background">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title title-1 white-90">
+                    <p>Quidditch</p>
+                    <div class="modal-cross" onclick="closeModal('quidditch-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50 body-2">
+                    <span class="title-3 white-90">Brief description:</span> An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 <script>
+        let currentModal = null;
+        function openModal(modalId) {
+            let modal = document.getElementById(modalId);
+            modal.style.display = "flex";
+
+            let modalBackground = document.getElementsByClassName("modal-black-background")[0];
+            modalBackground.style.display = "block";
+
+            currentModal = modalId;
+        }
+
+        function closeModal(modalId) {
+            let modal = document.getElementById(modalId);
+            modal.style.display = "none";
+
+            let modalBackground = document.getElementsByClassName("modal-black-background")[0];
+            modalBackground.style.display = "none";
+
+            currentModal = null;
+        }
+
+        function closeCurrentModal() {
+            if (currentModal != null) {
+                closeModal(currentModal);
+            }
+        }
+        
+
         fetch("code-sample.txt")
             .then(response => response.text())
             .then(text => {
@@ -517,6 +628,7 @@
                             } 
                             else {
                                 projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
+                                projectItem = projectItem.replace("{{modalId}}", project.modalId);
                             }
 
                             if (!project.buttonVisible) {
@@ -569,7 +681,6 @@
                     })
             })
         
-        // do same for plugin-item.html
         fetch("plugin-item.html")
             .then(response => response.text())
             .then(htmlCode => {
@@ -601,7 +712,6 @@
             })
         
         
-        // stats animation
         let progressItems = document.getElementsByClassName("progress-item");
         let initialDelay = 1;
         let counter = initialDelay;
@@ -613,4 +723,5 @@
             }
         }
 </script>
+<script src="scripts/modal.js"></script>
 </html>
