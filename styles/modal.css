@@ -8,7 +8,8 @@
 }
 
 #etalon-silver-modal {
-    display: flex;
+    /* display: flex; */
+    display: none;
     width: 544px;
     height: 468px;
     padding-bottom: 0px;
@@ -17,7 +18,16 @@
     gap: 24px;
 }
 
-#etalon-silver-modal .modal-background {
+#interactive-map-modal {
+    display: flex;
+    width: 544px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.modal-background {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +60,10 @@
 .modal-title p {
     margin: 0;
     width: 345px;
+}
+
+#interactive-map-modal .modal-title p {
+    flex: 1 0 0;
 }
 
 .modal-cross {
