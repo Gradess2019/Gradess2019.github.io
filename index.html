@@ -342,15 +342,15 @@
                             <h2>PROJECTS</h2>
                         </div>
                         <div class="projects-toolbar-buttons">
-                            <div class="carousel-button left" onclick="scrollPrevious('projects-list', 'project-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('projects-list', 'project-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('projects-list-clone', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
                     </div>
-                    <div class="projects-list" id="projects-list"></div>
+                    <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
             <div class="companies">
@@ -369,7 +369,7 @@
                             <h2>COMPANIES</h2>
                         </div>
                     </div>
-                    <div class="companies-list" id="companies-list"></div>
+                    <div class="companies-list" id="companies-list-original"></div>
                 </div>
             </div>
             <div class="marketplace">
@@ -552,7 +552,7 @@
                 slidesIds[slideClass] = 1;
             }
             else {
-                let slidesNumber = document.getElementsByClassName(slideClass).length;
+                let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
                 slidesIds[slideClass] = Math.max(0, Math.min(slidesNumber - 2, slidesIds[slideClass] + 1));
             }
             
@@ -560,7 +560,6 @@
             const slideWidth = slide.clientWidth;
             let newScrollLeft = slideWidth * slidesIds[slideClass] + gapOffset;
             slidesContainer.scrollLeft = newScrollLeft;
-            console.log("id: " + slidesIds[slideClass] + " " + "scrollLeft: " + slidesContainer.scrollLeft);
         }
 
         function scrollPrevious(containerId, slideClass, gap) {
@@ -571,7 +570,7 @@
                 slidesIds[slideClass] = 0;
             }
             else {
-                let slidesNumber = document.getElementsByClassName(slideClass).length;
+                let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
                 slidesIds[slideClass] = Math.max(0, Math.min(slidesNumber - 2, slidesIds[slideClass] - 1));
             }
             
@@ -579,9 +578,22 @@
             const slideWidth = slide.clientWidth;
             let newScrollLeft = slideWidth * slidesIds[slideClass] + gapOffset;
             slidesContainer.scrollLeft = newScrollLeft;
-            console.log("id: " + slidesIds[slideClass] + " " + "scrollLeft: " + slidesContainer.scrollLeft);
         }
         
+        function cloneList(containerClass, childId, cloneId) {
+            const container = document.querySelector('.' + containerClass);
+            const child = document.getElementById(childId);
+            const clone = child.cloneNode(true);
+            
+            clone.classList.add("clone")
+            clone.id = cloneId;
+            container.append(clone);
+
+            setInterval(function() {
+                console.log("original: " + child.scrollLeft + " clone: " + clone.scrollLeft);
+                child.style.marginLeft = "-" + clone.scrollLeft + "px";
+            }, 1);
+        }
 
         fetch("code-sample.txt")
             .then(response => response.text())
@@ -692,6 +704,8 @@
                             let projectsList = document.getElementsByClassName("projects-list")[0];
                             projectsList.innerHTML += projectItem;
                         }
+
+                        cloneList("projects-content", "projects-list-original", "projects-list-clone");
                     })
             });
         
@@ -730,6 +744,8 @@
                             let companiesList = document.getElementsByClassName("companies-list")[0];
                             companiesList.innerHTML += companyItem;
                         }
+
+                        // cloneList("companies-content", "companies-list-original", "companies-list-clone");
                     })
             })
         

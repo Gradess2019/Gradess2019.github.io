@@ -40,9 +40,15 @@
     align-items: flex-start;
     gap: 32px;
     align-self: stretch;
+    scroll-behavior: smooth;
+}
+
+.projects-list.clone {
     overflow-x: scroll;
     overflow-y: auto;
     scroll-behavior: smooth;
+    width: 1120px;
+    height: 753px;
 }
 
 .projects-list::-webkit-scrollbar {
