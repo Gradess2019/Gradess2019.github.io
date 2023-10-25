@@ -383,7 +383,7 @@
                         <div class="marketplace-tile-row-container">
                             <div class="marketplace-tile-row"></div>
                         </div>
-                        <div class="button marketplace-button">
+                        <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
                             <div class="button-content marketplace-button-content">
                                 <p class="link">See in market</p>
                             </div>
@@ -711,6 +711,8 @@
 
                             // replace {{reviewCount}} with plugin.reviewCount
                             pluginItem = pluginItem.replace("{{reviewCount}}", plugin.reviewCount);
+
+                            pluginItem = pluginItem.split("{{marketplaceUrl}}").join(plugin.marketplaceUrl);
 
                             // append pluginItem to marketplace-tile-row
                             let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
