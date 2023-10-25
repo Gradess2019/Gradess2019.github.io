@@ -255,6 +255,12 @@ h6 {
     display: none !important;
 }
 
+.clone {
+    position: absolute;
+    z-index: -9999;
+    visibility: hidden;
+}
+
 /* Button */
 .button {
     display: flex;
