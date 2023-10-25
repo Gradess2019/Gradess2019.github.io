@@ -589,7 +589,6 @@
             container.append(clone);
 
             setInterval(function() {
-                console.log("original: " + child.scrollLeft + " clone: " + clone.scrollLeft);
                 child.style.marginLeft = "-" + clone.scrollLeft + "px";
             }, 1);
         }
