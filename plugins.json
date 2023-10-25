@@ -2,16 +2,19 @@
     {
         "title": "Actor Locker",
         "imageSrc": "images/actor_locker.png",
-        "reviewCount": "31"
+        "reviewCount": "32",
+        "marketplaceUrl": "https://www.unrealengine.com/marketplace/en-US/product/actor-locker"
     },
     {
         "title": "Python Blueprint Fixer",
         "imageSrc": "images/python_blueprint_fixer.png",
-        "reviewCount": "3"
+        "reviewCount": "3",
+        "marketplaceUrl": "https://www.unrealengine.com/marketplace/en-US/product/python-blueprint-fixer"
     },
     {
         "title": "Blueprintable Developer Settings",
         "imageSrc": "images/blueprintable_developer_settings.png",
-        "reviewCount": "1"
+        "reviewCount": "1",
+        "marketplaceUrl": "https://www.unrealengine.com/marketplace/en-US/product/blueprintable-developer-settings"
     }
 ]
