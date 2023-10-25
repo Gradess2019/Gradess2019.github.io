@@ -354,14 +354,13 @@
                 </div>
             </div>
             <div class="companies">
-                <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
                         <div class="companies-toolbar-buttons">
-                            <div class="carousel-button left" onclick="scrollPrevious('companies-list', 'comapny-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('companies-list-clone', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('companies-list', 'comapny-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('companies-list-clone', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
@@ -745,7 +744,7 @@
                             companiesList.innerHTML += companyItem;
                         }
 
-                        // cloneList("companies-content", "companies-list-original", "companies-list-clone");
+                        cloneList("companies-content", "companies-list-original", "companies-list-clone");
                     })
             })
         
