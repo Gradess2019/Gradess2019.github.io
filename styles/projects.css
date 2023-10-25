@@ -42,6 +42,7 @@
     align-self: stretch;
     overflow-x: scroll;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .projects-list::-webkit-scrollbar {

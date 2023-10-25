@@ -50,6 +50,7 @@
     align-self: stretch;
     overflow-x: scroll;
     overflow-y: hidden;
+    scroll-behavior: smooth;
 }
 
 .companies-list::-webkit-scrollbar {
