@@ -164,8 +164,9 @@
     transform: translate(-32px, -32px);
 
     position: absolute;
-    backdrop-filter: blur(14px);
     z-index: -5;
+    backdrop-filter: blur(14px);
+    -webkit-mask: linear-gradient(135deg, #000 95.73%, transparent 95.73%);
 }
 
 .stats-bg-container svg {

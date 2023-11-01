@@ -78,6 +78,8 @@
     z-index: -1;
     width: 352px;
     height: 504px;
+    backdrop-filter: blur(4px);
+    -webkit-mask: linear-gradient(133deg, #000 97.35%, transparent 97.35%);
 }
 
 .marketplace-tile-item-background>img {

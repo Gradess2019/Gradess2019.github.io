@@ -75,6 +75,8 @@
     align-items: center;
     position: absolute;
     z-index: -1;
+    backdrop-filter: blur(4px);
+    -webkit-mask: linear-gradient(136deg, #000 98.55%, transparent 98.55%);
 }
 
 .company-list-item-description {
