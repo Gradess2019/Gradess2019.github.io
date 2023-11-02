@@ -124,6 +124,10 @@ body {
     margin-right: auto;
 }
 
+.content.debug {
+    border: 3px solid red;
+}
+
 /* Header style */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--Header-font-family);
