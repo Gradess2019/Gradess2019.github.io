@@ -1,0 +1,8 @@
+.debug-toolbar {
+    position: fixed;
+    z-index: 9999;
+}
+
+.debug-toolbar-item {
+    user-select: none;
+}
