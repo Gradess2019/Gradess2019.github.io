@@ -69,6 +69,7 @@
 
 .figma {
     left: 205px;
+    top: 4px;
     background-image: url("../images/figma.png");
     background-size: 1440px 6055px;
     width: 1440px;
