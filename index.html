@@ -43,13 +43,13 @@
                     <label>Figma opacity</label>
                 </div>
                 <div class="debug-toolbar-item">
-                    <input type="range" min="0" max="1" value="0.25" step="0.01" oninput="setContainerOpacity('content', this.value)">
+                    <input type="range" min="0" max="1" value="1" step="0.01" oninput="setContainerOpacity('opacity-container', this.value)">
                     <label>Content opacity</label>
                 </div>  
             </div>
         </div>
         <div class="figma" id="figma"></div>
-        <div class="content debug" id="content">
+        <div class="content debug">
             <div class="background-container">
                 <div class="bg-image"></div>
                 <div class="bg-image-2"></div>
@@ -58,7 +58,7 @@
                 <div class="bg-image-5"></div>
                 <div class="bg-border"></div>
             </div>
-            <div class="header title-3 white-90">
+            <div class="header title-3 white-90 opacity-container">
                 <div>
                     STEPAN
                 </div>
@@ -88,7 +88,7 @@
                     </a>
                 </div>
             </div>
-            <div class="main">
+            <div class="main opacity-container">
                 <div class="main-content">
                     <div class="title-block">
                         <div class="title-content">
@@ -260,13 +260,13 @@
                     </div>
                 </div>
             </div>
-            <div class="quote">
+            <div class="quote opacity-container">
                 <h4 class="quote-content">
                     <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h4>
             </div>
-            <div class="introduction">
+            <div class="introduction opacity-container">
                 <div id="introduction"></div>
                 <div class="introduction-text-container body-1 white-50">
                     <p>
@@ -325,7 +325,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gym">
+            <div class="gym opacity-container">
                 <div class="gym-content">
                     <div class="gym-photo">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="610" height="610" viewBox="0 0 610 610" fill="none">
@@ -361,7 +361,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projects">
+            <div class="projects opacity-container">
                 <div id="projects"></div>
                 <div class="projects-content">
                     <div class="projects-toolbar white-90">
@@ -380,7 +380,7 @@
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
-            <div class="companies">
+            <div class="companies opacity-container">
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
                         <div class="companies-toolbar-buttons">
@@ -398,7 +398,7 @@
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
             </div>
-            <div class="marketplace">
+            <div class="marketplace opacity-container">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -417,7 +417,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer">
+            <div class="footer opacity-container">
                 <div class="copyright body-1 white-90">
                     Stepan © 2023
                 </div>
@@ -842,7 +842,15 @@
 
         function setContainerOpacity(id, value) {
             let container = document.getElementById(id);
-            container.style.opacity = value;
+            if (container != null) {
+                container.style.opacity = value;
+                return;
+            }
+
+            let containers = document.getElementsByClassName(id);
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.opacity = value;
+            }
         }
 </script>
 <script src="scripts/modal.js"></script>
