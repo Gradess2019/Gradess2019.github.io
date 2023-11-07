@@ -14,21 +14,29 @@
 }
 
 .main-content .title-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
+    display: block;
     gap: 32px;
+    margin-top: -11px;
+    width: 447px;
 }
 
 .main-content .title-block .title-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
+    display: block;
     gap: 19px;
+    margin-top: 12px;
+}
+
+.main-content .title-block .title-content .position {
+    position: relative;
+    height: 19px;
 }
 
 .main-content .title-block .title-content .name {
-    margin-top: 19px;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    height: 192px;
 }
 
 .main-content .stats-block {
@@ -37,6 +45,7 @@
     flex-direction: column;
     align-items: flex-end;
     flex-shrink: 0;
+    margin-right: 1px;
 }
 
 .main-content .stats-block .photo-container {
@@ -73,6 +82,7 @@
     height: 256px;
     justify-content: center;
     align-items: center;
+    margin-top: 32px;
 }
 
 .main-code {

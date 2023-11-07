@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="styles/marketplace.css">
         <link rel="stylesheet" href="styles/footer.css">
         <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="styles/debug.css">
     </head>
     <body class="bg-black">
         <div style="display: none;">
@@ -23,6 +24,31 @@
                 <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
             </svg>
         </div>
+        <div class="debug-toolbar white-90">
+            <div class="debug-toolbar-item">
+                <input type="checkbox" id="toolbar-toggle" checked onclick="toggleToolbar()">
+                <label for="toolbar-toggle">Toolbar</label>
+            </div>
+            <div class="debug-toolbar-content">
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="figma-image-toggle" checked onclick="toggleFigmaImage()">
+                    <label for="figma-image-toggle">Figma image</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="figma-inversion-toggle" onclick="toggleFigmaInversion()">
+                    <label for="figma-inversion-toggle">Figma inversion</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="range" min="0" max="1" value="0.25" step="0.01" oninput="setContainerOpacity('figma', this.value)">
+                    <label>Figma opacity</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="range" min="0" max="1" value="1" step="0.01" oninput="setContainerOpacity('opacity-container', this.value)">
+                    <label>Content opacity</label>
+                </div>  
+            </div>
+        </div>
+        <div class="figma" id="figma"></div>
         <div class="content">
             <div class="background-container">
                 <div class="bg-image"></div>
@@ -30,8 +56,9 @@
                 <div class="bg-image-3"></div>
                 <div class="bg-image-4"></div>
                 <div class="bg-image-5"></div>
+                <div class="bg-border"></div>
             </div>
-            <div class="header title-3 white-90">
+            <div class="header title-3 white-90 opacity-container">
                 <div>
                     STEPAN
                 </div>
@@ -61,7 +88,7 @@
                     </a>
                 </div>
             </div>
-            <div class="main">
+            <div class="main opacity-container">
                 <div class="main-content">
                     <div class="title-block">
                         <div class="title-content">
@@ -233,13 +260,13 @@
                     </div>
                 </div>
             </div>
-            <div class="quote">
+            <div class="quote opacity-container">
                 <h4 class="quote-content">
                     <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h4>
             </div>
-            <div class="introduction">
+            <div class="introduction opacity-container">
                 <div id="introduction"></div>
                 <div class="introduction-text-container body-1 white-50">
                     <p>
@@ -298,7 +325,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gym">
+            <div class="gym opacity-container">
                 <div class="gym-content">
                     <div class="gym-photo">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="610" height="610" viewBox="0 0 610 610" fill="none">
@@ -334,7 +361,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projects">
+            <div class="projects opacity-container">
                 <div id="projects"></div>
                 <div class="projects-content">
                     <div class="projects-toolbar white-90">
@@ -353,7 +380,7 @@
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
-            <div class="companies">
+            <div class="companies opacity-container">
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
                         <div class="companies-toolbar-buttons">
@@ -371,7 +398,7 @@
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
             </div>
-            <div class="marketplace">
+            <div class="marketplace opacity-container">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -390,7 +417,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer">
+            <div class="footer opacity-container">
                 <div class="copyright body-1 white-90">
                     Stepan © 2023
                 </div>
@@ -788,6 +815,41 @@
                 counter++;
                 progressItems[i].style.animationDelay = `${counter * 0.125}s`;
                 progressItems[i].classList.add("animated");
+            }
+        }
+
+
+        function toggleToolbar() {
+            let toolbar = document.getElementsByClassName("debug-toolbar-content")[0];
+            let toolbarToggle = document.getElementById("toolbar-toggle");
+            let newToolbarState = toolbarToggle.checked ? "block" : "none";
+            toolbar.style.display = newToolbarState;
+        }
+
+        function toggleFigmaImage() {
+            let figmaContainer = document.getElementsByClassName("figma")[0];
+            let figmaToggle = document.getElementById("figma-image-toggle");
+            let newFigmaState = figmaToggle.checked ? "block" : "none";
+            figmaContainer.style.display = newFigmaState;
+        }
+
+        function toggleFigmaInversion() {
+            let figmaContainer = document.getElementsByClassName("figma")[0];
+            let figmaToggle = document.getElementById("figma-inversion-toggle");
+            let newFigmaState = figmaToggle.checked ? "invert(1)" : "invert(0)";
+            figmaContainer.style.filter = newFigmaState;
+        }
+
+        function setContainerOpacity(id, value) {
+            let container = document.getElementById(id);
+            if (container != null) {
+                container.style.opacity = value;
+                return;
+            }
+
+            let containers = document.getElementsByClassName(id);
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.opacity = value;
             }
         }
 </script>
