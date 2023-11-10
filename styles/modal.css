@@ -1,10 +1,21 @@
 .modal {
+    padding: 2px;
     display: block;
     position: fixed;
     z-index: 100;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    backdrop-filter: blur(14px);
+}
+
+.modal.animate {
+    animation: modal-show-in 0.3s forwards;
+}
+
+.modal.animate-out {
+    animation: modal-show-out 0.3s forwards;
 }
 
 .modal-black-background {
@@ -18,41 +29,53 @@
     overflow: hidden;
 }
 
+.modal-black-background.animate {
+    animation: modal-show-in 0.3s forwards;
+}
+
+.modal-black-background.animate-out {
+    animation: modal-show-out 0.3s forwards;
+}
+
 #etalon-silver-modal {
     display: none;
     width: 544px;
     height: 468px;
-    padding-bottom: 0px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(133deg, #000 96.6%, transparent 96.6%);
 }
 
 #interactive-map-modal {
     display: none;
     width: 544px;
-    padding-bottom: 0px;
+    height: 640px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%);
 }
 
 #vr-painter-modal {
     display: none;
     width: 544px;
-    padding-bottom: 0px;
+    height: 406px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
 }
 
 #quidditch-modal {
     display: none;
     width: 544px;
+    height: 404px;
     padding-bottom: 0px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
 }
 
 .modal-background {
@@ -66,20 +89,8 @@
     height: 404px;
 }
 
-.modal-blur-background {
-    backdrop-filter: blur(4px);
-    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
-}
-
-#etalon-silver-modal .modal-blur-background {
-    -webkit-mask: linear-gradient(133deg, #000 96.57%, transparent 96.57%);
-}
-
-#interactive-map-modal .modal-blur-background {
-    -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%);
-}
-
 .modal-content {
+    position: relative;
     z-index: 100;
     display: flex;
     padding: 32px 32px 0px 32px;
@@ -138,30 +149,24 @@
     height: 74px;
 }
 
-/* 
-.modal-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+@keyframes modal-show-in {
+    0% {
+        opacity: 0;
+    }
 
-/* .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    100% {
+        opacity: 1;
+    }
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
 
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-} */
+@keyframes modal-show-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

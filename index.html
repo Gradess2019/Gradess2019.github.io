@@ -541,19 +541,29 @@
         function openModal(modalId) {
             let modal = document.getElementById(modalId);
             modal.style.display = "flex";
+            modal.classList.remove("animate-out");
+            modal.classList.add("animate");
+            modal.offsetHeight;
 
             let modalBackground = document.getElementsByClassName("modal-black-background")[0];
             modalBackground.style.display = "block";
+            modalBackground.classList.remove("animate-out");
+            modalBackground.classList.add("animate");
+            modalBackground.offsetHeight;
 
             currentModal = modalId;
         }
 
         function closeModal(modalId) {
             let modal = document.getElementById(modalId);
-            modal.style.display = "none";
+            modal.classList.remove("animate");
+            modal.classList.add("animate-out");
+            modal.offsetHeight;
 
             let modalBackground = document.getElementsByClassName("modal-black-background")[0];
-            modalBackground.style.display = "none";
+            modalBackground.classList.remove("animate");
+            modalBackground.classList.add("animate-out");
+            modalBackground.offsetHeight;
 
             currentModal = null;
         }
