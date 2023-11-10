@@ -1,10 +1,13 @@
 .modal {
+    padding: 2px;
     display: block;
     position: fixed;
     z-index: 100;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    backdrop-filter: blur(14px);
 }
 
 .modal.animate {
@@ -38,37 +41,41 @@
     display: none;
     width: 544px;
     height: 468px;
-    padding-bottom: 0px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(133deg, #000 96.6%, transparent 96.6%);
 }
 
 #interactive-map-modal {
     display: none;
     width: 544px;
-    padding-bottom: 0px;
+    height: 640px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%);
 }
 
 #vr-painter-modal {
     display: none;
     width: 544px;
-    padding-bottom: 0px;
+    height: 406px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
 }
 
 #quidditch-modal {
     display: none;
     width: 544px;
+    height: 404px;
     padding-bottom: 0px;
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
 }
 
 .modal-background {
@@ -83,19 +90,23 @@
 }
 
 .modal-blur-background {
-    backdrop-filter: blur(4px);
-    -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%);
+    /* backdrop-filter: blur(14px); */
+}
+
+.modal-blur-background {
+    /* -webkit-mask: linear-gradient(135deg, #000 96.4%, transparent 96.4%); */
 }
 
 #etalon-silver-modal .modal-blur-background {
-    -webkit-mask: linear-gradient(133deg, #000 96.57%, transparent 96.57%);
+    /* -webkit-mask: linear-gradient(133deg, #000 96.57%, transparent 96.57%); */
 }
 
 #interactive-map-modal .modal-blur-background {
-    -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%);
+    /* -webkit-mask: linear-gradient(135deg, #000 97.1%, transparent 97.1%); */
 }
 
 .modal-content {
+    position: relative;
     z-index: 100;
     display: flex;
     padding: 32px 32px 0px 32px;
