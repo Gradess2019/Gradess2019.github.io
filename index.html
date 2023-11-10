@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="styles/modal.css">
         <link rel="stylesheet" href="styles/debug.css">
     </head>
-    <body class="bg-black">
+    <body class="bg-black debug outline">
         <div style="display: none;">
             <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
                 <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
@@ -30,6 +30,10 @@
                 <label for="toolbar-toggle">Toolbar</label>
             </div>
             <div class="debug-toolbar-content">
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="outline-toggle" checked onclick="toggleDebugOutline()">
+                    <label for="outline-toggle">Outline</label>
+                </div>
                 <div class="debug-toolbar-item">
                     <input type="checkbox" id="figma-image-toggle" checked onclick="toggleFigmaImage()">
                     <label for="figma-image-toggle">Figma image</label>
@@ -48,7 +52,7 @@
                 </div>  
             </div>
         </div>
-        <div class="figma" id="figma"></div>
+        <div class="figma hidden" id="figma"></div>
         <div class="content">
             <div class="background-container">
                 <div class="bg-image"></div>
@@ -835,6 +839,11 @@
             let toolbarToggle = document.getElementById("toolbar-toggle");
             let newToolbarState = toolbarToggle.checked ? "block" : "none";
             toolbar.style.display = newToolbarState;
+        }
+
+        function toggleDebugOutline() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.toggle("outline");
         }
 
         function toggleFigmaImage() {

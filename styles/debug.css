@@ -6,3 +6,11 @@
 .debug-toolbar-item {
     user-select: none;
 }
+
+.debug.outline * {
+    outline: 1px solid lightgreen;
+}
+
+.debug-toolbar, .debug-toolbar * {
+    outline: none !important;
+}
