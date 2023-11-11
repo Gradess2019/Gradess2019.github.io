@@ -52,15 +52,15 @@
                 </div>  
             </div>
         </div>
-        <div class="figma hidden" id="figma"></div>
+        <div class="figma" id="figma"></div>
         <div class="content">
-            <div class="background-container">
-                <div class="bg-image"></div>
-                <div class="bg-image-2"></div>
-                <div class="bg-image-3"></div>
-                <div class="bg-image-4"></div>
-                <div class="bg-image-5"></div>
-                <div class="bg-border"></div>
+            <div class="background-container hidden">
+                <div class="bg-image hidden"></div>
+                <div class="bg-image-2 hidden"></div>
+                <div class="bg-image-3 hidden"></div>
+                <div class="bg-image-4 hidden"></div>
+                <div class="bg-image-5 hidden"></div>
+                <div class="bg-border hidden"></div>
             </div>
             <div class="header title-3 white-90 opacity-container">
                 <div>
@@ -96,7 +96,10 @@
                 <div class="main-content">
                     <div class="title-block">
                         <div class="title-content">
-                            <div class="position white-50 descriptor-1">
+                            <div class="position white-50 descriptor-1 wide-screen">
+                                UNREAL ENGINE DEVELOPER
+                            </div>
+                            <div class="position white-50 descriptor-2 tablet-screen">
                                 UNREAL ENGINE DEVELOPER
                             </div>
                             <h1 class="white-90 name">
@@ -115,7 +118,7 @@
                         </div>
                         <div class="stats">
                             <div class="stats-bg-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="544" height="241" viewBox="0 0 544 241" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background wide-screen" width="544" height="241" viewBox="0 0 544 241" fill="none">
                                     <path d="M0 0H544V120.5V179.737V179.484V206.698L510 241H476H408H272H0V0Z" fill="url(#paint0_linear_789_5691)" fill-opacity="0.2"/>
                                     <defs>
                                         <linearGradient id="paint0_linear_789_5691" x1="287" y1="-10.6324" x2="271.621" y2="240.977" gradientUnits="userSpaceOnUse">
@@ -124,7 +127,7 @@
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border" width="584.5" height="281" viewBox="0 0 585 281" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border wide-screen" width="584.5" height="281" viewBox="0 0 585 281" fill="none">
                                     <g filter="url(#filter0_d_789_5692)">
                                         <path d="M565.5 23V229.571L531.819 263.494H22.5L22 23" stroke="#FE056B"/>
                                     </g>
@@ -140,6 +143,18 @@
                                             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_5692" result="shape"/>
                                         </filter>
                                     </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background tablet-screen" width="454" height="241" viewBox="0 0 454 241" fill="none">
+                                    <path d="M0 0H454V120.5V180.75V210.875V225.938V212.647L425.625 241H397.25H340.5H227H0V0Z" fill="url(#paint0_linear_1527_1176)" fill-opacity="0.2"/>
+                                    <defs>
+                                      <linearGradient id="paint0_linear_1527_1176" x1="239.518" y1="-10.6324" x2="221.12" y2="240.569" gradientUnits="userSpaceOnUse">
+                                        <stop stop-opacity="0"/>
+                                        <stop offset="1" stop-color="#FE056B"/>
+                                      </linearGradient>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border tablet-screen" width="456" height="242" viewBox="0 0 456 242" fill="none">
+                                    <path d="M1 0V241H228H341.5H398.25H426.625L455 212.647V200.179V210.875V180.75V120.5V0" stroke="#FE056B"/>
                                 </svg>
                             </div>
                             <div class="white-90 body-1 stat-item">
@@ -264,13 +279,13 @@
                     </div>
                 </div>
             </div>
-            <div class="quote opacity-container">
+            <div class="quote opacity-container hidden">
                 <h4 class="quote-content">
                     <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h4>
             </div>
-            <div class="introduction opacity-container">
+            <div class="introduction opacity-container hidden">
                 <div id="introduction"></div>
                 <div class="introduction-text-container body-1 white-50">
                     <p>
@@ -329,7 +344,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gym opacity-container">
+            <div class="gym opacity-container hidden">
                 <div class="gym-content">
                     <div class="gym-photo">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="610" height="610" viewBox="0 0 610 610" fill="none">
@@ -365,7 +380,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projects opacity-container">
+            <!-- <div class="projects opacity-container">
                 <div id="projects"></div>
                 <div class="projects-content">
                     <div class="projects-toolbar white-90">
@@ -402,8 +417,8 @@
                     </div>
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
-            </div>
-            <div class="marketplace opacity-container">
+            </div> -->
+            <div class="marketplace opacity-container hidden">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -422,7 +437,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer opacity-container">
+            <div class="footer opacity-container hidden">
                 <div class="copyright body-1 white-90">
                     Stepan © 2023
                 </div>
