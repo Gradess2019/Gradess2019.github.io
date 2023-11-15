@@ -49,7 +49,7 @@
                 <div class="debug-toolbar-item">
                     <input type="range" min="0" max="1" value="1" step="0.01" oninput="setContainerOpacity('opacity-container', this.value)">
                     <label>Content opacity</label>
-                </div>  
+                </div>
             </div>
         </div>
         <div class="figma" id="figma"></div>
@@ -147,10 +147,10 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background tablet-screen" width="454" height="241" viewBox="0 0 454 241" fill="none">
                                     <path d="M0 0H454V120.5V180.75V210.875V225.938V212.647L425.625 241H397.25H340.5H227H0V0Z" fill="url(#paint0_linear_1527_1176)" fill-opacity="0.2"/>
                                     <defs>
-                                      <linearGradient id="paint0_linear_1527_1176" x1="239.518" y1="-10.6324" x2="221.12" y2="240.569" gradientUnits="userSpaceOnUse">
-                                        <stop stop-opacity="0"/>
-                                        <stop offset="1" stop-color="#FE056B"/>
-                                      </linearGradient>
+                                        <linearGradient id="paint0_linear_1527_1176" x1="239.518" y1="-10.6324" x2="221.12" y2="240.569" gradientUnits="userSpaceOnUse">
+                                            <stop stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#FE056B"/>
+                                        </linearGradient>
                                     </defs>
                                 </svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border tablet-screen" width="456" height="242" viewBox="0 0 456 242" fill="none">
@@ -289,18 +289,21 @@
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h5>
             </div>
-            <div class="introduction opacity-container hidden">
+            <div class="introduction opacity-container">
                 <div id="introduction"></div>
                 <div class="introduction-text-container body-1 white-50">
                     <p>
                         Hey there, I'm Stepan, an Unreal Engine Developer fueled by boundless enthusiasm for creativity and technology. My life is a fusion of pixels and code, crafting virtual worlds and enriching reality with unprecedented possibilities.
                     </p>
-                    <p>
+                    <p class="wide-screen">
                         During moments when I'm not engrossed in virtual worlds, I discover happiness through a wide range of interests. Early morning workouts invigorate my spirit, while the piano's melodies envelop me in a blend of harmony and creative sparks. Likewise, I'm drawn to captivating gaming sessions and invigorating longboard rides, both of which provide me with a sense of liberation and novel concepts.
+                    </p>
+                    <p class="tablet-screen">
+                        When I'm not immersed in virtual realms, I find joy in a diverse array of hobbies. Morning workouts energize me, while the melodies of the piano immerse me in harmony and inspiration. Equally captivating are gaming sessions and longboard cruises, offering freedom and fresh ideas.
                     </p>
                 </div>
                 <div class="introduction-primary-photo">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="541" height="721" viewBox="0 0 541 721" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="wide-screen" width="541" height="721" viewBox="0 0 541 721" fill="none">
                         <g filter="url(#filter0_d_894_20400)">
                             <path d="M33 17H508V639.61L478.312 672H448.625H389.25H270.5H33V17Z" fill="url(#pattern0)" shape-rendering="crispEdges"/>
                             <path d="M33 16.5H32.5V17V672V672.5H33H270.5H389.25H448.625H478.312H478.532L478.681 672.338L508.369 639.948L508.5 639.804V639.61V17V16.5H508H33Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
@@ -320,6 +323,28 @@
                                 <use xlink:href="#image0_894_20400" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
                             </pattern>
                             <image id="image0_894_20400" width="816" height="1456" xlink:href="images/burger.png"/>
+                        </defs>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tablet-screen" width="444" height="546" viewBox="0 0 444 546" fill="none">
+                        <g filter="url(#filter0_d_894_20396)">
+                            <path d="M32 16H412V474.165L388.25 498H364.5H317H222H32V16Z" fill="url(#pattern0_tablet)" shape-rendering="crispEdges"/>
+                            <path d="M32.5 16.5H411.5V473.958L388.042 497.5H364.5H317H222H32.5V16.5Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_894_20396" x="0" y="0" width="444" height="546" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="16"/>
+                                <feGaussianBlur stdDeviation="16"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_894_20396"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_894_20396" result="shape"/>
+                            </filter>
+                            <pattern id="pattern0_tablet" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_894_20396" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
+                            </pattern>
+                            <image id="image0_894_20396" width="816" height="1456" xlink:href="images/burger.png"/>
                         </defs>
                     </svg>
                     <div class="introduction-secondary-photo">
