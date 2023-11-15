@@ -1,10 +1,5 @@
 .footer {
     display: flex;
-    width: 1120px;
-    padding-left: 160px;
-    padding-right: 160px;
-    padding-top: 150px;
-    padding-bottom: 44px;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -35,6 +30,36 @@
     gap: 10px;
 }
 
-.footer-content .contacts {
-    margin-top: 0px;
+.footer-content .contacts {}
+
+@media screen and (min-width: 1441px) {
+    .footer {
+        width: 1120px;
+        padding-left: 160px;
+        padding-right: 160px;
+        padding-top: 150px;
+        padding-bottom: 44px;
+    }
+
+    .footer-content .contacts {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+    .footer {
+        width: 940px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 132px;
+        padding-bottom: 42px;
+    }
+
+    .footer-content {
+        margin-top: -4px;
+    }
+
+    .footer-content .contacts {
+        margin-top: -1px;
+    }
 }
