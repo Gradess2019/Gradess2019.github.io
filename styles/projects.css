@@ -7,9 +7,6 @@
 
 .projects-content {
     display: flex;
-    padding-right: 160px;
-    padding-left: 160px;
-    padding-top: 144px;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -163,4 +160,35 @@
     gap: 4px;
     user-select: none;
     cursor: pointer;
+}
+
+
+@media screen and (min-width: 1441px) {
+    .projects-content {
+        padding-right: 160px;
+        padding-left: 160px;
+        padding-top: 144px;
+    }
+
+    .projects-toolbar {
+        width: 1120px;
+    }
+
+    .projects-list {}
+}
+
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+    .projects-content {
+        padding-right: 40px;
+        padding-left: 40px;
+        padding-top: 96px;
+    }
+
+    .projects-toolbar {
+        width: 940px;
+    }
+
+    .projects-list {
+        width: 940px;
+    }
 }
