@@ -116,7 +116,6 @@ body {
 
 .content {
     display: block;
-    width: 1440px;
     flex-direction: column;
     align-items: flex-start;
 
@@ -296,4 +295,24 @@ h6 {
     position: relative;
     margin: 0;
     top: -2px;
+}
+
+@media screen and (min-width: 1441px) {
+    .content {
+        width: 1440px;
+    }
+
+    .tablet-screen {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+    .content {
+        width: 1020px;
+    }
+
+    .wide-screen {
+        display: none;
+    }
 }
