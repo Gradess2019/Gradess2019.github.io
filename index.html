@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <meta name="viewport" content="width=1440, initial-scale=1, minimum-scale=1">
         <title>Stepan Trofimov</title>
         <link rel="stylesheet" href="styles/common.css">
         <link rel="stylesheet" href="styles/header.css">
@@ -34,6 +34,14 @@
                 <div class="debug-toolbar-item">
                     <input type="checkbox" id="outline-toggle" checked onclick="toggleDebugOutline()">
                     <label for="outline-toggle">Outline</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="screen-size" checked onclick="document.getElementById('screen-size-label').textContent = screen.width">
+                    <label for="screen-size" id="screen-size-label">Screen Size</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="window-size" checked onclick="document.getElementById('window-size-label').textContent = window.innerWidth">
+                    <label for="window-size" id="window-size-label">Window Size</label>
                 </div>
                 <div class="debug-toolbar-item">
                     <input type="checkbox" id="figma-image-toggle" checked onclick="toggleFigmaImage()">
@@ -612,6 +620,31 @@
     </div>
 </body>
 <script>
+        if (screen.width > 1440) {
+            var siteWidth = 1440;
+            console.log("1440");
+        }
+        else if (screen.width > 768) {
+            var siteWidth = 1080;
+            console.log("1080");
+        }
+        else {
+            var siteWidth = screen.width;
+            console.log("window.innerWidth");
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scale = screen.width / siteWidth;
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+            console.log("loaded. scale = " + scale + "");
+        });
+
+        window.onresize = function() {
+            scale = screen.width / siteWidth;
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+            console.log("on resize. scale = " + scale + "");
+        };
+
         let currentModal = null;
         function openModal(modalId) {
             let modal = document.getElementById(modalId);
