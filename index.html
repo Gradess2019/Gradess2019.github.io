@@ -620,27 +620,49 @@
     </div>
 </body>
 <script>
-        if (screen.width > 1440) {
-            var siteWidth = 1440;
-            console.log("1440");
+        const DESKTOP_CONTENT_WIDTH = 1440;
+        const TABLET_CONTENT_WIDTH = 1180;
+
+        function getSiteWidth() {
+            let siteWidth = 0;
+            if (screen.width > DESKTOP_CONTENT_WIDTH) {
+                siteWidth = DESKTOP_CONTENT_WIDTH;
+            }
+            else if (screen.width > 768) {
+                siteWidth = TABLET_CONTENT_WIDTH;
+            }
+            else {
+                siteWidth = screen.width;
+            }
+            
+            return siteWidth;
         }
-        else if (screen.width > 768) {
-            var siteWidth = 1080;
-            console.log("1080");
+
+        function getScale() {
+            let siteWidth = getSiteWidth();
+            return screen.width / siteWidth;
         }
-        else {
-            var siteWidth = screen.width;
-            console.log("window.innerWidth");
+
+        function getDesiredScale() {
+            let scale = 0;
+
+            if (screen.width > TABLET_CONTENT_WIDTH) {
+                scale = 1;
+            } else {
+                scale = getScale();
+            }
+
+            return scale;
         }
 
         document.addEventListener("DOMContentLoaded", function(event) {
-            var scale = screen.width / siteWidth;
+            var scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
             console.log("loaded. scale = " + scale + "");
         });
 
         window.onresize = function() {
-            scale = screen.width / siteWidth;
+            let scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
             console.log("on resize. scale = " + scale + "");
         };
