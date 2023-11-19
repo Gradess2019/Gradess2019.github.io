@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=1440, initial-scale=1, minimum-scale=1">
         <title>Stepan Trofimov</title>
         <link rel="stylesheet" href="styles/common.css">
         <link rel="stylesheet" href="styles/header.css">
@@ -18,7 +19,7 @@
         <link rel="stylesheet" href="styles/modal.css">
         <link rel="stylesheet" href="styles/debug.css">
     </head>
-    <body class="bg-black">
+    <body class="bg-black debug outline">
         <div style="display: none;">
             <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
                 <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
@@ -30,6 +31,18 @@
                 <label for="toolbar-toggle">Toolbar</label>
             </div>
             <div class="debug-toolbar-content">
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="outline-toggle" checked onclick="toggleDebugOutline()">
+                    <label for="outline-toggle">Outline</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="screen-size" checked onclick="document.getElementById('screen-size-label').textContent = screen.width">
+                    <label for="screen-size" id="screen-size-label">Screen Size</label>
+                </div>
+                <div class="debug-toolbar-item">
+                    <input type="checkbox" id="window-size" checked onclick="document.getElementById('window-size-label').textContent = window.innerWidth">
+                    <label for="window-size" id="window-size-label">Window Size</label>
+                </div>
                 <div class="debug-toolbar-item">
                     <input type="checkbox" id="figma-image-toggle" checked onclick="toggleFigmaImage()">
                     <label for="figma-image-toggle">Figma image</label>
@@ -45,7 +58,7 @@
                 <div class="debug-toolbar-item">
                     <input type="range" min="0" max="1" value="1" step="0.01" oninput="setContainerOpacity('opacity-container', this.value)">
                     <label>Content opacity</label>
-                </div>  
+                </div>
             </div>
         </div>
         <div class="figma" id="figma"></div>
@@ -92,7 +105,10 @@
                 <div class="main-content">
                     <div class="title-block">
                         <div class="title-content">
-                            <div class="position white-50 descriptor-1">
+                            <div class="position white-50 descriptor-1 wide-screen">
+                                UNREAL ENGINE DEVELOPER
+                            </div>
+                            <div class="position white-50 descriptor-2 tablet-screen">
                                 UNREAL ENGINE DEVELOPER
                             </div>
                             <h1 class="white-90 name">
@@ -111,7 +127,7 @@
                         </div>
                         <div class="stats">
                             <div class="stats-bg-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="544" height="241" viewBox="0 0 544 241" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background wide-screen" width="544" height="241" viewBox="0 0 544 241" fill="none">
                                     <path d="M0 0H544V120.5V179.737V179.484V206.698L510 241H476H408H272H0V0Z" fill="url(#paint0_linear_789_5691)" fill-opacity="0.2"/>
                                     <defs>
                                         <linearGradient id="paint0_linear_789_5691" x1="287" y1="-10.6324" x2="271.621" y2="240.977" gradientUnits="userSpaceOnUse">
@@ -120,7 +136,7 @@
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border" width="584.5" height="281" viewBox="0 0 585 281" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border wide-screen" width="584.5" height="281" viewBox="0 0 585 281" fill="none">
                                     <g filter="url(#filter0_d_789_5692)">
                                         <path d="M565.5 23V229.571L531.819 263.494H22.5L22 23" stroke="#FE056B"/>
                                     </g>
@@ -136,6 +152,18 @@
                                             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_5692" result="shape"/>
                                         </filter>
                                     </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background tablet-screen" width="454" height="241" viewBox="0 0 454 241" fill="none">
+                                    <path d="M0 0H454V120.5V180.75V210.875V225.938V212.647L425.625 241H397.25H340.5H227H0V0Z" fill="url(#paint0_linear_1527_1176)" fill-opacity="0.2"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1527_1176" x1="239.518" y1="-10.6324" x2="221.12" y2="240.569" gradientUnits="userSpaceOnUse">
+                                            <stop stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#FE056B"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border tablet-screen" width="456" height="242" viewBox="0 0 456 242" fill="none">
+                                    <path d="M1 0V241H228H341.5H398.25H426.625L455 212.647V200.179V210.875V180.75V120.5V0" stroke="#FE056B"/>
                                 </svg>
                             </div>
                             <div class="white-90 body-1 stat-item">
@@ -261,10 +289,14 @@
                 </div>
             </div>
             <div class="quote opacity-container">
-                <h4 class="quote-content">
+                <h4 class="quote-content wide-screen">
                     <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h4>
+                <h5 class="quote-content tablet-screen">
+                    <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
+                    <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
+                </h5>
             </div>
             <div class="introduction opacity-container">
                 <div id="introduction"></div>
@@ -272,12 +304,15 @@
                     <p>
                         Hey there, I'm Stepan, an Unreal Engine Developer fueled by boundless enthusiasm for creativity and technology. My life is a fusion of pixels and code, crafting virtual worlds and enriching reality with unprecedented possibilities.
                     </p>
-                    <p>
+                    <p class="wide-screen">
                         During moments when I'm not engrossed in virtual worlds, I discover happiness through a wide range of interests. Early morning workouts invigorate my spirit, while the piano's melodies envelop me in a blend of harmony and creative sparks. Likewise, I'm drawn to captivating gaming sessions and invigorating longboard rides, both of which provide me with a sense of liberation and novel concepts.
+                    </p>
+                    <p class="tablet-screen">
+                        When I'm not immersed in virtual realms, I find joy in a diverse array of hobbies. Morning workouts energize me, while the melodies of the piano immerse me in harmony and inspiration. Equally captivating are gaming sessions and longboard cruises, offering freedom and fresh ideas.
                     </p>
                 </div>
                 <div class="introduction-primary-photo">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="541" height="721" viewBox="0 0 541 721" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="wide-screen" width="541" height="721" viewBox="0 0 541 721" fill="none">
                         <g filter="url(#filter0_d_894_20400)">
                             <path d="M33 17H508V639.61L478.312 672H448.625H389.25H270.5H33V17Z" fill="url(#pattern0)" shape-rendering="crispEdges"/>
                             <path d="M33 16.5H32.5V17V672V672.5H33H270.5H389.25H448.625H478.312H478.532L478.681 672.338L508.369 639.948L508.5 639.804V639.61V17V16.5H508H33Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
@@ -297,6 +332,28 @@
                                 <use xlink:href="#image0_894_20400" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
                             </pattern>
                             <image id="image0_894_20400" width="816" height="1456" xlink:href="images/burger.png"/>
+                        </defs>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tablet-screen" width="444" height="546" viewBox="0 0 444 546" fill="none">
+                        <g filter="url(#filter0_d_894_20396)">
+                            <path d="M32 16H412V474.165L388.25 498H364.5H317H222H32V16Z" fill="url(#pattern0_tablet)" shape-rendering="crispEdges"/>
+                            <path d="M32.5 16.5H411.5V473.958L388.042 497.5H364.5H317H222H32.5V16.5Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_894_20396" x="0" y="0" width="444" height="546" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="16"/>
+                                <feGaussianBlur stdDeviation="16"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_894_20396"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_894_20396" result="shape"/>
+                            </filter>
+                            <pattern id="pattern0_tablet" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_894_20396" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
+                            </pattern>
+                            <image id="image0_894_20396" width="816" height="1456" xlink:href="images/burger.png"/>
                         </defs>
                     </svg>
                     <div class="introduction-secondary-photo">
@@ -328,7 +385,7 @@
             <div class="gym opacity-container">
                 <div class="gym-content">
                     <div class="gym-photo">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="610" height="610" viewBox="0 0 610 610" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="wide-screen" width="610" height="610" viewBox="0 0 610 610" fill="none">
                             <g filter="url(#filter0_d_966_124449)">
                                 <path d="M33 17H577V527L543 561H509H441H305H33V17Z" fill="url(#pattern-gym)" shape-rendering="crispEdges"/>
                                 <path d="M33 16.5H32.5V17V561V561.5H33H305H441H509H543H543.207L543.354 561.354L577.354 527.354L577.5 527.207V527V17V16.5H577H33Z" stroke="#FE056B" shape-rendering="crispEdges"/>
@@ -350,6 +407,28 @@
                                 <image id="image0_966_124449" width="1024" height="1024" xlink:href="images/gym.png"/>
                             </defs>
                         </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tablet-screen" width="518" height="518" viewBox="0 0 518 518" fill="none">
+                            <g filter="url(#filter0_d_978_124892)">
+                                <path d="M32 16H486V441.625L457.625 470H429.25H372.5H259H32V16Z" fill="url(#pattern-gym-tablet)" shape-rendering="crispEdges"/>
+                                <path d="M32.5 16.5H485.5V441.418L457.418 469.5H429.25H372.5H259H32.5V16.5Z" stroke="#FE056B" shape-rendering="crispEdges"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_978_124892" x="0" y="0" width="518" height="518" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="16"/>
+                                    <feGaussianBlur stdDeviation="16"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.16 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_978_124892"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_978_124892" result="shape"/>
+                                </filter>
+                                <pattern id="pattern-gym-tablet" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_978_124892" transform="scale(0.000976562)"/>
+                                </pattern>
+                                <image id="image0_978_124892" width="1024" height="1024" xlink:href="images/gym.png"/>
+                            </defs>
+                        </svg>
                     </div>
                     <div class="gym-description body-1 white-50">
                         <p>
@@ -366,7 +445,8 @@
                 <div class="projects-content">
                     <div class="projects-toolbar white-90">
                         <div class="projects-toolbar-title">
-                            <h2>PROJECTS</h2>
+                            <h2 class="wide-screen">PROJECTS</h2>
+                            <h3 class="tablet-screen">PROJECTS</h3>
                         </div>
                         <div class="projects-toolbar-buttons">
                             <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
@@ -393,7 +473,8 @@
                             </div>
                         </div>
                         <div class="companies-toolbar-title">
-                            <h2>COMPANIES</h2>
+                            <h2 class="wide-screen">COMPANIES</h2>
+                            <h3 class="tablet-screen">COMPANIES</h3>
                         </div>
                     </div>
                     <div class="companies-list" id="companies-list-original"></div>
@@ -403,7 +484,8 @@
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
-                        <h2 class="white-90">GRADESS GAMES</h2>
+                        <h2 class="white-90 wide-screen">GRADESS GAMES</h2>
+                        <h3 class="white-90 tablet-screen">GRADESS GAMES</h3>
                         <p class="body-1 white-50">Plugin development for Unreal Engine</p>
                     </div>
                     <div class="marketplace-tile">
@@ -538,6 +620,57 @@
     </div>
 </body>
 <script>
+        const DESKTOP_CONTENT_WIDTH = 1440;
+        const TABLET_CONTENT_WIDTH = 1180;
+
+        function getScreenWidth() {
+            return screen.width;
+        }
+
+        function getSiteWidth() {
+            let screenWidth = getScreenWidth();
+            let siteWidth = 0;
+            if (screenWidth > DESKTOP_CONTENT_WIDTH) {
+                siteWidth = DESKTOP_CONTENT_WIDTH;
+            }
+            else if (screenWidth > 768) {
+                siteWidth = TABLET_CONTENT_WIDTH;
+            }
+            else {
+                siteWidth = screenWidth;
+            }
+            
+            return siteWidth;
+        }
+
+        function getScale() {
+            let screenWidth = getScreenWidth();
+            let siteWidth = getSiteWidth();
+            return screenWidth / siteWidth;
+        }
+
+        function getDesiredScale() {
+            let screenWidth = getScreenWidth();
+
+            if (screenWidth > TABLET_CONTENT_WIDTH) {
+                return 1;
+            } else {
+                return getScale();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scale = getDesiredScale();
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+            console.log("loaded. scale = " + scale + "");
+        });
+
+        window.onresize = function() {
+            let scale = getDesiredScale();
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+            console.log("on resize. scale = " + scale + "");
+        };
+
         let currentModal = null;
         function openModal(modalId) {
             let modal = document.getElementById(modalId);
@@ -835,6 +968,11 @@
             let toolbarToggle = document.getElementById("toolbar-toggle");
             let newToolbarState = toolbarToggle.checked ? "block" : "none";
             toolbar.style.display = newToolbarState;
+        }
+
+        function toggleDebugOutline() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.toggle("outline");
         }
 
         function toggleFigmaImage() {

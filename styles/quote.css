@@ -1,6 +1,5 @@
 .quote {
     display: flex;
-    padding: 74px 160px 0px 160px;
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
@@ -9,4 +8,22 @@
 
 .quote-content {
     width: 832px;
+}
+
+@media screen and (min-width: 1441px) {
+    .quote {
+        padding: 74px 160px 0px 160px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+    .quote {
+        padding: 96px 40px 80px 40px;
+    }
+
+    .quote-content {
+        width: 697px;
+        margin: 0;
+        margin-top: 1px;
+    }
 }

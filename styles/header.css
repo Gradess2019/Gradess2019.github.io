@@ -1,7 +1,6 @@
 .header {
     display: flex;
     height: 80px;
-    padding: 0px 160px;
     justify-content: space-between;
     align-items: center;
 }
@@ -31,4 +30,16 @@ a {
     align-items: center;
     gap: 12px;
     margin-top: 7px;
+}
+
+@media screen and (min-width: 1441px) {
+    .header {
+        padding: 0px 160px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+    .header {
+        padding: 0px 40px;
+    }
 }
