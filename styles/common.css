@@ -305,6 +305,10 @@ h6 {
     .tablet-screen {
         display: none;
     }
+
+    .mobile-screen {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
@@ -315,4 +319,24 @@ h6 {
     .wide-screen {
         display: none;
     }
+
+    .mobile-screen {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .content {
+        width: 390px;
+    }
+
+    .wide-screen {
+        display: none;
+    }
+
+    .tablet-screen {
+        display: none;
+    }
+
+    
 }

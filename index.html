@@ -63,7 +63,7 @@
         </div>
         <div class="figma" id="figma"></div>
         <div class="content">
-            <div class="background-container">
+            <div class="background-container hidden">
                 <div class="bg-image"></div>
                 <div class="bg-image-2"></div>
                 <div class="bg-image-3"></div>
@@ -71,7 +71,7 @@
                 <div class="bg-image-5"></div>
                 <div class="bg-border"></div>
             </div>
-            <div class="header title-3 white-90 opacity-container">
+            <div class="header title-3 white-90 opacity-container hidden">
                 <div>
                     STEPAN
                 </div>
@@ -101,7 +101,7 @@
                     </a>
                 </div>
             </div>
-            <div class="main opacity-container">
+            <div class="main opacity-container hidden">
                 <div class="main-content">
                     <div class="title-block">
                         <div class="title-content">
@@ -288,7 +288,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quote opacity-container">
+            <div class="quote opacity-container hidden">
                 <h4 class="quote-content wide-screen">
                     <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
@@ -298,7 +298,7 @@
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h5>
             </div>
-            <div class="introduction opacity-container">
+            <div class="introduction opacity-container hidden">
                 <div id="introduction"></div>
                 <div class="introduction-text-container body-1 white-50">
                     <p>
@@ -382,7 +382,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gym opacity-container">
+            <div class="gym opacity-container hidden">
                 <div class="gym-content">
                     <div class="gym-photo">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="wide-screen" width="610" height="610" viewBox="0 0 610 610" fill="none">
@@ -440,7 +440,7 @@
                     </div>
                 </div>
             </div>
-            <div class="projects opacity-container">
+            <div class="projects opacity-container hidden">
                 <div id="projects"></div>
                 <div class="projects-content">
                     <div class="projects-toolbar white-90">
@@ -460,7 +460,7 @@
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
-            <div class="companies opacity-container">
+            <div class="companies opacity-container hidden">
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
@@ -480,7 +480,7 @@
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
             </div>
-            <div class="marketplace opacity-container">
+            <div class="marketplace opacity-container" hidden>
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -500,7 +500,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer opacity-container">
+            <div class="footer opacity-container hidden">
                 <div class="copyright body-1 white-90">
                     Stepan © 2023
                 </div>
@@ -662,13 +662,11 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             var scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-            console.log("loaded. scale = " + scale + "");
         });
 
         window.onresize = function() {
             let scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-            console.log("on resize. scale = " + scale + "");
         };
 
         let currentModal = null;
