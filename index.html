@@ -623,36 +623,40 @@
         const DESKTOP_CONTENT_WIDTH = 1440;
         const TABLET_CONTENT_WIDTH = 1180;
 
+        function getScreenWidth() {
+            return screen.width;
+        }
+
         function getSiteWidth() {
+            let screenWidth = getScreenWidth();
             let siteWidth = 0;
-            if (screen.width > DESKTOP_CONTENT_WIDTH) {
+            if (screenWidth > DESKTOP_CONTENT_WIDTH) {
                 siteWidth = DESKTOP_CONTENT_WIDTH;
             }
-            else if (screen.width > 768) {
+            else if (screenWidth > 768) {
                 siteWidth = TABLET_CONTENT_WIDTH;
             }
             else {
-                siteWidth = screen.width;
+                siteWidth = screenWidth;
             }
             
             return siteWidth;
         }
 
         function getScale() {
+            let screenWidth = getScreenWidth();
             let siteWidth = getSiteWidth();
-            return screen.width / siteWidth;
+            return screenWidth / siteWidth;
         }
 
         function getDesiredScale() {
-            let scale = 0;
+            let screenWidth = getScreenWidth();
 
-            if (screen.width > TABLET_CONTENT_WIDTH) {
-                scale = 1;
+            if (screenWidth > TABLET_CONTENT_WIDTH) {
+                return 1;
             } else {
-                scale = getScale();
+                return getScale();
             }
-
-            return scale;
         }
 
         document.addEventListener("DOMContentLoaded", function(event) {
