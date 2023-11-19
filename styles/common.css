@@ -303,11 +303,11 @@ h6 {
     }
 
     .tablet-screen {
-        display: none;
+        display: none !important;
     }
 
     .mobile-screen {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -317,11 +317,11 @@ h6 {
     }
 
     .wide-screen {
-        display: none;
+        display: none !important;
     }
 
     .mobile-screen {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -331,11 +331,15 @@ h6 {
     }
 
     .wide-screen {
-        display: none;
+        display: none !important;
     }
 
     .tablet-screen {
-        display: none;
+        display: none !important;
+    }
+
+    .no-mobile {
+        display: none !important;
     }
 
     

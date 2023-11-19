@@ -1,6 +1,5 @@
 .header {
     display: flex;
-    height: 80px;
     justify-content: space-between;
     align-items: center;
 }
@@ -35,11 +34,21 @@ a {
 @media screen and (min-width: 1441px) {
     .header {
         padding: 0px 160px;
+        height: 80px;
     }
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
     .header {
         padding: 0px 40px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .header {
+        padding: 0px 16px;
+        height: 64px;
+        font-size: 18px !important;
     }
 }
