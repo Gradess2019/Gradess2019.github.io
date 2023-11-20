@@ -92,3 +92,33 @@
         right: 40px;
     }
 }
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .introduction {
+        margin-top: 98px;
+        height: 454px;
+        width: 390px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .introduction-text-container {
+        width: 358px;
+        padding-right: 16px;
+        padding-left: 16px;
+        align-self: stretch;
+        gap: 17px !important;
+        margin-top: 3px;
+    }
+
+    .introduction-primary-photo {
+        align-items: start !important;
+        width: 390px;
+        height: 454px;
+    }
+
+    .introduction-secondary-photo {
+        top: -114px;
+        right: 13px;
+    }
+}
