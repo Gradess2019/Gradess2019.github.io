@@ -27,3 +27,15 @@
         margin-top: 1px;
     }
 }
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .quote {
+        padding: 128px 16px 0px 16px;
+    }
+
+    .quote-content {
+        width: 358px;
+        margin: 0;
+        margin-top: 1px;
+    }
+}
