@@ -529,15 +529,16 @@
                     </div>
                 </div>
             </div>
-            <div class="projects opacity-container hidden">
+            <div class="projects opacity-container">
                 <div id="projects"></div>
                 <div class="projects-content">
                     <div class="projects-toolbar white-90">
                         <div class="projects-toolbar-title">
                             <h2 class="wide-screen">PROJECTS</h2>
                             <h3 class="tablet-screen">PROJECTS</h3>
+                            <h4 class="mobile-screen">PROJECTS</h3>
                         </div>
-                        <div class="projects-toolbar-buttons">
+                        <div class="projects-toolbar-buttons no-mobile">
                             <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
@@ -545,6 +546,7 @@
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
                     </div>
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
@@ -711,6 +713,11 @@
 <script>
         const DESKTOP_CONTENT_WIDTH = 1440;
         const TABLET_CONTENT_WIDTH = 1180;
+
+        String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, 'g'), replacement);
+        };
 
         function getScreenWidth() {
             return screen.width;
@@ -902,57 +909,57 @@
                             let projectItem = htmlCodeCopy;
 
                             // replace {{projectName}} with project.name
-                            projectItem = projectItem.replace("{{projectName}}", project.projectName);
+                            projectItem = projectItem.replaceAll("{{projectName}}", project.projectName);
 
                             // replace {{company}} with project.company
-                            projectItem = projectItem.replace("{{company}}", project.company);
+                            projectItem = projectItem.replaceAll("{{company}}", project.company);
 
                             // replace {{position}} with project.position
-                            projectItem = projectItem.replace("{{position}}", project.position);
+                            projectItem = projectItem.replaceAll("{{position}}", project.position);
 
                             // replace {{technologies}} with project.technologies
-                            projectItem = projectItem.replace("{{technologies}}", project.technologies);
+                            projectItem = projectItem.replaceAll("{{technologies}}", project.technologies);
 
                             // replace {{platform}} with project.platform
-                            projectItem = projectItem.replace("{{platform}}", project.platform);
+                            projectItem = projectItem.replaceAll("{{platform}}", project.platform);
 
                             if (project.platform.length <= 0) {
-                                projectItem = projectItem.replace("{{platformVisibility}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{platformVisibility}}", "hidden");
                             }
 
                             // replace {{description}} with project.description
-                            projectItem = projectItem.replace("{{description}}", project.description);
+                            projectItem = projectItem.replaceAll("{{description}}", project.description);
 
                             // replace {{descriptionClass}} with project.descriptionClass
 
                             // replace {{buttonText}} with project.buttonText
-                            projectItem = projectItem.replace("{{buttonText}}", project.buttonText);
+                            projectItem = projectItem.replaceAll("{{buttonText}}", project.buttonText);
 
                             // replace {{imageUrl}} with project.imageUrl
-                            projectItem = projectItem.replace("{{imageUrl}}", project.imageUrl);
+                            projectItem = projectItem.replaceAll("{{imageUrl}}", project.imageUrl);
 
                             // replace {{fallbackName}} with project.fallbackName
                             if (project.fallbackName.length > 0) {
-                                projectItem = projectItem.replace("{{fallbackName}}", project.fallbackName);
+                                projectItem = projectItem.replaceAll("{{fallbackName}}", project.fallbackName);
                             } else {
-                                projectItem = projectItem.replace("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
+                                projectItem = projectItem.replaceAll("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
                             }
 
                             if (!project.showMoreVisible) {
-                                projectItem = projectItem.replace("{{showMoreVisible}}", "hidden");
-                                projectItem = projectItem.replace("{{descriptionClass}}", "");
+                                projectItem = projectItem.replaceAll("{{showMoreVisible}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "");
                             } 
                             else {
-                                projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
-                                projectItem = projectItem.replace("{{modalId}}", project.modalId);
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow");
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
                             }
 
                             if (!project.buttonVisible) {
-                                projectItem = projectItem.replace("{{buttonVisible}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{buttonVisible}}", "hidden");
                             }
                             else {
-                                projectItem = projectItem.replace("{{buttonVisible}}", "");
-                                projectItem = projectItem.replace("{{buttonUrl}}", project.buttonUrl);
+                                projectItem = projectItem.replaceAll("{{buttonVisible}}", "");
+                                projectItem = projectItem.replaceAll("{{buttonUrl}}", project.buttonUrl);
                             }
 
 

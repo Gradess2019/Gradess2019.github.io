@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="26" viewBox="0 0 73 26" fill="none">
+    <g filter="url(#carousel-arrow-mobile)">
+        <path
+            d="M57.674 10.1104C55.6117 8.91994 54.0378 8.00003 52.5183 7.13423C51.9755 6.80956 51.4328 6.539 50.9444 6.16021C50.2389 5.6732 49.262 5.13207 49.8047 4.10393C50.3474 3.12991 51.3786 3.56281 52.1384 3.83337C52.9524 4.04982 53.7665 4.48273 54.5263 4.86151C58.0539 6.539 61.5815 8.27059 65.0549 10.0022C65.9775 10.4892 66.9543 10.9221 67.7684 11.5715C69.5051 12.8702 69.3965 14.1688 67.497 15.1429C64.9463 16.4416 62.3413 17.632 59.7363 18.8225C58.6509 19.3636 57.5112 19.9048 56.3715 20.2835C55.7202 20.5 54.9605 20.4459 54.2549 20.5C54.0378 18.9849 54.9062 18.6602 55.666 18.2814C57.5655 17.2533 59.5192 16.2792 61.4187 15.2511C62.0699 14.8723 62.7755 14.4935 63.4267 13.6277C62.4498 13.5195 61.5272 13.3572 60.5504 13.303C53.2238 12.9243 45.9515 12.5455 38.6249 12.1667C27.9878 11.6256 17.4049 11.0844 6.76782 10.4892C5.89949 10.4351 5.03115 10.1104 4 9.83985C4.97688 8.37882 6.11657 8.70349 7.03918 8.7576C12.2492 8.86583 17.5135 9.08228 22.7235 9.24462C33.9576 9.62341 45.1917 10.0022 56.4258 10.381C56.6971 10.3269 56.8599 10.2727 57.674 10.1104Z"
+            fill="#59FFFF" />
+    </g>
+    <defs>
+        <filter id="carousel-arrow-mobile" x="0" y="0.5" width="73" height="25"
+            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="1" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="carousel_arrow_effect_dropShadow" />
+            <feColorMatrix in="SourceAlpha" type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="-1" />
+            <feGaussianBlur stdDeviation="1" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0" />
+            <feBlend mode="normal" in2="carousel_arrow_effect_dropShadow"
+                result="carousel_arrow_effect_dropShadow_2" />
+            <feBlend mode="normal" in="SourceGraphic" in2="carousel_arrow_effect_dropShadow_2"
+                result="shape" />
+        </filter>
+    </defs>
+</svg>
