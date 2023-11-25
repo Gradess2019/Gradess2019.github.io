@@ -152,3 +152,45 @@
         width: 940px;
     }
 }
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .companies-content {
+        padding-top: 116px;
+    }
+
+    .companies-toolbar {
+        width: 363px !important;
+        padding-left: 16px;
+    }
+
+    .companies-toolbar-title {
+        width: 293px;
+        justify-content: flex-start;
+    }
+
+    .companies-list {
+        padding: 0px 16px;
+        margin-top: -43px;
+        width: 358px;
+        gap: 24px;
+    }
+
+    .comapny-list-item {
+        width: 320px;
+        height: 406px;
+    }
+
+    .comapny-list-item-background {
+
+    }
+
+    .company-list-item-description {
+        margin: 16px;
+    }
+
+    .responsibilities-list {
+        padding-left: 21px;
+        padding-right: 0px;
+        margin-top: 0px;
+    }
+}

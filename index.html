@@ -551,11 +551,11 @@
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
-            <div class="companies opacity-container hidden">
+            <div class="companies opacity-container">
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
-                        <div class="companies-toolbar-buttons">
+                        <div class="companies-toolbar-buttons no-mobile">
                             <div class="carousel-button left" onclick="scrollPrevious('companies-list-clone', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
@@ -566,7 +566,9 @@
                         <div class="companies-toolbar-title">
                             <h2 class="wide-screen">COMPANIES</h2>
                             <h3 class="tablet-screen">COMPANIES</h3>
+                            <h4 class="mobile-screen">COMPANIES</h4>
                         </div>
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
                     </div>
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
@@ -988,10 +990,10 @@
                             let companyItem = htmlCodeCopy;
 
                             // replace {{title}} with company.title
-                            companyItem = companyItem.replace("{{title}}", company.title);
+                            companyItem = companyItem.replaceAll("{{title}}", company.title);
 
                             // replace {{timeRange}} with company.timeRange
-                            companyItem = companyItem.replace("{{timeRange}}", company.timeRange);
+                            companyItem = companyItem.replaceAll("{{timeRange}}", company.timeRange);
 
                             
                             // for each item in company.responsibilities create <li>item</li>
@@ -1001,7 +1003,7 @@
                                 responsibilitiesList += `<li>${responsibility}</li>`;
                             }
                             // and insert it to <ul class="responsibilities-list white-50 body-2">
-                            companyItem = companyItem.replace("{{responsibilities}}", responsibilitiesList);
+                            companyItem = companyItem.replaceAll("{{responsibilities}}", responsibilitiesList);
 
                             // append companyItem to companies-list
                             let companiesList = document.getElementsByClassName("companies-list")[0];
