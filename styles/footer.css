@@ -63,3 +63,13 @@
         margin-top: -1px;
     }
 }
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .footer {
+        padding: 75px 16px 16px 16px;
+    }
+
+    .footer-content>.contacts {
+        margin-top: -6px;
+    }
+}
