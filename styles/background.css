@@ -165,6 +165,68 @@
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
+    .background-container .bg-image {
+        width: 755px;
+        height: 691px;
+        left: -182px;
+        top: 0px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 32.23%, var(--Black) 90.43%), url("../images/background1.jpg") lightgray 0px -64.535px / 100% 109.339% no-repeat;
+    }
+
+    .background-container .bg-image.mobile-screen {
+        width: 755px;
+        height: 691px;
+        left: -173px;
+        top: 592px;
+        background: linear-gradient(to bottom, var(--Black) 3%, rgba(0, 0, 0, 0.5) 32.23%, var(--Black) 90.43%), url("../images/background1.jpg") lightgray 0px -64.535px / 100% 109.339% no-repeat;
+    }
+
+    .bg-image-2 {
+        width: 1572px;
+        height: 1392px;
+        left: -487px;
+        top: 1013px;
+        z-index: -101;
+
+        background: linear-gradient(180deg, var(--Black) 20.19%, rgba(0, 0, 0, 0.6) 32.34%, rgba(0, 0, 0, 0.6) 52.34%, rgba(0, 0, 0, 0.90) 88.24%, var(--Black) 100%), url("../images/background2.jpg") lightgray -183.217px -437.245px / 125.874% 138.385% no-repeat;
+    }
+
+    .bg-image-3 {
+        width: 2037px;
+        height: 1141px;
+
+        left: -814px;
+        top: 1847px;
+        z-index: -102;
+        background: linear-gradient(180deg, var(--Black) 47%, rgba(0, 0, 0, 0.4) 52.6%, var(--Black) 100%), url("../images/background3.jpg") lightgray 50% / cover no-repeat;
+    }
+
+    .bg-image-4 {
+        width: 1960px;
+        height: 1098.993px;
+        left: -726px;
+        top: 2902px;
+        z-index: -103;
+        background: linear-gradient(180deg, var(--Black) 10%, rgba(0, 0, 0, 0.70) 20%, rgba(0, 0, 0, 0.00) 46.69%, rgba(0, 0, 0, 0.70) 80%, var(--Black) 100%), url("../images/background4.jpg") lightgray 50% / cover no-repeat;
+    }
+
+    .bg-image-5 {
+        width: 1528px;
+        height: 1020px;
+        left: -422px;
+        top: 3934px;
+        background: linear-gradient(176deg, #000 2.93%, rgba(0, 0, 0, 0.00) 27.29%), url("../images/background5.jpg") lightgray 50% / cover no-repeat;
+        background-position-y: 0px;
+    }
+
+    .bg-border {
+        width: 1140px;
+        height: 4974px;
+        left: -294px;
+        top: -20px;
+        background: linear-gradient(to right, var(--Black) 23%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0) 60%, var(--Black) 63%);
+    }
+
     .figma {
         background-image: url("../images/figma_mobile.png");
         background-size: 390px 4954px;
