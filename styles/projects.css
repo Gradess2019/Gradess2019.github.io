@@ -192,3 +192,69 @@
         width: 940px;
     }
 }
+
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .projects-content {
+        padding-top: 82px;
+    }
+
+    .projects-toolbar {
+        width: 358px !important;
+        padding-left: 16px;
+    }
+
+    .projects-toolbar-title {
+        width: 289px !important;
+    }
+
+    .projects-list {
+        padding: 0px 16px;
+        margin-top: -22px;
+        width: 358px;
+        gap: 24px;
+    }
+
+    .project-list-item {
+        width: 320px;
+        height: 525px;
+        gap: 16px;
+    }
+
+    .project-list-item-background {
+        width: 335px !important;
+        height: 525px !important;
+        -webkit-mask: linear-gradient(136deg, #000 97.75%, transparent 97.75%);
+    }
+
+    .project-list-item-image {
+        width: 320px;
+        height: 180px;
+    }
+
+    .project-list-item-image-title {
+        margin-top: 10px;
+        background-size: 320px 180px;
+        width: 320px;
+        height: 180px;
+    }
+
+    .project-list-item-image>img {
+        width: 320px;
+        height: 180px;
+    }
+
+    .project-list-item-description-block {
+        margin-top: 4px;
+    }
+
+    .project-list-item-description {
+        width: 288px;
+    }
+    
+    .project-list-item-description-content {
+        padding: 0px 16px;
+    }
+
+    
+}

@@ -259,7 +259,7 @@ h6 {
 }
 
 .clone {
-    position: absolute;
+    position: absolute !important;
     z-index: -9999;
     visibility: hidden;
 }
@@ -303,7 +303,11 @@ h6 {
     }
 
     .tablet-screen {
-        display: none;
+        display: none !important;
+    }
+
+    .mobile-screen {
+        display: none !important;
     }
 }
 
@@ -313,6 +317,30 @@ h6 {
     }
 
     .wide-screen {
-        display: none;
+        display: none !important;
     }
+
+    .mobile-screen {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .content {
+        width: 390px;
+    }
+
+    .wide-screen {
+        display: none !important;
+    }
+
+    .tablet-screen {
+        display: none !important;
+    }
+
+    .no-mobile {
+        display: none !important;
+    }
+
+    
 }

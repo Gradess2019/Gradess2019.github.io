@@ -1,15 +1,22 @@
 <div class="comapny-list-item">
     <div class="comapny-list-item-background">
-        <img src="images/company_background_large.svg"/>
+        <img src="images/company_background_large.svg" class="no-mobile"/>
+        <img src="images/company-background-mobile.svg" class="mobile-screen"/>
     </div>
     <div class="company-list-item-description">
         <div class="company-list-item-title">
-            <p class="title-1-5 white-90">{{title}}</p>
-            <p class="body-2 white-50">{{timeRange}}</p>
+            <p class="title-1-5 white-90 no-mobile">{{title}}</p>
+            <p class="title-2 white-90 mobile-screen">{{title}}</p>
+            <p class="body-2 white-50 no-mobile">{{timeRange}}</p>
+            <p class="body-3 white-50 mobile-screen">{{timeRange}}</p>
         </div>
         <div class="company-list-item-responsibilities">
-            <p class="responsibilities-title title-3 white-90">Responsibilities:</p>
-            <ul class="responsibilities-list white-50 body-2">
+            <p class="responsibilities-title title-3 white-90 no-mobile">Responsibilities:</p>
+            <p class="responsibilities-title title-4 white-90 mobile-screen">Responsibilities:</p>
+            <ul class="responsibilities-list white-50 body-2 no-mobile">
+                {{responsibilities}}
+            </ul>
+            <ul class="responsibilities-list white-50 body-3 mobile-screen">
                 {{responsibilities}}
             </ul>
         </div>

@@ -65,6 +65,7 @@
         <div class="content">
             <div class="background-container">
                 <div class="bg-image"></div>
+                <div class="bg-image mobile-screen"></div>
                 <div class="bg-image-2"></div>
                 <div class="bg-image-3"></div>
                 <div class="bg-image-4"></div>
@@ -75,7 +76,7 @@
                 <div>
                     STEPAN
                 </div>
-                <div class="page-links">
+                <div class="page-links no-mobile">
                     <div class="item">
                         <a href="#introduction">&lt;about/&gt;</a>
                     </div>
@@ -89,7 +90,7 @@
                         <a href="#marketplace">&lt;studio/&gt;</a>
                     </div>
                 </div>
-                <div class="contacts">
+                <div class="contacts no-mobile">
                     <a href="https://www.linkedin.com/in/gradess/" target="_blank">
                         <img src="images/linkedin.svg">
                     </a>
@@ -111,12 +112,20 @@
                             <div class="position white-50 descriptor-2 tablet-screen">
                                 UNREAL ENGINE DEVELOPER
                             </div>
-                            <h1 class="white-90 name">
+                            <div class="position white-50 descriptor-1 mobile-screen">
+                                UNREAL ENGINE DEVELOPER
+                            </div>
+                            <h1 class="white-90 name no-mobile">
                                 STEPAN
                                 <br>
                                 TROFIMOV
                             </h1>
-                            <div class="main-code-container code white-90">
+                            <h2 class="white-90 name mobile-screen">
+                                STEPAN
+                                <br>
+                                TROFIMOV
+                            </h2>
+                            <div class="main-code-container code white-90 no-mobile">
                                 <div class="main-code"></div>
                             </div>
                         </div>
@@ -165,9 +174,22 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border tablet-screen" width="456" height="242" viewBox="0 0 456 242" fill="none">
                                     <path d="M1 0V241H228H341.5H398.25H426.625L455 212.647V200.179V210.875V180.75V120.5V0" stroke="#FE056B"/>
                                 </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background mobile-screen" width="358" height="210" viewBox="0 0 358 210" fill="none">
+                                    <path d="M0 0H358V187.392L335.625 210H313.25H268.5H179H0V0Z" fill="url(#paint0_linear_1668_835)" fill-opacity="0.2"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1668_835" x1="188.871" y1="-9.2647" x2="171.177" y2="209.367" gradientUnits="userSpaceOnUse">
+                                            <stop stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#FE056B"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border mobile-screen" width="360" height="211" viewBox="0 0 360 211" fill="none">
+                                    <path d="M1 0V210H180H269.5H314.25H336.625L359 187.392V0" stroke="#FE056B"/>
+                                </svg>
                             </div>
                             <div class="white-90 body-1 stat-item">
-                                <div class="stat-item-title">Foodie:</div>
+                                <div class="stat-item-title no-mobile">Foodie:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Foodie:</div>
                                 <div class="stat-item-progress">
                                     <svg>
                                         <use xlink:href="#progress-item" class="progress-item need-fill"/>
@@ -205,7 +227,8 @@
                                 </div>
                             </div>
                             <div class="white-90 body-1 stat-item">
-                                <div class="stat-item-title">Adaptability:</div>
+                                <div class="stat-item-title no-mobile">Adaptability:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Adaptability:</div>
                                 <div class="stat-item-progress">
                                     <svg>
                                         <use xlink:href="#progress-item" class="progress-item need-fill"/>
@@ -240,7 +263,8 @@
                                 </div>
                             </div>
                             <div class="white-90 body-1 stat-item">
-                                <div class="stat-item-title">Finesse:</div>
+                                <div class="stat-item-title no-mobile">Finesse:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Finesse:</div>
                                 <div class="stat-item-progress">
                                     <svg>
                                         <use xlink:href="#progress-item" class="progress-item need-fill"/>
@@ -275,13 +299,15 @@
                                 </div>
                             </div>
                             <div class="white-90 body-1 stat-item">
-                                <div class="stat-item-title">Strength:</div>
+                                <div class="stat-item-title no-mobile">Strength:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Strength:</div>
                                 <div class="stat-item-error-container">
                                     <div class="stat-item-error">ERROR</div>
                                 </div>
                             </div>
                             <div class="white-90 body-1 stat-item">
-                                <div class="stat-item-title">Intelligence:</div>
+                                <div class="stat-item-title no-mobile">Intelligence:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Intelligence:</div>
                                 <div class="stat-item-not-found">NOT FOUND</div>
                             </div>
                         </div>
@@ -297,10 +323,14 @@
                     <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
                     <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
                 </h5>
+                <h6 class="quote-content mobile-screen">
+                    <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
+                    <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
+                </h6>
             </div>
             <div class="introduction opacity-container">
                 <div id="introduction"></div>
-                <div class="introduction-text-container body-1 white-50">
+                <div class="introduction-text-container body-1 white-50 no-mobile">
                     <p>
                         Hey there, I'm Stepan, an Unreal Engine Developer fueled by boundless enthusiasm for creativity and technology. My life is a fusion of pixels and code, crafting virtual worlds and enriching reality with unprecedented possibilities.
                     </p>
@@ -356,6 +386,28 @@
                             <image id="image0_894_20396" width="816" height="1456" xlink:href="images/burger.png"/>
                         </defs>
                     </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mobile-screen" width="335" height="428" viewBox="0 0 335 428" fill="none">
+                        <g filter="url(#filter0_d_869_11705)">
+                            <path d="M16 16H303V362L285.062 380H267.125H231.25H159.5H16V16Z" fill="url(#pattern0_mobile)" shape-rendering="crispEdges"/>
+                            <path d="M16.5 16.5H302.5V361.793L284.855 379.5H267.125H231.25H159.5H16.5V16.5Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_869_11705" x="-16" y="0" width="351" height="428" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="16"/>
+                                <feGaussianBlur stdDeviation="16"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_869_11705"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_869_11705" result="shape"/>
+                            </filter>
+                            <pattern id="pattern0_mobile" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_869_11705" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
+                            </pattern>
+                            <image id="image0_869_11705" width="816" height="1456" xlink:href="images/burger.png"/>
+                        </defs>
+                    </svg>
                     <div class="introduction-secondary-photo">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="226" height="295" viewBox="0 0 226 295" fill="none">
                             <g filter="url(#filter0_d_1_5)">
@@ -380,6 +432,14 @@
                             </defs>
                         </svg>
                     </div>
+                </div>
+                <div class="introduction-text-container body-2 white-50 mobile-screen">
+                    <p>
+                        Hey there, I'm Stepan, an Unreal Engine Developer fueled by boundless enthusiasm for creativity and technology. My life is a fusion of pixels and code, crafting virtual worlds and enriching reality with unprecedented possibilities.
+                    </p>
+                    <p>
+                        When I'm not immersed in virtual realms, I find joy in a diverse array of hobbies. Morning workouts energize me, while the melodies of the piano immerse me in harmony and inspiration. Equally captivating are gaming sessions and longboard cruises, offering freedom and fresh ideas.
+                    </p>
                 </div>
             </div>
             <div class="gym opacity-container">
@@ -429,8 +489,38 @@
                                 <image id="image0_978_124892" width="1024" height="1024" xlink:href="images/gym.png"/>
                             </defs>
                         </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mobile-screen" width="390" height="422" viewBox="0 0 390 422" fill="none">
+                            <g filter="url(#filter0_d_978_124893)">
+                                <path d="M16 16H374V351.625L351.625 374H329.25H284.5H195H16V16Z" fill="url(#pattern-gym-mobile)" shape-rendering="crispEdges"/>
+                                <path d="M16.5 16.5H373.5V351.418L351.418 373.5H329.25H284.5H195H16.5V16.5Z" stroke="#FE056B" shape-rendering="crispEdges"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_978_124893" x="-16" y="0" width="422" height="422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="16"/>
+                                    <feGaussianBlur stdDeviation="16"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.16 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_978_124893"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_978_124893" result="shape"/>
+                                </filter>
+                                <pattern id="pattern-gym-mobile" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_978_124893" transform="scale(0.000976562)"/>
+                                </pattern>
+                                <image id="image0_978_124893" width="1024" height="1024" xlink:href="images/gym.png"/>
+                            </defs>
+                        </svg>
                     </div>
-                    <div class="gym-description body-1 white-50">
+                    <div class="gym-description body-1 white-50 no-mobile">
+                        <p>
+                            I'm perpetually eager to learn more, with quantum physics being one of the realms that captivates me, encouraging unconventional thinking. My life is a rhythm of daily activity and forward momentum, whether in the realm of development or personal achievements.
+                        </p>
+                        <p>
+                            Got a task? Consider it already in progress. Need assistance? I'm always ready to lend a hand and contribute my part.
+                        </p>
+                    </div>
+                    <div class="gym-description body-2 white-50 mobile-screen">
                         <p>
                             I'm perpetually eager to learn more, with quantum physics being one of the realms that captivates me, encouraging unconventional thinking. My life is a rhythm of daily activity and forward momentum, whether in the realm of development or personal achievements.
                         </p>
@@ -447,8 +537,9 @@
                         <div class="projects-toolbar-title">
                             <h2 class="wide-screen">PROJECTS</h2>
                             <h3 class="tablet-screen">PROJECTS</h3>
+                            <h4 class="mobile-screen">PROJECTS</h3>
                         </div>
-                        <div class="projects-toolbar-buttons">
+                        <div class="projects-toolbar-buttons no-mobile">
                             <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
@@ -456,6 +547,7 @@
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
                     </div>
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
@@ -464,7 +556,7 @@
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
-                        <div class="companies-toolbar-buttons">
+                        <div class="companies-toolbar-buttons no-mobile">
                             <div class="carousel-button left" onclick="scrollPrevious('companies-list-clone', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
@@ -475,7 +567,9 @@
                         <div class="companies-toolbar-title">
                             <h2 class="wide-screen">COMPANIES</h2>
                             <h3 class="tablet-screen">COMPANIES</h3>
+                            <h4 class="mobile-screen">COMPANIES</h4>
                         </div>
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
                     </div>
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
@@ -486,7 +580,9 @@
                     <div class="marketplace-title">
                         <h2 class="white-90 wide-screen">GRADESS GAMES</h2>
                         <h3 class="white-90 tablet-screen">GRADESS GAMES</h3>
-                        <p class="body-1 white-50">Plugin development for Unreal Engine</p>
+                        <h4 class="white-90 mobile-screen">GRADESS GAMES</h4>
+                        <p class="body-1 white-50 no-mobile">Plugin development for Unreal Engine</p>
+                        <p class="body-2 white-50 mobile-screen">Plugin development for Unreal Engine</p>
                     </div>
                     <div class="marketplace-tile">
                         <div class="marketplace-tile-row-container">
@@ -501,11 +597,14 @@
                 </div>
             </div>
             <div class="footer opacity-container">
-                <div class="copyright body-1 white-90">
+                <div class="copyright body-1 white-90 no-mobile">
+                    Stepan © 2023
+                </div>
+                <div class="copyright body-2 white-90 mobile-screen">
                     Stepan © 2023
                 </div>
                 <div class="footer-content title-3 white-90">
-                    <div class="page-links">
+                    <div class="page-links no-mobile">
                         <div class="item">
                             <a href="#introduction">&lt;about/&gt;</a>
                         </div>
@@ -623,6 +722,11 @@
         const DESKTOP_CONTENT_WIDTH = 1440;
         const TABLET_CONTENT_WIDTH = 1180;
 
+        String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, 'g'), replacement);
+        };
+
         function getScreenWidth() {
             return screen.width;
         }
@@ -662,13 +766,11 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             var scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-            console.log("loaded. scale = " + scale + "");
         });
 
         window.onresize = function() {
             let scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-            console.log("on resize. scale = " + scale + "");
         };
 
         let currentModal = null;
@@ -815,57 +917,57 @@
                             let projectItem = htmlCodeCopy;
 
                             // replace {{projectName}} with project.name
-                            projectItem = projectItem.replace("{{projectName}}", project.projectName);
+                            projectItem = projectItem.replaceAll("{{projectName}}", project.projectName);
 
                             // replace {{company}} with project.company
-                            projectItem = projectItem.replace("{{company}}", project.company);
+                            projectItem = projectItem.replaceAll("{{company}}", project.company);
 
                             // replace {{position}} with project.position
-                            projectItem = projectItem.replace("{{position}}", project.position);
+                            projectItem = projectItem.replaceAll("{{position}}", project.position);
 
                             // replace {{technologies}} with project.technologies
-                            projectItem = projectItem.replace("{{technologies}}", project.technologies);
+                            projectItem = projectItem.replaceAll("{{technologies}}", project.technologies);
 
                             // replace {{platform}} with project.platform
-                            projectItem = projectItem.replace("{{platform}}", project.platform);
+                            projectItem = projectItem.replaceAll("{{platform}}", project.platform);
 
                             if (project.platform.length <= 0) {
-                                projectItem = projectItem.replace("{{platformVisibility}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{platformVisibility}}", "hidden");
                             }
 
                             // replace {{description}} with project.description
-                            projectItem = projectItem.replace("{{description}}", project.description);
+                            projectItem = projectItem.replaceAll("{{description}}", project.description);
 
                             // replace {{descriptionClass}} with project.descriptionClass
 
                             // replace {{buttonText}} with project.buttonText
-                            projectItem = projectItem.replace("{{buttonText}}", project.buttonText);
+                            projectItem = projectItem.replaceAll("{{buttonText}}", project.buttonText);
 
                             // replace {{imageUrl}} with project.imageUrl
-                            projectItem = projectItem.replace("{{imageUrl}}", project.imageUrl);
+                            projectItem = projectItem.replaceAll("{{imageUrl}}", project.imageUrl);
 
                             // replace {{fallbackName}} with project.fallbackName
                             if (project.fallbackName.length > 0) {
-                                projectItem = projectItem.replace("{{fallbackName}}", project.fallbackName);
+                                projectItem = projectItem.replaceAll("{{fallbackName}}", project.fallbackName);
                             } else {
-                                projectItem = projectItem.replace("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
+                                projectItem = projectItem.replaceAll("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
                             }
 
                             if (!project.showMoreVisible) {
-                                projectItem = projectItem.replace("{{showMoreVisible}}", "hidden");
-                                projectItem = projectItem.replace("{{descriptionClass}}", "");
+                                projectItem = projectItem.replaceAll("{{showMoreVisible}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "");
                             } 
                             else {
-                                projectItem = projectItem.replace("{{descriptionClass}}", "project-description-overflow");
-                                projectItem = projectItem.replace("{{modalId}}", project.modalId);
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow");
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
                             }
 
                             if (!project.buttonVisible) {
-                                projectItem = projectItem.replace("{{buttonVisible}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{buttonVisible}}", "hidden");
                             }
                             else {
-                                projectItem = projectItem.replace("{{buttonVisible}}", "");
-                                projectItem = projectItem.replace("{{buttonUrl}}", project.buttonUrl);
+                                projectItem = projectItem.replaceAll("{{buttonVisible}}", "");
+                                projectItem = projectItem.replaceAll("{{buttonUrl}}", project.buttonUrl);
                             }
 
 
@@ -894,10 +996,10 @@
                             let companyItem = htmlCodeCopy;
 
                             // replace {{title}} with company.title
-                            companyItem = companyItem.replace("{{title}}", company.title);
+                            companyItem = companyItem.replaceAll("{{title}}", company.title);
 
                             // replace {{timeRange}} with company.timeRange
-                            companyItem = companyItem.replace("{{timeRange}}", company.timeRange);
+                            companyItem = companyItem.replaceAll("{{timeRange}}", company.timeRange);
 
                             
                             // for each item in company.responsibilities create <li>item</li>
@@ -907,7 +1009,7 @@
                                 responsibilitiesList += `<li>${responsibility}</li>`;
                             }
                             // and insert it to <ul class="responsibilities-list white-50 body-2">
-                            companyItem = companyItem.replace("{{responsibilities}}", responsibilitiesList);
+                            companyItem = companyItem.replaceAll("{{responsibilities}}", responsibilitiesList);
 
                             // append companyItem to companies-list
                             let companiesList = document.getElementsByClassName("companies-list")[0];
@@ -933,13 +1035,13 @@
                             let pluginItem = htmlCodeCopy;
 
                             // replace {{title}} with plugin.title
-                            pluginItem = pluginItem.replace("{{title}}", plugin.title);
+                            pluginItem = pluginItem.replaceAll("{{title}}", plugin.title);
 
                             // replace {{imageSrc}} with plugin.imageSrc
-                            pluginItem = pluginItem.replace("{{imageSrc}}", plugin.imageSrc);
+                            pluginItem = pluginItem.replaceAll("{{imageSrc}}", plugin.imageSrc);
 
                             // replace {{reviewCount}} with plugin.reviewCount
-                            pluginItem = pluginItem.replace("{{reviewCount}}", plugin.reviewCount);
+                            pluginItem = pluginItem.replaceAll("{{reviewCount}}", plugin.reviewCount);
 
                             pluginItem = pluginItem.split("{{marketplaceUrl}}").join(plugin.marketplaceUrl);
 

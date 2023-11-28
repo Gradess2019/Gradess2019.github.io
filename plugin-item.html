@@ -2,12 +2,16 @@
     <div class="marketplace-tile-item-background">
         <img src="images/plugin_background.svg" class="wide-screen">
         <img src="images/plugin_background_tablet.svg" class="tablet-screen">
+        <img src="images/plugin_background_mobile.svg" class="mobile-screen">
     </div>
     <div class="marketplace-tile-item-image" onclick="openUrl('{{marketplaceUrl}}')">
         <img src="{{imageSrc}}">
     </div>
     <div class="marketplace-tile-item-description-container" >
-        <div class="marketplace-tile-item-title title-2 white-90">
+        <div class="marketplace-tile-item-title title-2 white-90 no-mobile">
+            <p onclick="openUrl('{{marketplaceUrl}}')">{{title}}</p>
+        </div>
+        <div class="marketplace-tile-item-title title-3 white-90 mobile-screen">
             <p onclick="openUrl('{{marketplaceUrl}}')">{{title}}</p>
         </div>
         <div class="marketplace-tile-item-review">
@@ -20,7 +24,8 @@
                     <img src="images/star.svg">
                 </div>
             </div>
-            <div class="marketplace-tile-item-review-count title-2 white-90">{{reviewCount}}</div>
+            <div class="marketplace-tile-item-review-count title-2 white-90 no-mobile">{{reviewCount}}</div>
+            <div class="marketplace-tile-item-review-count title-3 white-90 mobile-screen">{{reviewCount}}</div>
         </div>
     </div>
 </div>
