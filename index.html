@@ -866,6 +866,25 @@
             }, 1);
         }
 
+        function updateSecondaryPhotoRotation() {
+            let secondaryPhoto = document.getElementsByClassName("introduction-secondary-photo")[0];
+            let secondaryPhotoRect = secondaryPhoto.getBoundingClientRect();
+
+            let secondaryPhotoTop = secondaryPhotoRect.top;
+            let screenHeight = window.innerHeight;
+            let upper20Percent = screenHeight * 0.2;
+            
+            let shouldRemoveRotation = secondaryPhotoTop < upper20Percent;
+            if (shouldRemoveRotation) {
+                secondaryPhoto.classList.add("unrotated");
+            }
+            else {
+                secondaryPhoto.classList.remove("unrotated");
+            }
+        }
+
+        document.addEventListener("scroll", updateSecondaryPhotoRotation);
+
         fetch("code-sample.txt")
             .then(response => response.text())
             .then(text => {
