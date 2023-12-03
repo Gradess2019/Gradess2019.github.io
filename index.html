@@ -63,6 +63,34 @@
         </div>
         <div class="figma" id="figma"></div>
         <div class="content">
+            <div class="header-menu title-3 white-90 mobile-screen">
+                <div class="page-links">
+                    <div class="item">
+                        <a href="#introduction">&lt;about/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#projects">&lt;projects/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#companies">&lt;companies/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#marketplace">&lt;studio/&gt;</a>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <a href="https://www.linkedin.com/in/gradess/" target="_blank">
+                        <img src="images/linkedin.svg">
+                    </a>
+                    <a href="https://t.me/GradessUE" target="_blank">
+                        <img src="images/telegram.svg">
+                    </a>
+                    <a href="https://github.com/Gradess2019" target="_blank">
+                        <img src="images/github.svg">
+                    </a>
+                </div>
+            </div>
+
             <div class="background-container">
                 <div class="bg-image"></div>
                 <div class="bg-image mobile-screen"></div>
@@ -101,6 +129,9 @@
                         <a href="https://github.com/Gradess2019" target="_blank">
                             <img src="images/github.svg">
                         </a>
+                    </div>
+                    <div class="header-menu-button" onclick="onHeaderMenuButtonClicked()">
+                        <img src="images/header-menu-button.svg" alt="" class="mobile-screen">
                     </div>
                 </div>
             </div>
@@ -539,7 +570,8 @@
                         <div class="projects-toolbar-title">
                             <h2 class="wide-screen">PROJECTS</h2>
                             <h3 class="tablet-screen">PROJECTS</h3>
-                            <h4 class="mobile-screen">PROJECTS
+                            <h4 class="mobile-screen">
+                                PROJECTS
                             </h3>
                         </div>
                         <div class="projects-toolbar-buttons no-mobile">
@@ -916,6 +948,10 @@
 
         document.addEventListener("scroll", updateSecondaryPhotoRotation);
         document.addEventListener("scroll", updateHeaderStyle);
+
+        function onHeaderMenuButtonClicked() {
+            console.log("Clicked");
+        }
 
         fetch("code-sample.txt")
             .then(response => response.text())
