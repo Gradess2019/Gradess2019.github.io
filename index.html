@@ -537,7 +537,8 @@
                         <div class="projects-toolbar-title">
                             <h2 class="wide-screen">PROJECTS</h2>
                             <h3 class="tablet-screen">PROJECTS</h3>
-                            <h4 class="mobile-screen">PROJECTS</h3>
+                            <h4 class="mobile-screen">PROJECTS
+                            </h3>
                         </div>
                         <div class="projects-toolbar-buttons no-mobile">
                             <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
@@ -884,6 +885,35 @@
         }
 
         document.addEventListener("scroll", updateSecondaryPhotoRotation);
+        function getHeaderHeight() {
+            let header = document.getElementsByClassName("header")[0];
+            return header.clientHeight;
+        }
+
+        function updateHeaderStyle() {
+            let minOpacity = 0.0;
+            let maxOpacity = 0.9;
+
+            let minFilterValue = 0;
+            let maxFilterValue = 14;
+
+            let endScroll = getHeaderHeight();
+
+            let scroll = document.documentElement.scrollTop;
+
+            let percent = Math.max(0, Math.min(1, scroll / endScroll));
+
+            let opacity = minOpacity + (maxOpacity - minOpacity) * percent;
+            let newColorWithOpacity = "rgba(2, 2, 2, " + opacity + ")";
+
+            let newBlurValue = minFilterValue + (maxFilterValue - minFilterValue) * percent;
+
+            let header = document.getElementsByClassName("header")[0];
+            header.style.backgroundColor = newColorWithOpacity;
+            header.style.backdropFilter = "blur(" + newBlurValue + "px)";
+        }
+
+        document.addEventListener("scroll", updateHeaderStyle);
 
         fetch("code-sample.txt")
             .then(response => response.text())

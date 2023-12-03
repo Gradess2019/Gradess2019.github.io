@@ -1,4 +1,7 @@
 .header {
+    z-index: 100;
+    background-color: rgba(2, 2, 2, 0.0);
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,6 +38,7 @@ a {
     .header {
         padding: 0px 160px;
         height: 80px;
+        width: 1120px;
     }
 }
 
@@ -42,6 +46,7 @@ a {
     .header {
         padding: 0px 40px;
         height: 80px;
+        width: 940px;
     }
 }
 
@@ -50,5 +55,6 @@ a {
         padding: 0px 16px;
         height: 64px;
         font-size: 18px !important;
+        width: 358px;
     }
 }

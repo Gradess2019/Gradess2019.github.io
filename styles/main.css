@@ -223,7 +223,7 @@
 
 @media screen and (min-width: 1441px) {
     .main {
-        padding: 64px 160px 120px 160px;
+        padding: 144px 160px 120px 160px;
         align-items: flex-start;
         gap: 10px;
     }
@@ -277,7 +277,7 @@
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
     .main {
-        padding: 80px 40px 93px 40px;
+        padding: 160px 40px 93px 40px;
         align-items: flex-start;
         gap: 10px;
     }
@@ -345,7 +345,7 @@
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
     .main {
-        padding: 48px 16px 0px 16px;
+        padding: 112px 16px 0px 16px;
         align-items: center;
         gap: 32px;
         align-self: stretch;
