@@ -1,16 +1,25 @@
 .header {
+    position: fixed;
+    z-index: 100;
+    width: 102%;
+
+    justify-content: center;
+}
+
+.header-content {
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header .page-links {
+.header-content .page-links {
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
 
-.header .page-links .item {
+.header-content .page-links .item {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -33,22 +42,37 @@ a {
 
 @media screen and (min-width: 1441px) {
     .header {
+        left: -18px;
+    }
+
+    .header-content {
         padding: 0px 160px;
         height: 80px;
+        width: 1120px;
     }
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
     .header {
+        left: -11px;
+    }
+
+    .header-content {
         padding: 0px 40px;
         height: 80px;
+        width: 940px;
     }
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
     .header {
+        left: -6px;
+    }
+
+    .header-content {
         padding: 0px 16px;
         height: 64px;
         font-size: 18px !important;
+        width: 358px;
     }
 }
