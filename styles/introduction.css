@@ -40,8 +40,12 @@
     align-items: center;
     flex-shrink: 0;
 
-    
+    transition: transform 0.3s ease-in-out;
     transform: rotate(-15deg);
+}
+
+.introduction-secondary-photo.unrotated {
+    transform: rotate(0deg);
 }
 
 @media screen and (min-width: 1441px) {
