@@ -100,15 +100,39 @@ a {
     }
 
     .header-menu {
+        background: linear-gradient(359deg, #000 9.57%, rgba(0, 0, 0, 0.3) 67.77%), url("../images/background1.jpg") lightgray 0px -78.825px / 100% 109.339% no-repeat;
+        background-size: 1024px 1024px;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        left: 0px;
+
         z-index: 99;
         display: block;
         flex-direction: column;
         justify-content: center;
 
-        width: 390px;
+        width: 100vw;
         height: 100vh;
         position: fixed;
+
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
     }
+
+    .header-menu.opened {
+        opacity: 1;
+    }
+
+    .opacity-container {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .opacity-container.hide {
+        opacity: 0;
+    }
+
+    
 
     .header-menu .page-links {
         top: 37%;
@@ -132,5 +156,4 @@ a {
         gap: 12px;
         flex-shrink: 0;
     }
-
 }

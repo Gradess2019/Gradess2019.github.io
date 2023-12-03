@@ -63,7 +63,7 @@
         </div>
         <div class="figma" id="figma"></div>
         <div class="content">
-            <div class="header-menu title-3 white-90 mobile-screen hidden">
+            <div class="header-menu title-3 white-90 mobile-screen">
                 <div class="page-links">
                     <div class="item">
                         <a href="#introduction" onclick="closeHeaderMenu()">&lt;about/&gt;</a>
@@ -956,16 +956,20 @@
         }
 
         function openHeaderMenu() {
-            // find open button and hide it, do vice versa for close button
             let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
             let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
             let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
 
             headerMenuOpenButton.classList.add("hidden");
             headerMenuCloseButton.classList.remove("hidden");
-            headerMenuContainer.classList.remove("hidden");
+            
+            headerMenuContainer.classList.add("opened");
 
-            setContainerOpacity('opacity-container', 0)
+            let opacityContainers = document.getElementsByClassName("opacity-container");
+            for (let i = 0; i < opacityContainers.length; i++) {
+                let opacityContainer = opacityContainers[i];
+                opacityContainer.classList.add("hide");
+            }
         }   
 
         function closeHeaderMenu() {
@@ -973,11 +977,16 @@
             let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
             let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
 
-            headerMenuCloseButton.classList.add("hidden");
-            headerMenuContainer.classList.add("hidden");
             headerMenuOpenButton.classList.remove("hidden");
+            headerMenuCloseButton.classList.add("hidden");
+            
+            headerMenuContainer.classList.remove("opened");
 
-            setContainerOpacity('opacity-container', 1)
+            let opacityContainers = document.getElementsByClassName("opacity-container");
+            for (let i = 0; i < opacityContainers.length; i++) {
+                let opacityContainer = opacityContainers[i];
+                opacityContainer.classList.remove("hide");
+            }
         }   
 
 
