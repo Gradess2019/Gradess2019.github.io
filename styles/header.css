@@ -147,7 +147,7 @@ a {
     .header-menu .contacts {
         top: 62%;
         justify-content: center;
-        left: 129px;
+        margin: auto;
         position: relative;
         display: flex;
         width: 132px;
