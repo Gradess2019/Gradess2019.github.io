@@ -73,33 +73,35 @@
                 <div class="bg-border"></div>
             </div>
             <div class="header title-3 white-90 opacity-container">
-                <div>
-                    STEPAN
-                </div>
-                <div class="page-links no-mobile">
-                    <div class="item">
-                        <a href="#introduction">&lt;about/&gt;</a>
+                <div class="header-content">
+                    <div>
+                        STEPAN
                     </div>
-                    <div class="item">
-                        <a href="#projects">&lt;projects/&gt;</a>
+                    <div class="page-links no-mobile">
+                        <div class="item">
+                            <a href="#introduction">&lt;about/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#projects">&lt;projects/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#companies">&lt;companies/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#marketplace">&lt;studio/&gt;</a>
+                        </div>
                     </div>
-                    <div class="item">
-                        <a href="#companies">&lt;companies/&gt;</a>
+                    <div class="contacts no-mobile">
+                        <a href="https://www.linkedin.com/in/gradess/" target="_blank">
+                            <img src="images/linkedin.svg">
+                        </a>
+                        <a href="https://t.me/GradessUE" target="_blank">
+                            <img src="images/telegram.svg">
+                        </a>
+                        <a href="https://github.com/Gradess2019" target="_blank">
+                            <img src="images/github.svg">
+                        </a>
                     </div>
-                    <div class="item">
-                        <a href="#marketplace">&lt;studio/&gt;</a>
-                    </div>
-                </div>
-                <div class="contacts no-mobile">
-                    <a href="https://www.linkedin.com/in/gradess/" target="_blank">
-                        <img src="images/linkedin.svg">
-                    </a>
-                    <a href="https://t.me/GradessUE" target="_blank">
-                        <img src="images/telegram.svg">
-                    </a>
-                    <a href="https://github.com/Gradess2019" target="_blank">
-                        <img src="images/github.svg">
-                    </a>
                 </div>
             </div>
             <div class="main opacity-container">
@@ -883,8 +885,7 @@
                 secondaryPhoto.classList.remove("unrotated");
             }
         }
-
-        document.addEventListener("scroll", updateSecondaryPhotoRotation);
+        
         function getHeaderHeight() {
             let header = document.getElementsByClassName("header")[0];
             return header.clientHeight;
@@ -892,7 +893,7 @@
 
         function updateHeaderStyle() {
             let minOpacity = 0.0;
-            let maxOpacity = 0.9;
+            let maxOpacity = 0.8;
 
             let minFilterValue = 0;
             let maxFilterValue = 14;
@@ -904,7 +905,7 @@
             let percent = Math.max(0, Math.min(1, scroll / endScroll));
 
             let opacity = minOpacity + (maxOpacity - minOpacity) * percent;
-            let newColorWithOpacity = "rgba(2, 2, 2, " + opacity + ")";
+            let newColorWithOpacity = "rgba(14, 12, 23, " + opacity + ")";
 
             let newBlurValue = minFilterValue + (maxFilterValue - minFilterValue) * percent;
 
@@ -913,6 +914,7 @@
             header.style.backdropFilter = "blur(" + newBlurValue + "px)";
         }
 
+        document.addEventListener("scroll", updateSecondaryPhotoRotation);
         document.addEventListener("scroll", updateHeaderStyle);
 
         fetch("code-sample.txt")
