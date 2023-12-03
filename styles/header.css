@@ -80,7 +80,7 @@ a {
         width: 358px;
     }
 
-    .header-menu-button {
+    .header-menu-open-button {
         display: flex;
         width: 40px;
         height: 40px;
@@ -90,15 +90,24 @@ a {
         flex-shrink: 0;
     }
 
+    .header-menu-close-button {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
     .header-menu {
         z-index: 99;
         display: block;
         flex-direction: column;
         justify-content: center;
-        
+
         width: 390px;
         height: 100vh;
-        position: absolute;
+        position: fixed;
     }
 
     .header-menu .page-links {

@@ -63,19 +63,19 @@
         </div>
         <div class="figma" id="figma"></div>
         <div class="content">
-            <div class="header-menu title-3 white-90 mobile-screen">
+            <div class="header-menu title-3 white-90 mobile-screen hidden">
                 <div class="page-links">
                     <div class="item">
-                        <a href="#introduction">&lt;about/&gt;</a>
+                        <a href="#introduction" onclick="closeHeaderMenu()">&lt;about/&gt;</a>
                     </div>
                     <div class="item">
-                        <a href="#projects">&lt;projects/&gt;</a>
+                        <a href="#projects" onclick="closeHeaderMenu()">&lt;projects/&gt;</a>
                     </div>
                     <div class="item">
-                        <a href="#companies">&lt;companies/&gt;</a>
+                        <a href="#companies" onclick="closeHeaderMenu()">&lt;companies/&gt;</a>
                     </div>
                     <div class="item">
-                        <a href="#marketplace">&lt;studio/&gt;</a>
+                        <a href="#marketplace" onclick="closeHeaderMenu()">&lt;studio/&gt;</a>
                     </div>
                 </div>
                 <div class="contacts">
@@ -90,7 +90,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="background-container">
                 <div class="bg-image"></div>
                 <div class="bg-image mobile-screen"></div>
@@ -100,7 +99,7 @@
                 <div class="bg-image-5"></div>
                 <div class="bg-border"></div>
             </div>
-            <div class="header title-3 white-90 opacity-container">
+            <div class="header title-3 white-90">
                 <div class="header-content">
                     <div>
                         STEPAN
@@ -130,8 +129,11 @@
                             <img src="images/github.svg">
                         </a>
                     </div>
-                    <div class="header-menu-button" onclick="onHeaderMenuButtonClicked()">
+                    <div class="header-menu-open-button" onclick="openHeaderMenu()">
                         <img src="images/header-menu-button.svg" alt="" class="mobile-screen">
+                    </div>
+                    <div class="header-menu-close-button hidden" onclick="closeHeaderMenu()">
+                        <img src="images/header-menu-cross.svg" alt="" class="mobile-screen">
                     </div>
                 </div>
             </div>
@@ -952,6 +954,32 @@
         function onHeaderMenuButtonClicked() {
             console.log("Clicked");
         }
+
+        function openHeaderMenu() {
+            // find open button and hide it, do vice versa for close button
+            let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
+            let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
+            let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
+
+            headerMenuOpenButton.classList.add("hidden");
+            headerMenuCloseButton.classList.remove("hidden");
+            headerMenuContainer.classList.remove("hidden");
+
+            setContainerOpacity('opacity-container', 0)
+        }   
+
+        function closeHeaderMenu() {
+            let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
+            let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
+            let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
+
+            headerMenuCloseButton.classList.add("hidden");
+            headerMenuContainer.classList.add("hidden");
+            headerMenuOpenButton.classList.remove("hidden");
+
+            setContainerOpacity('opacity-container', 1)
+        }   
+
 
         fetch("code-sample.txt")
             .then(response => response.text())
