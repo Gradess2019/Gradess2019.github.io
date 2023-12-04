@@ -928,7 +928,7 @@
         function updateHeaderStyle() {
             let scroll = document.documentElement.scrollTop;
             let header = document.getElementsByClassName("header")[0];
-            if (scroll > header.clientHeight) {
+            if (scroll > 0) {
                 header.classList.add("scrolled");
             }
             else {
