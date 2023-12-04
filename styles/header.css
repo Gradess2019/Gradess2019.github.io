@@ -4,6 +4,21 @@
     width: 102%;
 
     justify-content: center;
+
+    background-color: rgba(14, 12, 23, 0.0);
+    backdrop-filter: blur(0px);
+
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.header.scrolled {
+    background-color: rgba(14, 12, 23, 0.8);
+    backdrop-filter: blur(14px);
+}
+
+.header.menu-opened {
+    background-color: rgba(14, 12, 23, 0.0) !important;
+    backdrop-filter: blur(0px) !important;
 }
 
 .header-menu {
@@ -108,6 +123,8 @@ a {
 
         z-index: 99;
         display: block;
+        visibility: hidden;
+
         flex-direction: column;
         justify-content: center;
 
@@ -115,13 +132,36 @@ a {
         height: 100vh;
         position: fixed;
 
-        transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         opacity: 0;
     }
 
     .header-menu.opened {
         opacity: 1;
+        visibility: visible;
     }
+
+    @keyframes test-anim {
+        
+    }
+
+    @keyframes test-anim-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes test-anim-fade-out {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
 
     .opacity-container {
         opacity: 1;
@@ -131,8 +171,6 @@ a {
     .opacity-container.hide {
         opacity: 0;
     }
-
-    
 
     .header-menu .page-links {
         top: 37%;
@@ -155,5 +193,10 @@ a {
         align-items: center;
         gap: 12px;
         flex-shrink: 0;
+    }
+
+    .locked {
+        overflow-y:hidden;
+        height:100%;
     }
 }

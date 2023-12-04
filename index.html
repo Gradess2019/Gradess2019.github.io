@@ -926,26 +926,14 @@
         }
 
         function updateHeaderStyle() {
-            let minOpacity = 0.0;
-            let maxOpacity = 0.8;
-
-            let minFilterValue = 0;
-            let maxFilterValue = 14;
-
-            let endScroll = getHeaderHeight();
-
             let scroll = document.documentElement.scrollTop;
-
-            let percent = Math.max(0, Math.min(1, scroll / endScroll));
-
-            let opacity = minOpacity + (maxOpacity - minOpacity) * percent;
-            let newColorWithOpacity = "rgba(14, 12, 23, " + opacity + ")";
-
-            let newBlurValue = minFilterValue + (maxFilterValue - minFilterValue) * percent;
-
             let header = document.getElementsByClassName("header")[0];
-            header.style.backgroundColor = newColorWithOpacity;
-            header.style.backdropFilter = "blur(" + newBlurValue + "px)";
+            if (scroll > header.clientHeight) {
+                header.classList.add("scrolled");
+            }
+            else {
+                header.classList.remove("scrolled");
+            }
         }
 
         document.addEventListener("scroll", updateSecondaryPhotoRotation);
@@ -970,6 +958,12 @@
                 let opacityContainer = opacityContainers[i];
                 opacityContainer.classList.add("hide");
             }
+
+            let header = document.getElementsByClassName("header")[0];
+            header.classList.add("menu-opened");
+
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.add("locked");
         }   
 
         function closeHeaderMenu() {
@@ -987,6 +981,12 @@
                 let opacityContainer = opacityContainers[i];
                 opacityContainer.classList.remove("hide");
             }
+
+            let header = document.getElementsByClassName("header")[0];
+            header.classList.remove("menu-opened");
+
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.remove("locked");
         }   
 
 
