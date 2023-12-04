@@ -672,18 +672,22 @@
         <div class="modal-black-background" onclick="closeCurrentModal()"></div>
         <div id="etalon-silver-modal" class="modal">
             <div class="modal-background">
-                <img src="images/etalon_silver_background.svg" class="modal-blur-background">
+                <img src="images/etalon_silver_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/etalon_silver_background_mobile.svg" class="modal-blur-background mobile-screen">
             </div>
             <div class="modal-content">
-                <div class="modal-title title-1 white-90">
-                    <p>Apartment tour for Etalon Silver</p>
+                <div class="modal-title white-90">
+                    <p class="title-1 no-mobile">Apartment tour for Etalon Silver</p>
+                    <p class="title-2 mobile-screen">Apartment tour for Etalon Silver</p>
                     <div class="modal-cross" onclick="closeModal('etalon-silver-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
-                <p class="white-50 body-2">
-                    <span class="title-3 white-90">Brief description:</span>
-                    The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.
+                <p class="white-50">
+                    <span class="title-3 white-90 no-mobile">Brief description:</span>
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-2 no-mobile">The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.</span>
+                    <span class="body-3 mobile-screen">The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.</span>
                 </p>
                 <div class="button modal-button" onclick="openUrl('http://marta.technology/etalonsilver/apartment_3-4-127/')">
                     <div class="button-content">
@@ -800,6 +804,16 @@
             }
         }
 
+        function lockScroll() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.add("locked");
+        }
+
+        function unlockScroll() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.remove("locked");
+        }
+
         document.addEventListener("DOMContentLoaded", function(event) {
             var scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
@@ -825,6 +839,8 @@
             modalBackground.offsetHeight;
 
             currentModal = modalId;
+
+            lockScroll();
         }
 
         function closeModal(modalId) {
@@ -839,6 +855,7 @@
             modalBackground.offsetHeight;
 
             currentModal = null;
+            unlockScroll();
         }
 
         function closeCurrentModal() {
@@ -962,8 +979,7 @@
             let header = document.getElementsByClassName("header")[0];
             header.classList.add("menu-opened");
 
-            let body = document.getElementsByTagName("body")[0];
-            body.classList.add("locked");
+            lockScroll();
         }   
 
         function closeHeaderMenu() {
@@ -985,8 +1001,7 @@
             let header = document.getElementsByClassName("header")[0];
             header.classList.remove("menu-opened");
 
-            let body = document.getElementsByTagName("body")[0];
-            body.classList.remove("locked");
+            unlockScroll();
         }   
 
 

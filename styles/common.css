@@ -342,5 +342,14 @@ h6 {
         display: none !important;
     }
 
-    
+    .button-content {
+        width: 198px;
+        height: 62px;
+        background-image: url("../images/button_mobile.svg");
+    }
+}
+
+.locked {
+    overflow-y:hidden;
+    height:100%;
 }
