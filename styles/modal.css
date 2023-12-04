@@ -176,6 +176,20 @@
 @media screen and (max-width: 1440px) and (orientation: landscape) {}
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
+    .modal-title p {
+        width: 244px;
+    }
+
+    .modal-content {
+        padding: 16px 16px 24px 16px;
+    }
+
+    .modal-button {
+        width: 198px;
+        height: 62px;
+        margin-top: 0px;
+    }
+
     #etalon-silver-modal {
         -webkit-mask: linear-gradient(135deg, #000 97.45%, transparent 97.45%);
 
@@ -189,17 +203,16 @@
         height: 451px;
     }
 
-    #etalon-silver-modal .modal-title p {
-        width: 244px;
+    #interactive-map-modal {
+        -webkit-mask: linear-gradient(135deg, #000 98.1%, transparent 98.1%);
+
+        width: 320px;
+        height: 715px;
+        justify-content: space-between;
     }
 
-    .modal-content {
-        padding: 16px 16px 24px 16px;
-    }
-
-    .modal-button {
-        width: 198px;
-        height: 62px;
-        margin-top: 0px;
+    #interactive-map-modal .modal-background {
+        width: 320px;
+        height: 715px;
     }
 }
