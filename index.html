@@ -63,6 +63,33 @@
         </div>
         <div class="figma" id="figma"></div>
         <div class="content">
+            <div class="header-menu title-3 white-90 mobile-screen">
+                <div class="page-links">
+                    <div class="item">
+                        <a href="#introduction" onclick="closeHeaderMenu()">&lt;about/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#projects" onclick="closeHeaderMenu()">&lt;projects/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#companies" onclick="closeHeaderMenu()">&lt;companies/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#marketplace" onclick="closeHeaderMenu()">&lt;studio/&gt;</a>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <a href="https://www.linkedin.com/in/gradess/" target="_blank">
+                        <img src="images/linkedin.svg">
+                    </a>
+                    <a href="https://t.me/GradessUE" target="_blank">
+                        <img src="images/telegram.svg">
+                    </a>
+                    <a href="https://github.com/Gradess2019" target="_blank">
+                        <img src="images/github.svg">
+                    </a>
+                </div>
+            </div>
             <div class="background-container">
                 <div class="bg-image"></div>
                 <div class="bg-image mobile-screen"></div>
@@ -72,7 +99,7 @@
                 <div class="bg-image-5"></div>
                 <div class="bg-border"></div>
             </div>
-            <div class="header title-3 white-90 opacity-container">
+            <div class="header title-3 white-90">
                 <div class="header-content">
                     <div>
                         STEPAN
@@ -101,6 +128,12 @@
                         <a href="https://github.com/Gradess2019" target="_blank">
                             <img src="images/github.svg">
                         </a>
+                    </div>
+                    <div class="header-menu-open-button mobile-screen" onclick="openHeaderMenu()">
+                        <img src="images/header-menu-button.svg" alt="" class="mobile-screen">
+                    </div>
+                    <div class="header-menu-close-button hidden mobile-screen" onclick="closeHeaderMenu()">
+                        <img src="images/header-menu-cross.svg" alt="" class="mobile-screen">
                     </div>
                 </div>
             </div>
@@ -539,7 +572,8 @@
                         <div class="projects-toolbar-title">
                             <h2 class="wide-screen">PROJECTS</h2>
                             <h3 class="tablet-screen">PROJECTS</h3>
-                            <h4 class="mobile-screen">PROJECTS
+                            <h4 class="mobile-screen">
+                                PROJECTS
                             </h3>
                         </div>
                         <div class="projects-toolbar-buttons no-mobile">
@@ -892,30 +926,69 @@
         }
 
         function updateHeaderStyle() {
-            let minOpacity = 0.0;
-            let maxOpacity = 0.8;
-
-            let minFilterValue = 0;
-            let maxFilterValue = 14;
-
-            let endScroll = getHeaderHeight();
-
             let scroll = document.documentElement.scrollTop;
-
-            let percent = Math.max(0, Math.min(1, scroll / endScroll));
-
-            let opacity = minOpacity + (maxOpacity - minOpacity) * percent;
-            let newColorWithOpacity = "rgba(14, 12, 23, " + opacity + ")";
-
-            let newBlurValue = minFilterValue + (maxFilterValue - minFilterValue) * percent;
-
             let header = document.getElementsByClassName("header")[0];
-            header.style.backgroundColor = newColorWithOpacity;
-            header.style.backdropFilter = "blur(" + newBlurValue + "px)";
+            if (scroll > header.clientHeight) {
+                header.classList.add("scrolled");
+            }
+            else {
+                header.classList.remove("scrolled");
+            }
         }
 
         document.addEventListener("scroll", updateSecondaryPhotoRotation);
         document.addEventListener("scroll", updateHeaderStyle);
+
+        function onHeaderMenuButtonClicked() {
+            console.log("Clicked");
+        }
+
+        function openHeaderMenu() {
+            let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
+            let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
+            let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
+
+            headerMenuOpenButton.classList.add("hidden");
+            headerMenuCloseButton.classList.remove("hidden");
+            
+            headerMenuContainer.classList.add("opened");
+
+            let opacityContainers = document.getElementsByClassName("opacity-container");
+            for (let i = 0; i < opacityContainers.length; i++) {
+                let opacityContainer = opacityContainers[i];
+                opacityContainer.classList.add("hide");
+            }
+
+            let header = document.getElementsByClassName("header")[0];
+            header.classList.add("menu-opened");
+
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.add("locked");
+        }   
+
+        function closeHeaderMenu() {
+            let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
+            let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
+            let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
+
+            headerMenuOpenButton.classList.remove("hidden");
+            headerMenuCloseButton.classList.add("hidden");
+            
+            headerMenuContainer.classList.remove("opened");
+
+            let opacityContainers = document.getElementsByClassName("opacity-container");
+            for (let i = 0; i < opacityContainers.length; i++) {
+                let opacityContainer = opacityContainers[i];
+                opacityContainer.classList.remove("hide");
+            }
+
+            let header = document.getElementsByClassName("header")[0];
+            header.classList.remove("menu-opened");
+
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.remove("locked");
+        }   
+
 
         fetch("code-sample.txt")
             .then(response => response.text())

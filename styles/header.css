@@ -4,6 +4,25 @@
     width: 102%;
 
     justify-content: center;
+
+    background-color: rgba(14, 12, 23, 0.0);
+    backdrop-filter: blur(0px);
+
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.header.scrolled {
+    background-color: rgba(14, 12, 23, 0.8);
+    backdrop-filter: blur(14px);
+}
+
+.header.menu-opened {
+    background-color: rgba(14, 12, 23, 0.0) !important;
+    backdrop-filter: blur(0px) !important;
+}
+
+.header-menu {
+    display: none;
 }
 
 .header-content {
@@ -19,7 +38,7 @@
     gap: 12px;
 }
 
-.header-content .page-links .item {
+.header-content .page-links .item, .header-menu .page-links .item {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -74,5 +93,110 @@ a {
         height: 64px;
         font-size: 18px !important;
         width: 358px;
+    }
+
+    .header-menu-open-button {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+    .header-menu-close-button {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .header-menu {
+        background: linear-gradient(359deg, #000 9.57%, rgba(0, 0, 0, 0.3) 67.77%), url("../images/background1.jpg") lightgray 0px -78.825px / 100% 109.339% no-repeat;
+        background-size: 1024px 1024px;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        left: 0px;
+
+        z-index: 99;
+        display: block;
+        visibility: hidden;
+
+        flex-direction: column;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .header-menu.opened {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @keyframes test-anim {
+        
+    }
+
+    @keyframes test-anim-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      
+      @keyframes test-anim-fade-out {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+    .opacity-container {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .opacity-container.hide {
+        opacity: 0;
+    }
+
+    .header-menu .page-links {
+        top: 37%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .header-menu .contacts {
+        top: 62%;
+        justify-content: center;
+        margin: auto;
+        position: relative;
+        display: flex;
+        width: 132px;
+        height: 36px;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+    }
+
+    .locked {
+        overflow-y:hidden;
+        height:100%;
     }
 }
