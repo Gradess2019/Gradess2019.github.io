@@ -74,6 +74,11 @@
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
+    #introduction {
+        position: absolute;
+        bottom: 712px;
+    }
+
     .introduction {
         height: 586px;
         margin-top: 1px;

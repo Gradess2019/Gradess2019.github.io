@@ -138,6 +138,11 @@
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
+    #companies {
+        position: absolute;
+        top: 3570px;
+    }
+
     .companies-content {
         padding-right: 40px;
         padding-left: 40px;
