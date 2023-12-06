@@ -341,6 +341,10 @@
         height: 242px;
         transform: translate(0.5px, 0px);
     }
+
+    .stat-item-error-container {
+        width: 195px;
+    }
 }
 
 @media screen and (max-width: 767px) {
