@@ -103,6 +103,11 @@
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
+    #introduction {
+        position: absolute;
+        bottom: 600px;
+    }
+
     .introduction {
         margin-top: 98px;
         width: 390px;

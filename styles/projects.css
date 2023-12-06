@@ -200,6 +200,11 @@
 
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
+    #projects {
+        position: absolute;
+        top: 2780px;
+    }
+
     .projects-content {
         padding-top: 82px;
     }
