@@ -159,6 +159,11 @@
 }
 
 @media screen and (max-width: 767px) and (orientation: portrait) {
+    #companies {
+        position: absolute;
+        top: 3500px;
+    }
+
     .companies-content {
         height: 500px;
         padding-top: 116px;
