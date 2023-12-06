@@ -16,7 +16,7 @@
     }
 }
 
-@media screen and (max-width: 1440px) and (orientation: landscape) {
+@media screen and (max-width: 1440px) and (min-width: 768px) {
     .quote {
         padding: 96px 40px 80px 40px;
     }
@@ -28,7 +28,7 @@
     }
 }
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media screen and (max-width: 767px) {
     .quote {
         padding: 128px 16px 0px 16px;
     }

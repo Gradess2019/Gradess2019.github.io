@@ -173,9 +173,9 @@
 
 @media screen and (min-width: 1441px) {}
 
-@media screen and (max-width: 1440px) and (orientation: landscape) {}
+@media screen and (max-width: 1440px) and (min-width: 768px) {}
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media screen and (max-width: 767px) {
     .modal-title p {
         width: 244px;
     }
