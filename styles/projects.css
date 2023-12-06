@@ -178,6 +178,11 @@
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
+    #projects {
+        position: absolute;
+        top: 2490px;
+    }
+
     .projects-content {
         padding-right: 40px;
         padding-left: 40px;

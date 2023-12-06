@@ -170,6 +170,11 @@
 }
 
 @media screen and (max-width: 1440px) and (orientation: landscape) {
+    #marketplace {
+        position: absolute;
+        top: 4370px;
+    }
+
     .marketplace-content {
         width: 940px;
         padding-left: 40px;
