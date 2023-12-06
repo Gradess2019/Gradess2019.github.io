@@ -194,9 +194,4 @@ a {
         gap: 12px;
         flex-shrink: 0;
     }
-
-    .locked {
-        overflow-y:hidden;
-        height:100%;
-    }
 }
