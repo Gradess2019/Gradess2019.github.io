@@ -723,18 +723,22 @@
         </div>
         <div id="vr-painter-modal" class="modal">
             <div class="modal-background">
-                <img src="images/vr_painter_background.svg" class="modal-blur-background">
+                <img src="images/vr_painter_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/vr_painter_background_mobile.svg" class="modal-blur-background mobile-screen">
             </div>
             <div class="modal-content">
-                <div class="modal-title title-1 white-90">
-                    <p>VR Painter for Leroy Merlin</p>
+                <div class="modal-title white-90">
+                    <p class="title-1 no-mobile">VR Painter for Leroy Merlin</p>
+                    <p class="title-2 mobile-screen">VR Painter for Leroy Merlin</p>
                     <div class="modal-cross" onclick="closeModal('vr-painter-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
-                <p class="white-50 body-2">
-                    <span class="title-3 white-90">Brief description:</span>
-                    Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.
+                <p class="white-50">
+                    <span class="title-3 white-90 no-mobile">Brief description:</span>
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-2 no-mobile">Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.</span>
+                    <span class="body-3 mobile-screen">Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.</span>
                 </p>
                 <div class="button modal-button" onclick="openUrl('https://youtu.be/7GLhgSJwKck')">
                     <div class="button-content">
@@ -820,7 +824,7 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             var scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-            openModal("interactive-map-modal");
+            openModal("vr-painter-modal");
         });
 
         window.onresize = function() {
