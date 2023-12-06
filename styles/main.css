@@ -403,11 +403,15 @@
     .main-content .stats-block .stats {
         width: 310px;
         padding: 24px;
+        box-shadow: none;
     }
 
     .stats-bg-container {
+        width: 363px;
+        height: 214px;
         overflow: visible;
         transform: translate(-24.5px, -24.5px);
+        -webkit-mask: linear-gradient(135deg, #000 95.5%, transparent 95.5%);
     }
 
     .stat-item-error-container {
