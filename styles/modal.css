@@ -228,4 +228,21 @@
         width: 320px;
         height: 451px;
     }
+
+    #quidditch-modal {
+        -webkit-mask: linear-gradient(135deg, #000 97.7%, transparent 97.7%);
+
+        width: 320px;
+        height: 521px;
+        justify-content: space-between;
+    }
+
+    #quidditch-modal .modal-background {
+        width: 320px;
+        height: 521px;
+    }
+
+    #quidditch-modal .modal-title {
+        align-items: center;
+    }
 }

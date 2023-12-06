@@ -749,19 +749,28 @@
         </div>
         <div id="quidditch-modal" class="modal">
             <div class="modal-background">
-                <img src="images/quidditch_background.svg" class="modal-blur-background">
+                <img src="images/quidditch_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/quidditch_background_mobile.svg" class="modal-blur-background mobile-screen">
             </div>
             <div class="modal-content">
-                <div class="modal-title title-1 white-90">
-                    <p>Quidditch</p>
+                <div class="modal-title white-90">
+                    <p class="title-1 no-mobile">Quidditch</p>
+                    <p class="title-2 mobile-screen">Quidditch</p>
                     <div class="modal-cross" onclick="closeModal('quidditch-modal')">
                         <img src="images/cross.svg">
                     </div>
                 </div>
-                <p class="white-50 body-2">
-                    <span class="title-3 white-90">Brief description:</span>
-                    An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.
+                <p class="white-50">
+                    <span class="title-3 white-90 no-mobile">Brief description:</span>
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-2 no-mobile">An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.</span>
+                    <span class="body-3 mobile-screen">An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.</span>
                 </p>
+                <div class="button modal-button mobile-screen" onclick="openUrl('https://youtu.be/ua2ugfrAVNM')">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -824,7 +833,6 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             var scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-            openModal("vr-painter-modal");
         });
 
         window.onresize = function() {
