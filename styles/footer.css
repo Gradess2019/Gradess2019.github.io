@@ -46,7 +46,7 @@
     }
 }
 
-@media screen and (max-width: 1440px) and (orientation: landscape) {
+@media screen and (max-width: 1440px) and (min-width: 768px) {
     .footer {
         width: 940px;
         padding-left: 40px;
@@ -64,9 +64,9 @@
     }
 }
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media screen and (max-width: 767px) {
     .footer {
-        padding: 75px 16px 16px 16px;
+        padding: 86px 16px 16px 16px;
     }
 
     .footer-content>.contacts {

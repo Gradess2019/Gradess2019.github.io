@@ -177,7 +177,7 @@
     .projects-list {}
 }
 
-@media screen and (max-width: 1440px) and (orientation: landscape) {
+@media screen and (max-width: 1440px) and (min-width: 768px) {
     #projects {
         position: absolute;
         top: 2490px;
@@ -199,7 +199,7 @@
 }
 
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media screen and (max-width: 767px) {
     #projects {
         position: absolute;
         top: 2780px;

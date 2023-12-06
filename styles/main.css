@@ -275,7 +275,7 @@
     }
 }
 
-@media screen and (max-width: 1440px) and (orientation: landscape) {
+@media screen and (max-width: 1440px) and (min-width: 768px) {
     .main {
         padding: 160px 40px 93px 40px;
         align-items: flex-start;
@@ -343,7 +343,7 @@
     }
 }
 
-@media screen and (max-width: 767px) and (orientation: portrait) {
+@media screen and (max-width: 767px) {
     .main {
         padding: 112px 16px 0px 16px;
         align-items: center;
