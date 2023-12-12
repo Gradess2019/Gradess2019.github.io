@@ -590,7 +590,7 @@
                     <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
-            <div class="companies opacity-container">
+            <div class="companies opacity-container"> 
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
@@ -923,20 +923,6 @@
             slidesContainer.scrollLeft = newScrollLeft;
         }
         
-        function cloneList(containerClass, childId, cloneId) {
-            const container = document.querySelector('.' + containerClass);
-            const child = document.getElementById(childId);
-            const clone = child.cloneNode(true);
-            
-            clone.classList.add("clone")
-            clone.id = cloneId;
-            container.append(clone);
-
-            setInterval(function() {
-                child.style.marginLeft = "-" + clone.scrollLeft + "px";
-            }, 1);
-        }
-
         function updateSecondaryPhotoRotation() {
             let secondaryPhoto = document.getElementsByClassName("introduction-secondary-photo")[0];
             let secondaryPhotoRect = secondaryPhoto.getBoundingClientRect();
@@ -1132,7 +1118,6 @@
                             projectsList.innerHTML += projectItem;
                         }
 
-                        cloneList("projects-content", "projects-list-original", "projects-list-clone");
                     })
             });
         
@@ -1172,7 +1157,6 @@
                             companiesList.innerHTML += companyItem;
                         }
 
-                        cloneList("companies-content", "companies-list-original", "companies-list-clone");
                     })
             })
         

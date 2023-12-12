@@ -52,14 +52,6 @@
     align-self: stretch;
 }
 
-.companies-list.clone {
-    overflow-x: scroll;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    width: 1120px;
-    height: 753px;
-}
-
 .companies-list::-webkit-scrollbar {
     display: none;
 }
