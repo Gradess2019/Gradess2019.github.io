@@ -597,35 +597,9 @@
                     <div class="scroll-container">
                         <!-- list wrapper -->
                         <!-- <span class="fix-offset"></span> -->
-                        <ul class="list-wrapper">
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
-                            <div class="list-item"></div>
+                        <ul class="list-wrapper" id="project-list-wrapper">
                         </ul>
-                        <!-- <span class="fix-offset"></span> -->
+                        <span class="fix-offset"></span>
                     </div>
                 </div>
             </div>
@@ -1153,8 +1127,8 @@
 
 
                             // append projectItem to projects-list
-                            // let projectsList = document.getElementsByClassName("projects-list")[0];
-                            // projectsList.innerHTML += projectItem;
+                            let projectsList = document.getElementById("project-list-wrapper");
+                            projectsList.innerHTML += projectItem;
                         }
 
                     })

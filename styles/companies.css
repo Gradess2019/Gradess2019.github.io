@@ -3,7 +3,10 @@
     top: 4050px;
 }
 
-.companies {}
+.companies {
+    position: relative;
+    top: 850px;
+}
 
 .companies-content {
     display: flex;

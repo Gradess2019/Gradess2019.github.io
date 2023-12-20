@@ -44,24 +44,18 @@
 .list-body {
     background: transparent;
     margin: 0;
-    /* padding: 20px var(--WINDOW-X-SPACE); */
-    padding: 20px 200px;
+    padding: 0 200px;
     overflow-x: hidden;
     position: absolute;
     left: 0;
     width: 100vw;
 }
 
-.list-container {
-    /* padding: 40px var(--CONTAINER-X-SPACE); */
-    /* padding: 40px 30px; */
-    /* background: purple; */
-}
+.list-container {}
 
 .scroll-container {
-    height: 200px;
-    /* margin: 0 calc(-1 * calc(var(--WINDOW-X-SPACE) + var(--CONTAINER-X-SPACE))); */
-    /* padding: 0 var(--WINDOW-X-SPACE); */
+    height: 770px;
+    overflow-y: hidden;
     margin: 0 calc(-1 * 200px);
     padding: 0 392px;
     display: flex;
@@ -69,14 +63,14 @@
 }
 .scroll-container::-webkit-scrollbar {
     all: unset;
-    /* display: none; */
+    display: none;
 }
  
 .scroll-container::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
     border-radius: 10px;
-    /* margin: 0 var(--WINDOW-X-SPACE); */
     margin: 0 400px;
+    margin-right: 800px;
 }
  
 .scroll-container::-webkit-scrollbar-thumb {
@@ -85,33 +79,17 @@
     background-color: white;
 }
 .list-wrapper {
-    background: orange;
     width: fit-content;
     height: 100%;
     display: flex;
     margin: 0;
     padding: 0;
-    padding-top: 40px;
     position: relative;
-}
-
-.list-item {
-    text-align: center;
-    font-size: 18px;
-    background: rgba(255, 255, 255, .5);
-    border: solid 1px orange;
-    width: 100px;
-    flex-shrink: 0;
-    height: 100%;
-
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 32px;
 }
 
 .fix-offset {
-    width: var(--WINDOW-X-SPACE);
+    width: 415px;
     flex-shrink: 0;
 }
 
