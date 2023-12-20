@@ -57,7 +57,8 @@
     height: 770px;
     overflow-y: hidden;
     margin: 0 calc(-1 * 200px);
-    padding: 0 392px;
+    /* padding: 0 392px; */
+    /* padding-left: 30.9%; */
     display: flex;
     overflow: auto;
 }
@@ -89,7 +90,7 @@
 }
 
 .fix-offset {
-    width: 415px;
+    width: 778px;
     flex-shrink: 0;
 }
 

@@ -594,12 +594,12 @@
                 <!-- main -->
                 <div class="list-container">
                     <!-- scroll container -->
-                    <div class="scroll-container">
+                    <div class="scroll-container" id="project-scroll">
                         <!-- list wrapper -->
                         <!-- <span class="fix-offset"></span> -->
                         <ul class="list-wrapper" id="project-list-wrapper">
                         </ul>
-                        <span class="fix-offset"></span>
+                        <!-- <span class="fix-offset"></span> -->
                     </div>
                 </div>
             </div>
@@ -898,6 +898,22 @@
             window.open(url, "_blank");
         }
 
+        function updateProjectListPadding() {
+            let projectScroll = document.getElementById("project-scroll");
+            let projectsContainer = document.getElementsByClassName("projects")[0];
+            let projectsContent = document.getElementsByClassName("projects-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("project-list-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementsByClassName("list-wrapper")[0], null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = listItemWidth + listWrapperGap;
+
+            projectScroll.style.paddingLeft = projectsContainerRect.x + projectContentPaddingLeft + "px";
+            projectScroll.style.paddingRight = window.innerWidth - projectsContainerRect.right + additionaListOffset + "px";
+        }
+
+        setInterval(updateProjectListPadding, 16);
 
         let slidesIds = {}
         function scrollNext(containerId, slideClass, gap) {
