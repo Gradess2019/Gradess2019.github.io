@@ -907,10 +907,26 @@
             let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
             let listItemWidth = document.getElementsByClassName("project-list-item")[0].clientWidth;
             let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementsByClassName("list-wrapper")[0], null).getPropertyValue("gap")) / 2;
-            let additionaListOffset = listItemWidth + listWrapperGap;
+            let additionaListOffset = 0;
 
-            projectScroll.style.paddingLeft = projectsContainerRect.x + projectContentPaddingLeft + "px";
-            projectScroll.style.paddingRight = window.innerWidth - projectsContainerRect.right + additionaListOffset + "px";
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 16;
+                additionaListOffset = 400;
+            }
+            else if (getScreenWidth() < DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset = 400;
+            } else {
+                additionaListOffset = listItemWidth + listWrapperGap;
+            }
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+
+            // console.log("projectsContainerRect.right = " + projectsContainerRect.right + " innerWidth = " + window.innerWidth + ", listItemWidth = " + listItemWidth + ", listWrapperGap = " + listWrapperGap + ", additionaListOffset = " + additionaListOffset + ", projectScroll.style.paddingLeft = " + projectScroll.style.paddingLeft + ", projectScroll.style.paddingRight = " + projectScroll.style.paddingRight);
         }
 
         setInterval(updateProjectListPadding, 16);

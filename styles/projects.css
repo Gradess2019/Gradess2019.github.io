@@ -57,8 +57,6 @@
     height: 770px;
     overflow-y: hidden;
     margin: 0 calc(-1 * 200px);
-    /* padding: 0 392px; */
-    /* padding-left: 30.9%; */
     display: flex;
     overflow: auto;
 }
@@ -232,9 +230,7 @@
         width: 940px;
     }
 
-    .list-body {
-        width: 940px;
-    }
+    .list-body {}
 }
 
 
@@ -258,9 +254,7 @@
     }
 
     .list-body {
-        padding: 0px 16px;
         margin-top: -22px;
-        width: 358px;
         gap: 24px;
     }
 
