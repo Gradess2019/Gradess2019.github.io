@@ -212,6 +212,14 @@
     }
 
     .list-body {}
+
+    .project-description-overflow-mobile {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: unset;
+    }
 }
 
 @media screen and (max-width: 1440px) and (min-width: 768px) {
@@ -231,6 +239,14 @@
     }
 
     .list-body {}
+
+    .project-description-overflow-mobile {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: unset;
+    }
 }
 
 
@@ -255,6 +271,10 @@
 
     .list-body {
         margin-top: -22px;
+        gap: 24px;
+    }
+
+    .list-wrapper {
         gap: 24px;
     }
 
@@ -290,11 +310,22 @@
         overflow: hidden; */
     }
 
-    .project-description-overflow .clamp-2 {
+    .project-description-overflow-mobile {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .project-description-overflow .clamp-2, .project-description-overflow-mobile .clamp-2 {
         -webkit-line-clamp: 2 !important;
     }
 
-    .project-description-overflow .clamp-3 {
+    .project-description-overflow .clamp-3, .project-description-overflow-mobile .clamp-3 {
         -webkit-line-clamp: 3 !important;
     }
 

@@ -1140,18 +1140,23 @@
                                 projectItem = projectItem.replaceAll("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
                             }
 
+                            console.log("Project: " + project.projectName +" showMoreVisible: " + project.showMoreVisible + " showMoreMobileVisible: " + project.showMoreMobileVisible + " mobileLineClamp: " + project.mobileLineClamp);
+
                             if (!project.showMoreVisible && project.showMoreMobileVisible) {
+                                console.log("Only mobile visible");
                                 let clamp = "clamp-" + parseInt(project.mobileLineClamp);
                                 projectItem = projectItem.replaceAll("{{showMoreVisible}}", "mobile-screen");
-                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow mobile-screen " + clamp);
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow-mobile " + clamp);
                                 projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
                             }
                             else if (project.showMoreVisible && project.showMoreMobileVisible) {
+                                console.log("Both visible");
                                 let clamp = "clamp-" + parseInt(project.mobileLineClamp);
                                 projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow " + clamp);
                                 projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
                             }
                             else {
+                                console.log("None visible");
                                 projectItem = projectItem.replaceAll("{{showMoreVisible}}", "hidden");
                                 projectItem = projectItem.replaceAll("{{descriptionClass}}", "");
                             }
