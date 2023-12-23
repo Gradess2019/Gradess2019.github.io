@@ -1140,13 +1140,20 @@
                                 projectItem = projectItem.replaceAll("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
                             }
 
-                            if (!project.showMoreVisible) {
+                            if (!project.showMoreVisible && project.showMoreMobileVisible) {
+                                let clamp = "clamp-" + parseInt(project.mobileLineClamp);
+                                projectItem = projectItem.replaceAll("{{showMoreVisible}}", "mobile-screen");
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow mobile-screen " + clamp);
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
+                            }
+                            else if (project.showMoreVisible && project.showMoreMobileVisible) {
+                                let clamp = "clamp-" + parseInt(project.mobileLineClamp);
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow " + clamp);
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
+                            }
+                            else {
                                 projectItem = projectItem.replaceAll("{{showMoreVisible}}", "hidden");
                                 projectItem = projectItem.replaceAll("{{descriptionClass}}", "");
-                            } 
-                            else {
-                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow");
-                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
                             }
 
                             if (!project.buttonVisible) {

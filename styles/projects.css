@@ -258,6 +258,10 @@
         gap: 24px;
     }
 
+    .scroll-container {
+        height: auto;
+    }
+
     .project-list-item {
         width: 320px;
         height: 525px;
@@ -268,6 +272,30 @@
         width: 335px !important;
         height: 525px !important;
         -webkit-mask: linear-gradient(136deg, #000 97.75%, transparent 97.75%);
+    }
+
+    .project-description-overflow {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: 2;
+        /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.00) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden; */
+    }
+
+    .project-description-overflow .clamp-2 {
+        -webkit-line-clamp: 2 !important;
+    }
+
+    .project-description-overflow .clamp-3 {
+        -webkit-line-clamp: 3 !important;
     }
 
     .project-list-item-image {
@@ -299,5 +327,20 @@
         padding: 0px 16px;
     }
 
+    .project-list-item .carousel-item-button-container {
+
+    }
+
+    .project-list-item .carousel-item-button {
+        margin-left: 10px;
+        width: 198px;
+        height: 62px;
+    }
+
+    .project-list-item .carousel-item-button-content {
+        width: 198px;
+        height: 62px;
+        background-image: url("../images/button_project_mobile.svg");
+    }
     
 }
