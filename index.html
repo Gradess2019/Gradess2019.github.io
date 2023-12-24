@@ -1030,7 +1030,7 @@
 
             let currentScrollLeft = slidesContainer.scrollLeft;
             const slideWidth = slide.clientWidth + gap;
-            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let currentSlideId = Math.round(currentScrollLeft / slideWidth);
             let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
 
             let nextSlideId = Math.min(slidesNumber - 1, currentSlideId + 1);
@@ -1045,7 +1045,7 @@
 
             let currentScrollLeft = slidesContainer.scrollLeft;
             const slideWidth = slide.clientWidth + gap;
-            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let currentSlideId = Math.round(currentScrollLeft / slideWidth);
             let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
 
             let nextSlideId = Math.max(0, currentSlideId - 1);
