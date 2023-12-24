@@ -3,9 +3,17 @@
     top: 4050px;
 }
 
+#companies-scroll {
+    height: 460px !important;
+}
+
 .companies {
     position: relative;
     top: 850px;
+}
+
+.companies-list-body {
+    top: 4337px;
 }
 
 .companies-content {
@@ -122,7 +130,7 @@
     .companies-content {
         padding-right: 160px;
         padding-left: 160px;
-        padding-top: 240px;
+        padding-top: 145px;
     }
 
     .companies-toolbar {
@@ -141,7 +149,7 @@
     .companies-content {
         padding-right: 40px;
         padding-left: 40px;
-        padding-top: 216px;
+        padding-top: 120px;
     }
 
     .companies-toolbar {
@@ -151,6 +159,10 @@
     .companies-list {
         width: 940px;
     }
+
+    .companies-list-body {
+        top: 3784px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -159,9 +171,13 @@
         top: 3500px;
     }
 
+    .companies {
+        top: 620px;
+    }
+
     .companies-content {
         height: 500px;
-        padding-top: 116px;
+        padding-top: 0px;
     }
 
     .companies-toolbar {
@@ -172,6 +188,18 @@
     .companies-toolbar-title {
         width: 293px;
         justify-content: flex-start;
+    }
+
+    .companies-toolbar-title h4 {
+        margin: 0;
+    }
+
+    .companies-list-body {
+        top: 3682px;
+    }
+
+    #companies-scroll {
+        height: 413px !important;
     }
 
     .companies-list {

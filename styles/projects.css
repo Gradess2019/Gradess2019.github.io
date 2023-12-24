@@ -36,11 +36,6 @@
     gap: 12px;
 }
 
-:root {
-    --WINDOW-X-SPACE: 20px;
-    --CONTAINER-X-SPACE: 30px;
-}
-
 .list-body {
     background: transparent;
     margin: 0;
@@ -60,6 +55,7 @@
     display: flex;
     overflow: auto;
 }
+
 .scroll-container::-webkit-scrollbar {
     all: unset;
     display: none;
@@ -77,6 +73,7 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
     background-color: white;
 }
+
 .list-wrapper {
     width: fit-content;
     height: 100%;
@@ -279,7 +276,7 @@
     }
 
     .scroll-container {
-        height: auto;
+        height: 529px;
     }
 
     .project-list-item {

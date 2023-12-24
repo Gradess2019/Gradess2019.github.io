@@ -625,7 +625,20 @@
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
             </div>
-            <div class="marketplace opacity-container">
+            <div class="list-body companies-list-body">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="companies-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="companies-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="marketplace opacity-container" hidden>
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
                     <div class="marketplace-title">
@@ -647,7 +660,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer opacity-container">
+            <div class="footer opacity-container hidden">
                 <div class="copyright body-1 white-90 no-mobile">
                     Stepan © 2023
                 </div>
@@ -850,6 +863,7 @@
         });
 
         window.onresize = function() {
+            console.log("resize");
             let scale = getDesiredScale();
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
         };
@@ -925,11 +939,36 @@
             }
             projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
             projectScroll.style.paddingLeft = paddingLeftValue + "px";
-
-            // console.log("projectsContainerRect.right = " + projectsContainerRect.right + " innerWidth = " + window.innerWidth + ", listItemWidth = " + listItemWidth + ", listWrapperGap = " + listWrapperGap + ", additionaListOffset = " + additionaListOffset + ", projectScroll.style.paddingLeft = " + projectScroll.style.paddingLeft + ", projectScroll.style.paddingRight = " + projectScroll.style.paddingRight);
         }
 
-        setInterval(updateProjectListPadding, 16);
+        function updateCompanyListPadding() {
+            let projectScroll = document.getElementById("companies-scroll");
+            let projectsContainer = document.getElementsByClassName("companies")[0];
+            let projectsContent = document.getElementsByClassName("companies-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("comapny-list-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementsByClassName("list-wrapper")[0], null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 0;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 16;
+                additionaListOffset = 400;
+            }
+            else if (getScreenWidth() < DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset = 400;
+            } else {
+                additionaListOffset = listItemWidth + listWrapperGap;
+            }
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
 
         let slidesIds = {}
         function scrollNext(containerId, slideClass, gap) {
@@ -1206,7 +1245,7 @@
                             companyItem = companyItem.replaceAll("{{responsibilities}}", responsibilitiesList);
 
                             // append companyItem to companies-list
-                            let companiesList = document.getElementsByClassName("companies-list")[0];
+                            let companiesList = document.getElementById("companies-list-wrapper");
                             companiesList.innerHTML += companyItem;
                         }
 
@@ -1296,6 +1335,12 @@
                 containers[i].style.opacity = value;
             }
         }
+
+        let interval = setInterval(() => {
+            updateCompanyListPadding();
+            updateProjectListPadding();
+            clearInterval(interval);
+        })
 </script>
 <script src="scripts/modal.js"></script>
 </html>
