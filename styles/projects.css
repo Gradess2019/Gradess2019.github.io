@@ -54,6 +54,7 @@
     margin: 0 calc(-1 * 200px);
     display: flex;
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 .scroll-container::-webkit-scrollbar {

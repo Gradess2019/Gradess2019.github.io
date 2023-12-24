@@ -578,10 +578,10 @@
                             </h3>
                         </div>
                         <div class="projects-toolbar-buttons no-mobile">
-                            <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('project-scroll', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('projects-list-clone', 'project-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('project-scroll', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
@@ -608,10 +608,10 @@
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
                         <div class="companies-toolbar-buttons no-mobile">
-                            <div class="carousel-button left" onclick="scrollPrevious('companies-list-clone', 'comapny-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('companies-scroll', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('companies-list-clone', 'comapny-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('companies-scroll', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
@@ -932,13 +932,16 @@
 
             let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
             
+            let DESKTOP_WINDOW_WIDTH = 1440;
             let TABLET_WINDOW_WIDTH = 768;
 
             if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
-                paddingLeftValue += 16;
+                paddingLeftValue += 15;
+            } else if (getScreenWidth() >= DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset += 15;
             }
 
-            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + 16 + "px";
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
             projectScroll.style.paddingLeft = paddingLeftValue + "px";
         }
 
@@ -955,13 +958,16 @@
 
             let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
             
+            let DESKTOP_WINDOW_WIDTH = 1440;
             let TABLET_WINDOW_WIDTH = 768;
 
             if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
-                paddingLeftValue += 16;
+                paddingLeftValue += 15;
+            } else if (getScreenWidth() >= DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset += 15;
             }
 
-            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + 16 + "px";
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
             projectScroll.style.paddingLeft = paddingLeftValue + "px";
         }
 
@@ -998,17 +1004,14 @@
             let slidesContainer = document.getElementById(containerId);
             let slide = document.querySelector("." + slideClass);
 
-            if (slidesIds[slideClass] == null) {
-                slidesIds[slideClass] = 1;
-            }
-            else {
-                let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
-                slidesIds[slideClass] = Math.max(0, Math.min(slidesNumber - 2, slidesIds[slideClass] + 1));
-            }
+            let currentScrollLeft = slidesContainer.scrollLeft;
+            const slideWidth = slide.clientWidth + gap;
+            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
+
+            let nextSlideId = Math.min(slidesNumber - 1, currentSlideId + 1);
+            let newScrollLeft = slideWidth * nextSlideId;
             
-            let gapOffset = gap * slidesIds[slideClass];
-            const slideWidth = slide.clientWidth;
-            let newScrollLeft = slideWidth * slidesIds[slideClass] + gapOffset;
             slidesContainer.scrollLeft = newScrollLeft;
         }
 
@@ -1016,17 +1019,14 @@
             let slidesContainer = document.getElementById(containerId);
             let slide = document.querySelector("." + slideClass);
 
-            if (slidesIds[slideClass] == null) {
-                slidesIds[slideClass] = 0;
-            }
-            else {
-                let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
-                slidesIds[slideClass] = Math.max(0, Math.min(slidesNumber - 2, slidesIds[slideClass] - 1));
-            }
+            let currentScrollLeft = slidesContainer.scrollLeft;
+            const slideWidth = slide.clientWidth + gap;
+            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
+
+            let nextSlideId = Math.max(0, currentSlideId - 1);
+            let newScrollLeft = slideWidth * nextSlideId;
             
-            let gapOffset = gap * slidesIds[slideClass];
-            const slideWidth = slide.clientWidth;
-            let newScrollLeft = slideWidth * slidesIds[slideClass] + gapOffset;
             slidesContainer.scrollLeft = newScrollLeft;
         }
         
