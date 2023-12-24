@@ -211,8 +211,13 @@
         top: 20px;
     }
 
+    #marketplace-scroll {
+        height: 415px;
+    }
+
     .marketplace {
         top: 620px;
+        height: 740px;
     }
 
     .marketplace-content {
@@ -225,6 +230,7 @@
 
     .marketplace-tile {
         gap: 32px;
+        margin-top: 440px;
     }
 
     .marketplace-tile-item {
@@ -276,5 +282,9 @@
 
     .marketplace-button-content>p {
         top: 2px;
+    }
+
+    .marketplace-list-body {
+        top: 4328px;
     }
 }

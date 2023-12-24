@@ -649,7 +649,7 @@
                         <p class="body-2 white-50 mobile-screen">Plugin development for Unreal Engine</p>
                     </div>
                     <div class="marketplace-tile">
-                        <div class="marketplace-tile-row-container">
+                        <div class="marketplace-tile-row-container no-mobile">
                             <div class="marketplace-tile-row"></div>
                         </div>
                         <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
@@ -657,6 +657,19 @@
                                 <p class="link">See in market</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-body marketplace-list-body mobile-screen">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="marketplace-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="marketplace-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
                     </div>
                 </div>
             </div>
@@ -862,12 +875,6 @@
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
         });
 
-        window.onresize = function() {
-            console.log("resize");
-            let scale = getDesiredScale();
-            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-        };
-
         let currentModal = null;
         function openModal(modalId) {
             let modal = document.getElementById(modalId);
@@ -920,24 +927,18 @@
             let projectsContainerRect = projectsContainer.getBoundingClientRect();
             let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
             let listItemWidth = document.getElementsByClassName("project-list-item")[0].clientWidth;
-            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementsByClassName("list-wrapper")[0], null).getPropertyValue("gap")) / 2;
-            let additionaListOffset = 0;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("project-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 400;
 
             let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
             
-            let DESKTOP_WINDOW_WIDTH = 1440;
             let TABLET_WINDOW_WIDTH = 768;
 
             if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
                 paddingLeftValue += 16;
-                additionaListOffset = 400;
             }
-            else if (getScreenWidth() < DESKTOP_WINDOW_WIDTH) {
-                additionaListOffset = 400;
-            } else {
-                additionaListOffset = listItemWidth + listWrapperGap;
-            }
-            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + 16 + "px";
             projectScroll.style.paddingLeft = paddingLeftValue + "px";
         }
 
@@ -949,7 +950,30 @@
             let projectsContainerRect = projectsContainer.getBoundingClientRect();
             let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
             let listItemWidth = document.getElementsByClassName("comapny-list-item")[0].clientWidth;
-            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementsByClassName("list-wrapper")[0], null).getPropertyValue("gap")) / 2;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("companies-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 400;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 16;
+            }
+
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + 16 + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
+
+        function updateMarketplaceListPadding() {
+            let projectScroll = document.getElementById("marketplace-scroll");
+            let projectsContainer = document.getElementsByClassName("marketplace")[0];
+            let projectsContent = document.getElementsByClassName("marketplace-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("marketplace-tile-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("marketplace-list-wrapper"), null).getPropertyValue("gap")) / 2;
             let additionaListOffset = 0;
 
             let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
@@ -958,7 +982,6 @@
             let TABLET_WINDOW_WIDTH = 768;
 
             if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
-                paddingLeftValue += 16;
                 additionaListOffset = 400;
             }
             else if (getScreenWidth() < DESKTOP_WINDOW_WIDTH) {
@@ -1280,6 +1303,9 @@
                             // append pluginItem to marketplace-tile-row
                             let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
                             pluginsList.innerHTML += pluginItem;
+
+                            let mobilePluginList = document.getElementById("marketplace-list-wrapper");
+                            mobilePluginList.innerHTML += pluginItem;
                         }
                     })
             })
@@ -1337,10 +1363,21 @@
         }
 
         let interval = setInterval(() => {
-            updateCompanyListPadding();
             updateProjectListPadding();
+            updateCompanyListPadding();
+            updateMarketplaceListPadding();
             clearInterval(interval);
         })
+
+        window.onresize = function() {
+            let scale = getDesiredScale();
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+
+            updateProjectListPadding();
+            updateCompanyListPadding();
+            updateMarketplaceListPadding();
+        };
+
 </script>
 <script src="scripts/modal.js"></script>
 </html>
