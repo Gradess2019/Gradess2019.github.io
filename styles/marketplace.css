@@ -3,7 +3,10 @@
     top: 5000px;
 }
 
-.marketplace {}
+.marketplace {
+    position: relative;
+    top: 850px;
+}
 
 .marketplace-content {
     display: flex;
