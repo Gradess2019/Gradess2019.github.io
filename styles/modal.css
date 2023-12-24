@@ -105,6 +105,10 @@
     -webkit-mask: linear-gradient(135deg, #000 96.8%, transparent 96.8%);
 }
 
+#domont-modal .modal-content {
+    gap: 8px;
+}
+
 #domont-modal .modal-background {
     width: 322px;
     height: 315px;
