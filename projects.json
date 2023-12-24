@@ -11,6 +11,7 @@
         "showMoreVisible": false,
         "showMoreMobileVisible": true,
         "mobileLineClamp": 3,
+        "modalId": "postworld-modal",
         "buttonVisible": true,
         "buttonText": "Watch overview",
         "buttonUrl": "https://youtu.be/Wd_tDmG0Fis?si=VxWEq6JXztnEWLwW"
@@ -93,6 +94,7 @@
         "showMoreVisible": false,
         "showMoreMobileVisible": true,
         "mobileLineClamp": 3,
+        "modalId": "domont-modal",
         "buttonVisible": true,
         "buttonText": "Watch overview",
         "buttonUrl": "https://www.behance.net/gallery/94458205/Domont-360-virtual-tour"
@@ -169,6 +171,7 @@
         "showMoreVisible": false,
         "showMoreMobileVisible": true,
         "mobileLineClamp": 5,
+        "modalId": "valley-modal",
         "buttonVisible": false
     },
     {
