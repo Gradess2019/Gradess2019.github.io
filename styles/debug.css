@@ -1,17 +1,17 @@
 .debug-toolbar {
-    position: fixed;
+    /* position: fixed;
     z-index: 9999;
-    opacity: 0.5;
+    opacity: 0.5; */
 }
 
 .debug-toolbar-item {
-    user-select: none;
+    /* user-select: none; */
 }
 
 .debug.outline * {
-    outline: 1px solid lightgreen;
+    /* outline: 1px solid lightgreen; */
 }
 
 .debug-toolbar, .debug-toolbar * {
-    outline: none !important;
+    /* outline: none !important; */
 }
