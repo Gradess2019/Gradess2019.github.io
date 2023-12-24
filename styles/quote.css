@@ -1,0 +1,41 @@
+.quote {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+}
+
+.quote-content {
+    width: 832px;
+}
+
+@media screen and (min-width: 1441px) {
+    .quote {
+        padding: 74px 160px 0px 160px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+    .quote {
+        padding: 96px 40px 80px 40px;
+    }
+
+    .quote-content {
+        width: 697px;
+        margin: 0;
+        margin-top: 1px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .quote {
+        padding: 128px 16px 0px 16px;
+    }
+
+    .quote-content {
+        width: 358px;
+        margin: 0;
+        margin-top: 1px;
+    }
+}

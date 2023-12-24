@@ -1,0 +1,88 @@
+.gym {}
+
+.gym-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gym-photo {
+    flex-shrink: 0;
+}
+
+.gym-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.gym-description p {
+    margin: 0;
+}
+
+@media screen and (min-width: 1441px) {
+    .gym {
+        width: 1440px;
+    }
+
+    .gym-content {
+        padding: 80px 160px 0px 160px;
+    }
+
+    .gym-photo {
+        width: 610px;
+        height: 610px;
+        margin-left: -34px;
+    }
+
+    .gym-description {
+        width: 448px;
+        margin-top: -33px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+    .gym {
+        width: 1020px;
+    }
+
+    .gym-content {
+        padding: 80px 40px 0px 40px;
+    }
+
+    .gym-photo {
+        width: 518px;
+        height: 518px;
+        margin-left: -32px;
+        margin-top: -17px;
+    }
+
+    .gym-description {
+        width: 373px;
+        margin-top: -49px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .gym {
+        width: 390px;
+    }
+
+    .gym-content {
+        padding: 17px 0px 0px 0px;
+        flex-direction: column;
+    }
+
+    .gym-photo {
+        width: 390px;
+        height: 422px;
+    }
+
+    .gym-description {
+        width: 358px;
+        margin-top: -14px;
+        gap: 17px !important;
+    }
+}

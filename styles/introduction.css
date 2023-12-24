@@ -1,0 +1,137 @@
+#introduction {
+    position: absolute;
+    bottom: 950px;
+}
+
+.introduction {
+    position: relative;
+    align-self: stretch;
+    display: flex;
+}
+
+.introduction-text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.introduction-text-container p {
+    margin: 0;
+}
+
+.introduction-primary-photo {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.introduction-secondary-photo {
+    display: flex;
+    position: absolute;
+    width: 191px;
+    height: 295px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(-15deg);
+}
+
+.introduction-secondary-photo.unrotated {
+    transform: rotate(0deg);
+}
+
+@media screen and (min-width: 1441px) {
+    .introduction {
+        height: 784px;
+        padding-top: 13px;
+    }
+
+    .introduction-text-container {
+        width: 448px;
+        margin-top: 146px;
+        margin-left: 160px;
+    }
+
+    .introduction-primary-photo {
+        width: 541px;
+        height: 721px;
+        margin-left: -103px;
+        justify-content: center;
+    }
+
+    .introduction-secondary-photo {
+        top: -110px;
+        right: 160px;
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 768px) {
+    #introduction {
+        position: absolute;
+        bottom: 712px;
+    }
+
+    .introduction {
+        height: 586px;
+        margin-top: 1px;
+    }
+
+    .introduction-text-container {
+        width: 373px;
+        margin-top: 60px;
+        margin-left: 40px;
+    }
+
+    .introduction-primary-photo {
+        width: 444px;
+        height: 586px;
+        margin-top: -18px;
+    }
+
+    .introduction-secondary-photo {
+        top: -114px;
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #introduction {
+        position: absolute;
+        bottom: 600px;
+    }
+
+    .introduction {
+        margin-top: 98px;
+        width: 390px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .introduction-text-container {
+        width: 358px;
+        padding-right: 16px;
+        padding-left: 16px;
+        align-self: stretch;
+        gap: 17px !important;
+        margin-top: 3px;
+    }
+
+    .introduction-primary-photo {
+        align-items: start !important;
+        width: 390px;
+        height: 454px;
+    }
+
+    .introduction-secondary-photo {
+        top: -114px;
+        right: 13px;
+    }
+}

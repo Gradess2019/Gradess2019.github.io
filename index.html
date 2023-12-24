@@ -1,148 +1,1407 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
-    <link rel="stylesheet" type="text/css" href="styles/common.css">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="styles/animations/animate.css">
-    <script src="js/moment.js"></script>
-    <script src="js/moment-precise-range.js"></script>
-    <title>Stepan Trofimov</title>
-</head>
-<body class="h-100">
-<div class="row w-50 bg-idea rounded m-auto mb-5 border border-2 mt-4">
-    <p class="h1 text-white-50">Stepan Trofimov</p>
-    <p class="h2 text-white-50">Unreal Engine Developer</p>
-    <p>
-        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
-           href="https://www.linkedin.com/in/gradess/">LinkedIn</a>
-        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
-           href="https://t.me/GradessUE">Telegram</a>
-        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
-           href="mailto: trofimovjava@gmail.com">E-mail</a>
-        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
-           href="https://github.com/Gradess2019">GitHub</a>
-        <a class="link-warning text-decoration-none" target="_blank" rel="noopener noreferrer"
-           href="https://gitlab.com/gradess">GitLab</a>
-    </p>
-
-</div>
-<div class="m-auto w-50">
-    <p class="h1 text-white-50">Projects</p>
-</div>
-<div class="w-100" id="projects_root"></div>
-<div class="m-auto w-50">
-    <p class="h1 text-white-50">Companies</p>
-</div>
-<div class="w-100" id="companies_root">
-</div>
+    <head>
+        <script>history.scrollRestoration = "manual"</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=1440, initial-scale=1, minimum-scale=1">
+        <title>Stepan Trofimov</title>
+        <link rel="stylesheet" href="styles/common.css">
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/background.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/quote.css">
+        <link rel="stylesheet" href="styles/introduction.css">
+        <link rel="stylesheet" href="styles/gym.css">
+        <link rel="stylesheet" href="styles/carousel.css">
+        <link rel="stylesheet" href="styles/projects.css">
+        <link rel="stylesheet" href="styles/companies.css">
+        <link rel="stylesheet" href="styles/marketplace.css">
+        <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="styles/debug.css">
+    </head>
+    <body class="bg-black debug outline">
+        <div style="display: none;">
+            <svg style="display: none;" width="20" height="13" viewBox="0 0 20 13" fill="none">
+                <path id="progress-item" d="M0.539027 12.75L11.1159 0.25H19.461L8.88405 12.75H0.539027Z" stroke-width="0.5"/>
+            </svg>
+        </div>
+        <div class="content">
+            <div class="header-menu title-3 white-90 mobile-screen">
+                <div class="page-links">
+                    <div class="item">
+                        <a href="#introduction" onclick="closeHeaderMenu()">&lt;about/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#projects" onclick="closeHeaderMenu()">&lt;projects/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#companies" onclick="closeHeaderMenu()">&lt;companies/&gt;</a>
+                    </div>
+                    <div class="item">
+                        <a href="#marketplace" onclick="closeHeaderMenu()">&lt;studio/&gt;</a>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <a href="https://www.linkedin.com/in/gradess/" target="_blank">
+                        <img src="images/linkedin.svg">
+                    </a>
+                    <a href="https://t.me/GradessUE" target="_blank">
+                        <img src="images/telegram.svg">
+                    </a>
+                    <a href="https://github.com/Gradess2019" target="_blank">
+                        <img src="images/github.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="background-container">
+                <div class="bg-image"></div>
+                <div class="bg-image mobile-screen"></div>
+                <div class="bg-image-2"></div>
+                <div class="bg-image-3"></div>
+                <div class="bg-image-4"></div>
+                <div class="bg-image-5"></div>
+                <div class="bg-border"></div>
+            </div>
+            <div class="header title-3 white-90">
+                <div class="header-content">
+                    <div>
+                        STEPAN
+                    </div>
+                    <div class="page-links no-mobile">
+                        <div class="item">
+                            <a href="#introduction">&lt;about/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#projects">&lt;projects/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#companies">&lt;companies/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#marketplace">&lt;studio/&gt;</a>
+                        </div>
+                    </div>
+                    <div class="contacts no-mobile">
+                        <a href="https://www.linkedin.com/in/gradess/" target="_blank">
+                            <img src="images/linkedin.svg">
+                        </a>
+                        <a href="https://t.me/GradessUE" target="_blank">
+                            <img src="images/telegram.svg">
+                        </a>
+                        <a href="https://github.com/Gradess2019" target="_blank">
+                            <img src="images/github.svg">
+                        </a>
+                    </div>
+                    <div class="header-menu-open-button mobile-screen" onclick="openHeaderMenu()">
+                        <img src="images/header-menu-button.svg" alt="" class="mobile-screen">
+                    </div>
+                    <div class="header-menu-close-button hidden mobile-screen" onclick="closeHeaderMenu()">
+                        <img src="images/header-menu-cross.svg" alt="" class="mobile-screen">
+                    </div>
+                </div>
+            </div>
+            <div class="main opacity-container">
+                <div class="main-content">
+                    <div class="title-block">
+                        <div class="title-content">
+                            <div class="position white-50 descriptor-1 wide-screen">
+                                UNREAL ENGINE DEVELOPER
+                            </div>
+                            <div class="position white-50 descriptor-2 tablet-screen">
+                                UNREAL ENGINE DEVELOPER
+                            </div>
+                            <div class="position white-50 descriptor-1 mobile-screen">
+                                UNREAL ENGINE DEVELOPER
+                            </div>
+                            <h1 class="white-90 name no-mobile">
+                                STEPAN
+                                <br>
+                                TROFIMOV
+                            </h1>
+                            <h2 class="white-90 name mobile-screen">
+                                STEPAN
+                                <br>
+                                TROFIMOV
+                            </h2>
+                            <div class="main-code-container code white-90 no-mobile">
+                                <div class="main-code"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-block">
+                        <div class="photo-container">
+                            <div class="photo"></div>
+                        </div>
+                        <div class="stats">
+                            <div class="stats-bg-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background wide-screen" width="544" height="241" viewBox="0 0 544 241" fill="none">
+                                    <path d="M0 0H544V120.5V179.737V179.484V206.698L510 241H476H408H272H0V0Z" fill="url(#paint0_linear_789_5691)" fill-opacity="0.2"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_789_5691" x1="287" y1="-10.6324" x2="271.621" y2="240.977" gradientUnits="userSpaceOnUse">
+                                            <stop stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#FE056B"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border wide-screen" width="584.5" height="281" viewBox="0 0 585 281" fill="none">
+                                    <g filter="url(#filter0_d_789_5692)">
+                                        <path d="M565.5 23V229.571L531.819 263.494H22.5L22 23" stroke="#FE056B"/>
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_d_789_5692" x="0.5" y="-0.00109863" width="584.5" height="280.995" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                            <feOffset dx="-1" dy="-3"/>
+                                            <feGaussianBlur stdDeviation="10"/>
+                                            <feComposite in2="hardAlpha" operator="out"/>
+                                            <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.5 0"/>
+                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_789_5692"/>
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_789_5692" result="shape"/>
+                                        </filter>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background tablet-screen" width="454" height="241" viewBox="0 0 454 241" fill="none">
+                                    <path d="M0 0H454V120.5V180.75V210.875V225.938V212.647L425.625 241H397.25H340.5H227H0V0Z" fill="url(#paint0_linear_1527_1176)" fill-opacity="0.2"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1527_1176" x1="239.518" y1="-10.6324" x2="221.12" y2="240.569" gradientUnits="userSpaceOnUse">
+                                            <stop stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#FE056B"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border tablet-screen" width="456" height="242" viewBox="0 0 456 242" fill="none">
+                                    <path d="M1 0V241H228H341.5H398.25H426.625L455 212.647V200.179V210.875V180.75V120.5V0" stroke="#FE056B"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-background mobile-screen" width="358" height="210" viewBox="0 0 358 210" fill="none">
+                                    <path d="M0 0H358V187.392L335.625 210H313.25H268.5H179H0V0Z" fill="url(#paint0_linear_1668_835)" fill-opacity="0.2"/>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_1668_835" x1="188.871" y1="-9.2647" x2="171.177" y2="209.367" gradientUnits="userSpaceOnUse">
+                                            <stop stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#FE056B"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="stats-bg-border mobile-screen" width="360" height="211" viewBox="0 0 360 211" fill="none">
+                                    <path d="M1 0V210H180H269.5H314.25H336.625L359 187.392V0" stroke="#FE056B"/>
+                                </svg>
+                            </div>
+                            <div class="white-90 body-1 stat-item">
+                                <div class="stat-item-title no-mobile">Foodie:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Foodie:</div>
+                                <div class="stat-item-progress">
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item additional need-fill"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="white-90 body-1 stat-item">
+                                <div class="stat-item-title no-mobile">Adaptability:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Adaptability:</div>
+                                <div class="stat-item-progress">
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="white-90 body-1 stat-item">
+                                <div class="stat-item-title no-mobile">Finesse:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Finesse:</div>
+                                <div class="stat-item-progress">
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item need-fill"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                    <svg>
+                                        <use xlink:href="#progress-item" class="progress-item"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="white-90 body-1 stat-item">
+                                <div class="stat-item-title no-mobile">Strength:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Strength:</div>
+                                <div class="stat-item-error-container">
+                                    <div class="stat-item-error">ERROR</div>
+                                </div>
+                            </div>
+                            <div class="white-90 body-1 stat-item">
+                                <div class="stat-item-title no-mobile">Intelligence:</div>
+                                <div class="stat-item-title body-2 mobile-screen">Intelligence:</div>
+                                <div class="stat-item-not-found">NOT FOUND</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="quote opacity-container">
+                <h4 class="quote-content wide-screen">
+                    <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
+                    <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
+                </h4>
+                <h5 class="quote-content tablet-screen">
+                    <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
+                    <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
+                </h5>
+                <h6 class="quote-content mobile-screen">
+                    <span class="white-90">"Like a diver into the flames, I'm prepared to meet challenges</span>
+                    <span class="white-50">and overcome obstacles to achieve the desired outcome"</span>
+                </h6>
+            </div>
+            <div class="introduction opacity-container">
+                <div id="introduction"></div>
+                <div class="introduction-text-container body-1 white-50 no-mobile">
+                    <p>
+                        Hey there, I'm Stepan, an Unreal Engine Developer fueled by boundless enthusiasm for creativity and technology. My life is a fusion of pixels and code, crafting virtual worlds and enriching reality with unprecedented possibilities.
+                    </p>
+                    <p class="wide-screen">
+                        During moments when I'm not engrossed in virtual worlds, I discover happiness through a wide range of interests. Early morning workouts invigorate my spirit, while the piano's melodies envelop me in a blend of harmony and creative sparks. Likewise, I'm drawn to captivating gaming sessions and invigorating longboard rides, both of which provide me with a sense of liberation and novel concepts.
+                    </p>
+                    <p class="tablet-screen">
+                        When I'm not immersed in virtual realms, I find joy in a diverse array of hobbies. Morning workouts energize me, while the melodies of the piano immerse me in harmony and inspiration. Equally captivating are gaming sessions and longboard cruises, offering freedom and fresh ideas.
+                    </p>
+                </div>
+                <div class="introduction-primary-photo">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="wide-screen" width="541" height="721" viewBox="0 0 541 721" fill="none">
+                        <g filter="url(#filter0_d_894_20400)">
+                            <path d="M33 17H508V639.61L478.312 672H448.625H389.25H270.5H33V17Z" fill="url(#pattern0)" shape-rendering="crispEdges"/>
+                            <path d="M33 16.5H32.5V17V672V672.5H33H270.5H389.25H448.625H478.312H478.532L478.681 672.338L508.369 639.948L508.5 639.804V639.61V17V16.5H508H33Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_894_20400" x="0" y="0" width="541" height="721" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="16"/>
+                                <feGaussianBlur stdDeviation="16"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_894_20400"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_894_20400" result="shape"/>
+                            </filter>
+                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_894_20400" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
+                            </pattern>
+                            <image id="image0_894_20400" width="816" height="1456" xlink:href="images/burger.png"/>
+                        </defs>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tablet-screen" width="444" height="546" viewBox="0 0 444 546" fill="none">
+                        <g filter="url(#filter0_d_894_20396)">
+                            <path d="M32 16H412V474.165L388.25 498H364.5H317H222H32V16Z" fill="url(#pattern0_tablet)" shape-rendering="crispEdges"/>
+                            <path d="M32.5 16.5H411.5V473.958L388.042 497.5H364.5H317H222H32.5V16.5Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_894_20396" x="0" y="0" width="444" height="546" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="16"/>
+                                <feGaussianBlur stdDeviation="16"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_894_20396"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_894_20396" result="shape"/>
+                            </filter>
+                            <pattern id="pattern0_tablet" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_894_20396" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
+                            </pattern>
+                            <image id="image0_894_20396" width="816" height="1456" xlink:href="images/burger.png"/>
+                        </defs>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mobile-screen" width="335" height="428" viewBox="0 0 335 428" fill="none">
+                        <g filter="url(#filter0_d_869_11705)">
+                            <path d="M16 16H303V362L285.062 380H267.125H231.25H159.5H16V16Z" fill="url(#pattern0_mobile)" shape-rendering="crispEdges"/>
+                            <path d="M16.5 16.5H302.5V361.793L284.855 379.5H267.125H231.25H159.5H16.5V16.5Z" stroke="#59FFFF" shape-rendering="crispEdges"/>
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_869_11705" x="-16" y="0" width="351" height="428" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="16"/>
+                                <feGaussianBlur stdDeviation="16"/>
+                                <feComposite in2="hardAlpha" operator="out"/>
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.35 0 0 0 0 1 0 0 0 0 1 0 0 0 0.16 0"/>
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_869_11705"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_869_11705" result="shape"/>
+                            </filter>
+                            <pattern id="pattern0_mobile" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_869_11705" transform="matrix(0.00122549 0 0 0.000875023 0 -0.144772)"/>
+                            </pattern>
+                            <image id="image0_869_11705" width="816" height="1456" xlink:href="images/burger.png"/>
+                        </defs>
+                    </svg>
+                    <div class="introduction-secondary-photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="226" height="295" viewBox="0 0 226 295" fill="none">
+                            <g filter="url(#filter0_d_1_5)">
+                                <path d="M17.4683 9.13756L208.468 9.13756L208.468 245.138L184.593 269.138H160.718H112.968H17.4683L17.4683 9.13756Z" fill="url(#pattern1)" shape-rendering="crispEdges"/>
+                                <path d="M17.4683 8.63756H16.9683V9.13756L16.9683 269.138V269.638H17.4683H112.968H160.718H184.593H184.801L184.948 269.49L208.823 245.49L208.968 245.344V245.138L208.968 9.13756V8.63756H208.468L17.4683 8.63756Z" stroke="#FE056B" shape-rendering="crispEdges"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_1_5" x="0.468323" y="0.137558" width="225" height="294" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="8"/>
+                                    <feGaussianBlur stdDeviation="8"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.25 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_5"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_5" result="shape"/>
+                                </filter>
+                                <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_1_5" transform="matrix(0.00122549 0 0 0.000900264 0 -0.155392)"/>
+                                </pattern>
+                                <image id="image0_1_5" width="816" height="1456" xlink:href="images/cake.png"/>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="introduction-text-container body-2 white-50 mobile-screen">
+                    <p>
+                        Hey there, I'm Stepan, an Unreal Engine Developer fueled by boundless enthusiasm for creativity and technology. My life is a fusion of pixels and code, crafting virtual worlds and enriching reality with unprecedented possibilities.
+                    </p>
+                    <p>
+                        When I'm not immersed in virtual realms, I find joy in a diverse array of hobbies. Morning workouts energize me, while the melodies of the piano immerse me in harmony and inspiration. Equally captivating are gaming sessions and longboard cruises, offering freedom and fresh ideas.
+                    </p>
+                </div>
+            </div>
+            <div class="gym opacity-container">
+                <div class="gym-content">
+                    <div class="gym-photo">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="wide-screen" width="610" height="610" viewBox="0 0 610 610" fill="none">
+                            <g filter="url(#filter0_d_966_124449)">
+                                <path d="M33 17H577V527L543 561H509H441H305H33V17Z" fill="url(#pattern-gym)" shape-rendering="crispEdges"/>
+                                <path d="M33 16.5H32.5V17V561V561.5H33H305H441H509H543H543.207L543.354 561.354L577.354 527.354L577.5 527.207V527V17V16.5H577H33Z" stroke="#FE056B" shape-rendering="crispEdges"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_966_124449" x="0" y="0" width="610" height="610" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="16"/>
+                                    <feGaussianBlur stdDeviation="16"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.16 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_966_124449"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_966_124449" result="shape"/>
+                                </filter>
+                                <pattern id="pattern-gym" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_966_124449" transform="scale(0.000976562)"/>
+                                </pattern>
+                                <image id="image0_966_124449" width="1024" height="1024" xlink:href="images/gym.png"/>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tablet-screen" width="518" height="518" viewBox="0 0 518 518" fill="none">
+                            <g filter="url(#filter0_d_978_124892)">
+                                <path d="M32 16H486V441.625L457.625 470H429.25H372.5H259H32V16Z" fill="url(#pattern-gym-tablet)" shape-rendering="crispEdges"/>
+                                <path d="M32.5 16.5H485.5V441.418L457.418 469.5H429.25H372.5H259H32.5V16.5Z" stroke="#FE056B" shape-rendering="crispEdges"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_978_124892" x="0" y="0" width="518" height="518" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="16"/>
+                                    <feGaussianBlur stdDeviation="16"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.16 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_978_124892"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_978_124892" result="shape"/>
+                                </filter>
+                                <pattern id="pattern-gym-tablet" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_978_124892" transform="scale(0.000976562)"/>
+                                </pattern>
+                                <image id="image0_978_124892" width="1024" height="1024" xlink:href="images/gym.png"/>
+                            </defs>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="mobile-screen" width="390" height="422" viewBox="0 0 390 422" fill="none">
+                            <g filter="url(#filter0_d_978_124893)">
+                                <path d="M16 16H374V351.625L351.625 374H329.25H284.5H195H16V16Z" fill="url(#pattern-gym-mobile)" shape-rendering="crispEdges"/>
+                                <path d="M16.5 16.5H373.5V351.418L351.418 373.5H329.25H284.5H195H16.5V16.5Z" stroke="#FE056B" shape-rendering="crispEdges"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_978_124893" x="-16" y="0" width="422" height="422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="16"/>
+                                    <feGaussianBlur stdDeviation="16"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.996078 0 0 0 0 0.0196078 0 0 0 0 0.419608 0 0 0 0.16 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_978_124893"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_978_124893" result="shape"/>
+                                </filter>
+                                <pattern id="pattern-gym-mobile" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_978_124893" transform="scale(0.000976562)"/>
+                                </pattern>
+                                <image id="image0_978_124893" width="1024" height="1024" xlink:href="images/gym.png"/>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="gym-description body-1 white-50 no-mobile">
+                        <p>
+                            I'm perpetually eager to learn more, with quantum physics being one of the realms that captivates me, encouraging unconventional thinking. My life is a rhythm of daily activity and forward momentum, whether in the realm of development or personal achievements.
+                        </p>
+                        <p>
+                            Got a task? Consider it already in progress. Need assistance? I'm always ready to lend a hand and contribute my part.
+                        </p>
+                    </div>
+                    <div class="gym-description body-2 white-50 mobile-screen">
+                        <p>
+                            I'm perpetually eager to learn more, with quantum physics being one of the realms that captivates me, encouraging unconventional thinking. My life is a rhythm of daily activity and forward momentum, whether in the realm of development or personal achievements.
+                        </p>
+                        <p>
+                            Got a task? Consider it already in progress. Need assistance? I'm always ready to lend a hand and contribute my part.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="projects opacity-container">
+                <div id="projects"></div>
+                <div class="projects-content">
+                    <div class="projects-toolbar white-90">
+                        <div class="projects-toolbar-title">
+                            <h2 class="wide-screen">PROJECTS</h2>
+                            <h3 class="tablet-screen">PROJECTS</h3>
+                            <h4 class="mobile-screen">
+                                PROJECTS
+                            </h3>
+                        </div>
+                        <div class="projects-toolbar-buttons no-mobile">
+                            <div class="carousel-button left" onclick="scrollPrevious('project-scroll', 'project-list-item', 32)">
+                                <img src="images/carousel-arrow.svg">
+                            </div>
+                            <div class="carousel-button right" onclick="scrollNext('project-scroll', 'project-list-item', 32)">
+                                <img src="images/carousel-arrow.svg">
+                            </div>
+                        </div>
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
+                    </div>
+                </div>
+            </div>
+            <!-- Window -->
+            <div class="list-body">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="project-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="project-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="companies opacity-container"> 
+                <div id="companies"></div>
+                <div class="companies-content">
+                    <div class="companies-toolbar white-90">
+                        <div class="companies-toolbar-buttons no-mobile">
+                            <div class="carousel-button left" onclick="scrollPrevious('companies-scroll', 'comapny-list-item', 32)">
+                                <img src="images/carousel-arrow.svg">
+                            </div>
+                            <div class="carousel-button right" onclick="scrollNext('companies-scroll', 'comapny-list-item', 32)">
+                                <img src="images/carousel-arrow.svg">
+                            </div>
+                        </div>
+                        <div class="companies-toolbar-title">
+                            <h2 class="wide-screen">COMPANIES</h2>
+                            <h3 class="tablet-screen">COMPANIES</h3>
+                            <h4 class="mobile-screen">COMPANIES</h4>
+                        </div>
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
+                    </div>
+                    <div class="companies-list" id="companies-list-original"></div>
+                </div>
+            </div>
+            <div class="list-body companies-list-body">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="companies-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="companies-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="marketplace opacity-container">
+                <div id="marketplace"></div>
+                <div class="marketplace-content">
+                    <div class="marketplace-title">
+                        <h2 class="white-90 wide-screen">GRADESS GAMES</h2>
+                        <h3 class="white-90 tablet-screen">GRADESS GAMES</h3>
+                        <h4 class="white-90 mobile-screen">GRADESS GAMES</h4>
+                        <p class="body-1 white-50 no-mobile">Plugin development for Unreal Engine</p>
+                        <p class="body-2 white-50 mobile-screen">Plugin development for Unreal Engine</p>
+                    </div>
+                    <div class="marketplace-tile">
+                        <div class="marketplace-tile-row-container no-mobile">
+                            <div class="marketplace-tile-row"></div>
+                        </div>
+                        <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
+                            <div class="button-content marketplace-button-content">
+                                <p class="link">See in market</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-body marketplace-list-body mobile-screen">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="marketplace-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="marketplace-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer opacity-container">
+                <div class="copyright body-1 white-90 no-mobile">
+                    Stepan © 2023
+                </div>
+                <div class="copyright body-2 white-90 mobile-screen">
+                    Stepan © 2023
+                </div>
+                <div class="footer-content title-3 white-90">
+                    <div class="page-links no-mobile">
+                        <div class="item">
+                            <a href="#introduction">&lt;about/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#projects">&lt;projects/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#companies">&lt;companies/&gt;</a>
+                        </div>
+                        <div class="item">
+                            <a href="#marketplace">&lt;studio/&gt;</a>
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <a href="https://www.linkedin.com/in/gradess/" target="_blank">
+                            <img src="images/linkedin.svg">
+                        </a>
+                        <a href="https://t.me/GradessUE" target="_blank">
+                            <img src="images/telegram.svg">
+                        </a>
+                        <a href="https://github.com/Gradess2019" target="_blank">
+                            <img src="images/github.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-black-background" onclick="closeCurrentModal()"></div>
+        <div id="etalon-silver-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/etalon_silver_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/etalon_silver_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title white-90">
+                    <p class="title-1 no-mobile">Apartment tour for Etalon Silver</p>
+                    <p class="title-2 mobile-screen">Apartment tour for Etalon Silver</p>
+                    <div class="modal-cross" onclick="closeModal('etalon-silver-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-3 white-90 no-mobile">Brief description:</span>
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-2 no-mobile">The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.</span>
+                    <span class="body-3 mobile-screen">The tour comprises a 3D apartment model with two modes: orbit camera and point of view. The application is fully compatible with both iOS and Android devices. It offers flexible texture loading, supporting high-quality (HQ) and low-quality (LQ) types for desktop and mobile devices, respectively. To reduce GPU memory usage, we implemented texture compression for each platform (DXT, PVR, ETC1, ETC2). Users are also able to capture screenshots, which are automatically saved in the storage.</span>
+                </p>
+                <div class="button modal-button" onclick="openUrl('http://marta.technology/etalonsilver/apartment_3-4-127/')">
+                    <div class="button-content">
+                        <p class="link">Try it!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="interactive-map-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/interactive_map_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/interactive_map_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title title-1 white-90">
+                    <p class="title-1 no-mobile">Interactive map for EEF 2019</p>
+                    <p class="title-2 mobile-screen">Interactive map for EEF 2019</p>
+                    <div class="modal-cross" onclick="closeModal('interactive-map-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-3 white-90">Brief description:</span>
+                    <span class="body-2 no-mobile">An interactive map designed for the Primorye stand at EEF 2019 allowed visitors to explore the forthcoming transformations of Russky Island. The map featured distinct object categories. Some objects were represented by a single approximation, depicted in white with a solid border, while more intricate elements had accompanying visualizations and comprehensive information. Clicking on any object triggered the display of general information on the screen. For crucial objects, an option to "show more" was available, revealing slides and complementary text. The map also showcased existing island structures, with the possibility of a secondary level of zoom for select items. Larger entities were visible at the map's default scale. The entire project was realized in just two weeks, with graphic materials introduced during the second week, utilizing a model initially designed for the video presentation.</span>
+                    <span class="body-3 mobile-screen">An interactive map designed for the Primorye stand at EEF 2019 allowed visitors to explore the forthcoming transformations of Russky Island. The map featured distinct object categories. Some objects were represented by a single approximation, depicted in white with a solid border, while more intricate elements had accompanying visualizations and comprehensive information. Clicking on any object triggered the display of general information on the screen. For crucial objects, an option to "show more" was available, revealing slides and complementary text. The map also showcased existing island structures, with the possibility of a secondary level of zoom for select items. Larger entities were visible at the map's default scale. The entire project was realized in just two weeks, with graphic materials introduced during the second week, utilizing a model initially designed for the video presentation.</span>
+                </p>
+                <div class="button modal-button" onclick="openUrl('https://www.behance.net/gallery/85869855/Interactive-map')">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="vr-painter-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/vr_painter_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/vr_painter_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title white-90">
+                    <p class="title-1 no-mobile">VR Painter for Leroy Merlin</p>
+                    <p class="title-2 mobile-screen">VR Painter for Leroy Merlin</p>
+                    <div class="modal-cross" onclick="closeModal('vr-painter-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-3 white-90 no-mobile">Brief description:</span>
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-2 no-mobile">Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.</span>
+                    <span class="body-3 mobile-screen">Within the advanced VR software, users have the capability to paint objects such as walls, floors, and furniture utilizing the V33 paint palette. The outcomes of their creative manipulations are then sent to them via email, presented in the form of screenshots accompanied by text descriptions of the colors applied to each object. These visual and textual representations facilitate subsequent purchases of the selected colors from retail stores.</span>
+                </p>
+                <div class="button modal-button" onclick="openUrl('https://youtu.be/7GLhgSJwKck')">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="quidditch-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/quidditch_background.svg" class="modal-blur-background no-mobile">
+                <img src="images/quidditch_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title white-90">
+                    <p class="title-1 no-mobile">Quidditch</p>
+                    <p class="title-2 mobile-screen">Quidditch</p>
+                    <div class="modal-cross" onclick="closeModal('quidditch-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-3 white-90 no-mobile">Brief description:</span>
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-2 no-mobile">An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.</span>
+                    <span class="body-3 mobile-screen">An immersive gaming application designed for virtual reality glasses and the Futurift V2. Set within the enchanting Harry Potter universe, this game offers players a captivating experience. Through the use of the Futurift simulator and Oculus Rift, players take control of a broom using the left controller to adjust its position, while the right controller interacts with the Quaffle (game ball). The objective is to score as many goals as possible by getting the balls through the ring within the allocated time. Notably, the Futurift chair simulates broom tilting, thereby intensifying the player's sense of immersion within the virtual reality world.</span>
+                </p>
+                <div class="button modal-button mobile-screen" onclick="openUrl('https://youtu.be/ua2ugfrAVNM')">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="postworld-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/postworld_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title white-90">
+                    <p class="title-2 mobile-screen">POSTWORLD</p>
+                    <div class="modal-cross" onclick="closeModal('postworld-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-3 mobile-screen">POSTWORLD is a Hardcore Action RPG featuring a non-linear story and the unique ability to swap character body parts with powerful combat prostheses on the fly. The game also offers a non-linear narrative, allowing you to align with factions such as Slavers, Cultists, or Railwaymen, and seize control of the Wasteland.</span>
+                </p>
+                <div class="button modal-button mobile-screen" onclick="openUrl('https://youtu.be/Wd_tDmG0Fis?si=VxWEq6JXztnEWLwW')">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="domont-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/domont_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title white-90">
+                    <p class="title-2 mobile-screen">Domont | 360</p>
+                    <div class="modal-cross" onclick="closeModal('postworld-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-3 mobile-screen">Domont is composed of three high-quality (16k) panoramas, enabling users to explore the streets from three distinct viewpoints. Additionally, users are provided with a bottom menu that allows interaction with the environment, including features such as drawing.</span>
+                </p>
+                <div class="button modal-button mobile-screen" onclick="openUrl('https://youtu.be/Wd_tDmG0Fis?si=VxWEq6JXztnEWLwW')">
+                    <div class="button-content">
+                        <p class="link">Watch overview</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="valley-modal" class="modal">
+            <div class="modal-background">
+                <img src="images/valley_background_mobile.svg" class="modal-blur-background mobile-screen">
+            </div>
+            <div class="modal-content">
+                <div class="modal-title white-90">
+                    <p class="title-2 mobile-screen">The secrets of the Honey Valley (Season 2-4)</p>
+                    <div class="modal-cross" onclick="closeModal('postworld-modal')">
+                        <img src="images/cross.svg">
+                    </div>
+                </div>
+                <p class="white-50">
+                    <span class="title-4 white-90 mobile-screen">Brief description:</span>
+                    <span class="body-3 mobile-screen">“The Secrets of Honey Valley" is an animated television series aimed at children and families. Crafted in an adventure-comedy style, the series is situated in the enchanting world of Honey Valley, where a diverse array of animals takes on the roles of the main charactersthat allows interaction with the environment, including features such as drawing.</span>
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
-<script type="module">
-    import ProjectBuilder from "./js/project-builder.js";
-    import CompanyBuilder from "./js/company-builder.js";
+<script>
+        const DESKTOP_CONTENT_WIDTH = 1440;
+        const TABLET_CONTENT_WIDTH = 1180;
 
-    let projectsRoot = document.getElementById("projects_root");
-    let companiesRoot = document.getElementById("companies_root");
-
-    let checkVisibility = function () {
-        [...projectsRoot.children, ...companiesRoot.children].forEach(child => {
-            if (isInViewport(child)) {
-                child.classList.add("animate__animated", "animate__backInLeft");
-                child.classList.remove("invisible");
-            }
-        })
-    };
-
-    let getJSON = function (url, callback) {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        xhr.responseType = 'json';
-        xhr.onload = function () {
-            let status = xhr.status;
-            if (status === 200) {
-                callback(xhr.response)
-            } else {
-                console.log("FAILED")
-                return null
-            }
+        String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, 'g'), replacement);
         };
-        xhr.send();
-    };
 
-    let currentIndex = 0;
-    let projects = [
-        "data\\projects\\postworld.json",
-        "data\\projects\\quidditch.json",
-        "data\\projects\\vr-painter.json",
-        "data\\projects\\interactive-map-eef.json",
-        "data\\projects\\domont-360.json",
-        "data\\projects\\research-spark-web-ar.json",
-        "data\\projects\\apartment-tour-etalon-silver.json",
-        "data\\projects\\marta-hub.json",
-        "data\\projects\\sakhalin-ind.json",
-        "data\\projects\\sakhalin-mp.json",
-        "data\\projects\\secrets-honey-valley.json",
-        "data\\projects\\ufl.json",
-    ]
-
-    let companies = [
-        "data\\companies\\screwdriver-entertainment.json",
-        "data\\companies\\rtu-it-lab.json",
-        "data\\companies\\enter-vr.json",
-        "data\\companies\\marta.json",
-        "data\\companies\\magic-factory.json",
-        "data\\companies\\strikerz-inc.json",
-    ]
-
-
-    let onReceiveProjectJson = (data) => {
-        let projectBuilder = new ProjectBuilder();
-        let project = projectBuilder.build(data);
-        projectsRoot.innerHTML += project;
-        checkVisibility();
-
-        currentIndex++;
-        if (projects.length === currentIndex) {
-            currentIndex = 0;
-            getJSON(companies[currentIndex], onReceiveCompanyJson);
-            return;
+        function getScreenWidth() {
+            return screen.width;
         }
 
-        getJSON(projects[currentIndex], onReceiveProjectJson);
-    };
-
-    let onReceiveCompanyJson = (data) => {
-        let companyBuilder = new CompanyBuilder();
-        let company = companyBuilder.build(data);
-        companiesRoot.innerHTML += company;
-        checkVisibility();
-
-        currentIndex++;
-        if (companies.length === currentIndex) return;
-
-        getJSON(companies[currentIndex], onReceiveCompanyJson);
-    };
-
-    getJSON(projects[currentIndex], onReceiveProjectJson)
-
-    function isInViewport(el) {
-        const rect = el.getBoundingClientRect();
-
-        let bottom = rect.bottom;
-        if (bottom > 300) {
-            bottom -= 300;
+        function getSiteWidth() {
+            let screenWidth = getScreenWidth();
+            let siteWidth = 0;
+            if (screenWidth > DESKTOP_CONTENT_WIDTH) {
+                siteWidth = DESKTOP_CONTENT_WIDTH;
+            }
+            else if (screenWidth > 768) {
+                siteWidth = TABLET_CONTENT_WIDTH;
+            }
+            else {
+                siteWidth = screenWidth;
+            }
+            
+            return siteWidth;
         }
 
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        function getScale() {
+            let screenWidth = getScreenWidth();
+            let siteWidth = getSiteWidth();
+            return screenWidth / siteWidth;
+        }
 
-        );
-    }
+        function getDesiredScale() {
+            let screenWidth = getScreenWidth();
 
-    window.addEventListener("scroll", checkVisibility);
+            if (screenWidth > TABLET_CONTENT_WIDTH) {
+                return 1;
+            } else {
+                return getScale();
+            }
+        }
+
+        function lockScroll() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.add("locked");
+        }
+
+        function unlockScroll() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.remove("locked");
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scale = getDesiredScale();
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+        });
+
+        let currentModal = null;
+        function openModal(modalId) {
+            let modal = document.getElementById(modalId);
+            modal.style.display = "flex";
+            modal.classList.remove("animate-out");
+            modal.classList.add("animate");
+            modal.offsetHeight;
+
+            let modalBackground = document.getElementsByClassName("modal-black-background")[0];
+            modalBackground.style.display = "block";
+            modalBackground.classList.remove("animate-out");
+            modalBackground.classList.add("animate");
+            modalBackground.offsetHeight;
+
+            currentModal = modalId;
+
+            lockScroll();
+        }
+
+        function closeModal(modalId) {
+            let modal = document.getElementById(modalId);
+            modal.classList.remove("animate");
+            modal.classList.add("animate-out");
+            modal.offsetHeight;
+
+            let modalBackground = document.getElementsByClassName("modal-black-background")[0];
+            modalBackground.classList.remove("animate");
+            modalBackground.classList.add("animate-out");
+            modalBackground.offsetHeight;
+
+            currentModal = null;
+            unlockScroll();
+        }
+
+        function closeCurrentModal() {
+            if (currentModal != null) {
+                closeModal(currentModal);
+            }
+        }
+
+        function openUrl(url) {
+            window.open(url, "_blank");
+        }
+
+        function updateProjectListPadding() {
+            let projectScroll = document.getElementById("project-scroll");
+            let projectsContainer = document.getElementsByClassName("projects")[0];
+            let projectsContent = document.getElementsByClassName("projects-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("project-list-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("project-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 400;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 15;
+            } else if (getScreenWidth() >= DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset += 15;
+            }
+
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
+
+        function updateCompanyListPadding() {
+            let projectScroll = document.getElementById("companies-scroll");
+            let projectsContainer = document.getElementsByClassName("companies")[0];
+            let projectsContent = document.getElementsByClassName("companies-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("comapny-list-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("companies-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 400;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 15;
+            } else if (getScreenWidth() >= DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset += 15;
+            }
+
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
+
+        function updateMarketplaceListPadding() {
+            let projectScroll = document.getElementById("marketplace-scroll");
+            let projectsContainer = document.getElementsByClassName("marketplace")[0];
+            let projectsContent = document.getElementsByClassName("marketplace-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("marketplace-tile-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("marketplace-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 0;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                additionaListOffset = 400;
+            }
+            else if (getScreenWidth() < DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset = 400;
+            } else {
+                additionaListOffset = listItemWidth + listWrapperGap;
+            }
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
+
+        let slidesIds = {}
+        function scrollNext(containerId, slideClass, gap) {
+            let slidesContainer = document.getElementById(containerId);
+            let slide = document.querySelector("." + slideClass);
+
+            let currentScrollLeft = slidesContainer.scrollLeft;
+            const slideWidth = slide.clientWidth + gap;
+            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
+
+            let nextSlideId = Math.min(slidesNumber - 1, currentSlideId + 1);
+            let newScrollLeft = slideWidth * nextSlideId;
+            
+            slidesContainer.scrollLeft = newScrollLeft;
+        }
+
+        function scrollPrevious(containerId, slideClass, gap) {
+            let slidesContainer = document.getElementById(containerId);
+            let slide = document.querySelector("." + slideClass);
+
+            let currentScrollLeft = slidesContainer.scrollLeft;
+            const slideWidth = slide.clientWidth + gap;
+            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
+
+            let nextSlideId = Math.max(0, currentSlideId - 1);
+            let newScrollLeft = slideWidth * nextSlideId;
+            
+            slidesContainer.scrollLeft = newScrollLeft;
+        }
+        
+        function updateSecondaryPhotoRotation() {
+            let secondaryPhoto = document.getElementsByClassName("introduction-secondary-photo")[0];
+            let secondaryPhotoRect = secondaryPhoto.getBoundingClientRect();
+
+            let secondaryPhotoTop = secondaryPhotoRect.top;
+            let screenHeight = window.innerHeight;
+            let upper20Percent = screenHeight * 0.2;
+            
+            let shouldRemoveRotation = secondaryPhotoTop < upper20Percent;
+            if (shouldRemoveRotation) {
+                secondaryPhoto.classList.add("unrotated");
+            }
+            else {
+                secondaryPhoto.classList.remove("unrotated");
+            }
+        }
+        
+        function getHeaderHeight() {
+            let header = document.getElementsByClassName("header")[0];
+            return header.clientHeight;
+        }
+
+        function updateHeaderStyle() {
+            let scroll = document.documentElement.scrollTop;
+            let header = document.getElementsByClassName("header")[0];
+            if (scroll > 0) {
+                header.classList.add("scrolled");
+            }
+            else {
+                header.classList.remove("scrolled");
+            }
+        }
+
+        document.addEventListener("scroll", updateSecondaryPhotoRotation);
+        document.addEventListener("scroll", updateHeaderStyle);
+
+        function onHeaderMenuButtonClicked() {
+            console.log("Clicked");
+        }
+
+        function openHeaderMenu() {
+            let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
+            let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
+            let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
+
+            headerMenuOpenButton.classList.add("hidden");
+            headerMenuCloseButton.classList.remove("hidden");
+            
+            headerMenuContainer.classList.add("opened");
+
+            let opacityContainers = document.getElementsByClassName("opacity-container");
+            for (let i = 0; i < opacityContainers.length; i++) {
+                let opacityContainer = opacityContainers[i];
+                opacityContainer.classList.add("hide");
+            }
+
+            let header = document.getElementsByClassName("header")[0];
+            header.classList.add("menu-opened");
+
+            lockScroll();
+        }   
+
+        function closeHeaderMenu() {
+            let headerMenuOpenButton = document.getElementsByClassName("header-menu-open-button")[0];
+            let headerMenuCloseButton = document.getElementsByClassName("header-menu-close-button")[0];
+            let headerMenuContainer = document.getElementsByClassName("header-menu")[0];
+
+            headerMenuOpenButton.classList.remove("hidden");
+            headerMenuCloseButton.classList.add("hidden");
+            
+            headerMenuContainer.classList.remove("opened");
+
+            let opacityContainers = document.getElementsByClassName("opacity-container");
+            for (let i = 0; i < opacityContainers.length; i++) {
+                let opacityContainer = opacityContainers[i];
+                opacityContainer.classList.remove("hide");
+            }
+
+            let header = document.getElementsByClassName("header")[0];
+            header.classList.remove("menu-opened");
+
+            unlockScroll();
+        }   
+
+
+        fetch("code-sample.txt")
+            .then(response => response.text())
+            .then(text => {
+                let mainCodeBlock = document.getElementsByClassName("main-code")[0];
+                
+                let p1 = document.createElement("p");
+                let p2 = document.createElement("p");
+                
+                p1.innerHTML = text;
+                p2.innerHTML = text;
+
+                mainCodeBlock.appendChild(p1);
+                mainCodeBlock.appendChild(p2);
+
+                p1.classList.add("main-code-content");
+
+                let currentCodeBlock = p1;
+                let nextCodeBlock = p2;
+                let animateNext = function() {
+                    currentCodeBlock.parentElement.removeChild(currentCodeBlock);
+                    nextCodeBlock.classList.add("main-code-content");
+                    currentCodeBlock.classList.remove("main-code-content");
+
+                    let tempNextBlock = currentCodeBlock;
+                    currentCodeBlock = nextCodeBlock;
+                    nextCodeBlock = tempNextBlock;
+
+                    mainCodeBlock.appendChild(nextCodeBlock);
+                }
+
+                currentCodeBlock.onanimationend = animateNext;
+                nextCodeBlock.onanimationend = animateNext;
+            })
+            .catch(error => console.error(error));
+
+        fetch("project-item.html")
+            .then(response => response.text())
+            .then(htmlCode => {
+                let htmlCodeCopy = htmlCode;
+
+                fetch("projects.json")
+                    .then(response => response.json())
+                    .then(projects => {
+                        projects.reverse();
+
+                        // for each project in projects
+                        for (let i = 0; i < projects.length; i++) {
+                            let project = projects[i];
+                            let projectItem = htmlCodeCopy;
+
+                            // replace {{projectName}} with project.name
+                            projectItem = projectItem.replaceAll("{{projectName}}", project.projectName);
+
+                            // replace {{company}} with project.company
+                            projectItem = projectItem.replaceAll("{{company}}", project.company);
+
+                            // replace {{position}} with project.position
+                            projectItem = projectItem.replaceAll("{{position}}", project.position);
+
+                            // replace {{technologies}} with project.technologies
+                            projectItem = projectItem.replaceAll("{{technologies}}", project.technologies);
+
+                            // replace {{platform}} with project.platform
+                            projectItem = projectItem.replaceAll("{{platform}}", project.platform);
+
+                            if (project.platform.length <= 0) {
+                                projectItem = projectItem.replaceAll("{{platformVisibility}}", "hidden");
+                            }
+
+                            // replace {{description}} with project.description
+                            projectItem = projectItem.replaceAll("{{description}}", project.description);
+
+                            // replace {{descriptionClass}} with project.descriptionClass
+
+                            // replace {{buttonText}} with project.buttonText
+                            projectItem = projectItem.replaceAll("{{buttonText}}", project.buttonText);
+
+                            // replace {{imageUrl}} with project.imageUrl
+                            projectItem = projectItem.replaceAll("{{imageUrl}}", project.imageUrl);
+
+                            // replace {{fallbackName}} with project.fallbackName
+                            if (project.fallbackName.length > 0) {
+                                projectItem = projectItem.replaceAll("{{fallbackName}}", project.fallbackName);
+                            } else {
+                                projectItem = projectItem.replaceAll("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
+                            }
+
+
+                            if (!project.showMoreVisible && project.showMoreMobileVisible) {
+                                let clamp = "clamp-" + parseInt(project.mobileLineClamp);
+                                projectItem = projectItem.replaceAll("{{showMoreVisible}}", "mobile-screen");
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow-mobile " + clamp);
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
+                            }
+                            else if (project.showMoreVisible && project.showMoreMobileVisible) {
+                                let clamp = "clamp-" + parseInt(project.mobileLineClamp);
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow " + clamp);
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
+                            }
+                            else {
+                                projectItem = projectItem.replaceAll("{{showMoreVisible}}", "hidden");
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "");
+                            }
+
+                            if (!project.buttonVisible) {
+                                projectItem = projectItem.replaceAll("{{buttonVisible}}", "hidden");
+                            }
+                            else {
+                                projectItem = projectItem.replaceAll("{{buttonVisible}}", "");
+                                projectItem = projectItem.replaceAll("{{buttonUrl}}", project.buttonUrl);
+                            }
+
+
+                            // append projectItem to projects-list
+                            let projectsList = document.getElementById("project-list-wrapper");
+                            projectsList.innerHTML += projectItem;
+                        }
+
+                    })
+            });
+        
+        fetch("company-item.html")
+            .then(response => response.text())
+            .then(htmlCode => {
+                let htmlCodeCopy = htmlCode;
+
+                fetch("companies.json")
+                    .then(response => response.json())
+                    .then(companies => {
+                        companies.reverse();
+
+                        // for each company in companies
+                        for (let i = 0; i < companies.length; i++) {
+                            let company = companies[i];
+                            let companyItem = htmlCodeCopy;
+
+                            // replace {{title}} with company.title
+                            companyItem = companyItem.replaceAll("{{title}}", company.title);
+
+                            // replace {{timeRange}} with company.timeRange
+                            companyItem = companyItem.replaceAll("{{timeRange}}", company.timeRange);
+
+                            
+                            // for each item in company.responsibilities create <li>item</li>
+                            let responsibilitiesList = "";
+                            for (let j = 0; j < company.responsibilities.length; j++) {
+                                let responsibility = company.responsibilities[j];
+                                responsibilitiesList += `<li>${responsibility}</li>`;
+                            }
+                            // and insert it to <ul class="responsibilities-list white-50 body-2">
+                            companyItem = companyItem.replaceAll("{{responsibilities}}", responsibilitiesList);
+
+                            // append companyItem to companies-list
+                            let companiesList = document.getElementById("companies-list-wrapper");
+                            companiesList.innerHTML += companyItem;
+                        }
+
+                    })
+            })
+        
+        fetch("plugin-item.html")
+            .then(response => response.text())
+            .then(htmlCode => {
+                let htmlCodeCopy = htmlCode;
+
+                fetch("plugins.json")
+                    .then(response => response.json())
+                    .then(plugins => {
+
+                        // for each plugin in plugins
+                        for (let i = 0; i < plugins.length; i++) {
+                            let plugin = plugins[i];
+                            let pluginItem = htmlCodeCopy;
+
+                            // replace {{title}} with plugin.title
+                            pluginItem = pluginItem.replaceAll("{{title}}", plugin.title);
+
+                            // replace {{imageSrc}} with plugin.imageSrc
+                            pluginItem = pluginItem.replaceAll("{{imageSrc}}", plugin.imageSrc);
+
+                            // replace {{reviewCount}} with plugin.reviewCount
+                            pluginItem = pluginItem.replaceAll("{{reviewCount}}", plugin.reviewCount);
+
+                            pluginItem = pluginItem.split("{{marketplaceUrl}}").join(plugin.marketplaceUrl);
+
+                            // append pluginItem to marketplace-tile-row
+                            let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
+                            pluginsList.innerHTML += pluginItem;
+
+                            let mobilePluginList = document.getElementById("marketplace-list-wrapper");
+                            mobilePluginList.innerHTML += pluginItem;
+                        }
+                    })
+            })
+        
+        
+        let progressItems = document.getElementsByClassName("progress-item");
+        let initialDelay = 1;
+        let counter = initialDelay;
+        for (let i = 0; i < progressItems.length; i++) {
+            if (progressItems[i].classList.contains("need-fill")) {
+                counter++;
+                progressItems[i].style.animationDelay = `${counter * 0.125}s`;
+                progressItems[i].classList.add("animated");
+            }
+        }
+
+
+        function toggleToolbar() {
+            let toolbar = document.getElementsByClassName("debug-toolbar-content")[0];
+            let toolbarToggle = document.getElementById("toolbar-toggle");
+            let newToolbarState = toolbarToggle.checked ? "block" : "none";
+            toolbar.style.display = newToolbarState;
+        }
+
+        function toggleDebugOutline() {
+            let body = document.getElementsByTagName("body")[0];
+            body.classList.toggle("outline");
+        }
+
+        function toggleFigmaImage() {
+            let figmaContainer = document.getElementsByClassName("figma")[0];
+            let figmaToggle = document.getElementById("figma-image-toggle");
+            let newFigmaState = figmaToggle.checked ? "block" : "none";
+            figmaContainer.style.display = newFigmaState;
+        }
+
+        function toggleFigmaInversion() {
+            let figmaContainer = document.getElementsByClassName("figma")[0];
+            let figmaToggle = document.getElementById("figma-inversion-toggle");
+            let newFigmaState = figmaToggle.checked ? "invert(1)" : "invert(0)";
+            figmaContainer.style.filter = newFigmaState;
+        }
+
+        function setContainerOpacity(id, value) {
+            let container = document.getElementById(id);
+            if (container != null) {
+                container.style.opacity = value;
+                return;
+            }
+
+            let containers = document.getElementsByClassName(id);
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].style.opacity = value;
+            }
+        }
+
+        let interval = setInterval(() => {
+            updateProjectListPadding();
+            updateCompanyListPadding();
+            updateMarketplaceListPadding();
+            clearInterval(interval);
+        })
+
+        window.onresize = function() {
+            let scale = getDesiredScale();
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+
+            updateProjectListPadding();
+            updateCompanyListPadding();
+            updateMarketplaceListPadding();
+        };
+
 </script>
+<script src="scripts/modal.js"></script>
 </html>
