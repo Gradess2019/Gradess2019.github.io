@@ -49,7 +49,7 @@
 }
 
 .photo {
-    background: url("../images/photo.png"), lightgray 50% / cover no-repeat;
+    background: url("../images/photo.jpg"), lightgray 50% / cover no-repeat;
 }
 
 .main-content .stats-block .stats {
