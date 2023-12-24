@@ -578,27 +578,40 @@
                             </h3>
                         </div>
                         <div class="projects-toolbar-buttons no-mobile">
-                            <div class="carousel-button left" onclick="scrollPrevious('projects-list-clone', 'project-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('project-scroll', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('projects-list-clone', 'project-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('project-scroll', 'project-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
                         <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
                     </div>
-                    <div class="projects-list" id="projects-list-original"></div>
                 </div>
             </div>
-            <div class="companies opacity-container">
+            <!-- Window -->
+            <div class="list-body">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="project-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="project-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="companies opacity-container"> 
                 <div id="companies"></div>
                 <div class="companies-content">
                     <div class="companies-toolbar white-90">
                         <div class="companies-toolbar-buttons no-mobile">
-                            <div class="carousel-button left" onclick="scrollPrevious('companies-list-clone', 'comapny-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('companies-scroll', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('companies-list-clone', 'comapny-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('companies-scroll', 'comapny-list-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
@@ -612,6 +625,19 @@
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
             </div>
+            <div class="list-body companies-list-body">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="companies-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="companies-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
+                    </div>
+                </div>
+            </div>
             <div class="marketplace opacity-container">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
@@ -623,7 +649,7 @@
                         <p class="body-2 white-50 mobile-screen">Plugin development for Unreal Engine</p>
                     </div>
                     <div class="marketplace-tile">
-                        <div class="marketplace-tile-row-container">
+                        <div class="marketplace-tile-row-container no-mobile">
                             <div class="marketplace-tile-row"></div>
                         </div>
                         <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
@@ -631,6 +657,19 @@
                                 <p class="link">See in market</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-body marketplace-list-body mobile-screen">
+                <!-- main -->
+                <div class="list-container">
+                    <!-- scroll container -->
+                    <div class="scroll-container" id="marketplace-scroll">
+                        <!-- list wrapper -->
+                        <!-- <span class="fix-offset"></span> -->
+                        <ul class="list-wrapper" id="marketplace-list-wrapper">
+                        </ul>
+                        <!-- <span class="fix-offset"></span> -->
                     </div>
                 </div>
             </div>
@@ -836,11 +875,6 @@
             document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
         });
 
-        window.onresize = function() {
-            let scale = getDesiredScale();
-            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
-        };
-
         let currentModal = null;
         function openModal(modalId) {
             let modal = document.getElementById(modalId);
@@ -885,23 +919,99 @@
             window.open(url, "_blank");
         }
 
+        function updateProjectListPadding() {
+            let projectScroll = document.getElementById("project-scroll");
+            let projectsContainer = document.getElementsByClassName("projects")[0];
+            let projectsContent = document.getElementsByClassName("projects-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("project-list-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("project-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 400;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 15;
+            } else if (getScreenWidth() >= DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset += 15;
+            }
+
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
+
+        function updateCompanyListPadding() {
+            let projectScroll = document.getElementById("companies-scroll");
+            let projectsContainer = document.getElementsByClassName("companies")[0];
+            let projectsContent = document.getElementsByClassName("companies-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("comapny-list-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("companies-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 400;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                paddingLeftValue += 15;
+            } else if (getScreenWidth() >= DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset += 15;
+            }
+
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
+
+        function updateMarketplaceListPadding() {
+            let projectScroll = document.getElementById("marketplace-scroll");
+            let projectsContainer = document.getElementsByClassName("marketplace")[0];
+            let projectsContent = document.getElementsByClassName("marketplace-content")[0];
+
+            let projectsContainerRect = projectsContainer.getBoundingClientRect();
+            let projectContentPaddingLeft = parseFloat(document.defaultView.getComputedStyle(projectsContent, null).getPropertyValue("padding-left"));
+            let listItemWidth = document.getElementsByClassName("marketplace-tile-item")[0].clientWidth;
+            let listWrapperGap = parseFloat(document.defaultView.getComputedStyle(document.getElementById("marketplace-list-wrapper"), null).getPropertyValue("gap")) / 2;
+            let additionaListOffset = 0;
+
+            let paddingLeftValue = projectsContainerRect.x + projectContentPaddingLeft;
+            
+            let DESKTOP_WINDOW_WIDTH = 1440;
+            let TABLET_WINDOW_WIDTH = 768;
+
+            if (getScreenWidth() < TABLET_WINDOW_WIDTH) {
+                additionaListOffset = 400;
+            }
+            else if (getScreenWidth() < DESKTOP_WINDOW_WIDTH) {
+                additionaListOffset = 400;
+            } else {
+                additionaListOffset = listItemWidth + listWrapperGap;
+            }
+            projectScroll.style.paddingRight = paddingLeftValue + additionaListOffset + "px";
+            projectScroll.style.paddingLeft = paddingLeftValue + "px";
+        }
 
         let slidesIds = {}
         function scrollNext(containerId, slideClass, gap) {
             let slidesContainer = document.getElementById(containerId);
             let slide = document.querySelector("." + slideClass);
 
-            if (slidesIds[slideClass] == null) {
-                slidesIds[slideClass] = 1;
-            }
-            else {
-                let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
-                slidesIds[slideClass] = Math.max(0, Math.min(slidesNumber - 2, slidesIds[slideClass] + 1));
-            }
+            let currentScrollLeft = slidesContainer.scrollLeft;
+            const slideWidth = slide.clientWidth + gap;
+            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
+
+            let nextSlideId = Math.min(slidesNumber - 1, currentSlideId + 1);
+            let newScrollLeft = slideWidth * nextSlideId;
             
-            let gapOffset = gap * slidesIds[slideClass];
-            const slideWidth = slide.clientWidth;
-            let newScrollLeft = slideWidth * slidesIds[slideClass] + gapOffset;
             slidesContainer.scrollLeft = newScrollLeft;
         }
 
@@ -909,34 +1019,17 @@
             let slidesContainer = document.getElementById(containerId);
             let slide = document.querySelector("." + slideClass);
 
-            if (slidesIds[slideClass] == null) {
-                slidesIds[slideClass] = 0;
-            }
-            else {
-                let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
-                slidesIds[slideClass] = Math.max(0, Math.min(slidesNumber - 2, slidesIds[slideClass] - 1));
-            }
+            let currentScrollLeft = slidesContainer.scrollLeft;
+            const slideWidth = slide.clientWidth + gap;
+            let currentSlideId = Math.floor(currentScrollLeft / slideWidth);
+            let slidesNumber = slidesContainer.getElementsByClassName(slideClass).length;
+
+            let nextSlideId = Math.max(0, currentSlideId - 1);
+            let newScrollLeft = slideWidth * nextSlideId;
             
-            let gapOffset = gap * slidesIds[slideClass];
-            const slideWidth = slide.clientWidth;
-            let newScrollLeft = slideWidth * slidesIds[slideClass] + gapOffset;
             slidesContainer.scrollLeft = newScrollLeft;
         }
         
-        function cloneList(containerClass, childId, cloneId) {
-            const container = document.querySelector('.' + containerClass);
-            const child = document.getElementById(childId);
-            const clone = child.cloneNode(true);
-            
-            clone.classList.add("clone")
-            clone.id = cloneId;
-            container.append(clone);
-
-            setInterval(function() {
-                child.style.marginLeft = "-" + clone.scrollLeft + "px";
-            }, 1);
-        }
-
         function updateSecondaryPhotoRotation() {
             let secondaryPhoto = document.getElementsByClassName("introduction-secondary-photo")[0];
             let secondaryPhotoRect = secondaryPhoto.getBoundingClientRect();
@@ -1109,13 +1202,21 @@
                                 projectItem = projectItem.replaceAll("<h4>&lt;{{fallbackName}}/&gt;</h4>", "");
                             }
 
-                            if (!project.showMoreVisible) {
+
+                            if (!project.showMoreVisible && project.showMoreMobileVisible) {
+                                let clamp = "clamp-" + parseInt(project.mobileLineClamp);
+                                projectItem = projectItem.replaceAll("{{showMoreVisible}}", "mobile-screen");
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow-mobile " + clamp);
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
+                            }
+                            else if (project.showMoreVisible && project.showMoreMobileVisible) {
+                                let clamp = "clamp-" + parseInt(project.mobileLineClamp);
+                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow " + clamp);
+                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
+                            }
+                            else {
                                 projectItem = projectItem.replaceAll("{{showMoreVisible}}", "hidden");
                                 projectItem = projectItem.replaceAll("{{descriptionClass}}", "");
-                            } 
-                            else {
-                                projectItem = projectItem.replaceAll("{{descriptionClass}}", "project-description-overflow");
-                                projectItem = projectItem.replaceAll("{{modalId}}", project.modalId);
                             }
 
                             if (!project.buttonVisible) {
@@ -1128,11 +1229,10 @@
 
 
                             // append projectItem to projects-list
-                            let projectsList = document.getElementsByClassName("projects-list")[0];
+                            let projectsList = document.getElementById("project-list-wrapper");
                             projectsList.innerHTML += projectItem;
                         }
 
-                        cloneList("projects-content", "projects-list-original", "projects-list-clone");
                     })
             });
         
@@ -1168,11 +1268,10 @@
                             companyItem = companyItem.replaceAll("{{responsibilities}}", responsibilitiesList);
 
                             // append companyItem to companies-list
-                            let companiesList = document.getElementsByClassName("companies-list")[0];
+                            let companiesList = document.getElementById("companies-list-wrapper");
                             companiesList.innerHTML += companyItem;
                         }
 
-                        cloneList("companies-content", "companies-list-original", "companies-list-clone");
                     })
             })
         
@@ -1204,6 +1303,9 @@
                             // append pluginItem to marketplace-tile-row
                             let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
                             pluginsList.innerHTML += pluginItem;
+
+                            let mobilePluginList = document.getElementById("marketplace-list-wrapper");
+                            mobilePluginList.innerHTML += pluginItem;
                         }
                     })
             })
@@ -1259,6 +1361,23 @@
                 containers[i].style.opacity = value;
             }
         }
+
+        let interval = setInterval(() => {
+            updateProjectListPadding();
+            updateCompanyListPadding();
+            updateMarketplaceListPadding();
+            clearInterval(interval);
+        })
+
+        window.onresize = function() {
+            let scale = getDesiredScale();
+            document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale='+scale+', minimum-scale='+scale+'');
+
+            updateProjectListPadding();
+            updateCompanyListPadding();
+            updateMarketplaceListPadding();
+        };
+
 </script>
 <script src="scripts/modal.js"></script>
 </html>

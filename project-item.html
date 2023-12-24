@@ -1,4 +1,4 @@
-<div class="project-list-item">
+<div class="project-list-item list-item">
     <div class="project-list-item-background">
         <svg xmlns="http://www.w3.org/2000/svg" class="no-mobile" width="546" height="755" viewBox="0 0 546 755" fill="none">
             <path d="M1 0.5H0.5V1V754V754.5H1H273H409H477H511H511.2L511.345 754.362L545.345 721.954L545.5 721.807V721.592V1V0.5H545H1Z" fill="url(#paint0_linear_1260_153)" fill-opacity="0.5" stroke="#FE056B"/>
@@ -57,7 +57,11 @@
                     <span class="body-2 no-mobile">{{description}}</span>
                     <span class="body-3 mobile-screen">{{description}}</span>
                 </p>
-                <div class="white-90 title-3 project-show-more {{showMoreVisible}}" onclick="openModal('{{modalId}}')">
+                <div class="white-90 title-3 project-show-more {{showMoreVisible}} no-mobile" onclick="openModal('{{modalId}}')">
+                    show more
+                    <img src="images/arrow-down.svg">
+                </div>
+                <div class="white-90 title-4 project-show-more {{showMoreVisible}} mobile-screen" onclick="openModal('{{modalId}}')">
                     show more
                     <img src="images/arrow-down.svg">
                 </div>

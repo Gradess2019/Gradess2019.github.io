@@ -3,12 +3,15 @@
     top: 3075px;
 }
 
-.projects {}
+.projects {
+    overflow-x: hidden;
+}
 
 .projects-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    overflow-x: hidden;
 }
 
 .projects-toolbar {
@@ -33,26 +36,58 @@
     gap: 12px;
 }
 
-.projects-list {
+.list-body {
+    background: transparent;
+    margin: 0;
+    padding: 0 200px;
+    overflow-x: hidden;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+}
+
+.list-container {}
+
+.scroll-container {
+    height: 770px;
+    overflow-y: hidden;
+    margin: 0 calc(-1 * 200px);
     display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
+    overflow: auto;
     scroll-behavior: smooth;
-
-    margin-top: 1px;
 }
 
-.projects-list.clone {
-    overflow-x: scroll;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    width: 1120px;
-    height: 753px;
-}
-
-.projects-list::-webkit-scrollbar {
+.scroll-container::-webkit-scrollbar {
+    all: unset;
     display: none;
+}
+ 
+.scroll-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    margin: 0 400px;
+    margin-right: 800px;
+}
+ 
+.scroll-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background-color: white;
+}
+
+.list-wrapper {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    gap: 32px;
+}
+
+.fix-offset {
+    width: 778px;
+    flex-shrink: 0;
 }
 
 .project-list-item {
@@ -174,7 +209,15 @@
         width: 1120px;
     }
 
-    .projects-list {}
+    .list-body {}
+
+    .project-description-overflow-mobile {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: unset;
+    }
 }
 
 @media screen and (max-width: 1440px) and (min-width: 768px) {
@@ -193,8 +236,14 @@
         width: 940px;
     }
 
-    .projects-list {
-        width: 940px;
+    .list-body {}
+
+    .project-description-overflow-mobile {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: unset;
     }
 }
 
@@ -218,11 +267,17 @@
         width: 289px !important;
     }
 
-    .projects-list {
-        padding: 0px 16px;
+    .list-body {
         margin-top: -22px;
-        width: 358px;
         gap: 24px;
+    }
+
+    .list-wrapper {
+        gap: 24px;
+    }
+
+    .scroll-container {
+        height: 529px;
     }
 
     .project-list-item {
@@ -235,6 +290,41 @@
         width: 335px !important;
         height: 525px !important;
         -webkit-mask: linear-gradient(136deg, #000 97.75%, transparent 97.75%);
+    }
+
+    .project-description-overflow {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: 2;
+        /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.00) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden; */
+    }
+
+    .project-description-overflow-mobile {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .project-description-overflow .clamp-2, .project-description-overflow-mobile .clamp-2 {
+        -webkit-line-clamp: 2 !important;
+    }
+
+    .project-description-overflow .clamp-3, .project-description-overflow-mobile .clamp-3 {
+        -webkit-line-clamp: 3 !important;
     }
 
     .project-list-item-image {
@@ -266,5 +356,20 @@
         padding: 0px 16px;
     }
 
+    .project-list-item .carousel-item-button-container {
+
+    }
+
+    .project-list-item .carousel-item-button {
+        margin-left: 10px;
+        width: 198px;
+        height: 62px;
+    }
+
+    .project-list-item .carousel-item-button-content {
+        width: 198px;
+        height: 62px;
+        background-image: url("../images/button_project_mobile.svg");
+    }
     
 }

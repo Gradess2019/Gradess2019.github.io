@@ -1,9 +1,19 @@
 #companies {
     position: absolute;
-    top: 4050px;
 }
 
-.companies {}
+#companies-scroll {
+    height: 460px !important;
+}
+
+.companies {
+    position: relative;
+    top: 850px;
+}
+
+.companies-list-body {
+    top: 4337px;
+}
 
 .companies-content {
     display: flex;
@@ -50,14 +60,6 @@
     gap: 32px;
     
     align-self: stretch;
-}
-
-.companies-list.clone {
-    overflow-x: scroll;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    width: 1120px;
-    height: 753px;
 }
 
 .companies-list::-webkit-scrollbar {
@@ -127,7 +129,7 @@
     .companies-content {
         padding-right: 160px;
         padding-left: 160px;
-        padding-top: 240px;
+        padding-top: 145px;
     }
 
     .companies-toolbar {
@@ -140,13 +142,12 @@
 @media screen and (max-width: 1440px) and (min-width: 768px) {
     #companies {
         position: absolute;
-        top: 3570px;
     }
 
     .companies-content {
         padding-right: 40px;
         padding-left: 40px;
-        padding-top: 216px;
+        padding-top: 120px;
     }
 
     .companies-toolbar {
@@ -156,17 +157,25 @@
     .companies-list {
         width: 940px;
     }
+
+    .companies-list-body {
+        top: 3784px;
+    }
 }
 
 @media screen and (max-width: 767px) {
     #companies {
         position: absolute;
-        top: 3500px;
+        top: -100px;
+    }
+
+    .companies {
+        top: 620px;
     }
 
     .companies-content {
         height: 500px;
-        padding-top: 116px;
+        padding-top: 0px;
     }
 
     .companies-toolbar {
@@ -177,6 +186,18 @@
     .companies-toolbar-title {
         width: 293px;
         justify-content: flex-start;
+    }
+
+    .companies-toolbar-title h4 {
+        margin: 0;
+    }
+
+    .companies-list-body {
+        top: 3682px;
+    }
+
+    #companies-scroll {
+        height: 413px !important;
     }
 
     .companies-list {

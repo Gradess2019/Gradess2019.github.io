@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
+    top: 850px;
 }
 
 .copyright {}
@@ -67,6 +69,7 @@
 @media screen and (max-width: 767px) {
     .footer {
         padding: 86px 16px 16px 16px;
+        top: 620px;
     }
 
     .footer-content>.contacts {

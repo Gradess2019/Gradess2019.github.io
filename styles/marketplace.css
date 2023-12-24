@@ -1,9 +1,12 @@
 #marketplace {
     position: absolute;
-    top: 5000px;
+    top: 150px;
 }
 
-.marketplace {}
+.marketplace {
+    position: relative;
+    top: 850px;
+}
 
 .marketplace-content {
     display: flex;
@@ -172,7 +175,7 @@
 @media screen and (max-width: 1440px) and (min-width: 768px) {
     #marketplace {
         position: absolute;
-        top: 4370px;
+        top: 120px;
     }
 
     .marketplace-content {
@@ -205,7 +208,16 @@
 @media screen and (max-width: 767px) {
     #marketplace {
         position: absolute;
-        top: 4100px;
+        top: 20px;
+    }
+
+    #marketplace-scroll {
+        height: 415px;
+    }
+
+    .marketplace {
+        top: 620px;
+        height: 740px;
     }
 
     .marketplace-content {
@@ -218,6 +230,7 @@
 
     .marketplace-tile {
         gap: 32px;
+        margin-top: 440px;
     }
 
     .marketplace-tile-item {
@@ -269,5 +282,9 @@
 
     .marketplace-button-content>p {
         top: 2px;
+    }
+
+    .marketplace-list-body {
+        top: 4328px;
     }
 }
