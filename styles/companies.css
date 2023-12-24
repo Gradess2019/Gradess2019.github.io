@@ -1,6 +1,5 @@
 #companies {
     position: absolute;
-    top: 4050px;
 }
 
 #companies-scroll {
@@ -143,7 +142,6 @@
 @media screen and (max-width: 1440px) and (min-width: 768px) {
     #companies {
         position: absolute;
-        top: 3570px;
     }
 
     .companies-content {
@@ -168,7 +166,7 @@
 @media screen and (max-width: 767px) {
     #companies {
         position: absolute;
-        top: 3500px;
+        top: -100px;
     }
 
     .companies {

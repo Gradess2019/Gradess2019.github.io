@@ -1,6 +1,6 @@
 #marketplace {
     position: absolute;
-    top: 5000px;
+    top: 150px;
 }
 
 .marketplace {
@@ -175,7 +175,7 @@
 @media screen and (max-width: 1440px) and (min-width: 768px) {
     #marketplace {
         position: absolute;
-        top: 4370px;
+        top: 120px;
     }
 
     .marketplace-content {
@@ -208,7 +208,11 @@
 @media screen and (max-width: 767px) {
     #marketplace {
         position: absolute;
-        top: 4100px;
+        top: 20px;
+    }
+
+    .marketplace {
+        top: 620px;
     }
 
     .marketplace-content {
