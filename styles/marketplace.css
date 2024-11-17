@@ -10,7 +10,6 @@
 
 .marketplace-content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 64px;
@@ -154,9 +153,14 @@
 @media screen and (min-width: 1441px) {
     .marketplace-content {
         width: 1120px;
+        height: 675px;
         padding-left: 160px;
         padding-right: 160px;
         padding-top: 240px;
+    }
+
+    #marketplace-scroll {
+        height: 510px;
     }
 
     .marketplace-toolbar {
@@ -181,6 +185,10 @@
     .marketplace-tile-item-image {
         height: 352px;
     }
+
+    .marketplace-list-body {
+        top: 5175px;
+    }
 }
 
 @media screen and (max-width: 1440px) and (min-width: 768px) {
@@ -189,8 +197,13 @@
         top: 120px;
     }
 
+    #marketplace-scroll {
+        height: 450px;
+    }
+
     .marketplace-content {
         width: 940px;
+        height: 625px;
         padding-left: 40px;
         padding-right: 40px;
         padding-top: 216px;
@@ -218,6 +231,10 @@
     .marketplace-tile-item-image {
         height: 292px;
     }
+
+    .marketplace-list-body {
+        top: 4600px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -237,6 +254,7 @@
 
     .marketplace-content {
         width: 358px;
+        height: 550px;
         padding-left: 16px;
         padding-right: 16px;
         padding-top: 124px;
