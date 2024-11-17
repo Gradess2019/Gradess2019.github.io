@@ -41,11 +41,11 @@
     flex-shrink: 0;
 
     transition: transform 0.3s ease-in-out;
-    transform: rotate(-15deg);
+    transform: rotate(0deg);
 }
 
 .introduction-secondary-photo.unrotated {
-    transform: rotate(0deg);
+    transform: rotate(-15deg);
 }
 
 @media screen and (min-width: 1441px) {
