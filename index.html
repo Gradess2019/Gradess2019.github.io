@@ -614,27 +614,22 @@
                             
                         </div>
                         <div class="projects-toolbar-buttons no-mobile">
-                            <div class="carousel-button left" onclick="scrollPrevious('project-scroll', 'project-list-item', 32)">
+                            <div class="carousel-button left" onclick="scrollPrevious('marketplace-scroll', 'marketplace-tile-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
-                            <div class="carousel-button right" onclick="scrollNext('project-scroll', 'project-list-item', 32)">
+                            <div class="carousel-button right" onclick="scrollNext('marketplace-scroll', 'marketplace-tile-item', 32)">
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
                     </div>
-                    <div class="marketplace-tile">
-                        <div class="marketplace-tile-row-container no-mobile">
-                            <div class="marketplace-tile-row"></div>
-                        </div>
-                        <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
-                            <div class="button-content marketplace-button-content">
-                                <p class="link">See in market</p>
-                            </div>
+                    <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
+                        <div class="button-content marketplace-button-content">
+                            <p class="link">See in market</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="list-body marketplace-list-body mobile-screen">
+            <div class="list-body marketplace-list-body">
                 <!-- main -->
                 <div class="list-container">
                     <!-- scroll container -->
@@ -1334,10 +1329,6 @@
                             pluginItem = pluginItem.replaceAll("{{reviewCount}}", plugin.reviewCount);
 
                             pluginItem = pluginItem.split("{{marketplaceUrl}}").join(plugin.marketplaceUrl);
-
-                            // append pluginItem to marketplace-tile-row
-                            let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
-                            pluginsList.innerHTML += pluginItem;
 
                             let mobilePluginList = document.getElementById("marketplace-list-wrapper");
                             mobilePluginList.innerHTML += pluginItem;
