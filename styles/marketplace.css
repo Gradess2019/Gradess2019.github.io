@@ -16,6 +16,13 @@
     gap: 64px;
 }
 
+.marketplace-toolbar {
+    display: flex;
+    width: 1120px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .marketplace-title {
     display: flex;
     flex-direction: column;
@@ -152,6 +159,10 @@
         padding-top: 240px;
     }
 
+    .marketplace-toolbar {
+        width: 1120px;
+    }
+
     .marketplace-tile-item {
         width: 352px;
         height: 504px;
@@ -183,6 +194,10 @@
         padding-left: 40px;
         padding-right: 40px;
         padding-top: 216px;
+    }
+
+    .marketplace-toolbar {
+        width: 940px;
     }
 
     .marketplace-tile-item {
@@ -226,6 +241,11 @@
         padding-right: 16px;
         padding-top: 124px;
         gap: 32px;
+    }
+
+    .marketplace-toolbar {
+        width: 358px !important;
+        padding-left: 16px;
     }
 
     .marketplace-tile {
