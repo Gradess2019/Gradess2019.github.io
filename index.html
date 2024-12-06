@@ -604,26 +604,32 @@
             <div class="marketplace opacity-container">
                 <div id="marketplace"></div>
                 <div class="marketplace-content">
-                    <div class="marketplace-title">
-                        <h2 class="white-90 wide-screen">GRADESS GAMES</h2>
-                        <h3 class="white-90 tablet-screen">GRADESS GAMES</h3>
-                        <h4 class="white-90 mobile-screen">GRADESS GAMES</h4>
-                        <p class="body-1 white-50 no-mobile">Plugin development for Unreal Engine</p>
-                        <p class="body-2 white-50 mobile-screen">Plugin development for Unreal Engine</p>
-                    </div>
-                    <div class="marketplace-tile">
-                        <div class="marketplace-tile-row-container no-mobile">
-                            <div class="marketplace-tile-row"></div>
+                    <div class="marketplace-toolbar white-90">
+                        <div class="marketplace-title">
+                            <h2 class="white-90 wide-screen">GRADESS GAMES</h2>
+                            <h3 class="white-90 tablet-screen">GRADESS GAMES</h3>
+                            <h4 class="white-90 mobile-screen">GRADESS GAMES</h4>
+                            <p class="body-1 white-50 no-mobile">Plugin development for Unreal Engine</p>
+                            <p class="body-2 white-50 mobile-screen">Plugin development for Unreal Engine</p>
+                            
                         </div>
-                        <div class="button marketplace-button" onclick="openUrl('https://www.unrealengine.com/marketplace/en-US/profile/Gradess+Games?count=20&sortBy=effectiveDate&sortDir=DESC&start=0')">
-                            <div class="button-content marketplace-button-content">
-                                <p class="link">See in market</p>
+                        <div class="projects-toolbar-buttons no-mobile">
+                            <div class="carousel-button left" onclick="scrollPrevious('marketplace-scroll', 'marketplace-tile-item', 32)">
+                                <img src="images/carousel-arrow.svg">
                             </div>
+                            <div class="carousel-button right" onclick="scrollNext('marketplace-scroll', 'marketplace-tile-item', 32)">
+                                <img src="images/carousel-arrow.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button marketplace-button" onclick="openUrl('https://www.fab.com/sellers/Gradess%20Games')">
+                        <div class="button-content marketplace-button-content">
+                            <p class="link">Explore on Fab</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="list-body marketplace-list-body mobile-screen">
+            <div class="list-body marketplace-list-body">
                 <!-- main -->
                 <div class="list-container">
                     <!-- scroll container -->
@@ -1324,9 +1330,7 @@
 
                             pluginItem = pluginItem.split("{{marketplaceUrl}}").join(plugin.marketplaceUrl);
 
-                            // append pluginItem to marketplace-tile-row
-                            let pluginsList = document.getElementsByClassName("marketplace-tile-row")[0];
-                            pluginsList.innerHTML += pluginItem;
+                            pluginItem = pluginItem.split("{{starOpacity}}").join(plugin.reviewCount > 0 ? "" : "no-reviews");
 
                             let mobilePluginList = document.getElementById("marketplace-list-wrapper");
                             mobilePluginList.innerHTML += pluginItem;
