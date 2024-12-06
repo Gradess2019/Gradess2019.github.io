@@ -1330,6 +1330,8 @@
 
                             pluginItem = pluginItem.split("{{marketplaceUrl}}").join(plugin.marketplaceUrl);
 
+                            pluginItem = pluginItem.split("{{starOpacity}}").join(plugin.reviewCount > 0 ? "" : "no-reviews");
+
                             let mobilePluginList = document.getElementById("marketplace-list-wrapper");
                             mobilePluginList.innerHTML += pluginItem;
                         }

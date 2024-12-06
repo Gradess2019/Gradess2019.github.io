@@ -107,6 +107,10 @@
     height: 99%;
 }
 
+.no-reviews {
+    opacity: 50%;
+}
+
 .marketplace-tile-item-description-container {
     padding: 0px 24px 32px 24px;
     flex-direction: column;
