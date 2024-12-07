@@ -347,3 +347,12 @@ h6 {
     overflow-y:hidden;
     height:100%;
 }
+
+.mobile-arrow-image {
+    /* transition, by default rotation is 0, if "left" class added - rotation 180 */
+    transition: transform 0.2s;
+}
+
+.mobile-arrow-image.left {
+    transform: rotate(180deg);
+}
