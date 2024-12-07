@@ -2,19 +2,31 @@
     {
         "title": "Actor Locker",
         "imageSrc": "images/actor_locker.png",
-        "reviewCount": "32",
-        "marketplaceUrl": "https://www.unrealengine.com/marketplace/en-US/product/actor-locker"
+        "reviewCount": "65",
+        "marketplaceUrl": "https://www.fab.com/listings/ec26ac5e-4720-467c-a3a6-b5103b6b74d0"
+    },
+    {
+        "title": "Blueprint Screenshot Tool",
+        "imageSrc": "images/blueprint_screenshot_tool.png",
+        "reviewCount": "13",
+        "marketplaceUrl": "https://www.fab.com/listings/29a452f8-5851-49dd-80af-cb2ee4bc9bcb"
     },
     {
         "title": "Python Blueprint Fixer",
         "imageSrc": "images/python_blueprint_fixer.png",
-        "reviewCount": "3",
-        "marketplaceUrl": "https://www.unrealengine.com/marketplace/en-US/product/python-blueprint-fixer"
+        "reviewCount": "4",
+        "marketplaceUrl": "https://www.fab.com/listings/d650d089-120d-4c3d-b494-77b57eac6093"
     },
     {
         "title": "Blueprintable Developer Settings",
         "imageSrc": "images/blueprintable_developer_settings.png",
-        "reviewCount": "1",
-        "marketplaceUrl": "https://www.unrealengine.com/marketplace/en-US/product/blueprintable-developer-settings"
+        "reviewCount": "2",
+        "marketplaceUrl": "https://www.fab.com/listings/4cbce447-8e8d-49b2-afdc-ddf5ce06e518"
+    },
+    {
+        "title": "Diff Helper",
+        "imageSrc": "images/diff_helper.png",
+        "reviewCount": "0",
+        "marketplaceUrl": "https://www.fab.com/listings/29a452f8-5851-49dd-80af-cb2ee4bc9bcb"
     }
 ]

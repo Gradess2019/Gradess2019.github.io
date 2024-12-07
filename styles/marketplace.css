@@ -11,9 +11,15 @@
 .marketplace-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    gap: 64px;
+    gap: 600px;
+}
+
+.marketplace-toolbar {
+    display: flex;
+    width: 1120px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .marketplace-title {
@@ -101,6 +107,10 @@
     height: 99%;
 }
 
+.no-reviews {
+    opacity: 50%;
+}
+
 .marketplace-tile-item-description-container {
     padding: 0px 24px 32px 24px;
     flex-direction: column;
@@ -147,9 +157,18 @@
 @media screen and (min-width: 1441px) {
     .marketplace-content {
         width: 1120px;
+        height: 775px;
         padding-left: 160px;
         padding-right: 160px;
         padding-top: 240px;
+    }
+
+    #marketplace-scroll {
+        height: 510px;
+    }
+
+    .marketplace-toolbar {
+        width: 1120px;
     }
 
     .marketplace-tile-item {
@@ -170,6 +189,10 @@
     .marketplace-tile-item-image {
         height: 352px;
     }
+
+    .marketplace-list-body {
+        top: 5175px;
+    }
 }
 
 @media screen and (max-width: 1440px) and (min-width: 768px) {
@@ -178,11 +201,21 @@
         top: 120px;
     }
 
+    #marketplace-scroll {
+        height: 450px;
+    }
+
     .marketplace-content {
         width: 940px;
+        height: 725px;
         padding-left: 40px;
         padding-right: 40px;
         padding-top: 216px;
+        gap: 550px;
+    }
+
+    .marketplace-toolbar {
+        width: 940px;
     }
 
     .marketplace-tile-item {
@@ -203,6 +236,10 @@
     .marketplace-tile-item-image {
         height: 292px;
     }
+
+    .marketplace-list-body {
+        top: 4600px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -222,10 +259,15 @@
 
     .marketplace-content {
         width: 358px;
+        height: 615px;
         padding-left: 16px;
         padding-right: 16px;
         padding-top: 124px;
-        gap: 32px;
+        gap: 475px;
+    }
+
+    .marketplace-toolbar {
+        width: 358px !important;
     }
 
     .marketplace-tile {
