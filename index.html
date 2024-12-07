@@ -548,7 +548,7 @@
                                 <img src="images/carousel-arrow.svg">
                             </div>
                         </div>
-                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen mobile-arrow-image" id="mobile-scroll-projects">
                     </div>
                 </div>
             </div>
@@ -557,7 +557,7 @@
                 <!-- main -->
                 <div class="list-container">
                     <!-- scroll container -->
-                    <div class="scroll-container" id="project-scroll">
+                    <div class="scroll-container" id="project-scroll" onscroll="updateScrollArrowDirection('project-scroll', 'mobile-scroll-projects')">
                         <!-- list wrapper -->
                         <!-- <span class="fix-offset"></span> -->
                         <ul class="list-wrapper" id="project-list-wrapper">
@@ -583,7 +583,7 @@
                             <h3 class="tablet-screen">COMPANIES</h3>
                             <h4 class="mobile-screen">COMPANIES</h4>
                         </div>
-                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen">
+                        <img src="images/carousel-arrow-mobile.svg" class="mobile-screen mobile-arrow-image" id="mobile-scroll-companies">
                     </div>
                     <div class="companies-list" id="companies-list-original"></div>
                 </div>
@@ -592,7 +592,7 @@
                 <!-- main -->
                 <div class="list-container">
                     <!-- scroll container -->
-                    <div class="scroll-container" id="companies-scroll">
+                    <div class="scroll-container" id="companies-scroll" onscroll="updateScrollArrowDirection('companies-scroll', 'mobile-scroll-companies')">
                         <!-- list wrapper -->
                         <!-- <span class="fix-offset"></span> -->
                         <ul class="list-wrapper" id="companies-list-wrapper">
@@ -1059,6 +1059,20 @@
             
             slidesContainer.scrollLeft = newScrollLeft;
         }
+
+        function updateScrollArrowDirection(containerId, arrowId) {
+            let slidesContainer = document.getElementById(containerId);
+            let arrowElement = document.getElementById(arrowId);
+
+            let currentScroll = slidesContainer.scrollLeft + slidesContainer.clientWidth;
+            let backThreshold = 250;
+            if (currentScroll >= slidesContainer.scrollWidth) {
+                arrowElement.classList.add("left");
+            }
+            else if (slidesContainer.scrollWidth - currentScroll > backThreshold) {
+                arrowElement.classList.remove("left");
+            }
+        }
         
         function updateSecondaryPhotoRotation() {
             let secondaryPhoto = document.getElementsByClassName("introduction-secondary-photo")[0];
@@ -1097,7 +1111,6 @@
         document.addEventListener("scroll", updateHeaderStyle);
 
         function onHeaderMenuButtonClicked() {
-            console.log("Clicked");
         }
 
         function openHeaderMenu() {
